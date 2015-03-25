@@ -10,7 +10,7 @@ namespace projectDepTraiClub
     {
          Boolean insert();
          Boolean update();
-         Boolean delete();
+         Boolean delete(int id);
          SqlDataReader select();
     }
 }

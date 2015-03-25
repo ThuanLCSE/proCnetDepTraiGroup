@@ -1,3 +1,7 @@
 D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\ResolveAssemblyReference.cache
 D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.Properties.Resources.resources
 D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.csproj.GenerateResource.Cache
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.pdb
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.exe
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.pdb

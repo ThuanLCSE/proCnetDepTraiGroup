@@ -2,19 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
 
 namespace projectDepTraiClub
 {
-    class orderDetail: objectInterface
+    class customer:objectInterface
     {
-        SqlCommand cmd = new SqlCommand();
-        public orderDetail()
-        {
-            cmd.Connection=(new dataAccessObjest()).getCon();
-        }
-
-
         #region objectInterface Members
 
         public bool insert()
@@ -32,12 +24,11 @@ namespace projectDepTraiClub
             throw new NotImplementedException();
         }
 
-        public SqlDataReader select()
+        public System.Data.SqlClient.SqlDataReader select()
         {
             throw new NotImplementedException();
         }
 
         #endregion
     }
-
 }

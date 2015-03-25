@@ -19,7 +19,7 @@ namespace projectDepTraiClub
             throw new NotImplementedException();
         }
 
-        public bool delete()
+        public bool delete(int id)
         {
             throw new NotImplementedException();
         }

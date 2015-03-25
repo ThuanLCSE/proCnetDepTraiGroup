@@ -2,41 +2,33 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data.SqlClient;
 
 namespace projectDepTraiClub
 {
-    class employee: objectInterface
+    class employee:objectInterface
     {
-        SqlCommand cmd = new SqlCommand();
-        public employee()
+        #region objectInterface Members
+
+        public bool insert()
         {
-            cmd.Connection=(new dataAccessObjest()).getCon();
+            throw new NotImplementedException();
         }
-    
-#region objectInterface Members
 
-bool  objectInterface.insert()
-{
- 	throw new NotImplementedException();
-}
+        public bool update()
+        {
+            throw new NotImplementedException();
+        }
 
-bool  objectInterface.update()
-{
- 	throw new NotImplementedException();
-}
+        public bool delete(int id)
+        {
+            throw new NotImplementedException();
+        }
 
-bool  objectInterface.delete()
-{
- 	throw new NotImplementedException();
-}
+        public System.Data.SqlClient.SqlDataReader select()
+        {
+            throw new NotImplementedException();
+        }
 
-System.Data.SqlClient.SqlDataReader  objectInterface.select()
-{
- 	throw new NotImplementedException();
-}
-
-#endregion
+        #endregion
     }
-
 }
