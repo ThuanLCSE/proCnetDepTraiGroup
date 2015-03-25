@@ -7,14 +7,15 @@ namespace projectDepTraiClub
 {
     class employee:objectInterface
     {
+
         #region objectInterface Members
 
-        public bool insert()
+        public bool insert(List<string> str)
         {
             throw new NotImplementedException();
         }
 
-        public bool update()
+        public bool update(int id, List<string> str)
         {
             throw new NotImplementedException();
         }

@@ -8,8 +8,8 @@ namespace projectDepTraiClub
 {
     interface objectInterface
     {
-         Boolean insert();
-         Boolean update();
+         Boolean insert(List<String> str);
+         Boolean update(int id, List<String> str);
          Boolean delete(int id);
          SqlDataReader select();
     }
