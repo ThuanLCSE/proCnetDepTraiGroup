@@ -1,1 +1,2 @@
 D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.exe
+C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.exe
