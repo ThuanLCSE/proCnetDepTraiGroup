@@ -11,29 +11,27 @@ namespace Project
         SqlCommand cmd = new SqlCommand();
         public orderDetail()
         {
-            cmd.Connection=(new dataAccessObjest()).getCon();
+            cmd.Connection = (new dataAccessObjest()).getCon();
         }
-
-
 
         #region objectInterface Members
 
-        public bool insert(List<string> str)
+        bool objectInterface.insert(List<string> str)
         {
             throw new NotImplementedException();
         }
 
-        public bool update(int id, List<string> str)
+        bool objectInterface.update(int id, List<string> str)
         {
             throw new NotImplementedException();
         }
 
-        public bool delete(int id)
+        bool objectInterface.delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        public SqlDataReader select()
+        SqlDataReader objectInterface.select()
         {
             throw new NotImplementedException();
         }
