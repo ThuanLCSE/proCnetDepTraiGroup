@@ -14,6 +14,7 @@ namespace projectDepTraiClub
         }
         public SqlConnection getCon()
         {
+            return null;
         }
     }
 }

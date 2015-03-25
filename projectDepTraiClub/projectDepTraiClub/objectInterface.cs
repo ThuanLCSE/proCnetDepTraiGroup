@@ -8,9 +8,9 @@ namespace projectDepTraiClub
 {
     interface objectInterface
     {
-        public Boolean insert();
-        public Boolean update();
-        public Boolean delete();
-        public SqlDataReader select();
+         Boolean insert();
+         Boolean update();
+         Boolean delete();
+         SqlDataReader select();
     }
 }
