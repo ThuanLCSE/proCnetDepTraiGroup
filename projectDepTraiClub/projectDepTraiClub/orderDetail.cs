@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Project
 {
@@ -11,7 +12,7 @@ namespace Project
         SqlCommand cmd = new SqlCommand();
         public orderDetail()
         {
-            cmd.Connection = (new dataAccessObjest()).getCon();
+            cmd.Connection= (new dataAccessObjest).getCon();
         }
 
         #region objectInterface Members
@@ -33,7 +34,11 @@ namespace Project
 
         SqlDataReader objectInterface.select()
         {
-            throw new NotImplementedException();
+             cmd.CommandType = CommandType.StoredProcedure;
+             cmd.CommandText = "selectOrderDetail";
+            SqlDataReader dr = cmd.ExecuteReader();
+            dr.Close();
+            return dr;
         }
 
         #endregion

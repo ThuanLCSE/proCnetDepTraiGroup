@@ -2,18 +2,19 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 
 namespace Project
 {
-    class Categori : objectInterface
+    class Shipper:objectInterface
     {
         SqlCommand cmd = new SqlCommand();
-        public Categori()
+        public Shipper()
         {
             cmd.Connection= (new dataAccessObjest).getCon();
         }
+
         #region objectInterface Members
 
         public bool insert(List<string> str)
@@ -31,10 +32,11 @@ namespace Project
             throw new NotImplementedException();
         }
 
-        public SqlDataReader select()
+        public System.Data.SqlClient.SqlDataReader select()
         {
-           cmd.CommandType = CommandType.StoredProcedure;
-           cmd.CommandText = "selectCategories";
+
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "selectShipper";
             SqlDataReader dr = cmd.ExecuteReader();
             dr.Close();
             return dr;
