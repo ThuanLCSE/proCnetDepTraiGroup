@@ -5,3 +5,8 @@ D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug
 D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.pdb
 D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.exe
 D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.pdb
+C:\Users\BuiPhu\Documents\Visual Studio 2008\Projects\Project\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BuiPhu\Documents\Visual Studio 2008\Projects\Project\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Form1.resources
+C:\Users\BuiPhu\Documents\Visual Studio 2008\Projects\Project\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.Properties.Resources.resources
+C:\Users\BuiPhu\Documents\Visual Studio 2008\Projects\Project\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.csproj.GenerateResource.Cache
+C:\Users\BuiPhu\Documents\Visual Studio 2008\Projects\Project\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.exe

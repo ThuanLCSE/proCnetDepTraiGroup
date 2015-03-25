@@ -30,6 +30,11 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tCustomer = new System.Windows.Forms.TabPage();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnDeleteCustomer = new System.Windows.Forms.Button();
+            this.btnAddCustomer = new System.Windows.Forms.Button();
+            this.dgvCustomer = new System.Windows.Forms.DataGridView();
             this.txtFax = new System.Windows.Forms.TextBox();
             this.lblFax = new System.Windows.Forms.Label();
             this.txtPhone = new System.Windows.Forms.TextBox();
@@ -53,6 +58,11 @@
             this.lblComName = new System.Windows.Forms.Label();
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
+            this.btnUpdateOrder = new System.Windows.Forms.Button();
+            this.btnDeleteOrder = new System.Windows.Forms.Button();
+            this.btnAddOrder = new System.Windows.Forms.Button();
+            this.dgvOrder = new System.Windows.Forms.DataGridView();
             this.txtShipCountry = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txtShippedDate = new System.Windows.Forms.TextBox();
@@ -80,6 +90,11 @@
             this.lblOrderCusID = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.tProduct = new System.Windows.Forms.TabPage();
+            this.button6 = new System.Windows.Forms.Button();
+            this.btnUpdateCustomer = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.dgvProduct = new System.Windows.Forms.DataGridView();
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
@@ -94,6 +109,11 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tEmployee = new System.Windows.Forms.TabPage();
+            this.button10 = new System.Windows.Forms.Button();
+            this.btnUpdateEmp = new System.Windows.Forms.Button();
+            this.btnDeleteEmp = new System.Windows.Forms.Button();
+            this.btnAddEmp = new System.Windows.Forms.Button();
+            this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.txtHireDate = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
             this.txtMgrid = new System.Windows.Forms.TextBox();
@@ -123,6 +143,11 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.tSuppliers = new System.Windows.Forms.TabPage();
+            this.button14 = new System.Windows.Forms.Button();
+            this.btnUpdateSupplier = new System.Windows.Forms.Button();
+            this.btnDeleteSupplier = new System.Windows.Forms.Button();
+            this.btnAddSupplier = new System.Windows.Forms.Button();
+            this.dgvSupplier = new System.Windows.Forms.DataGridView();
             this.txtSupFax = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtSupPhone = new System.Windows.Forms.TextBox();
@@ -144,6 +169,11 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.tOderDetail = new System.Windows.Forms.TabPage();
+            this.button18 = new System.Windows.Forms.Button();
+            this.updateOrderDetail = new System.Windows.Forms.Button();
+            this.deleteOrderDetail = new System.Windows.Forms.Button();
+            this.addOrderDetail = new System.Windows.Forms.Button();
+            this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
             this.txtDiscount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtOrDeQuantity = new System.Windows.Forms.TextBox();
@@ -155,6 +185,11 @@
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.tCategories = new System.Windows.Forms.TabPage();
+            this.button22 = new System.Windows.Forms.Button();
+            this.btnUpdateCategory = new System.Windows.Forms.Button();
+            this.btnDeleteCategory = new System.Windows.Forms.Button();
+            this.btnAddCategory = new System.Windows.Forms.Button();
+            this.dgvCategory = new System.Windows.Forms.DataGridView();
             this.txtCateDescription = new System.Windows.Forms.TextBox();
             this.txtCaterogyName = new System.Windows.Forms.TextBox();
             this.txtCategoryID = new System.Windows.Forms.TextBox();
@@ -162,7 +197,11 @@
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.tShippers = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.button26 = new System.Windows.Forms.Button();
+            this.btnUpdateShipper = new System.Windows.Forms.Button();
+            this.btnDeleteShipper = new System.Windows.Forms.Button();
+            this.btnAddShipper = new System.Windows.Forms.Button();
+            this.dgvShipper = new System.Windows.Forms.DataGridView();
             this.txtShipperPhone = new System.Windows.Forms.TextBox();
             this.txtCompanyShipper = new System.Windows.Forms.TextBox();
             this.txtShipperID = new System.Windows.Forms.TextBox();
@@ -171,14 +210,21 @@
             this.label34 = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tOrder.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.tProduct.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.tEmployee.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.tSuppliers.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
             this.tOderDetail.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             this.tCategories.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.tShippers.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl
@@ -191,14 +237,19 @@
             this.tabControl.Controls.Add(this.tOderDetail);
             this.tabControl.Controls.Add(this.tCategories);
             this.tabControl.Controls.Add(this.tShippers);
-            this.tabControl.Location = new System.Drawing.Point(4, 12);
+            this.tabControl.Location = new System.Drawing.Point(4, 14);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(640, 268);
+            this.tabControl.Size = new System.Drawing.Size(640, 484);
             this.tabControl.TabIndex = 0;
             // 
             // tCustomer
             // 
+            this.tCustomer.Controls.Add(this.button4);
+            this.tCustomer.Controls.Add(this.btnUpdate);
+            this.tCustomer.Controls.Add(this.btnDeleteCustomer);
+            this.tCustomer.Controls.Add(this.btnAddCustomer);
+            this.tCustomer.Controls.Add(this.dgvCustomer);
             this.tCustomer.Controls.Add(this.txtFax);
             this.tCustomer.Controls.Add(this.lblFax);
             this.tCustomer.Controls.Add(this.txtPhone);
@@ -224,10 +275,54 @@
             this.tCustomer.Location = new System.Drawing.Point(4, 22);
             this.tCustomer.Name = "tCustomer";
             this.tCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tCustomer.Size = new System.Drawing.Size(632, 242);
+            this.tCustomer.Size = new System.Drawing.Size(632, 458);
             this.tCustomer.TabIndex = 0;
             this.tCustomer.Text = "Customer";
             this.tCustomer.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(333, 247);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(119, 23);
+            this.button4.TabIndex = 27;
+            this.button4.Text = "button4";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(185, 247);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdate.TabIndex = 26;
+            this.btnUpdate.Text = "Update Customer";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteCustomer
+            // 
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(333, 214);
+            this.btnDeleteCustomer.Name = "btnDeleteCustomer";
+            this.btnDeleteCustomer.Size = new System.Drawing.Size(119, 23);
+            this.btnDeleteCustomer.TabIndex = 25;
+            this.btnDeleteCustomer.Text = "Delete Customer";
+            this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            // 
+            // btnAddCustomer
+            // 
+            this.btnAddCustomer.Location = new System.Drawing.Point(185, 214);
+            this.btnAddCustomer.Name = "btnAddCustomer";
+            this.btnAddCustomer.Size = new System.Drawing.Size(115, 23);
+            this.btnAddCustomer.TabIndex = 24;
+            this.btnAddCustomer.Text = "Add Customer";
+            this.btnAddCustomer.UseVisualStyleBackColor = true;
+            // 
+            // dgvCustomer
+            // 
+            this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCustomer.Location = new System.Drawing.Point(6, 276);
+            this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.Size = new System.Drawing.Size(620, 137);
+            this.dgvCustomer.TabIndex = 23;
             // 
             // txtFax
             // 
@@ -407,6 +502,11 @@
             // 
             // tOrder
             // 
+            this.tOrder.Controls.Add(this.button1);
+            this.tOrder.Controls.Add(this.btnUpdateOrder);
+            this.tOrder.Controls.Add(this.btnDeleteOrder);
+            this.tOrder.Controls.Add(this.btnAddOrder);
+            this.tOrder.Controls.Add(this.dgvOrder);
             this.tOrder.Controls.Add(this.txtShipCountry);
             this.tOrder.Controls.Add(this.label5);
             this.tOrder.Controls.Add(this.txtShippedDate);
@@ -436,10 +536,54 @@
             this.tOrder.Location = new System.Drawing.Point(4, 22);
             this.tOrder.Name = "tOrder";
             this.tOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.tOrder.Size = new System.Drawing.Size(632, 242);
+            this.tOrder.Size = new System.Drawing.Size(632, 458);
             this.tOrder.TabIndex = 1;
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(336, 283);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(119, 23);
+            this.button1.TabIndex = 53;
+            this.button1.Text = "button1";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateOrder
+            // 
+            this.btnUpdateOrder.Location = new System.Drawing.Point(188, 283);
+            this.btnUpdateOrder.Name = "btnUpdateOrder";
+            this.btnUpdateOrder.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateOrder.TabIndex = 52;
+            this.btnUpdateOrder.Text = "Update Order";
+            this.btnUpdateOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteOrder
+            // 
+            this.btnDeleteOrder.Location = new System.Drawing.Point(336, 250);
+            this.btnDeleteOrder.Name = "btnDeleteOrder";
+            this.btnDeleteOrder.Size = new System.Drawing.Size(119, 23);
+            this.btnDeleteOrder.TabIndex = 51;
+            this.btnDeleteOrder.Text = "Delete Order";
+            this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            // 
+            // btnAddOrder
+            // 
+            this.btnAddOrder.Location = new System.Drawing.Point(188, 250);
+            this.btnAddOrder.Name = "btnAddOrder";
+            this.btnAddOrder.Size = new System.Drawing.Size(115, 23);
+            this.btnAddOrder.TabIndex = 50;
+            this.btnAddOrder.Text = "Add Order";
+            this.btnAddOrder.UseVisualStyleBackColor = true;
+            // 
+            // dgvOrder
+            // 
+            this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrder.Location = new System.Drawing.Point(9, 312);
+            this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.Size = new System.Drawing.Size(620, 137);
+            this.dgvOrder.TabIndex = 49;
             // 
             // txtShipCountry
             // 
@@ -651,6 +795,11 @@
             // 
             // tProduct
             // 
+            this.tProduct.Controls.Add(this.button6);
+            this.tProduct.Controls.Add(this.btnUpdateCustomer);
+            this.tProduct.Controls.Add(this.btnDeleteProduct);
+            this.tProduct.Controls.Add(this.btnAddProduct);
+            this.tProduct.Controls.Add(this.dgvProduct);
             this.tProduct.Controls.Add(this.radNo);
             this.tProduct.Controls.Add(this.radYes);
             this.tProduct.Controls.Add(this.label11);
@@ -667,10 +816,54 @@
             this.tProduct.Location = new System.Drawing.Point(4, 22);
             this.tProduct.Name = "tProduct";
             this.tProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tProduct.Size = new System.Drawing.Size(632, 242);
+            this.tProduct.Size = new System.Drawing.Size(632, 458);
             this.tProduct.TabIndex = 2;
             this.tProduct.Text = "Product";
             this.tProduct.UseVisualStyleBackColor = true;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(333, 241);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(119, 23);
+            this.button6.TabIndex = 40;
+            this.button6.Text = "button6";
+            this.button6.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateCustomer
+            // 
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 241);
+            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateCustomer.TabIndex = 39;
+            this.btnUpdateCustomer.Text = "Update Product";
+            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteProduct
+            // 
+            this.btnDeleteProduct.Location = new System.Drawing.Point(333, 208);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(119, 23);
+            this.btnDeleteProduct.TabIndex = 38;
+            this.btnDeleteProduct.Text = "Delete Product";
+            this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnAddProduct
+            // 
+            this.btnAddProduct.Location = new System.Drawing.Point(185, 208);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(115, 23);
+            this.btnAddProduct.TabIndex = 37;
+            this.btnAddProduct.Text = "Add Product";
+            this.btnAddProduct.UseVisualStyleBackColor = true;
+            // 
+            // dgvProduct
+            // 
+            this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Location = new System.Drawing.Point(6, 270);
+            this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.Size = new System.Drawing.Size(620, 137);
+            this.dgvProduct.TabIndex = 36;
             // 
             // radNo
             // 
@@ -785,6 +978,11 @@
             // 
             // tEmployee
             // 
+            this.tEmployee.Controls.Add(this.button10);
+            this.tEmployee.Controls.Add(this.btnUpdateEmp);
+            this.tEmployee.Controls.Add(this.btnDeleteEmp);
+            this.tEmployee.Controls.Add(this.btnAddEmp);
+            this.tEmployee.Controls.Add(this.dgvEmp);
             this.tEmployee.Controls.Add(this.txtHireDate);
             this.tEmployee.Controls.Add(this.label25);
             this.tEmployee.Controls.Add(this.txtMgrid);
@@ -816,10 +1014,54 @@
             this.tEmployee.Location = new System.Drawing.Point(4, 22);
             this.tEmployee.Name = "tEmployee";
             this.tEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tEmployee.Size = new System.Drawing.Size(632, 242);
+            this.tEmployee.Size = new System.Drawing.Size(632, 458);
             this.tEmployee.TabIndex = 3;
             this.tEmployee.Text = "Employee";
             this.tEmployee.UseVisualStyleBackColor = true;
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(333, 286);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(119, 23);
+            this.button10.TabIndex = 81;
+            this.button10.Text = "button10";
+            this.button10.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateEmp
+            // 
+            this.btnUpdateEmp.Location = new System.Drawing.Point(185, 286);
+            this.btnUpdateEmp.Name = "btnUpdateEmp";
+            this.btnUpdateEmp.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateEmp.TabIndex = 80;
+            this.btnUpdateEmp.Text = "Update Employee";
+            this.btnUpdateEmp.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteEmp
+            // 
+            this.btnDeleteEmp.Location = new System.Drawing.Point(333, 253);
+            this.btnDeleteEmp.Name = "btnDeleteEmp";
+            this.btnDeleteEmp.Size = new System.Drawing.Size(119, 23);
+            this.btnDeleteEmp.TabIndex = 79;
+            this.btnDeleteEmp.Text = "Delete Employee";
+            this.btnDeleteEmp.UseVisualStyleBackColor = true;
+            // 
+            // btnAddEmp
+            // 
+            this.btnAddEmp.Location = new System.Drawing.Point(185, 253);
+            this.btnAddEmp.Name = "btnAddEmp";
+            this.btnAddEmp.Size = new System.Drawing.Size(115, 23);
+            this.btnAddEmp.TabIndex = 78;
+            this.btnAddEmp.Text = "Add Employee";
+            this.btnAddEmp.UseVisualStyleBackColor = true;
+            // 
+            // dgvEmp
+            // 
+            this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmp.Location = new System.Drawing.Point(6, 315);
+            this.dgvEmp.Name = "dgvEmp";
+            this.dgvEmp.Size = new System.Drawing.Size(620, 137);
+            this.dgvEmp.TabIndex = 77;
             // 
             // txtHireDate
             // 
@@ -1047,6 +1289,11 @@
             // 
             // tSuppliers
             // 
+            this.tSuppliers.Controls.Add(this.button14);
+            this.tSuppliers.Controls.Add(this.btnUpdateSupplier);
+            this.tSuppliers.Controls.Add(this.btnDeleteSupplier);
+            this.tSuppliers.Controls.Add(this.btnAddSupplier);
+            this.tSuppliers.Controls.Add(this.dgvSupplier);
             this.tSuppliers.Controls.Add(this.txtSupFax);
             this.tSuppliers.Controls.Add(this.label27);
             this.tSuppliers.Controls.Add(this.txtSupPhone);
@@ -1070,10 +1317,54 @@
             this.tSuppliers.Location = new System.Drawing.Point(4, 22);
             this.tSuppliers.Name = "tSuppliers";
             this.tSuppliers.Padding = new System.Windows.Forms.Padding(3);
-            this.tSuppliers.Size = new System.Drawing.Size(632, 242);
+            this.tSuppliers.Size = new System.Drawing.Size(632, 458);
             this.tSuppliers.TabIndex = 4;
             this.tSuppliers.Text = "Suppliers";
             this.tSuppliers.UseVisualStyleBackColor = true;
+            // 
+            // button14
+            // 
+            this.button14.Location = new System.Drawing.Point(333, 286);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(119, 23);
+            this.button14.TabIndex = 107;
+            this.button14.Text = "button14";
+            this.button14.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateSupplier
+            // 
+            this.btnUpdateSupplier.Location = new System.Drawing.Point(185, 286);
+            this.btnUpdateSupplier.Name = "btnUpdateSupplier";
+            this.btnUpdateSupplier.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateSupplier.TabIndex = 106;
+            this.btnUpdateSupplier.Text = "Update Supplier";
+            this.btnUpdateSupplier.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteSupplier
+            // 
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(333, 253);
+            this.btnDeleteSupplier.Name = "btnDeleteSupplier";
+            this.btnDeleteSupplier.Size = new System.Drawing.Size(119, 23);
+            this.btnDeleteSupplier.TabIndex = 105;
+            this.btnDeleteSupplier.Text = "Delete Supplier";
+            this.btnDeleteSupplier.UseVisualStyleBackColor = true;
+            // 
+            // btnAddSupplier
+            // 
+            this.btnAddSupplier.Location = new System.Drawing.Point(185, 253);
+            this.btnAddSupplier.Name = "btnAddSupplier";
+            this.btnAddSupplier.Size = new System.Drawing.Size(115, 23);
+            this.btnAddSupplier.TabIndex = 104;
+            this.btnAddSupplier.Text = "Add Supplier";
+            this.btnAddSupplier.UseVisualStyleBackColor = true;
+            // 
+            // dgvSupplier
+            // 
+            this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupplier.Location = new System.Drawing.Point(6, 315);
+            this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.Size = new System.Drawing.Size(620, 137);
+            this.dgvSupplier.TabIndex = 103;
             // 
             // txtSupFax
             // 
@@ -1237,6 +1528,11 @@
             // 
             // tOderDetail
             // 
+            this.tOderDetail.Controls.Add(this.button18);
+            this.tOderDetail.Controls.Add(this.updateOrderDetail);
+            this.tOderDetail.Controls.Add(this.deleteOrderDetail);
+            this.tOderDetail.Controls.Add(this.addOrderDetail);
+            this.tOderDetail.Controls.Add(this.dgvOrderDetail);
             this.tOderDetail.Controls.Add(this.txtDiscount);
             this.tOderDetail.Controls.Add(this.label45);
             this.tOderDetail.Controls.Add(this.txtOrDeQuantity);
@@ -1250,10 +1546,54 @@
             this.tOderDetail.Location = new System.Drawing.Point(4, 22);
             this.tOderDetail.Name = "tOderDetail";
             this.tOderDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tOderDetail.Size = new System.Drawing.Size(632, 242);
+            this.tOderDetail.Size = new System.Drawing.Size(632, 458);
             this.tOderDetail.TabIndex = 5;
             this.tOderDetail.Text = "OrderDetail";
             this.tOderDetail.UseVisualStyleBackColor = true;
+            // 
+            // button18
+            // 
+            this.button18.Location = new System.Drawing.Point(333, 225);
+            this.button18.Name = "button18";
+            this.button18.Size = new System.Drawing.Size(119, 23);
+            this.button18.TabIndex = 91;
+            this.button18.Text = "button18";
+            this.button18.UseVisualStyleBackColor = true;
+            // 
+            // updateOrderDetail
+            // 
+            this.updateOrderDetail.Location = new System.Drawing.Point(185, 225);
+            this.updateOrderDetail.Name = "updateOrderDetail";
+            this.updateOrderDetail.Size = new System.Drawing.Size(115, 23);
+            this.updateOrderDetail.TabIndex = 90;
+            this.updateOrderDetail.Text = "Update Order Detail";
+            this.updateOrderDetail.UseVisualStyleBackColor = true;
+            // 
+            // deleteOrderDetail
+            // 
+            this.deleteOrderDetail.Location = new System.Drawing.Point(333, 192);
+            this.deleteOrderDetail.Name = "deleteOrderDetail";
+            this.deleteOrderDetail.Size = new System.Drawing.Size(119, 23);
+            this.deleteOrderDetail.TabIndex = 89;
+            this.deleteOrderDetail.Text = "Delete Order Detail";
+            this.deleteOrderDetail.UseVisualStyleBackColor = true;
+            // 
+            // addOrderDetail
+            // 
+            this.addOrderDetail.Location = new System.Drawing.Point(185, 192);
+            this.addOrderDetail.Name = "addOrderDetail";
+            this.addOrderDetail.Size = new System.Drawing.Size(115, 23);
+            this.addOrderDetail.TabIndex = 88;
+            this.addOrderDetail.Text = "Add Order Detail";
+            this.addOrderDetail.UseVisualStyleBackColor = true;
+            // 
+            // dgvOrderDetail
+            // 
+            this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderDetail.Location = new System.Drawing.Point(6, 254);
+            this.dgvOrderDetail.Name = "dgvOrderDetail";
+            this.dgvOrderDetail.Size = new System.Drawing.Size(620, 137);
+            this.dgvOrderDetail.TabIndex = 87;
             // 
             // txtDiscount
             // 
@@ -1337,6 +1677,11 @@
             // 
             // tCategories
             // 
+            this.tCategories.Controls.Add(this.button22);
+            this.tCategories.Controls.Add(this.btnUpdateCategory);
+            this.tCategories.Controls.Add(this.btnDeleteCategory);
+            this.tCategories.Controls.Add(this.btnAddCategory);
+            this.tCategories.Controls.Add(this.dgvCategory);
             this.tCategories.Controls.Add(this.txtCateDescription);
             this.tCategories.Controls.Add(this.txtCaterogyName);
             this.tCategories.Controls.Add(this.txtCategoryID);
@@ -1346,10 +1691,54 @@
             this.tCategories.Location = new System.Drawing.Point(4, 22);
             this.tCategories.Name = "tCategories";
             this.tCategories.Padding = new System.Windows.Forms.Padding(3);
-            this.tCategories.Size = new System.Drawing.Size(632, 242);
+            this.tCategories.Size = new System.Drawing.Size(632, 458);
             this.tCategories.TabIndex = 6;
             this.tCategories.Text = "Categories";
             this.tCategories.UseVisualStyleBackColor = true;
+            // 
+            // button22
+            // 
+            this.button22.Location = new System.Drawing.Point(333, 140);
+            this.button22.Name = "button22";
+            this.button22.Size = new System.Drawing.Size(119, 23);
+            this.button22.TabIndex = 88;
+            this.button22.Text = "button22";
+            this.button22.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateCategory
+            // 
+            this.btnUpdateCategory.Location = new System.Drawing.Point(185, 140);
+            this.btnUpdateCategory.Name = "btnUpdateCategory";
+            this.btnUpdateCategory.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateCategory.TabIndex = 87;
+            this.btnUpdateCategory.Text = "Update Category";
+            this.btnUpdateCategory.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteCategory
+            // 
+            this.btnDeleteCategory.Location = new System.Drawing.Point(333, 107);
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(119, 23);
+            this.btnDeleteCategory.TabIndex = 86;
+            this.btnDeleteCategory.Text = "Delete Category";
+            this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.Location = new System.Drawing.Point(185, 107);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(115, 23);
+            this.btnAddCategory.TabIndex = 85;
+            this.btnAddCategory.Text = "Add Category";
+            this.btnAddCategory.UseVisualStyleBackColor = true;
+            // 
+            // dgvCategory
+            // 
+            this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Location = new System.Drawing.Point(6, 169);
+            this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.Size = new System.Drawing.Size(620, 137);
+            this.dgvCategory.TabIndex = 84;
             // 
             // txtCateDescription
             // 
@@ -1401,6 +1790,11 @@
             // 
             // tShippers
             // 
+            this.tShippers.Controls.Add(this.button26);
+            this.tShippers.Controls.Add(this.btnUpdateShipper);
+            this.tShippers.Controls.Add(this.btnDeleteShipper);
+            this.tShippers.Controls.Add(this.btnAddShipper);
+            this.tShippers.Controls.Add(this.dgvShipper);
             this.tShippers.Controls.Add(this.txtShipperPhone);
             this.tShippers.Controls.Add(this.txtCompanyShipper);
             this.tShippers.Controls.Add(this.txtShipperID);
@@ -1410,18 +1804,54 @@
             this.tShippers.Location = new System.Drawing.Point(4, 22);
             this.tShippers.Name = "tShippers";
             this.tShippers.Padding = new System.Windows.Forms.Padding(3);
-            this.tShippers.Size = new System.Drawing.Size(632, 242);
+            this.tShippers.Size = new System.Drawing.Size(632, 458);
             this.tShippers.TabIndex = 7;
             this.tShippers.Text = "Shippers";
             this.tShippers.UseVisualStyleBackColor = true;
             // 
-            // dataGridView1
+            // button26
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(4, 286);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(640, 137);
-            this.dataGridView1.TabIndex = 1;
+            this.button26.Location = new System.Drawing.Point(333, 138);
+            this.button26.Name = "button26";
+            this.button26.Size = new System.Drawing.Size(119, 23);
+            this.button26.TabIndex = 94;
+            this.button26.Text = "button26";
+            this.button26.UseVisualStyleBackColor = true;
+            // 
+            // btnUpdateShipper
+            // 
+            this.btnUpdateShipper.Location = new System.Drawing.Point(185, 138);
+            this.btnUpdateShipper.Name = "btnUpdateShipper";
+            this.btnUpdateShipper.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateShipper.TabIndex = 93;
+            this.btnUpdateShipper.Text = "Update Shipper";
+            this.btnUpdateShipper.UseVisualStyleBackColor = true;
+            // 
+            // btnDeleteShipper
+            // 
+            this.btnDeleteShipper.Location = new System.Drawing.Point(333, 105);
+            this.btnDeleteShipper.Name = "btnDeleteShipper";
+            this.btnDeleteShipper.Size = new System.Drawing.Size(119, 23);
+            this.btnDeleteShipper.TabIndex = 92;
+            this.btnDeleteShipper.Text = "Delete Shipper";
+            this.btnDeleteShipper.UseVisualStyleBackColor = true;
+            // 
+            // btnAddShipper
+            // 
+            this.btnAddShipper.Location = new System.Drawing.Point(185, 105);
+            this.btnAddShipper.Name = "btnAddShipper";
+            this.btnAddShipper.Size = new System.Drawing.Size(115, 23);
+            this.btnAddShipper.TabIndex = 91;
+            this.btnAddShipper.Text = "Add Shipper";
+            this.btnAddShipper.UseVisualStyleBackColor = true;
+            // 
+            // dgvShipper
+            // 
+            this.dgvShipper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShipper.Location = new System.Drawing.Point(6, 167);
+            this.dgvShipper.Name = "dgvShipper";
+            this.dgvShipper.Size = new System.Drawing.Size(620, 137);
+            this.dgvShipper.TabIndex = 90;
             // 
             // txtShipperPhone
             // 
@@ -1476,8 +1906,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(650, 435);
-            this.Controls.Add(this.dataGridView1);
+            this.ClientSize = new System.Drawing.Size(651, 505);
             this.Controls.Add(this.tabControl);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -1485,21 +1914,28 @@
             this.tabControl.ResumeLayout(false);
             this.tCustomer.ResumeLayout(false);
             this.tCustomer.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.tOrder.ResumeLayout(false);
             this.tOrder.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.tProduct.ResumeLayout(false);
             this.tProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.tEmployee.ResumeLayout(false);
             this.tEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).EndInit();
             this.tSuppliers.ResumeLayout(false);
             this.tSuppliers.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
             this.tOderDetail.ResumeLayout(false);
             this.tOderDetail.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).EndInit();
             this.tCategories.ResumeLayout(false);
             this.tCategories.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
             this.tShippers.ResumeLayout(false);
             this.tShippers.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1510,7 +1946,6 @@
         private System.Windows.Forms.TabPage tCustomer;
         private System.Windows.Forms.TabPage tOrder;
         private System.Windows.Forms.TabPage tProduct;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TextBox txtCusTitle;
         private System.Windows.Forms.TextBox txtCusName;
         private System.Windows.Forms.TextBox txtComName;
@@ -1647,6 +2082,46 @@
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.DataGridView dgvCustomer;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnDeleteCustomer;
+        private System.Windows.Forms.Button btnAddCustomer;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnUpdateOrder;
+        private System.Windows.Forms.Button btnDeleteOrder;
+        private System.Windows.Forms.Button btnAddOrder;
+        private System.Windows.Forms.DataGridView dgvOrder;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnUpdateCustomer;
+        private System.Windows.Forms.Button btnDeleteProduct;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.DataGridView dgvProduct;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnUpdateEmp;
+        private System.Windows.Forms.Button btnDeleteEmp;
+        private System.Windows.Forms.Button btnAddEmp;
+        private System.Windows.Forms.DataGridView dgvEmp;
+        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnUpdateSupplier;
+        private System.Windows.Forms.Button btnDeleteSupplier;
+        private System.Windows.Forms.Button btnAddSupplier;
+        private System.Windows.Forms.DataGridView dgvSupplier;
+        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button updateOrderDetail;
+        private System.Windows.Forms.Button deleteOrderDetail;
+        private System.Windows.Forms.Button addOrderDetail;
+        private System.Windows.Forms.DataGridView dgvOrderDetail;
+        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btnUpdateCategory;
+        private System.Windows.Forms.Button btnDeleteCategory;
+        private System.Windows.Forms.Button btnAddCategory;
+        private System.Windows.Forms.DataGridView dgvCategory;
+        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button btnUpdateShipper;
+        private System.Windows.Forms.Button btnDeleteShipper;
+        private System.Windows.Forms.Button btnAddShipper;
+        private System.Windows.Forms.DataGridView dgvShipper;
     }
 }
 
