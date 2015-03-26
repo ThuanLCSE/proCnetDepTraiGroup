@@ -16,18 +16,19 @@ namespace Project
         public Form1()
         {
             InitializeComponent();
+            Categories();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
 
 
 
 
-        //Validate 8 tab, put here!!!!!!!!!!!!!!!!!!!!!!
+        #region validate input
         private bool validateCustomer()
         {
             bool error = true;
@@ -192,11 +193,6 @@ namespace Project
                 errorProvider1.SetError(txtEmpPosCode, "Enter Postal Code!!!");
                 error = false;
             }
-            if (txtEmpCountry.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtEmpCountry, "Enter Employee's Country!!!");
-                error = false;
-            }
             if (mtbEmpPhone.MaskCompleted == false)
             {
                 errorProvider1.SetError(mtbEmpPhone, "Please enter require digit!!!");
@@ -204,13 +200,11 @@ namespace Project
             }
             return error;
         }
-
-        //End validate!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+        #endregion
 
 
 
-        //Must enter number, put here!!!!!!!!!!!!!!!!!!!    
+        #region validate enter number
         private void txtCusPhone_KeyDown(object sender, KeyEventArgs e)
         {
             if ((e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9) && e.KeyCode != Keys.Back)
@@ -331,15 +325,26 @@ namespace Project
                 if (e.Shift == true)
                     e.SuppressKeyPress = true;
         }
+        #endregion
 
+
+
+
+
+        #region load from db to dgv
         private void btnLoadEmp_Click(object sender, EventArgs e)
+        {
+            LoadEmp();
+        }
+
+        private void LoadEmp()
         {
             SqlDataReader dr = (new employee()).select();
             dgvEmp.Rows.Clear();
             while (dr.Read())
             {
                 int mgrid;
-                if (dr[13]==DBNull.Value)
+                if (dr[13] == DBNull.Value)
                     mgrid = 0;
                 else mgrid = dr.GetInt32(0);
                 dgvEmp.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(),
@@ -348,8 +353,131 @@ namespace Project
             }
             dr.Close();
         }
-        
-        //End enter number
 
+        private void btnLoadProduct_Click(object sender, EventArgs e)
+        {
+            LoadProduct();
+        }
+
+        private void LoadProduct()
+        {
+            SqlDataReader dr = (new products()).select();
+            dgvProduct.Rows.Clear();
+            while (dr.Read())
+            {
+                string s = "";
+                if (dr.GetBoolean(5)==true)
+                    s = "Y";
+                else s = "N";
+                dgvProduct.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr.GetInt32(2), dr.GetInt32(3), double.Parse(dr[4].ToString()), s);
+            }
+            dr.Close();
+        }
+
+        private void btnLoadOrder_Click(object sender, EventArgs e)
+        {
+            LoadOrder();   
+        }
+
+        private void LoadOrder()
+        {
+            SqlDataReader dr = (new order()).select();
+            dgvOrder.Rows.Clear();
+            while (dr.Read())
+            {
+                int cusid;
+                if (dr[1] == DBNull.Value)
+                    cusid = 0;
+                else cusid = dr.GetInt32(0);
+                dgvOrder.Rows.Add(dr.GetInt32(0), dr.GetInt32(1), dr.GetInt32(2), DateTime.Parse(dr[3].ToString()).ToShortDateString(),
+                    DateTime.Parse(dr[4].ToString()).ToShortDateString(), DateTime.Parse(dr[5].ToString()).ToShortDateString(),
+                    dr.GetInt32(6), double.Parse(dr[7].ToString()), dr[8].ToString(), dr[9].ToString(), dr[10].ToString(), dr[11].ToString(), dr[12].ToString(), dr[13].ToString());
+            }
+            dr.Close();
+        }
+
+        private void btnLoadCustomer_Click(object sender, EventArgs e)
+        {
+            LoadCustomer();
+        }
+
+        private void LoadCustomer()
+        {
+            SqlDataReader dr = (new customer()).select();
+            dgvCustomer.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvCustomer.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(),
+                    dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString());
+            }
+            dr.Close();
+        }
+        #endregion
+
+
+
+        #region combo box
+        void Categories()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"server=(local);database=TSQLFundamentals2008;uid=sa;pwd=123456";
+
+            SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryID,CategoryName FROM Production.Categories",con);
+            DataTable dt = new DataTable("Production.Categories");
+            da.Fill(dt);
+
+            cbCaterogyID.DataSource = dt;
+            cbCaterogyID.DisplayMember = "CategoryName";
+            cbCaterogyID.ValueMember = "CategoryID";
+        }
+        #endregion
+
+
+
+        
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AddCustomer()
+        {
+            List<String> list = new List<string>();
+            list.Add(txtCusComName.Text);
+            list.Add(txtCusName.Text);
+            list.Add(txtCusTitle.Text);
+            list.Add(txtCusAddress.Text);
+            list.Add(txtCusCity.Text);
+            list.Add(txtCusRegion.Text);
+            list.Add(txtCusPosCode.Text);
+            list.Add(cbCusCountry.Text);
+            list.Add(txtCusPhone.Text);
+            list.Add(txtCusFax.Text);
+        }
+
+
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            List<String> list = new List<string>();
+            list.Add(txtOrderCusID.Text);
+            list.Add(txtOrderEmpID.Text);
+            list.Add(
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddEmp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dtpOrderDate_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
