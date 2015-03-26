@@ -1,2 +1,0 @@
-# proCnetDepTraiGroup
-zolo
