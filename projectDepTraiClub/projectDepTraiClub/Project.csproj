@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="Categori.cs" />
     <Compile Include="customer.cs" />
+    <Compile Include="DAO\getCon.cs" />
     <Compile Include="dataAccessObjest.cs" />
     <Compile Include="employee.cs" />
     <Compile Include="order.cs" />
@@ -85,6 +86,10 @@
     </Compile>
     <Compile Include="Shipper.cs" />
     <Compile Include="Supplier.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="BUS\" />
+    <Folder Include="DTO\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -59,6 +59,10 @@
             this.lblComName = new System.Windows.Forms.Label();
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
+            this.mtbOrderFreight = new System.Windows.Forms.MaskedTextBox();
+            this.dtpRequireDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpShippedDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
             this.button1 = new System.Windows.Forms.Button();
             this.btnUpdateOrder = new System.Windows.Forms.Button();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
@@ -95,7 +99,7 @@
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
-            this.txtUnitPrice = new System.Windows.Forms.TextBox();
+            this.txtProUnitPrice = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtProCategoryID = new System.Windows.Forms.TextBox();
             this.txtProSupplierID = new System.Windows.Forms.TextBox();
@@ -106,6 +110,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tEmployee = new System.Windows.Forms.TabPage();
+            this.mtbEmpPhone = new System.Windows.Forms.MaskedTextBox();
+            this.dtpEmpHireDate = new System.Windows.Forms.DateTimePicker();
+            this.dtpEmpBirthdate = new System.Windows.Forms.DateTimePicker();
             this.button10 = new System.Windows.Forms.Button();
             this.btnUpdateEmp = new System.Windows.Forms.Button();
             this.btnDeleteEmp = new System.Windows.Forms.Button();
@@ -126,9 +133,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.txtEmpAddress = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
-            this.txtTitleOfCourtesy = new System.Windows.Forms.TextBox();
+            this.txtEmpTitleOfCourtesy = new System.Windows.Forms.TextBox();
             this.label20 = new System.Windows.Forms.Label();
-            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.txtEmpTitle = new System.Windows.Forms.TextBox();
             this.txtEmpFirstName = new System.Windows.Forms.TextBox();
             this.txtEmpLastName = new System.Windows.Forms.TextBox();
             this.txtEmployID = new System.Windows.Forms.TextBox();
@@ -203,13 +210,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpShippedDate = new System.Windows.Forms.DateTimePicker();
-            this.dtpRequireDate = new System.Windows.Forms.DateTimePicker();
-            this.mtbOrderFreight = new System.Windows.Forms.MaskedTextBox();
-            this.dtpEmpBirthdate = new System.Windows.Forms.DateTimePicker();
-            this.dtpEmpHireDate = new System.Windows.Forms.DateTimePicker();
-            this.mtbEmpPhone = new System.Windows.Forms.MaskedTextBox();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -228,6 +229,7 @@
             this.tShippers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -547,6 +549,35 @@
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
             // 
+            // mtbOrderFreight
+            // 
+            this.mtbOrderFreight.Location = new System.Drawing.Point(381, 5);
+            this.mtbOrderFreight.Mask = "999.999kg";
+            this.mtbOrderFreight.Name = "mtbOrderFreight";
+            this.mtbOrderFreight.Size = new System.Drawing.Size(181, 20);
+            this.mtbOrderFreight.TabIndex = 57;
+            // 
+            // dtpRequireDate
+            // 
+            this.dtpRequireDate.Location = new System.Drawing.Point(98, 142);
+            this.dtpRequireDate.Name = "dtpRequireDate";
+            this.dtpRequireDate.Size = new System.Drawing.Size(181, 20);
+            this.dtpRequireDate.TabIndex = 56;
+            // 
+            // dtpShippedDate
+            // 
+            this.dtpShippedDate.Location = new System.Drawing.Point(98, 181);
+            this.dtpShippedDate.Name = "dtpShippedDate";
+            this.dtpShippedDate.Size = new System.Drawing.Size(181, 20);
+            this.dtpShippedDate.TabIndex = 55;
+            // 
+            // dtpOrderDate
+            // 
+            this.dtpOrderDate.Location = new System.Drawing.Point(98, 106);
+            this.dtpOrderDate.Name = "dtpOrderDate";
+            this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
+            this.dtpOrderDate.TabIndex = 54;
+            // 
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(336, 283);
@@ -776,15 +807,14 @@
             // 
             // tProduct
             // 
+            this.tProduct.Controls.Add(this.groupBox1);
             this.tProduct.Controls.Add(this.button6);
             this.tProduct.Controls.Add(this.btnUpdateCustomer);
             this.tProduct.Controls.Add(this.btnDeleteProduct);
             this.tProduct.Controls.Add(this.btnAddProduct);
             this.tProduct.Controls.Add(this.dgvProduct);
-            this.tProduct.Controls.Add(this.radNo);
-            this.tProduct.Controls.Add(this.radYes);
             this.tProduct.Controls.Add(this.label11);
-            this.tProduct.Controls.Add(this.txtUnitPrice);
+            this.tProduct.Controls.Add(this.txtProUnitPrice);
             this.tProduct.Controls.Add(this.label12);
             this.tProduct.Controls.Add(this.txtProCategoryID);
             this.tProduct.Controls.Add(this.txtProSupplierID);
@@ -849,7 +879,7 @@
             // radNo
             // 
             this.radNo.AutoSize = true;
-            this.radNo.Location = new System.Drawing.Point(183, 178);
+            this.radNo.Location = new System.Drawing.Point(110, 9);
             this.radNo.Name = "radNo";
             this.radNo.Size = new System.Drawing.Size(39, 17);
             this.radNo.TabIndex = 35;
@@ -860,7 +890,7 @@
             // radYes
             // 
             this.radYes.AutoSize = true;
-            this.radYes.Location = new System.Drawing.Point(91, 178);
+            this.radYes.Location = new System.Drawing.Point(39, 9);
             this.radYes.Name = "radYes";
             this.radYes.Size = new System.Drawing.Size(43, 17);
             this.radYes.TabIndex = 34;
@@ -877,13 +907,13 @@
             this.label11.TabIndex = 33;
             this.label11.Text = "Discontinued";
             // 
-            // txtUnitPrice
+            // txtProUnitPrice
             // 
-            this.txtUnitPrice.Location = new System.Drawing.Point(91, 145);
-            this.txtUnitPrice.Name = "txtUnitPrice";
-            this.txtUnitPrice.Size = new System.Drawing.Size(181, 20);
-            this.txtUnitPrice.TabIndex = 32;
-            this.txtUnitPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUnitPrice_KeyDown);
+            this.txtProUnitPrice.Location = new System.Drawing.Point(91, 145);
+            this.txtProUnitPrice.Name = "txtProUnitPrice";
+            this.txtProUnitPrice.Size = new System.Drawing.Size(181, 20);
+            this.txtProUnitPrice.TabIndex = 32;
+            this.txtProUnitPrice.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtUnitPrice_KeyDown);
             // 
             // label12
             // 
@@ -985,9 +1015,9 @@
             this.tEmployee.Controls.Add(this.label18);
             this.tEmployee.Controls.Add(this.txtEmpAddress);
             this.tEmployee.Controls.Add(this.label19);
-            this.tEmployee.Controls.Add(this.txtTitleOfCourtesy);
+            this.tEmployee.Controls.Add(this.txtEmpTitleOfCourtesy);
             this.tEmployee.Controls.Add(this.label20);
-            this.tEmployee.Controls.Add(this.txtTitle);
+            this.tEmployee.Controls.Add(this.txtEmpTitle);
             this.tEmployee.Controls.Add(this.txtEmpFirstName);
             this.tEmployee.Controls.Add(this.txtEmpLastName);
             this.tEmployee.Controls.Add(this.txtEmployID);
@@ -1002,6 +1032,28 @@
             this.tEmployee.TabIndex = 3;
             this.tEmployee.Text = "Employee";
             this.tEmployee.UseVisualStyleBackColor = true;
+            // 
+            // mtbEmpPhone
+            // 
+            this.mtbEmpPhone.Location = new System.Drawing.Point(387, 183);
+            this.mtbEmpPhone.Mask = "(9000) 000-0000";
+            this.mtbEmpPhone.Name = "mtbEmpPhone";
+            this.mtbEmpPhone.Size = new System.Drawing.Size(181, 20);
+            this.mtbEmpPhone.TabIndex = 84;
+            // 
+            // dtpEmpHireDate
+            // 
+            this.dtpEmpHireDate.Location = new System.Drawing.Point(104, 218);
+            this.dtpEmpHireDate.Name = "dtpEmpHireDate";
+            this.dtpEmpHireDate.Size = new System.Drawing.Size(181, 20);
+            this.dtpEmpHireDate.TabIndex = 83;
+            // 
+            // dtpEmpBirthdate
+            // 
+            this.dtpEmpBirthdate.Location = new System.Drawing.Point(104, 183);
+            this.dtpEmpBirthdate.Name = "dtpEmpBirthdate";
+            this.dtpEmpBirthdate.Size = new System.Drawing.Size(181, 20);
+            this.dtpEmpBirthdate.TabIndex = 82;
             // 
             // button10
             // 
@@ -1062,6 +1114,7 @@
             this.txtMgrid.Name = "txtMgrid";
             this.txtMgrid.Size = new System.Drawing.Size(181, 20);
             this.txtMgrid.TabIndex = 74;
+            this.txtMgrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMgrid_KeyDown);
             // 
             // label6
             // 
@@ -1171,12 +1224,12 @@
             this.label19.TabIndex = 59;
             this.label19.Text = "Address";
             // 
-            // txtTitleOfCourtesy
+            // txtEmpTitleOfCourtesy
             // 
-            this.txtTitleOfCourtesy.Location = new System.Drawing.Point(104, 147);
-            this.txtTitleOfCourtesy.Name = "txtTitleOfCourtesy";
-            this.txtTitleOfCourtesy.Size = new System.Drawing.Size(181, 20);
-            this.txtTitleOfCourtesy.TabIndex = 58;
+            this.txtEmpTitleOfCourtesy.Location = new System.Drawing.Point(104, 147);
+            this.txtEmpTitleOfCourtesy.Name = "txtEmpTitleOfCourtesy";
+            this.txtEmpTitleOfCourtesy.Size = new System.Drawing.Size(181, 20);
+            this.txtEmpTitleOfCourtesy.TabIndex = 58;
             // 
             // label20
             // 
@@ -1187,12 +1240,12 @@
             this.label20.TabIndex = 57;
             this.label20.Text = "Title Of Courtesy";
             // 
-            // txtTitle
+            // txtEmpTitle
             // 
-            this.txtTitle.Location = new System.Drawing.Point(104, 109);
-            this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(181, 20);
-            this.txtTitle.TabIndex = 56;
+            this.txtEmpTitle.Location = new System.Drawing.Point(104, 109);
+            this.txtEmpTitle.Name = "txtEmpTitle";
+            this.txtEmpTitle.Size = new System.Drawing.Size(181, 20);
+            this.txtEmpTitle.TabIndex = 56;
             // 
             // txtEmpFirstName
             // 
@@ -1869,56 +1922,15 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // dtpOrderDate
+            // groupBox1
             // 
-            this.dtpOrderDate.Location = new System.Drawing.Point(98, 106);
-            this.dtpOrderDate.Name = "dtpOrderDate";
-            this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
-            this.dtpOrderDate.TabIndex = 54;
-            // 
-            // dtpShippedDate
-            // 
-            this.dtpShippedDate.Location = new System.Drawing.Point(98, 181);
-            this.dtpShippedDate.Name = "dtpShippedDate";
-            this.dtpShippedDate.Size = new System.Drawing.Size(181, 20);
-            this.dtpShippedDate.TabIndex = 55;
-            // 
-            // dtpRequireDate
-            // 
-            this.dtpRequireDate.Location = new System.Drawing.Point(98, 142);
-            this.dtpRequireDate.Name = "dtpRequireDate";
-            this.dtpRequireDate.Size = new System.Drawing.Size(181, 20);
-            this.dtpRequireDate.TabIndex = 56;
-            // 
-            // mtbOrderFreight
-            // 
-            this.mtbOrderFreight.Location = new System.Drawing.Point(381, 5);
-            this.mtbOrderFreight.Mask = "999.999kg";
-            this.mtbOrderFreight.Name = "mtbOrderFreight";
-            this.mtbOrderFreight.Size = new System.Drawing.Size(181, 20);
-            this.mtbOrderFreight.TabIndex = 57;
-            // 
-            // dtpEmpBirthdate
-            // 
-            this.dtpEmpBirthdate.Location = new System.Drawing.Point(104, 183);
-            this.dtpEmpBirthdate.Name = "dtpEmpBirthdate";
-            this.dtpEmpBirthdate.Size = new System.Drawing.Size(181, 20);
-            this.dtpEmpBirthdate.TabIndex = 82;
-            // 
-            // dtpEmpHireDate
-            // 
-            this.dtpEmpHireDate.Location = new System.Drawing.Point(104, 218);
-            this.dtpEmpHireDate.Name = "dtpEmpHireDate";
-            this.dtpEmpHireDate.Size = new System.Drawing.Size(181, 20);
-            this.dtpEmpHireDate.TabIndex = 83;
-            // 
-            // mtbEmpPhone
-            // 
-            this.mtbEmpPhone.Location = new System.Drawing.Point(387, 183);
-            this.mtbEmpPhone.Mask = "(9000) 000-0000";
-            this.mtbEmpPhone.Name = "mtbEmpPhone";
-            this.mtbEmpPhone.Size = new System.Drawing.Size(181, 20);
-            this.mtbEmpPhone.TabIndex = 84;
+            this.groupBox1.Controls.Add(this.radNo);
+            this.groupBox1.Controls.Add(this.radYes);
+            this.groupBox1.Location = new System.Drawing.Point(91, 172);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(181, 30);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
             // 
             // Form1
             // 
@@ -1956,6 +1968,8 @@
             this.tShippers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2012,7 +2026,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TabPage tEmployee;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox txtUnitPrice;
+        private System.Windows.Forms.TextBox txtProUnitPrice;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.TextBox txtProCategoryID;
         private System.Windows.Forms.TextBox txtProSupplierID;
@@ -2039,9 +2053,9 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox txtEmpAddress;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.TextBox txtTitleOfCourtesy;
+        private System.Windows.Forms.TextBox txtEmpTitleOfCourtesy;
         private System.Windows.Forms.Label label20;
-        private System.Windows.Forms.TextBox txtTitle;
+        private System.Windows.Forms.TextBox txtEmpTitle;
         private System.Windows.Forms.TextBox txtEmpFirstName;
         private System.Windows.Forms.TextBox txtEmpLastName;
         private System.Windows.Forms.TextBox txtEmployID;
@@ -2143,6 +2157,7 @@
         private System.Windows.Forms.DateTimePicker dtpEmpHireDate;
         private System.Windows.Forms.DateTimePicker dtpEmpBirthdate;
         private System.Windows.Forms.MaskedTextBox mtbEmpPhone;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
