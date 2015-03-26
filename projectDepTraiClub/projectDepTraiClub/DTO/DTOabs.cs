@@ -10,10 +10,16 @@ namespace Project
     abstract class DTOabs:objectInterface
     {
         public SqlCommand cmd = new SqlCommand();
-
+        private SqlConnection con;
         public DTOabs()
         {
+
             cmd.Connection = (new DAO.getCon()).ConDB();
+            
+        }
+        public void closeConnection()
+        {
+            cmd.Connection.Close();
         }
         #region objectInterface Members
 
