@@ -1,5 +1,20 @@
+--declare @procName varchar(500)
+--declare cur cursor
+--    for select [name] from sys.objects where type = 'p'
+--open cur
 
----------------------
+--fetch next from cur into @procName
+--      while @@fetch_status = 0
+--      begin
+--            if @procName <> 'DeleteAllProcedures'
+--                  exec('drop procedure ' + @procName)
+--                  fetch next from cur into @procName
+--      end
+
+--close cur
+--deallocate cur
+
+-----------------------
 CREATE PROCEDURE [InsertEmployee]
 
 	@lastname nvarchar(20) ,
@@ -10,7 +25,7 @@ CREATE PROCEDURE [InsertEmployee]
 	@hiredate datetime,
 	@address nvarchar(60), 
 	@city nvarchar(15), 
-	@region nvarchar(15), 
+	@region nvarchar(15),
 	@postalcode nvarchar(10), 
 	@country nvarchar(15), 
 	@phone nvarchar (24), 
@@ -18,16 +33,17 @@ CREATE PROCEDURE [InsertEmployee]
 
 AS
 BEGIN
-	IF( @mgrid in (SELECT empID FROM [HR].[Employees] )
-	BEGIN	
-		INSERT INTO Employees (lastname,firstname,title,titleofcourtesy,birthdate,hiredate,address,city,region,postalcode,country,phone,mgrid)
-		VALUES (@lastname,@firstname,@title,@titleofcourtesy,@birthdate,@hiredate,@address,@city,@region,@postalcode,@country,@phone,@mgrid)
 	
+	BEGIN	
+		INSERT INTO HR.Employees (lastname,firstname,title,titleofcourtesy,birthdate,hiredate,address,city,region,postalcode,country,phone,mgrid)
+		VALUES (@lastname,@firstname,@title,@titleofcourtesy,@birthdate,@hiredate,@address,@city,@region,@postalcode,@country,@phone,@mgrid)
+	END
+
 END
 GO
 ---------------------
 
-CREATE PROCEDURE [HR].[UpdateEmployee]
+CREATE PROCEDURE [UpdateEmployee]
 
 	@lastname nvarchar(20) ,
 	@firstname nvarchar(10), 
@@ -45,21 +61,22 @@ CREATE PROCEDURE [HR].[UpdateEmployee]
 
 AS
 BEGIN
-	UPDATE Employees SET lastname=@lastname,firstname=@firstname,title=@title,titleofcourtesy=@titleofcourtesy,birthdate=@birthdate,hiredate=@hiredate,address=@address,city=@city,region=@region,postalcode=@postalcode,country=@country,phone=@phone,mgrid=@mgrid
+	UPDATE HR.Employees SET lastname=@lastname,firstname=@firstname,title=@title,titleofcourtesy=@titleofcourtesy,birthdate=@birthdate,hiredate=@hiredate,address=@address,city=@city,region=@region,postalcode=@postalcode,country=@country,phone=@phone,mgrid=@mgrid
 	
 END
 GO
 -----------------------------------
-CREATE PROCEDURE [HR].[DeleteEmployee]
+
+CREATE PROCEDURE [DeleteEmployee]
 @id int
 AS
 BEGIN
-	DELETE FROM Employees WHERE empid=@id
+	DELETE FROM HR.Employees WHERE empid=@id
 END
 GO
 -----------------------------------
 
-CREATE PROCEDURE [Sales].[InsertCustomers]
+CREATE PROCEDURE [InsertCustomers]
 @companyname nvarchar (40),
 @contactname nvarchar (30),
 @contacttitle nvarchar (30),
@@ -73,13 +90,16 @@ CREATE PROCEDURE [Sales].[InsertCustomers]
  
 AS
 BEGIN
-INSERT INTO  Customers  (companyname,contactname,contacttitle,address,city,region,postalcode,country,phone,fax)
-Values  (@companyname,@contactname,@contacttitle,@address,@city,@region,@postalcode,@country,@phone,@fax)
+	INSERT INTO  Sales.Customers  (companyname,contactname,contacttitle,address,city,region,postalcode,country,phone,fax)
+	Values  (@companyname,@contactname,@contacttitle,@address,@city,@region,@postalcode,@country,@phone,@fax)
 End
 GO
+ --EXECUTE InsertCustomers @companyname='hihi2',@contactname='cc2',@contacttitle='ee',@address='ee',@city='ee',@region='ee',@postalcode='ee',@country='ee',@phone='ee',@fax='ee'
 
 --------------
-CREATE PROCEDURE [Sales].[UpdateCustomer]
+
+CREATE PROCEDURE [UpdateCustomer]
+@id int,
 @companyname nvarchar (40),
 @contactname nvarchar (30),
 @contacttitle nvarchar (30),
@@ -92,11 +112,15 @@ CREATE PROCEDURE [Sales].[UpdateCustomer]
 @fax nvarchar (24)
  AS
 BEGIN
-UPDATE  Customers SET companyname=@companyname ,contactname=@contactname ,contacttitle=@contacttitle ,address=@address ,city=@city ,region=@region ,postalcode=@postalcode ,country=@country ,phone=@phone ,fax=@fax
+	UPDATE  Sales.Customers 
+	SET companyname=@companyname ,contactname=@contactname ,contacttitle=@contacttitle ,address=@address ,city=@city ,region=@region ,postalcode=@postalcode ,country=@country ,phone=@phone ,fax=@fax
+	WHERE custid = @id;
 End
 GO
+--EXECUTE UpdateCustomer @companyname='hihi1',@contactname='cc1',@contacttitle='ee2',@address='ee3',@city='ee',@region='ee',@postalcode='ee',@country='ee',@phone='ee',@fax='ee', @id =1
+
 ------------
-CREATE PROCEDURE [Sales].[DeleteCustomer]
+CREATE PROCEDURE [DeleteCustomer]
 @id int
 AS
 BEGIN
@@ -104,27 +128,28 @@ BEGIN
 END
 GO
 -----------
-CREATE PROCEDURE [Production].[InsertCategories]
+CREATE PROCEDURE [InsertCategories]
 @categoryname nvarchar (15),
 @description nvarchar (200)
  
 AS
 BEGIN
-INSERT INTO  Categories   (categoryname,description)
+INSERT INTO  Production.Categories   (categoryname,description)
 Values  (@categoryname,@description)
 End
 GO
 --------------------------
-CREATE PROCEDURE [Production].[UpdateCategories]
+CREATE PROCEDURE [UpdateCategories]
+@id int ,
 @categoryname nvarchar (15),
 @description nvarchar (200)
 AS
 BEGIN
-UPDATE   Categories     SET categoryname=@categoryname ,description=@description  
+UPDATE   Production.Categories     SET categoryname=@categoryname ,description=@description   WHERE categoryid =@id;
 End
 GO
 ----------------------
-CREATE PROCEDURE [Production].[DeleteCategories]
+CREATE PROCEDURE [DeleteCategories]
 @id int
 AS
 BEGIN
@@ -132,7 +157,7 @@ BEGIN
 END
 GO
 ----------------------
-CREATE PROCEDURE  [Production].[InsertSupliers]
+CREATE PROCEDURE  [InsertSupliers]
 @companyname nvarchar (40),
 @contactname nvarchar (30),
 @contacttitle nvarchar (30),
@@ -146,12 +171,13 @@ CREATE PROCEDURE  [Production].[InsertSupliers]
  
 AS
 BEGIN
-INSERT INTO   Production.Suppliers(companyname,contactname,contacttitle,address,city,region,postalcode,country,phone,fax)
+INSERT INTO   Production.Suppliers (companyname,contactname,contacttitle,address,city,region,postalcode,country,phone,fax)
 Values  (@companyname,@contactname,@contacttitle,@address,@city,@region,@postalcode,@country,@phone,@fax)
 End
 GO
 ------
-CREATE PROCEDURE  [Production].[UpdateSupliers]
+CREATE PROCEDURE  [UpdateSupliers]
+@id int ,
 @companyname nvarchar (40),
 @contactname nvarchar (30),
 @contacttitle nvarchar (30),
@@ -164,11 +190,12 @@ CREATE PROCEDURE  [Production].[UpdateSupliers]
 @fax nvarchar (24)
 AS
 BEGIN
-UPDATE Production.Suppliers       SET companyname=@companyname ,contactname=@contactname ,contacttitle=@contacttitle ,address=@address ,city=@city ,region=@region ,postalcode=@postalcode ,country=@country ,phone=@phone ,fax=@fax 
+UPDATE Production.Suppliers       SET companyname=@companyname ,contactname=@contactname ,contacttitle=@contacttitle ,address=@address ,city=@city ,region=@region ,postalcode=@postalcode ,country=@country ,phone=@phone ,fax=@fax
+WHERE supplierid = @id;
 End
 GO
 ---------------------------
-CREATE PROCEDURE [Production].[DeleteSuplier]
+CREATE PROCEDURE [DeleteSuplier]
 @id int
 AS
 BEGIN
@@ -176,7 +203,7 @@ BEGIN
 END
 GO
 ---------------------------
-CREATE PROCEDURE  [Sales].[InsertShippers]
+CREATE PROCEDURE [InsertShippers]
 @companyname nvarchar (40),
 @phone nvarchar (24)
  
@@ -187,17 +214,18 @@ Values  (@companyname,@phone)
 End
 GO
 -------
-CREATE PROCEDURE  [Sales].[UpdateShippers]
+CREATE PROCEDURE  [UpdateShippers]
+@id int ,
 @companyname nvarchar (40),
 @phone nvarchar (24)
 AS
 
 BEGIN
-UPDATE   Sales.Shippers     SET companyname=@companyname ,phone=@phone 
+UPDATE   Sales.Shippers     SET companyname=@companyname ,phone=@phone  WHERE shipperid = @id;
 End
 GO
 --------------------------
-CREATE PROCEDURE [Sales].[DeleteShipper]
+CREATE PROCEDURE .[DeleteShipper]
 @id int
 AS
 BEGIN
@@ -205,7 +233,7 @@ BEGIN
 END
 GO
 --------------------------
-CREATE PROCEDURE  [Production].[InsertProduct]
+CREATE PROCEDURE  [InsertProduct]
 @productname nvarchar (40),
 @supplierid int,
 @categoryid int,
@@ -223,7 +251,8 @@ End
 GO
 -------------
 
-CREATE PROCEDURE  [Production].[UpdateProduct]
+CREATE PROCEDURE  [UpdateProduct]
+@id int ,
 @productname nvarchar (40),
 @supplierid int,
 @categoryid int,
@@ -233,12 +262,13 @@ AS
 BEGIN
 	IF ( @supplierid in (SELECT supplierID FROM Production.Suppliers ) and @categoryid in (SELECT categoryID FROM Production.Categories) )
 	BEGIN
-	UPDATE  Production.Products     SET productname=@productname ,supplierid=@supplierid ,categoryid=@categoryid ,unitprice=@unitprice ,discontinued=@discontinued 
+	UPDATE  Production.Products     SET productname=@productname ,supplierid=@supplierid ,categoryid=@categoryid ,unitprice=@unitprice ,discontinued=@discontinued
+	WHERE productid= @id; 
 	END
 End
 GO
 ------------
-CREATE PROCEDURE [Production].[DeleteProduct]
+CREATE PROCEDURE [DeleteProduct]
 @id int
 AS
 BEGIN
@@ -246,7 +276,7 @@ BEGIN
 END
 GO
 --------------
-CREATE PROCEDURE [Sales].[InsertOrder]
+CREATE PROCEDURE [InsertOrder]
 @custid int,
 @empid int,
 @orderdate datetime,
@@ -265,7 +295,7 @@ AS
 BEGIN
 	IF( @custid in (SELECT custid FROM Sales.Customers) AND @empid in ( SELECT empid FROM HR.Employees) and @shipperid in (SELECT shipperID from Sales.Shippers))
 	BEGIN
-		INSERT INTO  Sales.Orders(custid,empid,orderdate,requireddate,shippeddate,shipperid,freight,shipname,shipaddress,shipcity,shipregion,shippostalcode,shipcountry)
+		INSERT INTO  Sales.Orders (custid,empid,orderdate,requireddate,shippeddate,shipperid,freight,shipname,shipaddress,shipcity,shipregion,shippostalcode,shipcountry)
 		Values  (@custid,@empid,@orderdate,@requireddate,@shippeddate,@shipperid,@freight,@shipname,@shipaddress,@shipcity,@shipregion,@shippostalcode,@shipcountry)
 	END
 End
@@ -273,7 +303,8 @@ End
 GO
 ----------------
 
-CREATE PROCEDURE [Sales].[UpdateOrder]
+CREATE PROCEDURE [UpdateOrder]
+@id int ,
 @custid int,
 @empid int,
 @orderdate datetime,
@@ -292,20 +323,22 @@ BEGIN
 	IF( @custid in (SELECT custid FROM Sales.Customers) AND @empid in ( SELECT empid FROM HR.Employees) and @shipperid in (SELECT shipperID from Sales.Shippers))
 	BEGIN
 		UPDATE  Sales.Orders      SET custid=@custid ,empid=@empid ,orderdate=@orderdate ,requireddate=@requireddate ,shippeddate=@shippeddate ,shipperid=@shipperid ,freight=@freight ,shipname=@shipname ,shipaddress=@shipaddress ,shipcity=@shipcity ,shipregion=@shipregion ,shippostalcode=@shippostalcode ,shipcountry=@shipcountry 
+		WHERE orderid = @id;
 	END
 End
 GO
 ---------------------
-CREATE PROCEDURE [Sales].[DeleteOrder]
+CREATE PROCEDURE [DeleteOrder]
 @id int
 AS
 BEGIN
 	DELETE FROM  Sales.Orders  WHERE  orderid=@id
+	DELETE FROM Sales.OrderDetails WHERE orderid = @id
 END
 GO
 ---------------------
 
-CREATE PROCEDURE [Sales].[InsertOrderDetail]
+CREATE PROCEDURE [InsertOrderDetail]
 @productid int,
 @unitprice money,
 @qty smallint,
@@ -323,7 +356,8 @@ End
 GO
 --------------------------------------------
 
-CREATE PROCEDURE [Sales].[UpdateOrderDetail]
+CREATE PROCEDURE [UpdateOrderDetail]
+@id int ,
 @productid int,
 @unitprice money,
 @qty smallint,
@@ -332,7 +366,8 @@ AS
 BEGIN
 	IF( @productid in (SELECT productid FROM Production.Product ) )
 	BEGIN
-	UPDATE   Sales.OrderDetails     SET productid=@productid ,unitprice=@unitprice ,qty=@qty ,discount=@discount 
+	UPDATE   Sales.OrderDetails     SET productid=@productid ,unitprice=@unitprice ,qty=@qty ,discount=@discount
+	WHERE orderid =@id ; 
 	END
 End
 GO
