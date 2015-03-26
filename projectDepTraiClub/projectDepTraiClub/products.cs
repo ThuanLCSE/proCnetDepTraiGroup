@@ -7,12 +7,10 @@ using System.Data;
 
 namespace Project
 {
-    class products:objectInterface
+    class products:DTOabs
     {
-        SqlCommand cmd = new SqlCommand();
-        public products()
+        public products():base()
         {
-            cmd.Connection= (new dataAccessObjest).getCon();
         }
         #region objectInterface Members
 
@@ -36,7 +34,6 @@ namespace Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectProduct";
             SqlDataReader dr = cmd.ExecuteReader();
-            dr.Close();
             return dr;
         }
 

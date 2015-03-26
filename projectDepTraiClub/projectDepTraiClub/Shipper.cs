@@ -7,12 +7,10 @@ using System.Data;
 
 namespace Project
 {
-    class Shipper:objectInterface
+    class Shipper:DTOabs
     {
-        SqlCommand cmd = new SqlCommand();
         public Shipper()
         {
-            cmd.Connection= (new dataAccessObjest).getCon();
         }
 
         #region objectInterface Members
@@ -38,7 +36,6 @@ namespace Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectShipper";
             SqlDataReader dr = cmd.ExecuteReader();
-            dr.Close();
             return dr;
         }
 

@@ -7,12 +7,12 @@ using System.Data.SqlClient;
 
 namespace Project
 {
-    class Categori : objectInterface
+    class Categori : DTOabs
     {
-        SqlCommand cmd = new SqlCommand();
-        public Categori()
+        
+        public Categori():base()
         {
-            cmd.Connection= (new dataAccessObjest).getCon();
+            
         }
         #region objectInterface Members
 
@@ -36,7 +36,6 @@ namespace Project
            cmd.CommandType = CommandType.StoredProcedure;
            cmd.CommandText = "selectCategories";
             SqlDataReader dr = cmd.ExecuteReader();
-            dr.Close();
             return dr;
         }
 

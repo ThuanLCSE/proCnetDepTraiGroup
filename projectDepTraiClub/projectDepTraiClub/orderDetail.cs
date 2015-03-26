@@ -7,37 +7,34 @@ using System.Data;
 
 namespace Project
 {
-    class orderDetail: objectInterface
+    class orderDetail: DTOabs
     {
-        SqlCommand cmd = new SqlCommand();
-        public orderDetail()
+        public orderDetail():base()
         {
-            cmd.Connection= (new dataAccessObjest).getCon();
         }
 
         #region objectInterface Members
 
-        bool objectInterface.insert(List<string> str)
+        public bool insert(List<string> str)
         {
             throw new NotImplementedException();
         }
 
-        bool objectInterface.update(int id, List<string> str)
+        public bool update(int id, List<string> str)
         {
             throw new NotImplementedException();
         }
 
-        bool objectInterface.delete(int id)
+        public bool delete(int id)
         {
             throw new NotImplementedException();
         }
 
-        SqlDataReader objectInterface.select()
+        public SqlDataReader select()
         {
              cmd.CommandType = CommandType.StoredProcedure;
              cmd.CommandText = "selectOrderDetail";
             SqlDataReader dr = cmd.ExecuteReader();
-            dr.Close();
             return dr;
         }
 

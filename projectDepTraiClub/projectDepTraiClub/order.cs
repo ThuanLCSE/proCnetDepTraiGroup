@@ -7,12 +7,12 @@ using System.Data;
 
 namespace Project
 {
-    class order:objectInterface
+    class order:DTOabs
     {
-        SqlCommand cmd = new SqlCommand();
-        public order()
+       
+        public order():base()
         {
-            cmd.Connection= (new dataAccessObjest).getCon();
+          
         }
         #region objectInterface Members
 
@@ -36,7 +36,6 @@ namespace Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectOrder";
             SqlDataReader dr = cmd.ExecuteReader();
-            dr.Close();
             return dr;
         }
 
