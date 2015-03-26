@@ -462,7 +462,7 @@ namespace Project
             List<String> list = new List<string>();
             list.Add(txtOrderCusID.Text);
             list.Add(txtOrderEmpID.Text);
-            list.Add(
+            //list.Add();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
