@@ -59,7 +59,7 @@ namespace Project
                 dtpRequireDate.Value = dt;
                 DateTime.TryParse(r.Cells[5].Value.ToString(), out dt);
                 dtpShippedDate.Value = dt;
-                txtOrFreight.Text = r.Cells[6].Value.ToString();
+                mtbOrderFreight.Text = r.Cells[6].Value.ToString();
                 txtOrderShipName.Text = r.Cells[7].Value.ToString();
                 txtOrderShipAddress.Text = r.Cells[8].Value.ToString();
                 txtOrderShipCity.Text = r.Cells[9].Value.ToString();
@@ -122,9 +122,9 @@ namespace Project
                 errorProvider1.SetError(txtProductName, "Enter Employee's ID!!!");
                 error = false;
             }
-            if (txtOrFreight.Text.Length == 0)
+            if (mtbOrderFreight.Text.Length == 0)
             {
-                errorProvider1.SetError(txtOrFreight, "Enter Order's Freight!!!");
+                errorProvider1.SetError(mtbOrderFreight, "Enter Order's Freight!!!");
                 error = false;
             }
             if (txtOrderShipName.Text.Length == 0)
@@ -163,11 +163,11 @@ namespace Project
                 errorProvider1.SetError(txtProSupplierID, "Enter Supplier ID!!!");
                 error = false;
             }
-            if (txtProCategoryID.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtProCategoryID, "Enter Category ID!!!");
-                error = false;
-            }
+            //if (cbCaterogyID.Text.Length == 0)
+            //{
+            //    errorProvider1.SetError(cbCaterogyID, "Enter Category ID!!!");
+            //    error = false;
+            //}
             if (txtProUnitPrice.Text.Length == 0)
             {
                 errorProvider1.SetError(txtProUnitPrice, "Enter Unit Price!!!");
@@ -538,7 +538,7 @@ namespace Project
             list.Add(dtpOrderDate.Value.ToShortDateString());
             list.Add(dtpRequireDate.Value.ToShortDateString());
             list.Add(dtpShippedDate.Value.ToShortDateString());
-            list.Add(txtOrFreight.Text);
+            list.Add(mtbOrderFreight.Text);
             list.Add(txtOrderShipName.Text);
             list.Add(txtOrderShipAddress.Text);
             list.Add(txtOrderShipCity.Text);
@@ -547,16 +547,106 @@ namespace Project
             list.Add(cbOrderShipCountry.Text);
         }
 
+        //private void btnAddProduct_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        //private void btnAddEmp_Click(object sender, EventArgs e)
+        //{
+
+        //}
+        //private void btnAddOrder_Click(object sender, EventArgs e)
+        //{
+        //    List<String> list = new List<string>();
+        //    list.Add(txtOrderCusID.Text);
+        //    list.Add(txtOrderEmpID.Text);
+        //    //list.Add();
+        //}
+
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
-
+            List<String> list = new List<string>();
+            list.Add(this.txtProductID.Text);
+            list.Add(this.txtProductName.Text);
+            list.Add(this.txtSupID.Text);
+            list.Add(this.cbCaterogyID.Text);
+            list.Add(this.txtProUnitPrice.Text);
+            if (this.radYes.Checked)
+            {
+                list.Add("True");
+            }
+            else
+            {
+                list.Add("False");
+            }
         }
 
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
-
+            List<String> list = new List<string>();
+            list.Add(this.txtEmployID.Text);
+            list.Add(this.txtEmpLastName.Text);
+            list.Add(this.txtEmpFirstName.Text);
+            list.Add(this.txtEmpTitle.Text);
+            list.Add(this.txtEmpTitleOfCourtesy.Text);
+            //Date
+            list.Add(this.dtpEmpBirthdate.Value.ToString());
+            list.Add(this.dtpEmpHireDate.Value.ToString());
+            //
+            list.Add(this.txtEmpAddress.Text);
+            list.Add(this.txtEmpCity.Text);
+            list.Add(this.txtEmpRegion.Text);
+            list.Add(this.txtEmpPosCode.Text);
+            list.Add(this.cbEmpCountry.Text);
+            list.Add(this.mtbEmpPhone.Text);
+            list.Add(this.txtEmpManagerID.Text);
         }
 
+        private void dtpOrderDate_ValueChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void btnAddSupplier_Click(object sender, EventArgs e)
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtSupID.Text);
+            list.Add(this.txtSupCompanyName.Text);
+            list.Add(this.txtSupContactName.Text);
+            list.Add(this.txtSupAdd.Text);
+            list.Add(this.txtSupCity.Text);
+            list.Add(this.txtSupRegion.Text);
+            list.Add(this.txtSupPosCode.Text);
+            list.Add(this.cbSupCountry.Text);
+            list.Add(this.txtSupPhone.Text);
+            list.Add(this.txtSupFax.Text);
+        }
+
+        private void addOrderDetail_Click(object sender, EventArgs e)
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtOrDeDetailID.Text);
+            list.Add(this.txtOrDeProID.Text);
+            list.Add(this.txtOrDeUnitPrice.Text);
+            list.Add(this.txtOrDeQuantity.Text);
+            list.Add(this.txtOrDeDiscount.Text);
+        }
+
+        private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtCateID.Text);
+            list.Add(this.txtCateName.Text);
+            list.Add(this.txtCateDescription.Text);
+        }
+
+        private void btnAddShipper_Click(object sender, EventArgs e)
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtShipperID.Text);
+            list.Add(this.txtShipperCompany.Text);
+            list.Add(this.txtShipperPhone.Text);
+        }
         #endregion
 
 
@@ -684,7 +774,7 @@ namespace Project
                 list.Add(dtpOrderDate.Value.ToShortDateString());
                 list.Add(dtpRequireDate.Value.ToShortDateString());
                 list.Add(dtpShippedDate.Value.ToShortDateString());
-                list.Add(txtOrFreight.Text);
+                list.Add(mtbOrderFreight.Text);
                 list.Add(txtOrderShipName.Text);
                 list.Add(txtOrderShipAddress.Text);
                 list.Add(txtOrderShipCity.Text);

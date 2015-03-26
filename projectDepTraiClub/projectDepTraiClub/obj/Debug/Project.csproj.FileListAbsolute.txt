@@ -3,3 +3,5 @@ C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\ob
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Properties.Resources.resources
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.csproj.GenerateResource.Cache
+C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe.config
+C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Form1.resources

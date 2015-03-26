@@ -33,7 +33,7 @@
             this.tCustomer = new System.Windows.Forms.TabPage();
             this.cbCusCountry = new System.Windows.Forms.ComboBox();
             this.btnLoadCustomer = new System.Windows.Forms.Button();
-            this.btnUpdateCustomer = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
@@ -71,6 +71,7 @@
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
             this.cbOrderShipCountry = new System.Windows.Forms.ComboBox();
+            this.mtbOrderFreight = new System.Windows.Forms.MaskedTextBox();
             this.dtpRequireDate = new System.Windows.Forms.DateTimePicker();
             this.dtpShippedDate = new System.Windows.Forms.DateTimePicker();
             this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
@@ -119,7 +120,7 @@
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
             this.btnLoadProduct = new System.Windows.Forms.Button();
-            this.btnUpdateProduct = new System.Windows.Forms.Button();
+            this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
@@ -132,7 +133,6 @@
             this.label11 = new System.Windows.Forms.Label();
             this.txtProUnitPrice = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.txtProCategoryID = new System.Windows.Forms.TextBox();
             this.txtProSupplierID = new System.Windows.Forms.TextBox();
             this.txtProductName = new System.Windows.Forms.TextBox();
             this.txtProductID = new System.Windows.Forms.TextBox();
@@ -141,7 +141,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tEmployee = new System.Windows.Forms.TabPage();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbEmpCountry = new System.Windows.Forms.ComboBox();
             this.mtbEmpPhone = new System.Windows.Forms.MaskedTextBox();
             this.dtpEmpHireDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEmpBirthdate = new System.Windows.Forms.DateTimePicker();
@@ -189,12 +189,22 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.tSuppliers = new System.Windows.Forms.TabPage();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.button14 = new System.Windows.Forms.Button();
+            this.cbSupCountry = new System.Windows.Forms.ComboBox();
+            this.btnLoadSupplier = new System.Windows.Forms.Button();
             this.btnUpdateSupplier = new System.Windows.Forms.Button();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
+            this.clSupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSupFax = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtSupPhone = new System.Windows.Forms.TextBox();
@@ -206,56 +216,66 @@
             this.label32 = new System.Windows.Forms.Label();
             this.txtSupCity = new System.Windows.Forms.TextBox();
             this.label33 = new System.Windows.Forms.Label();
-            this.txtSupplierAdd = new System.Windows.Forms.TextBox();
+            this.txtSupAdd = new System.Windows.Forms.TextBox();
             this.txtSupContactName = new System.Windows.Forms.TextBox();
             this.txtSupCompanyName = new System.Windows.Forms.TextBox();
-            this.txtSupplierID = new System.Windows.Forms.TextBox();
+            this.txtSupID = new System.Windows.Forms.TextBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.tOderDetail = new System.Windows.Forms.TabPage();
-            this.button18 = new System.Windows.Forms.Button();
+            this.btnLoadDetail = new System.Windows.Forms.Button();
             this.updateOrderDetail = new System.Windows.Forms.Button();
-            this.deleteOrderDetail = new System.Windows.Forms.Button();
-            this.addOrderDetail = new System.Windows.Forms.Button();
+            this.btndeleteOrderDetail = new System.Windows.Forms.Button();
+            this.btnaddOrderDetail = new System.Windows.Forms.Button();
             this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
-            this.txtDiscount = new System.Windows.Forms.TextBox();
+            this.cltOrDeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltOrDeProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltOrDeUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltOrDeQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cltOrDeDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtOrDeDiscount = new System.Windows.Forms.TextBox();
             this.label45 = new System.Windows.Forms.Label();
             this.txtOrDeQuantity = new System.Windows.Forms.TextBox();
             this.txtOrDeUnitPrice = new System.Windows.Forms.TextBox();
             this.txtOrDeProID = new System.Windows.Forms.TextBox();
-            this.txtOrderDetailID = new System.Windows.Forms.TextBox();
+            this.txtOrDeDetailID = new System.Windows.Forms.TextBox();
             this.label46 = new System.Windows.Forms.Label();
             this.label47 = new System.Windows.Forms.Label();
             this.label48 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.tCategories = new System.Windows.Forms.TabPage();
-            this.button22 = new System.Windows.Forms.Button();
+            this.btnLoadCategory = new System.Windows.Forms.Button();
             this.btnUpdateCategory = new System.Windows.Forms.Button();
             this.btnDeleteCategory = new System.Windows.Forms.Button();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.dgvCategory = new System.Windows.Forms.DataGridView();
+            this.clCateID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCateName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCateDescription = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCateDescription = new System.Windows.Forms.TextBox();
-            this.txtCaterogyName = new System.Windows.Forms.TextBox();
-            this.txtCategoryID = new System.Windows.Forms.TextBox();
+            this.txtCateName = new System.Windows.Forms.TextBox();
+            this.txtCateID = new System.Windows.Forms.TextBox();
             this.label52 = new System.Windows.Forms.Label();
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.tShippers = new System.Windows.Forms.TabPage();
-            this.button26 = new System.Windows.Forms.Button();
+            this.btnLoadShipper = new System.Windows.Forms.Button();
             this.btnUpdateShipper = new System.Windows.Forms.Button();
             this.btnDeleteShipper = new System.Windows.Forms.Button();
             this.btnAddShipper = new System.Windows.Forms.Button();
             this.dgvShipper = new System.Windows.Forms.DataGridView();
+            this.clShipperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipperCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipperPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtShipperPhone = new System.Windows.Forms.TextBox();
-            this.txtCompanyShipper = new System.Windows.Forms.TextBox();
+            this.txtShipperCompany = new System.Windows.Forms.TextBox();
             this.txtShipperID = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtOrFreight = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -297,7 +317,7 @@
             // 
             this.tCustomer.Controls.Add(this.cbCusCountry);
             this.tCustomer.Controls.Add(this.btnLoadCustomer);
-            this.tCustomer.Controls.Add(this.btnUpdateCustomer);
+            this.tCustomer.Controls.Add(this.btnUpdate);
             this.tCustomer.Controls.Add(this.btnDeleteCustomer);
             this.tCustomer.Controls.Add(this.btnAddCustomer);
             this.tCustomer.Controls.Add(this.dgvCustomer);
@@ -359,15 +379,14 @@
             this.btnLoadCustomer.UseVisualStyleBackColor = true;
             this.btnLoadCustomer.Click += new System.EventHandler(this.btnLoadCustomer_Click);
             // 
-            // btnUpdateCustomer
+            // btnUpdate
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 247);
-            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
-            this.btnUpdateCustomer.TabIndex = 26;
-            this.btnUpdateCustomer.Text = "Update Customer";
-            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
-            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
+            this.btnUpdate.Location = new System.Drawing.Point(185, 247);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdate.TabIndex = 26;
+            this.btnUpdate.Text = "Update Customer";
+            this.btnUpdate.UseVisualStyleBackColor = true;
             // 
             // btnDeleteCustomer
             // 
@@ -377,7 +396,6 @@
             this.btnDeleteCustomer.TabIndex = 25;
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
-            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnAddCustomer
             // 
@@ -391,6 +409,8 @@
             // 
             // dgvCustomer
             // 
+            this.dgvCustomer.AllowUserToAddRows = false;
+            this.dgvCustomer.AllowUserToDeleteRows = false;
             this.dgvCustomer.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvCustomer.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clCusID,
@@ -406,64 +426,75 @@
             this.clCusFax});
             this.dgvCustomer.Location = new System.Drawing.Point(6, 276);
             this.dgvCustomer.Name = "dgvCustomer";
+            this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.Size = new System.Drawing.Size(620, 137);
             this.dgvCustomer.TabIndex = 23;
-            this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
             // clCusID
             // 
             this.clCusID.HeaderText = "ID";
             this.clCusID.Name = "clCusID";
+            this.clCusID.ReadOnly = true;
             // 
             // clCusComName
             // 
             this.clCusComName.HeaderText = "Company Name";
             this.clCusComName.Name = "clCusComName";
+            this.clCusComName.ReadOnly = true;
             // 
             // clCusName
             // 
             this.clCusName.HeaderText = "Customer Name";
             this.clCusName.Name = "clCusName";
+            this.clCusName.ReadOnly = true;
             // 
             // clCusContactTitle
             // 
             this.clCusContactTitle.HeaderText = "Contact Title";
             this.clCusContactTitle.Name = "clCusContactTitle";
+            this.clCusContactTitle.ReadOnly = true;
             // 
             // clCusAddress
             // 
             this.clCusAddress.HeaderText = "Address";
             this.clCusAddress.Name = "clCusAddress";
+            this.clCusAddress.ReadOnly = true;
             // 
             // clCusCity
             // 
             this.clCusCity.HeaderText = "City";
             this.clCusCity.Name = "clCusCity";
+            this.clCusCity.ReadOnly = true;
             // 
             // clCusRegion
             // 
             this.clCusRegion.HeaderText = "Region";
             this.clCusRegion.Name = "clCusRegion";
+            this.clCusRegion.ReadOnly = true;
             // 
             // clCusPosCode
             // 
             this.clCusPosCode.HeaderText = "Postal Code";
             this.clCusPosCode.Name = "clCusPosCode";
+            this.clCusPosCode.ReadOnly = true;
             // 
             // clCusCountry
             // 
             this.clCusCountry.HeaderText = "Country";
             this.clCusCountry.Name = "clCusCountry";
+            this.clCusCountry.ReadOnly = true;
             // 
             // clCusPhone
             // 
             this.clCusPhone.HeaderText = "Phone";
             this.clCusPhone.Name = "clCusPhone";
+            this.clCusPhone.ReadOnly = true;
             // 
             // clCusFax
             // 
             this.clCusFax.HeaderText = "Fax";
             this.clCusFax.Name = "clCusFax";
+            this.clCusFax.ReadOnly = true;
             // 
             // txtCusFax
             // 
@@ -640,8 +671,8 @@
             // 
             // tOrder
             // 
-            this.tOrder.Controls.Add(this.txtOrFreight);
             this.tOrder.Controls.Add(this.cbOrderShipCountry);
+            this.tOrder.Controls.Add(this.mtbOrderFreight);
             this.tOrder.Controls.Add(this.dtpRequireDate);
             this.tOrder.Controls.Add(this.dtpShippedDate);
             this.tOrder.Controls.Add(this.dtpOrderDate);
@@ -698,6 +729,14 @@
             this.cbOrderShipCountry.Size = new System.Drawing.Size(181, 21);
             this.cbOrderShipCountry.TabIndex = 86;
             // 
+            // mtbOrderFreight
+            // 
+            this.mtbOrderFreight.Location = new System.Drawing.Point(381, 5);
+            this.mtbOrderFreight.Mask = "999.999";
+            this.mtbOrderFreight.Name = "mtbOrderFreight";
+            this.mtbOrderFreight.Size = new System.Drawing.Size(181, 20);
+            this.mtbOrderFreight.TabIndex = 57;
+            // 
             // dtpRequireDate
             // 
             this.dtpRequireDate.Location = new System.Drawing.Point(98, 142);
@@ -718,6 +757,7 @@
             this.dtpOrderDate.Name = "dtpOrderDate";
             this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
             this.dtpOrderDate.TabIndex = 54;
+            this.dtpOrderDate.ValueChanged += new System.EventHandler(this.dtpOrderDate_ValueChanged);
             // 
             // btnLoadOrder
             // 
@@ -737,7 +777,6 @@
             this.btnUpdateOrder.TabIndex = 52;
             this.btnUpdateOrder.Text = "Update Order";
             this.btnUpdateOrder.UseVisualStyleBackColor = true;
-            this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click);
             // 
             // btnDeleteOrder
             // 
@@ -747,7 +786,6 @@
             this.btnDeleteOrder.TabIndex = 51;
             this.btnDeleteOrder.Text = "Delete Order";
             this.btnDeleteOrder.UseVisualStyleBackColor = true;
-            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
             // 
             // btnAddOrder
             // 
@@ -761,6 +799,8 @@
             // 
             // dgvOrder
             // 
+            this.dgvOrder.AllowUserToAddRows = false;
+            this.dgvOrder.AllowUserToDeleteRows = false;
             this.dgvOrder.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvOrder.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clOrderID,
@@ -778,74 +818,87 @@
             this.clShipCountry});
             this.dgvOrder.Location = new System.Drawing.Point(9, 312);
             this.dgvOrder.Name = "dgvOrder";
+            this.dgvOrder.ReadOnly = true;
             this.dgvOrder.Size = new System.Drawing.Size(620, 137);
             this.dgvOrder.TabIndex = 49;
-            this.dgvOrder.SelectionChanged += new System.EventHandler(this.dgvOrder_SelectionChanged);
             // 
             // clOrderID
             // 
             this.clOrderID.HeaderText = "Order ID";
             this.clOrderID.Name = "clOrderID";
+            this.clOrderID.ReadOnly = true;
             // 
             // clOrderCusID
             // 
             this.clOrderCusID.HeaderText = "Customer ID";
             this.clOrderCusID.Name = "clOrderCusID";
+            this.clOrderCusID.ReadOnly = true;
             // 
             // clOrderEmpID
             // 
             this.clOrderEmpID.HeaderText = "Employee ID";
             this.clOrderEmpID.Name = "clOrderEmpID";
+            this.clOrderEmpID.ReadOnly = true;
             // 
             // clOrderDate
             // 
             this.clOrderDate.HeaderText = "Order Date";
             this.clOrderDate.Name = "clOrderDate";
+            this.clOrderDate.ReadOnly = true;
             // 
             // clReqDate
             // 
             this.clReqDate.HeaderText = "Require Date";
             this.clReqDate.Name = "clReqDate";
+            this.clReqDate.ReadOnly = true;
             // 
             // clShippedDate
             // 
             this.clShippedDate.HeaderText = "Shipped Date";
             this.clShippedDate.Name = "clShippedDate";
+            this.clShippedDate.ReadOnly = true;
             // 
             // clFreight
             // 
             this.clFreight.HeaderText = "Freight";
             this.clFreight.Name = "clFreight";
+            this.clFreight.ReadOnly = true;
             // 
             // clShipName
             // 
             this.clShipName.HeaderText = "Ship Name";
             this.clShipName.Name = "clShipName";
+            this.clShipName.ReadOnly = true;
             // 
             // clShipAddress
             // 
             this.clShipAddress.HeaderText = "Ship Address";
             this.clShipAddress.Name = "clShipAddress";
+            this.clShipAddress.ReadOnly = true;
             // 
             // clShipCity
             // 
             this.clShipCity.HeaderText = "Ship City";
             this.clShipCity.Name = "clShipCity";
+            this.clShipCity.ReadOnly = true;
             // 
             // clShipRegion
             // 
             this.clShipRegion.HeaderText = "Ship Region";
             this.clShipRegion.Name = "clShipRegion";
+            this.clShipRegion.ReadOnly = true;
             // 
             // clShipPosCode
             // 
             this.clShipPosCode.HeaderText = "Ship Postal Code";
             this.clShipPosCode.Name = "clShipPosCode";
+            this.clShipPosCode.ReadOnly = true;
             // 
             // clShipCountry
             // 
             this.clShipCountry.HeaderText = "Ship Country";
             this.clShipCountry.Name = "clShipCountry";
+            this.clShipCountry.ReadOnly = true;
             // 
             // label5
             // 
@@ -1029,14 +1082,13 @@
             this.tProduct.Controls.Add(this.cbCaterogyID);
             this.tProduct.Controls.Add(this.groupBox1);
             this.tProduct.Controls.Add(this.btnLoadProduct);
-            this.tProduct.Controls.Add(this.btnUpdateProduct);
+            this.tProduct.Controls.Add(this.btnUpdateCustomer);
             this.tProduct.Controls.Add(this.btnDeleteProduct);
             this.tProduct.Controls.Add(this.btnAddProduct);
             this.tProduct.Controls.Add(this.dgvProduct);
             this.tProduct.Controls.Add(this.label11);
             this.tProduct.Controls.Add(this.txtProUnitPrice);
             this.tProduct.Controls.Add(this.label12);
-            this.tProduct.Controls.Add(this.txtProCategoryID);
             this.tProduct.Controls.Add(this.txtProSupplierID);
             this.tProduct.Controls.Add(this.txtProductName);
             this.tProduct.Controls.Add(this.txtProductID);
@@ -1054,10 +1106,11 @@
             // 
             // cbCaterogyID
             // 
+            this.cbCaterogyID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCaterogyID.FormattingEnabled = true;
-            this.cbCaterogyID.Location = new System.Drawing.Point(278, 106);
+            this.cbCaterogyID.Location = new System.Drawing.Point(91, 106);
             this.cbCaterogyID.Name = "cbCaterogyID";
-            this.cbCaterogyID.Size = new System.Drawing.Size(121, 21);
+            this.cbCaterogyID.Size = new System.Drawing.Size(181, 21);
             this.cbCaterogyID.TabIndex = 42;
             // 
             // groupBox1
@@ -1102,14 +1155,14 @@
             this.btnLoadProduct.UseVisualStyleBackColor = true;
             this.btnLoadProduct.Click += new System.EventHandler(this.btnLoadProduct_Click);
             // 
-            // btnUpdateProduct
+            // btnUpdateCustomer
             // 
-            this.btnUpdateProduct.Location = new System.Drawing.Point(185, 241);
-            this.btnUpdateProduct.Name = "btnUpdateProduct";
-            this.btnUpdateProduct.Size = new System.Drawing.Size(115, 23);
-            this.btnUpdateProduct.TabIndex = 39;
-            this.btnUpdateProduct.Text = "Update Product";
-            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 241);
+            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateCustomer.TabIndex = 39;
+            this.btnUpdateCustomer.Text = "Update Product";
+            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
             // 
             // btnDeleteProduct
             // 
@@ -1119,7 +1172,6 @@
             this.btnDeleteProduct.TabIndex = 38;
             this.btnDeleteProduct.Text = "Delete Product";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
-            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // btnAddProduct
             // 
@@ -1133,6 +1185,8 @@
             // 
             // dgvProduct
             // 
+            this.dgvProduct.AllowUserToAddRows = false;
+            this.dgvProduct.AllowUserToDeleteRows = false;
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clProductID,
@@ -1143,6 +1197,7 @@
             this.clProDiscontinued});
             this.dgvProduct.Location = new System.Drawing.Point(6, 270);
             this.dgvProduct.Name = "dgvProduct";
+            this.dgvProduct.ReadOnly = true;
             this.dgvProduct.Size = new System.Drawing.Size(620, 137);
             this.dgvProduct.TabIndex = 36;
             // 
@@ -1150,31 +1205,37 @@
             // 
             this.clProductID.HeaderText = "Product ID";
             this.clProductID.Name = "clProductID";
+            this.clProductID.ReadOnly = true;
             // 
             // clProName
             // 
             this.clProName.HeaderText = "Product Name";
             this.clProName.Name = "clProName";
+            this.clProName.ReadOnly = true;
             // 
             // clProSupplierID
             // 
             this.clProSupplierID.HeaderText = "Supplier ID";
             this.clProSupplierID.Name = "clProSupplierID";
+            this.clProSupplierID.ReadOnly = true;
             // 
             // clProCategoryID
             // 
             this.clProCategoryID.HeaderText = "Category ID";
             this.clProCategoryID.Name = "clProCategoryID";
+            this.clProCategoryID.ReadOnly = true;
             // 
             // clProUnitPrice
             // 
             this.clProUnitPrice.HeaderText = "Unit Price";
             this.clProUnitPrice.Name = "clProUnitPrice";
+            this.clProUnitPrice.ReadOnly = true;
             // 
             // clProDiscontinued
             // 
             this.clProDiscontinued.HeaderText = "Discontinued";
             this.clProDiscontinued.Name = "clProDiscontinued";
+            this.clProDiscontinued.ReadOnly = true;
             // 
             // label11
             // 
@@ -1201,14 +1262,6 @@
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 31;
             this.label12.Text = "Unit Price";
-            // 
-            // txtProCategoryID
-            // 
-            this.txtProCategoryID.Location = new System.Drawing.Point(91, 107);
-            this.txtProCategoryID.Name = "txtProCategoryID";
-            this.txtProCategoryID.Size = new System.Drawing.Size(181, 20);
-            this.txtProCategoryID.TabIndex = 30;
-            this.txtProCategoryID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtProCategoryID_KeyDown);
             // 
             // txtProSupplierID
             // 
@@ -1271,7 +1324,7 @@
             // 
             // tEmployee
             // 
-            this.tEmployee.Controls.Add(this.comboBox1);
+            this.tEmployee.Controls.Add(this.cbEmpCountry);
             this.tEmployee.Controls.Add(this.mtbEmpPhone);
             this.tEmployee.Controls.Add(this.dtpEmpHireDate);
             this.tEmployee.Controls.Add(this.dtpEmpBirthdate);
@@ -1312,10 +1365,10 @@
             this.tEmployee.Text = "Employee";
             this.tEmployee.UseVisualStyleBackColor = true;
             // 
-            // comboBox1
+            // cbEmpCountry
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
+            this.cbEmpCountry.FormattingEnabled = true;
+            this.cbEmpCountry.Items.AddRange(new object[] {
             "Viet Nam",
             "Lao",
             "Indonesia",
@@ -1326,10 +1379,10 @@
             "Korea",
             "USA",
             "China"});
-            this.comboBox1.Location = new System.Drawing.Point(387, 147);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 85;
+            this.cbEmpCountry.Location = new System.Drawing.Point(387, 147);
+            this.cbEmpCountry.Name = "cbEmpCountry";
+            this.cbEmpCountry.Size = new System.Drawing.Size(181, 21);
+            this.cbEmpCountry.TabIndex = 85;
             // 
             // mtbEmpPhone
             // 
@@ -1380,7 +1433,6 @@
             this.btnDeleteEmp.TabIndex = 79;
             this.btnDeleteEmp.Text = "Delete Employee";
             this.btnDeleteEmp.UseVisualStyleBackColor = true;
-            this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
             // 
             // btnAddEmp
             // 
@@ -1394,6 +1446,8 @@
             // 
             // dgvEmp
             // 
+            this.dgvEmp.AllowUserToAddRows = false;
+            this.dgvEmp.AllowUserToDeleteRows = false;
             this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvEmp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.clEmployeeID,
@@ -1412,6 +1466,7 @@
             this.clEmpManagerID});
             this.dgvEmp.Location = new System.Drawing.Point(6, 315);
             this.dgvEmp.Name = "dgvEmp";
+            this.dgvEmp.ReadOnly = true;
             this.dgvEmp.Size = new System.Drawing.Size(620, 137);
             this.dgvEmp.TabIndex = 77;
             // 
@@ -1419,71 +1474,85 @@
             // 
             this.clEmployeeID.HeaderText = "Employee ID";
             this.clEmployeeID.Name = "clEmployeeID";
+            this.clEmployeeID.ReadOnly = true;
             // 
             // clEmpLastName
             // 
             this.clEmpLastName.HeaderText = "Employee Last Name";
             this.clEmpLastName.Name = "clEmpLastName";
+            this.clEmpLastName.ReadOnly = true;
             // 
             // clEmpFirstName
             // 
             this.clEmpFirstName.HeaderText = "Employee Last Name";
             this.clEmpFirstName.Name = "clEmpFirstName";
+            this.clEmpFirstName.ReadOnly = true;
             // 
             // clEmpTitle
             // 
             this.clEmpTitle.HeaderText = "Employee Title";
             this.clEmpTitle.Name = "clEmpTitle";
+            this.clEmpTitle.ReadOnly = true;
             // 
             // clEmpTitleofCourtesy
             // 
             this.clEmpTitleofCourtesy.HeaderText = "Employee Title of Courtesy";
             this.clEmpTitleofCourtesy.Name = "clEmpTitleofCourtesy";
+            this.clEmpTitleofCourtesy.ReadOnly = true;
             // 
             // clEmpBirthdate
             // 
             this.clEmpBirthdate.HeaderText = "Employee Birthdate";
             this.clEmpBirthdate.Name = "clEmpBirthdate";
+            this.clEmpBirthdate.ReadOnly = true;
             // 
             // clEmpHireDate
             // 
             this.clEmpHireDate.HeaderText = "Employee Hire Date";
             this.clEmpHireDate.Name = "clEmpHireDate";
+            this.clEmpHireDate.ReadOnly = true;
             // 
             // clEmpAddress
             // 
             this.clEmpAddress.HeaderText = "Employee Address";
             this.clEmpAddress.Name = "clEmpAddress";
+            this.clEmpAddress.ReadOnly = true;
             // 
             // clEmpCity
             // 
             this.clEmpCity.HeaderText = "Employee City";
             this.clEmpCity.Name = "clEmpCity";
+            this.clEmpCity.ReadOnly = true;
             // 
             // clEmpRegion
             // 
             this.clEmpRegion.HeaderText = "Employee Region";
             this.clEmpRegion.Name = "clEmpRegion";
+            this.clEmpRegion.ReadOnly = true;
             // 
             // clEmpPosCode
             // 
             this.clEmpPosCode.HeaderText = "Employee Postal Code";
             this.clEmpPosCode.Name = "clEmpPosCode";
+            this.clEmpPosCode.ReadOnly = true;
             // 
             // clEmpCountry
             // 
             this.clEmpCountry.HeaderText = "Employee Country";
             this.clEmpCountry.Name = "clEmpCountry";
+            this.clEmpCountry.ReadOnly = true;
             // 
             // clEmpPhone
             // 
             this.clEmpPhone.HeaderText = "Employee Phone";
             this.clEmpPhone.Name = "clEmpPhone";
+            this.clEmpPhone.ReadOnly = true;
             // 
             // clEmpManagerID
             // 
             this.clEmpManagerID.HeaderText = "Employee Managaer ID";
             this.clEmpManagerID.Name = "clEmpManagerID";
+            this.clEmpManagerID.ReadOnly = true;
             // 
             // label25
             // 
@@ -1685,8 +1754,8 @@
             // 
             // tSuppliers
             // 
-            this.tSuppliers.Controls.Add(this.comboBox4);
-            this.tSuppliers.Controls.Add(this.button14);
+            this.tSuppliers.Controls.Add(this.cbSupCountry);
+            this.tSuppliers.Controls.Add(this.btnLoadSupplier);
             this.tSuppliers.Controls.Add(this.btnUpdateSupplier);
             this.tSuppliers.Controls.Add(this.btnDeleteSupplier);
             this.tSuppliers.Controls.Add(this.btnAddSupplier);
@@ -1702,10 +1771,10 @@
             this.tSuppliers.Controls.Add(this.label32);
             this.tSuppliers.Controls.Add(this.txtSupCity);
             this.tSuppliers.Controls.Add(this.label33);
-            this.tSuppliers.Controls.Add(this.txtSupplierAdd);
+            this.tSuppliers.Controls.Add(this.txtSupAdd);
             this.tSuppliers.Controls.Add(this.txtSupContactName);
             this.tSuppliers.Controls.Add(this.txtSupCompanyName);
-            this.tSuppliers.Controls.Add(this.txtSupplierID);
+            this.tSuppliers.Controls.Add(this.txtSupID);
             this.tSuppliers.Controls.Add(this.label36);
             this.tSuppliers.Controls.Add(this.label37);
             this.tSuppliers.Controls.Add(this.label38);
@@ -1718,10 +1787,11 @@
             this.tSuppliers.Text = "Suppliers";
             this.tSuppliers.UseVisualStyleBackColor = true;
             // 
-            // comboBox4
+            // cbSupCountry
             // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
+            this.cbSupCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbSupCountry.FormattingEnabled = true;
+            this.cbSupCountry.Items.AddRange(new object[] {
             "Viet Nam",
             "Lao",
             "Indonesia",
@@ -1732,19 +1802,19 @@
             "Korea",
             "USA",
             "China"});
-            this.comboBox4.Location = new System.Drawing.Point(392, 109);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(181, 21);
-            this.comboBox4.TabIndex = 108;
+            this.cbSupCountry.Location = new System.Drawing.Point(392, 109);
+            this.cbSupCountry.Name = "cbSupCountry";
+            this.cbSupCountry.Size = new System.Drawing.Size(181, 21);
+            this.cbSupCountry.TabIndex = 108;
             // 
-            // button14
+            // btnLoadSupplier
             // 
-            this.button14.Location = new System.Drawing.Point(333, 286);
-            this.button14.Name = "button14";
-            this.button14.Size = new System.Drawing.Size(119, 23);
-            this.button14.TabIndex = 107;
-            this.button14.Text = "button14";
-            this.button14.UseVisualStyleBackColor = true;
+            this.btnLoadSupplier.Location = new System.Drawing.Point(333, 286);
+            this.btnLoadSupplier.Name = "btnLoadSupplier";
+            this.btnLoadSupplier.Size = new System.Drawing.Size(119, 23);
+            this.btnLoadSupplier.TabIndex = 107;
+            this.btnLoadSupplier.Text = "Load Supplier";
+            this.btnLoadSupplier.UseVisualStyleBackColor = true;
             // 
             // btnUpdateSupplier
             // 
@@ -1772,14 +1842,89 @@
             this.btnAddSupplier.TabIndex = 104;
             this.btnAddSupplier.Text = "Add Supplier";
             this.btnAddSupplier.UseVisualStyleBackColor = true;
+            this.btnAddSupplier.Click += new System.EventHandler(this.btnAddSupplier_Click);
             // 
             // dgvSupplier
             // 
+            this.dgvSupplier.AllowUserToAddRows = false;
+            this.dgvSupplier.AllowUserToDeleteRows = false;
             this.dgvSupplier.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvSupplier.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clSupID,
+            this.clSupCompanyName,
+            this.clSupContactName,
+            this.clSupAddress,
+            this.clSupCity,
+            this.clSupRegion,
+            this.clSupPostalCode,
+            this.clSupCountry,
+            this.clSupPhone,
+            this.clSupFax});
             this.dgvSupplier.Location = new System.Drawing.Point(6, 315);
             this.dgvSupplier.Name = "dgvSupplier";
+            this.dgvSupplier.ReadOnly = true;
             this.dgvSupplier.Size = new System.Drawing.Size(620, 137);
             this.dgvSupplier.TabIndex = 103;
+            // 
+            // clSupID
+            // 
+            this.clSupID.HeaderText = "Supplier ID";
+            this.clSupID.Name = "clSupID";
+            this.clSupID.ReadOnly = true;
+            // 
+            // clSupCompanyName
+            // 
+            this.clSupCompanyName.HeaderText = "Company Name";
+            this.clSupCompanyName.Name = "clSupCompanyName";
+            this.clSupCompanyName.ReadOnly = true;
+            // 
+            // clSupContactName
+            // 
+            this.clSupContactName.HeaderText = "Contact Name";
+            this.clSupContactName.Name = "clSupContactName";
+            this.clSupContactName.ReadOnly = true;
+            // 
+            // clSupAddress
+            // 
+            this.clSupAddress.HeaderText = "Address";
+            this.clSupAddress.Name = "clSupAddress";
+            this.clSupAddress.ReadOnly = true;
+            // 
+            // clSupCity
+            // 
+            this.clSupCity.HeaderText = "City";
+            this.clSupCity.Name = "clSupCity";
+            this.clSupCity.ReadOnly = true;
+            // 
+            // clSupRegion
+            // 
+            this.clSupRegion.HeaderText = "Region";
+            this.clSupRegion.Name = "clSupRegion";
+            this.clSupRegion.ReadOnly = true;
+            // 
+            // clSupPostalCode
+            // 
+            this.clSupPostalCode.HeaderText = "Postal Code";
+            this.clSupPostalCode.Name = "clSupPostalCode";
+            this.clSupPostalCode.ReadOnly = true;
+            // 
+            // clSupCountry
+            // 
+            this.clSupCountry.HeaderText = "Country";
+            this.clSupCountry.Name = "clSupCountry";
+            this.clSupCountry.ReadOnly = true;
+            // 
+            // clSupPhone
+            // 
+            this.clSupPhone.HeaderText = "Phone";
+            this.clSupPhone.Name = "clSupPhone";
+            this.clSupPhone.ReadOnly = true;
+            // 
+            // clSupFax
+            // 
+            this.clSupFax.HeaderText = "Fax";
+            this.clSupFax.Name = "clSupFax";
+            this.clSupFax.ReadOnly = true;
             // 
             // txtSupFax
             // 
@@ -1870,12 +2015,12 @@
             this.label33.TabIndex = 89;
             this.label33.Text = "City";
             // 
-            // txtSupplierAdd
+            // txtSupAdd
             // 
-            this.txtSupplierAdd.Location = new System.Drawing.Point(98, 107);
-            this.txtSupplierAdd.Name = "txtSupplierAdd";
-            this.txtSupplierAdd.Size = new System.Drawing.Size(181, 20);
-            this.txtSupplierAdd.TabIndex = 84;
+            this.txtSupAdd.Location = new System.Drawing.Point(98, 107);
+            this.txtSupAdd.Name = "txtSupAdd";
+            this.txtSupAdd.Size = new System.Drawing.Size(181, 20);
+            this.txtSupAdd.TabIndex = 84;
             // 
             // txtSupContactName
             // 
@@ -1891,12 +2036,12 @@
             this.txtSupCompanyName.Size = new System.Drawing.Size(181, 20);
             this.txtSupCompanyName.TabIndex = 82;
             // 
-            // txtSupplierID
+            // txtSupID
             // 
-            this.txtSupplierID.Location = new System.Drawing.Point(98, 6);
-            this.txtSupplierID.Name = "txtSupplierID";
-            this.txtSupplierID.Size = new System.Drawing.Size(181, 20);
-            this.txtSupplierID.TabIndex = 81;
+            this.txtSupID.Location = new System.Drawing.Point(98, 6);
+            this.txtSupID.Name = "txtSupID";
+            this.txtSupID.Size = new System.Drawing.Size(181, 20);
+            this.txtSupID.TabIndex = 81;
             // 
             // label36
             // 
@@ -1936,17 +2081,17 @@
             // 
             // tOderDetail
             // 
-            this.tOderDetail.Controls.Add(this.button18);
+            this.tOderDetail.Controls.Add(this.btnLoadDetail);
             this.tOderDetail.Controls.Add(this.updateOrderDetail);
-            this.tOderDetail.Controls.Add(this.deleteOrderDetail);
-            this.tOderDetail.Controls.Add(this.addOrderDetail);
+            this.tOderDetail.Controls.Add(this.btndeleteOrderDetail);
+            this.tOderDetail.Controls.Add(this.btnaddOrderDetail);
             this.tOderDetail.Controls.Add(this.dgvOrderDetail);
-            this.tOderDetail.Controls.Add(this.txtDiscount);
+            this.tOderDetail.Controls.Add(this.txtOrDeDiscount);
             this.tOderDetail.Controls.Add(this.label45);
             this.tOderDetail.Controls.Add(this.txtOrDeQuantity);
             this.tOderDetail.Controls.Add(this.txtOrDeUnitPrice);
             this.tOderDetail.Controls.Add(this.txtOrDeProID);
-            this.tOderDetail.Controls.Add(this.txtOrderDetailID);
+            this.tOderDetail.Controls.Add(this.txtOrDeDetailID);
             this.tOderDetail.Controls.Add(this.label46);
             this.tOderDetail.Controls.Add(this.label47);
             this.tOderDetail.Controls.Add(this.label48);
@@ -1959,14 +2104,14 @@
             this.tOderDetail.Text = "OrderDetail";
             this.tOderDetail.UseVisualStyleBackColor = true;
             // 
-            // button18
+            // btnLoadDetail
             // 
-            this.button18.Location = new System.Drawing.Point(333, 225);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(119, 23);
-            this.button18.TabIndex = 91;
-            this.button18.Text = "button18";
-            this.button18.UseVisualStyleBackColor = true;
+            this.btnLoadDetail.Location = new System.Drawing.Point(333, 225);
+            this.btnLoadDetail.Name = "btnLoadDetail";
+            this.btnLoadDetail.Size = new System.Drawing.Size(119, 23);
+            this.btnLoadDetail.TabIndex = 91;
+            this.btnLoadDetail.Text = "Load Detail";
+            this.btnLoadDetail.UseVisualStyleBackColor = true;
             // 
             // updateOrderDetail
             // 
@@ -1977,38 +2122,78 @@
             this.updateOrderDetail.Text = "Update Order Detail";
             this.updateOrderDetail.UseVisualStyleBackColor = true;
             // 
-            // deleteOrderDetail
+            // btndeleteOrderDetail
             // 
-            this.deleteOrderDetail.Location = new System.Drawing.Point(333, 192);
-            this.deleteOrderDetail.Name = "deleteOrderDetail";
-            this.deleteOrderDetail.Size = new System.Drawing.Size(119, 23);
-            this.deleteOrderDetail.TabIndex = 89;
-            this.deleteOrderDetail.Text = "Delete Order Detail";
-            this.deleteOrderDetail.UseVisualStyleBackColor = true;
+            this.btndeleteOrderDetail.Location = new System.Drawing.Point(333, 192);
+            this.btndeleteOrderDetail.Name = "btndeleteOrderDetail";
+            this.btndeleteOrderDetail.Size = new System.Drawing.Size(119, 23);
+            this.btndeleteOrderDetail.TabIndex = 89;
+            this.btndeleteOrderDetail.Text = "Delete Order Detail";
+            this.btndeleteOrderDetail.UseVisualStyleBackColor = true;
             // 
-            // addOrderDetail
+            // btnaddOrderDetail
             // 
-            this.addOrderDetail.Location = new System.Drawing.Point(185, 192);
-            this.addOrderDetail.Name = "addOrderDetail";
-            this.addOrderDetail.Size = new System.Drawing.Size(115, 23);
-            this.addOrderDetail.TabIndex = 88;
-            this.addOrderDetail.Text = "Add Order Detail";
-            this.addOrderDetail.UseVisualStyleBackColor = true;
+            this.btnaddOrderDetail.Location = new System.Drawing.Point(185, 192);
+            this.btnaddOrderDetail.Name = "btnaddOrderDetail";
+            this.btnaddOrderDetail.Size = new System.Drawing.Size(115, 23);
+            this.btnaddOrderDetail.TabIndex = 88;
+            this.btnaddOrderDetail.Text = "Add Order Detail";
+            this.btnaddOrderDetail.UseVisualStyleBackColor = true;
+            this.btnaddOrderDetail.Click += new System.EventHandler(this.addOrderDetail_Click);
             // 
             // dgvOrderDetail
             // 
+            this.dgvOrderDetail.AllowUserToAddRows = false;
+            this.dgvOrderDetail.AllowUserToDeleteRows = false;
             this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.cltOrDeID,
+            this.cltOrDeProductID,
+            this.cltOrDeUnitPrice,
+            this.cltOrDeQuantity,
+            this.cltOrDeDiscount});
             this.dgvOrderDetail.Location = new System.Drawing.Point(6, 254);
             this.dgvOrderDetail.Name = "dgvOrderDetail";
+            this.dgvOrderDetail.ReadOnly = true;
             this.dgvOrderDetail.Size = new System.Drawing.Size(620, 137);
             this.dgvOrderDetail.TabIndex = 87;
             // 
-            // txtDiscount
+            // cltOrDeID
             // 
-            this.txtDiscount.Location = new System.Drawing.Point(97, 144);
-            this.txtDiscount.Name = "txtDiscount";
-            this.txtDiscount.Size = new System.Drawing.Size(181, 20);
-            this.txtDiscount.TabIndex = 86;
+            this.cltOrDeID.HeaderText = "Order ID";
+            this.cltOrDeID.Name = "cltOrDeID";
+            this.cltOrDeID.ReadOnly = true;
+            // 
+            // cltOrDeProductID
+            // 
+            this.cltOrDeProductID.HeaderText = "Product ID";
+            this.cltOrDeProductID.Name = "cltOrDeProductID";
+            this.cltOrDeProductID.ReadOnly = true;
+            // 
+            // cltOrDeUnitPrice
+            // 
+            this.cltOrDeUnitPrice.HeaderText = "Unit Price";
+            this.cltOrDeUnitPrice.Name = "cltOrDeUnitPrice";
+            this.cltOrDeUnitPrice.ReadOnly = true;
+            // 
+            // cltOrDeQuantity
+            // 
+            this.cltOrDeQuantity.HeaderText = "Quantity";
+            this.cltOrDeQuantity.Name = "cltOrDeQuantity";
+            this.cltOrDeQuantity.ReadOnly = true;
+            // 
+            // cltOrDeDiscount
+            // 
+            this.cltOrDeDiscount.HeaderText = "Discount";
+            this.cltOrDeDiscount.Name = "cltOrDeDiscount";
+            this.cltOrDeDiscount.ReadOnly = true;
+            // 
+            // txtOrDeDiscount
+            // 
+            this.txtOrDeDiscount.Location = new System.Drawing.Point(97, 144);
+            this.txtOrDeDiscount.Name = "txtOrDeDiscount";
+            this.txtOrDeDiscount.Size = new System.Drawing.Size(181, 20);
+            this.txtOrDeDiscount.TabIndex = 86;
             // 
             // label45
             // 
@@ -2040,12 +2225,12 @@
             this.txtOrDeProID.Size = new System.Drawing.Size(181, 20);
             this.txtOrDeProID.TabIndex = 82;
             // 
-            // txtOrderDetailID
+            // txtOrDeDetailID
             // 
-            this.txtOrderDetailID.Location = new System.Drawing.Point(97, 5);
-            this.txtOrderDetailID.Name = "txtOrderDetailID";
-            this.txtOrderDetailID.Size = new System.Drawing.Size(181, 20);
-            this.txtOrderDetailID.TabIndex = 81;
+            this.txtOrDeDetailID.Location = new System.Drawing.Point(97, 5);
+            this.txtOrDeDetailID.Name = "txtOrDeDetailID";
+            this.txtOrDeDetailID.Size = new System.Drawing.Size(181, 20);
+            this.txtOrDeDetailID.TabIndex = 81;
             // 
             // label46
             // 
@@ -2085,14 +2270,14 @@
             // 
             // tCategories
             // 
-            this.tCategories.Controls.Add(this.button22);
+            this.tCategories.Controls.Add(this.btnLoadCategory);
             this.tCategories.Controls.Add(this.btnUpdateCategory);
             this.tCategories.Controls.Add(this.btnDeleteCategory);
             this.tCategories.Controls.Add(this.btnAddCategory);
             this.tCategories.Controls.Add(this.dgvCategory);
             this.tCategories.Controls.Add(this.txtCateDescription);
-            this.tCategories.Controls.Add(this.txtCaterogyName);
-            this.tCategories.Controls.Add(this.txtCategoryID);
+            this.tCategories.Controls.Add(this.txtCateName);
+            this.tCategories.Controls.Add(this.txtCateID);
             this.tCategories.Controls.Add(this.label52);
             this.tCategories.Controls.Add(this.label53);
             this.tCategories.Controls.Add(this.label54);
@@ -2104,14 +2289,14 @@
             this.tCategories.Text = "Categories";
             this.tCategories.UseVisualStyleBackColor = true;
             // 
-            // button22
+            // btnLoadCategory
             // 
-            this.button22.Location = new System.Drawing.Point(333, 140);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(119, 23);
-            this.button22.TabIndex = 88;
-            this.button22.Text = "button22";
-            this.button22.UseVisualStyleBackColor = true;
+            this.btnLoadCategory.Location = new System.Drawing.Point(333, 140);
+            this.btnLoadCategory.Name = "btnLoadCategory";
+            this.btnLoadCategory.Size = new System.Drawing.Size(119, 23);
+            this.btnLoadCategory.TabIndex = 88;
+            this.btnLoadCategory.Text = "Load Category";
+            this.btnLoadCategory.UseVisualStyleBackColor = true;
             // 
             // btnUpdateCategory
             // 
@@ -2139,14 +2324,40 @@
             this.btnAddCategory.TabIndex = 85;
             this.btnAddCategory.Text = "Add Category";
             this.btnAddCategory.UseVisualStyleBackColor = true;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
             // 
             // dgvCategory
             // 
+            this.dgvCategory.AllowUserToAddRows = false;
+            this.dgvCategory.AllowUserToDeleteRows = false;
             this.dgvCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCategory.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clCateID,
+            this.clCateName,
+            this.clCateDescription});
             this.dgvCategory.Location = new System.Drawing.Point(6, 169);
             this.dgvCategory.Name = "dgvCategory";
+            this.dgvCategory.ReadOnly = true;
             this.dgvCategory.Size = new System.Drawing.Size(620, 137);
             this.dgvCategory.TabIndex = 84;
+            // 
+            // clCateID
+            // 
+            this.clCateID.HeaderText = "Category ID";
+            this.clCateID.Name = "clCateID";
+            this.clCateID.ReadOnly = true;
+            // 
+            // clCateName
+            // 
+            this.clCateName.HeaderText = "Caterogy Name";
+            this.clCateName.Name = "clCateName";
+            this.clCateName.ReadOnly = true;
+            // 
+            // clCateDescription
+            // 
+            this.clCateDescription.HeaderText = "Description";
+            this.clCateDescription.Name = "clCateDescription";
+            this.clCateDescription.ReadOnly = true;
             // 
             // txtCateDescription
             // 
@@ -2155,19 +2366,19 @@
             this.txtCateDescription.Size = new System.Drawing.Size(181, 20);
             this.txtCateDescription.TabIndex = 83;
             // 
-            // txtCaterogyName
+            // txtCateName
             // 
-            this.txtCaterogyName.Location = new System.Drawing.Point(98, 37);
-            this.txtCaterogyName.Name = "txtCaterogyName";
-            this.txtCaterogyName.Size = new System.Drawing.Size(181, 20);
-            this.txtCaterogyName.TabIndex = 82;
+            this.txtCateName.Location = new System.Drawing.Point(98, 37);
+            this.txtCateName.Name = "txtCateName";
+            this.txtCateName.Size = new System.Drawing.Size(181, 20);
+            this.txtCateName.TabIndex = 82;
             // 
-            // txtCategoryID
+            // txtCateID
             // 
-            this.txtCategoryID.Location = new System.Drawing.Point(98, 3);
-            this.txtCategoryID.Name = "txtCategoryID";
-            this.txtCategoryID.Size = new System.Drawing.Size(181, 20);
-            this.txtCategoryID.TabIndex = 81;
+            this.txtCateID.Location = new System.Drawing.Point(98, 3);
+            this.txtCateID.Name = "txtCateID";
+            this.txtCateID.Size = new System.Drawing.Size(181, 20);
+            this.txtCateID.TabIndex = 81;
             // 
             // label52
             // 
@@ -2198,13 +2409,13 @@
             // 
             // tShippers
             // 
-            this.tShippers.Controls.Add(this.button26);
+            this.tShippers.Controls.Add(this.btnLoadShipper);
             this.tShippers.Controls.Add(this.btnUpdateShipper);
             this.tShippers.Controls.Add(this.btnDeleteShipper);
             this.tShippers.Controls.Add(this.btnAddShipper);
             this.tShippers.Controls.Add(this.dgvShipper);
             this.tShippers.Controls.Add(this.txtShipperPhone);
-            this.tShippers.Controls.Add(this.txtCompanyShipper);
+            this.tShippers.Controls.Add(this.txtShipperCompany);
             this.tShippers.Controls.Add(this.txtShipperID);
             this.tShippers.Controls.Add(this.label26);
             this.tShippers.Controls.Add(this.label28);
@@ -2217,14 +2428,14 @@
             this.tShippers.Text = "Shippers";
             this.tShippers.UseVisualStyleBackColor = true;
             // 
-            // button26
+            // btnLoadShipper
             // 
-            this.button26.Location = new System.Drawing.Point(333, 138);
-            this.button26.Name = "button26";
-            this.button26.Size = new System.Drawing.Size(119, 23);
-            this.button26.TabIndex = 94;
-            this.button26.Text = "button26";
-            this.button26.UseVisualStyleBackColor = true;
+            this.btnLoadShipper.Location = new System.Drawing.Point(333, 138);
+            this.btnLoadShipper.Name = "btnLoadShipper";
+            this.btnLoadShipper.Size = new System.Drawing.Size(119, 23);
+            this.btnLoadShipper.TabIndex = 94;
+            this.btnLoadShipper.Text = "Load Shipper";
+            this.btnLoadShipper.UseVisualStyleBackColor = true;
             // 
             // btnUpdateShipper
             // 
@@ -2252,14 +2463,40 @@
             this.btnAddShipper.TabIndex = 91;
             this.btnAddShipper.Text = "Add Shipper";
             this.btnAddShipper.UseVisualStyleBackColor = true;
+            this.btnAddShipper.Click += new System.EventHandler(this.btnAddShipper_Click);
             // 
             // dgvShipper
             // 
+            this.dgvShipper.AllowUserToAddRows = false;
+            this.dgvShipper.AllowUserToDeleteRows = false;
             this.dgvShipper.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvShipper.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clShipperID,
+            this.clShipperCompany,
+            this.clShipperPhone});
             this.dgvShipper.Location = new System.Drawing.Point(6, 167);
             this.dgvShipper.Name = "dgvShipper";
+            this.dgvShipper.ReadOnly = true;
             this.dgvShipper.Size = new System.Drawing.Size(620, 137);
             this.dgvShipper.TabIndex = 90;
+            // 
+            // clShipperID
+            // 
+            this.clShipperID.HeaderText = "Shipper ID";
+            this.clShipperID.Name = "clShipperID";
+            this.clShipperID.ReadOnly = true;
+            // 
+            // clShipperCompany
+            // 
+            this.clShipperCompany.HeaderText = "Company Name";
+            this.clShipperCompany.Name = "clShipperCompany";
+            this.clShipperCompany.ReadOnly = true;
+            // 
+            // clShipperPhone
+            // 
+            this.clShipperPhone.HeaderText = "Phone";
+            this.clShipperPhone.Name = "clShipperPhone";
+            this.clShipperPhone.ReadOnly = true;
             // 
             // txtShipperPhone
             // 
@@ -2268,12 +2505,12 @@
             this.txtShipperPhone.Size = new System.Drawing.Size(181, 20);
             this.txtShipperPhone.TabIndex = 89;
             // 
-            // txtCompanyShipper
+            // txtShipperCompany
             // 
-            this.txtCompanyShipper.Location = new System.Drawing.Point(99, 37);
-            this.txtCompanyShipper.Name = "txtCompanyShipper";
-            this.txtCompanyShipper.Size = new System.Drawing.Size(181, 20);
-            this.txtCompanyShipper.TabIndex = 88;
+            this.txtShipperCompany.Location = new System.Drawing.Point(99, 37);
+            this.txtShipperCompany.Name = "txtShipperCompany";
+            this.txtShipperCompany.Size = new System.Drawing.Size(181, 20);
+            this.txtShipperCompany.TabIndex = 88;
             // 
             // txtShipperID
             // 
@@ -2312,14 +2549,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // txtOrFreight
-            // 
-            this.txtOrFreight.Location = new System.Drawing.Point(381, 5);
-            this.txtOrFreight.Name = "txtOrFreight";
-            this.txtOrFreight.Size = new System.Drawing.Size(181, 20);
-            this.txtOrFreight.TabIndex = 87;
-            this.txtOrFreight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOrFreight_KeyDown);
             // 
             // Form1
             // 
@@ -2415,7 +2644,6 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox txtProUnitPrice;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox txtProCategoryID;
         private System.Windows.Forms.TextBox txtProSupplierID;
         private System.Windows.Forms.TextBox txtProductName;
         private System.Windows.Forms.TextBox txtProductID;
@@ -2464,39 +2692,39 @@
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TextBox txtSupCity;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.TextBox txtSupplierAdd;
+        private System.Windows.Forms.TextBox txtSupAdd;
         private System.Windows.Forms.TextBox txtSupContactName;
         private System.Windows.Forms.TextBox txtSupCompanyName;
-        private System.Windows.Forms.TextBox txtSupplierID;
+        private System.Windows.Forms.TextBox txtSupID;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox txtDiscount;
+        private System.Windows.Forms.TextBox txtOrDeDiscount;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.TextBox txtOrDeQuantity;
         private System.Windows.Forms.TextBox txtOrDeUnitPrice;
         private System.Windows.Forms.TextBox txtOrDeProID;
-        private System.Windows.Forms.TextBox txtOrderDetailID;
+        private System.Windows.Forms.TextBox txtOrDeDetailID;
         private System.Windows.Forms.Label label46;
         private System.Windows.Forms.Label label47;
         private System.Windows.Forms.Label label48;
         private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox txtCateDescription;
-        private System.Windows.Forms.TextBox txtCaterogyName;
-        private System.Windows.Forms.TextBox txtCategoryID;
+        private System.Windows.Forms.TextBox txtCateName;
+        private System.Windows.Forms.TextBox txtCateID;
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.TextBox txtShipperPhone;
-        private System.Windows.Forms.TextBox txtCompanyShipper;
+        private System.Windows.Forms.TextBox txtShipperCompany;
         private System.Windows.Forms.TextBox txtShipperID;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Button btnLoadCustomer;
-        private System.Windows.Forms.Button btnUpdateCustomer;
+        private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnLoadOrder;
@@ -2505,7 +2733,7 @@
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.DataGridView dgvOrder;
         private System.Windows.Forms.Button btnLoadProduct;
-        private System.Windows.Forms.Button btnUpdateProduct;
+        private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView dgvProduct;
@@ -2514,22 +2742,22 @@
         private System.Windows.Forms.Button btnDeleteEmp;
         private System.Windows.Forms.Button btnAddEmp;
         private System.Windows.Forms.DataGridView dgvEmp;
-        private System.Windows.Forms.Button button14;
+        private System.Windows.Forms.Button btnLoadSupplier;
         private System.Windows.Forms.Button btnUpdateSupplier;
         private System.Windows.Forms.Button btnDeleteSupplier;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.DataGridView dgvSupplier;
-        private System.Windows.Forms.Button button18;
+        private System.Windows.Forms.Button btnLoadDetail;
         private System.Windows.Forms.Button updateOrderDetail;
-        private System.Windows.Forms.Button deleteOrderDetail;
-        private System.Windows.Forms.Button addOrderDetail;
+        private System.Windows.Forms.Button btndeleteOrderDetail;
+        private System.Windows.Forms.Button btnaddOrderDetail;
         private System.Windows.Forms.DataGridView dgvOrderDetail;
-        private System.Windows.Forms.Button button22;
+        private System.Windows.Forms.Button btnLoadCategory;
         private System.Windows.Forms.Button btnUpdateCategory;
         private System.Windows.Forms.Button btnDeleteCategory;
         private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.DataGridView dgvCategory;
-        private System.Windows.Forms.Button button26;
+        private System.Windows.Forms.Button btnLoadShipper;
         private System.Windows.Forms.Button btnUpdateShipper;
         private System.Windows.Forms.Button btnDeleteShipper;
         private System.Windows.Forms.Button btnAddShipper;
@@ -2538,6 +2766,7 @@
         private System.Windows.Forms.DateTimePicker dtpRequireDate;
         private System.Windows.Forms.DateTimePicker dtpShippedDate;
         private System.Windows.Forms.DateTimePicker dtpOrderDate;
+        private System.Windows.Forms.MaskedTextBox mtbOrderFreight;
         private System.Windows.Forms.DateTimePicker dtpEmpHireDate;
         private System.Windows.Forms.DateTimePicker dtpEmpBirthdate;
         private System.Windows.Forms.MaskedTextBox mtbEmpPhone;
@@ -2589,9 +2818,29 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusFax;
         private System.Windows.Forms.ComboBox cbCusCountry;
         private System.Windows.Forms.ComboBox cbOrderShipCountry;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox txtOrFreight;
+        private System.Windows.Forms.ComboBox cbEmpCountry;
+        private System.Windows.Forms.ComboBox cbSupCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCompanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupContactName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupPostalCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupFax;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeQuantity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeDiscount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCateID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCateName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clCateDescription;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipperID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipperCompany;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipperPhone;
     }
 }
 
