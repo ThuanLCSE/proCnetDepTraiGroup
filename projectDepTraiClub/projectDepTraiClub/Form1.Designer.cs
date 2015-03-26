@@ -33,7 +33,7 @@
             this.tCustomer = new System.Windows.Forms.TabPage();
             this.cbCusCountry = new System.Windows.Forms.ComboBox();
             this.btnLoadCustomer = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
@@ -70,8 +70,7 @@
             this.lblComName = new System.Windows.Forms.Label();
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.mtbOrderFreight = new System.Windows.Forms.MaskedTextBox();
+            this.cbOrderShipCountry = new System.Windows.Forms.ComboBox();
             this.dtpRequireDate = new System.Windows.Forms.DateTimePicker();
             this.dtpShippedDate = new System.Windows.Forms.DateTimePicker();
             this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
@@ -120,7 +119,7 @@
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
             this.btnLoadProduct = new System.Windows.Forms.Button();
-            this.btnUpdateCustomer = new System.Windows.Forms.Button();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
@@ -256,6 +255,7 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.txtOrFreight = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -297,7 +297,7 @@
             // 
             this.tCustomer.Controls.Add(this.cbCusCountry);
             this.tCustomer.Controls.Add(this.btnLoadCustomer);
-            this.tCustomer.Controls.Add(this.btnUpdate);
+            this.tCustomer.Controls.Add(this.btnUpdateCustomer);
             this.tCustomer.Controls.Add(this.btnDeleteCustomer);
             this.tCustomer.Controls.Add(this.btnAddCustomer);
             this.tCustomer.Controls.Add(this.dgvCustomer);
@@ -359,14 +359,15 @@
             this.btnLoadCustomer.UseVisualStyleBackColor = true;
             this.btnLoadCustomer.Click += new System.EventHandler(this.btnLoadCustomer_Click);
             // 
-            // btnUpdate
+            // btnUpdateCustomer
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(185, 247);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(115, 23);
-            this.btnUpdate.TabIndex = 26;
-            this.btnUpdate.Text = "Update Customer";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 247);
+            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateCustomer.TabIndex = 26;
+            this.btnUpdateCustomer.Text = "Update Customer";
+            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // btnDeleteCustomer
             // 
@@ -376,6 +377,7 @@
             this.btnDeleteCustomer.TabIndex = 25;
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnAddCustomer
             // 
@@ -406,6 +408,7 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(620, 137);
             this.dgvCustomer.TabIndex = 23;
+            this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
             // clCusID
             // 
@@ -637,8 +640,8 @@
             // 
             // tOrder
             // 
-            this.tOrder.Controls.Add(this.comboBox2);
-            this.tOrder.Controls.Add(this.mtbOrderFreight);
+            this.tOrder.Controls.Add(this.txtOrFreight);
+            this.tOrder.Controls.Add(this.cbOrderShipCountry);
             this.tOrder.Controls.Add(this.dtpRequireDate);
             this.tOrder.Controls.Add(this.dtpShippedDate);
             this.tOrder.Controls.Add(this.dtpOrderDate);
@@ -676,10 +679,10 @@
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
             // 
-            // comboBox2
+            // cbOrderShipCountry
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
+            this.cbOrderShipCountry.FormattingEnabled = true;
+            this.cbOrderShipCountry.Items.AddRange(new object[] {
             "Viet Nam",
             "Lao",
             "Indonesia",
@@ -690,18 +693,10 @@
             "Korea",
             "USA",
             "China"});
-            this.comboBox2.Location = new System.Drawing.Point(381, 216);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(181, 21);
-            this.comboBox2.TabIndex = 86;
-            // 
-            // mtbOrderFreight
-            // 
-            this.mtbOrderFreight.Location = new System.Drawing.Point(381, 5);
-            this.mtbOrderFreight.Mask = "999.999";
-            this.mtbOrderFreight.Name = "mtbOrderFreight";
-            this.mtbOrderFreight.Size = new System.Drawing.Size(181, 20);
-            this.mtbOrderFreight.TabIndex = 57;
+            this.cbOrderShipCountry.Location = new System.Drawing.Point(381, 216);
+            this.cbOrderShipCountry.Name = "cbOrderShipCountry";
+            this.cbOrderShipCountry.Size = new System.Drawing.Size(181, 21);
+            this.cbOrderShipCountry.TabIndex = 86;
             // 
             // dtpRequireDate
             // 
@@ -723,7 +718,6 @@
             this.dtpOrderDate.Name = "dtpOrderDate";
             this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
             this.dtpOrderDate.TabIndex = 54;
-            this.dtpOrderDate.ValueChanged += new System.EventHandler(this.dtpOrderDate_ValueChanged);
             // 
             // btnLoadOrder
             // 
@@ -743,6 +737,7 @@
             this.btnUpdateOrder.TabIndex = 52;
             this.btnUpdateOrder.Text = "Update Order";
             this.btnUpdateOrder.UseVisualStyleBackColor = true;
+            this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click);
             // 
             // btnDeleteOrder
             // 
@@ -752,6 +747,7 @@
             this.btnDeleteOrder.TabIndex = 51;
             this.btnDeleteOrder.Text = "Delete Order";
             this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
             // 
             // btnAddOrder
             // 
@@ -784,6 +780,7 @@
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.Size = new System.Drawing.Size(620, 137);
             this.dgvOrder.TabIndex = 49;
+            this.dgvOrder.SelectionChanged += new System.EventHandler(this.dgvOrder_SelectionChanged);
             // 
             // clOrderID
             // 
@@ -1032,7 +1029,7 @@
             this.tProduct.Controls.Add(this.cbCaterogyID);
             this.tProduct.Controls.Add(this.groupBox1);
             this.tProduct.Controls.Add(this.btnLoadProduct);
-            this.tProduct.Controls.Add(this.btnUpdateCustomer);
+            this.tProduct.Controls.Add(this.btnUpdateProduct);
             this.tProduct.Controls.Add(this.btnDeleteProduct);
             this.tProduct.Controls.Add(this.btnAddProduct);
             this.tProduct.Controls.Add(this.dgvProduct);
@@ -1105,14 +1102,14 @@
             this.btnLoadProduct.UseVisualStyleBackColor = true;
             this.btnLoadProduct.Click += new System.EventHandler(this.btnLoadProduct_Click);
             // 
-            // btnUpdateCustomer
+            // btnUpdateProduct
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 241);
-            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
-            this.btnUpdateCustomer.TabIndex = 39;
-            this.btnUpdateCustomer.Text = "Update Product";
-            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Location = new System.Drawing.Point(185, 241);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateProduct.TabIndex = 39;
+            this.btnUpdateProduct.Text = "Update Product";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
             // 
             // btnDeleteProduct
             // 
@@ -1122,6 +1119,7 @@
             this.btnDeleteProduct.TabIndex = 38;
             this.btnDeleteProduct.Text = "Delete Product";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // btnAddProduct
             // 
@@ -1382,6 +1380,7 @@
             this.btnDeleteEmp.TabIndex = 79;
             this.btnDeleteEmp.Text = "Delete Employee";
             this.btnDeleteEmp.UseVisualStyleBackColor = true;
+            this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
             // 
             // btnAddEmp
             // 
@@ -2314,6 +2313,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // txtOrFreight
+            // 
+            this.txtOrFreight.Location = new System.Drawing.Point(381, 5);
+            this.txtOrFreight.Name = "txtOrFreight";
+            this.txtOrFreight.Size = new System.Drawing.Size(181, 20);
+            this.txtOrFreight.TabIndex = 87;
+            this.txtOrFreight.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtOrFreight_KeyDown);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2489,7 +2496,7 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Button btnLoadCustomer;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnLoadOrder;
@@ -2498,7 +2505,7 @@
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.DataGridView dgvOrder;
         private System.Windows.Forms.Button btnLoadProduct;
-        private System.Windows.Forms.Button btnUpdateCustomer;
+        private System.Windows.Forms.Button btnUpdateProduct;
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView dgvProduct;
@@ -2531,7 +2538,6 @@
         private System.Windows.Forms.DateTimePicker dtpRequireDate;
         private System.Windows.Forms.DateTimePicker dtpShippedDate;
         private System.Windows.Forms.DateTimePicker dtpOrderDate;
-        private System.Windows.Forms.MaskedTextBox mtbOrderFreight;
         private System.Windows.Forms.DateTimePicker dtpEmpHireDate;
         private System.Windows.Forms.DateTimePicker dtpEmpBirthdate;
         private System.Windows.Forms.MaskedTextBox mtbEmpPhone;
@@ -2582,9 +2588,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusFax;
         private System.Windows.Forms.ComboBox cbCusCountry;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cbOrderShipCountry;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.TextBox txtOrFreight;
     }
 }
 
