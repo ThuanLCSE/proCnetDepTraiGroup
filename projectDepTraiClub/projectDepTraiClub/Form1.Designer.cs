@@ -63,7 +63,7 @@
             this.dtpRequireDate = new System.Windows.Forms.DateTimePicker();
             this.dtpShippedDate = new System.Windows.Forms.DateTimePicker();
             this.dtpOrderDate = new System.Windows.Forms.DateTimePicker();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnLoadOrder = new System.Windows.Forms.Button();
             this.btnUpdateOrder = new System.Windows.Forms.Button();
             this.btnDeleteOrder = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
@@ -94,7 +94,7 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
-            this.button6 = new System.Windows.Forms.Button();
+            this.btnLoadProduct = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
@@ -225,6 +225,12 @@
             this.clEmpCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clEmpPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clEmpManagerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clProName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clProSupplierID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clProCategoryID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clProUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clProDiscontinued = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -528,7 +534,7 @@
             this.tOrder.Controls.Add(this.dtpRequireDate);
             this.tOrder.Controls.Add(this.dtpShippedDate);
             this.tOrder.Controls.Add(this.dtpOrderDate);
-            this.tOrder.Controls.Add(this.button1);
+            this.tOrder.Controls.Add(this.btnLoadOrder);
             this.tOrder.Controls.Add(this.btnUpdateOrder);
             this.tOrder.Controls.Add(this.btnDeleteOrder);
             this.tOrder.Controls.Add(this.btnAddOrder);
@@ -592,14 +598,14 @@
             this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
             this.dtpOrderDate.TabIndex = 54;
             // 
-            // button1
+            // btnLoadOrder
             // 
-            this.button1.Location = new System.Drawing.Point(336, 283);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(119, 23);
-            this.button1.TabIndex = 53;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnLoadOrder.Location = new System.Drawing.Point(336, 283);
+            this.btnLoadOrder.Name = "btnLoadOrder";
+            this.btnLoadOrder.Size = new System.Drawing.Size(119, 23);
+            this.btnLoadOrder.TabIndex = 53;
+            this.btnLoadOrder.Text = "Load Order";
+            this.btnLoadOrder.UseVisualStyleBackColor = true;
             // 
             // btnUpdateOrder
             // 
@@ -822,7 +828,7 @@
             // tProduct
             // 
             this.tProduct.Controls.Add(this.groupBox1);
-            this.tProduct.Controls.Add(this.button6);
+            this.tProduct.Controls.Add(this.btnLoadProduct);
             this.tProduct.Controls.Add(this.btnUpdateCustomer);
             this.tProduct.Controls.Add(this.btnDeleteProduct);
             this.tProduct.Controls.Add(this.btnAddProduct);
@@ -878,14 +884,15 @@
             this.radYes.Text = "Yes";
             this.radYes.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnLoadProduct
             // 
-            this.button6.Location = new System.Drawing.Point(333, 241);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(119, 23);
-            this.button6.TabIndex = 40;
-            this.button6.Text = "button6";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnLoadProduct.Location = new System.Drawing.Point(333, 241);
+            this.btnLoadProduct.Name = "btnLoadProduct";
+            this.btnLoadProduct.Size = new System.Drawing.Size(119, 23);
+            this.btnLoadProduct.TabIndex = 40;
+            this.btnLoadProduct.Text = "Load Product";
+            this.btnLoadProduct.UseVisualStyleBackColor = true;
+            this.btnLoadProduct.Click += new System.EventHandler(this.btnLoadProduct_Click);
             // 
             // btnUpdateCustomer
             // 
@@ -917,6 +924,13 @@
             // dgvProduct
             // 
             this.dgvProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProduct.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clProductID,
+            this.clProName,
+            this.clProSupplierID,
+            this.clProCategoryID,
+            this.clProUnitPrice,
+            this.clProDiscontinued});
             this.dgvProduct.Location = new System.Drawing.Point(6, 270);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(620, 137);
@@ -2032,6 +2046,36 @@
             this.clEmpManagerID.HeaderText = "Employee Managaer ID";
             this.clEmpManagerID.Name = "clEmpManagerID";
             // 
+            // clProductID
+            // 
+            this.clProductID.HeaderText = "Product ID";
+            this.clProductID.Name = "clProductID";
+            // 
+            // clProName
+            // 
+            this.clProName.HeaderText = "Product Name";
+            this.clProName.Name = "clProName";
+            // 
+            // clProSupplierID
+            // 
+            this.clProSupplierID.HeaderText = "Supplier ID";
+            this.clProSupplierID.Name = "clProSupplierID";
+            // 
+            // clProCategoryID
+            // 
+            this.clProCategoryID.HeaderText = "Category ID";
+            this.clProCategoryID.Name = "clProCategoryID";
+            // 
+            // clProUnitPrice
+            // 
+            this.clProUnitPrice.HeaderText = "Unit Price";
+            this.clProUnitPrice.Name = "clProUnitPrice";
+            // 
+            // clProDiscontinued
+            // 
+            this.clProDiscontinued.HeaderText = "Discontinued";
+            this.clProDiscontinued.Name = "clProDiscontinued";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2214,12 +2258,12 @@
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnAddCustomer;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnLoadOrder;
         private System.Windows.Forms.Button btnUpdateOrder;
         private System.Windows.Forms.Button btnDeleteOrder;
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.DataGridView dgvOrder;
-        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button btnLoadProduct;
         private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnAddProduct;
@@ -2272,6 +2316,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clEmpCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn clEmpPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn clEmpManagerID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clProName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clProSupplierID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clProCategoryID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clProUnitPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clProDiscontinued;
     }
 }
 

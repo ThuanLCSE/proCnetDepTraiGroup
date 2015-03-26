@@ -332,14 +332,25 @@ namespace Project
                     e.SuppressKeyPress = true;
         }
 
+
+
+
+
+
+        //Load from database to data grid view
         private void btnLoadEmp_Click(object sender, EventArgs e)
+        {
+            LoadEmp();
+        }
+
+        private void LoadEmp()
         {
             SqlDataReader dr = (new employee()).select();
             dgvEmp.Rows.Clear();
             while (dr.Read())
             {
                 int mgrid;
-                if (dr[13]==DBNull.Value)
+                if (dr[13] == DBNull.Value)
                     mgrid = 0;
                 else mgrid = dr.GetInt32(0);
                 dgvEmp.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(),
@@ -348,8 +359,25 @@ namespace Project
             }
             dr.Close();
         }
-        
-        //End enter number
 
+        private void btnLoadProduct_Click(object sender, EventArgs e)
+        {
+            LoadProduct();
+        }
+
+        private void LoadProduct()
+        {
+            SqlDataReader dr = (new products()).select();
+            dgvProduct.Rows.Clear();
+            while (dr.Read())
+            {
+                string s = "";
+                if (dr.GetBoolean(5)==true)
+                    s = "Y";
+                else s = "N";
+                dgvProduct.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr.GetInt32(2), dr.GetInt32(3), double.Parse(dr[4].ToString()), s);
+            }
+            dr.Close();
+        }
     }
 }
