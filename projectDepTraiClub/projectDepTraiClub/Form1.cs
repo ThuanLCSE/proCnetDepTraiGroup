@@ -6,6 +6,8 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.IO;
+using System.Data.SqlClient;
 
 namespace Project
 {
@@ -328,6 +330,23 @@ namespace Project
             else
                 if (e.Shift == true)
                     e.SuppressKeyPress = true;
+        }
+
+        private void btnLoadEmp_Click(object sender, EventArgs e)
+        {
+            SqlDataReader dr = (new employee()).select();
+            dgvEmp.Rows.Clear();
+            while (dr.Read())
+            {
+                int mgrid;
+                if (dr[13]==DBNull.Value)
+                    mgrid = 0;
+                else mgrid = dr.GetInt32(0);
+                dgvEmp.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(),
+                    DateTime.Parse(dr[5].ToString()).ToShortDateString(), DateTime.Parse(dr[6].ToString()).ToShortDateString(),
+                    dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString(), dr[11].ToString(), dr[12].ToString(), mgrid);
+            }
+            dr.Close();
         }
         
         //End enter number

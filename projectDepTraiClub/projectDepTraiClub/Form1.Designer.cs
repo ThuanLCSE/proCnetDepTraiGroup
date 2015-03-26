@@ -91,13 +91,14 @@
             this.lblOrderCusID = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.tProduct = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.radNo = new System.Windows.Forms.RadioButton();
+            this.radYes = new System.Windows.Forms.RadioButton();
             this.button6 = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
-            this.radNo = new System.Windows.Forms.RadioButton();
-            this.radYes = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
             this.txtProUnitPrice = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -113,13 +114,13 @@
             this.mtbEmpPhone = new System.Windows.Forms.MaskedTextBox();
             this.dtpEmpHireDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEmpBirthdate = new System.Windows.Forms.DateTimePicker();
-            this.button10 = new System.Windows.Forms.Button();
+            this.btnLoadEmp = new System.Windows.Forms.Button();
             this.btnUpdateEmp = new System.Windows.Forms.Button();
             this.btnDeleteEmp = new System.Windows.Forms.Button();
             this.btnAddEmp = new System.Windows.Forms.Button();
             this.dgvEmp = new System.Windows.Forms.DataGridView();
             this.label25 = new System.Windows.Forms.Label();
-            this.txtMgrid = new System.Windows.Forms.TextBox();
+            this.txtEmpManagerID = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
@@ -210,13 +211,27 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.clEmployeeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpLastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpFirstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpTitleofCourtesy = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpBirthdate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpHireDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clEmpManagerID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tOrder.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.tProduct.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).BeginInit();
             this.tEmployee.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
@@ -229,7 +244,6 @@
             this.tShippers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -832,6 +846,38 @@
             this.tProduct.Text = "Product";
             this.tProduct.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.radNo);
+            this.groupBox1.Controls.Add(this.radYes);
+            this.groupBox1.Location = new System.Drawing.Point(91, 172);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(181, 30);
+            this.groupBox1.TabIndex = 41;
+            this.groupBox1.TabStop = false;
+            // 
+            // radNo
+            // 
+            this.radNo.AutoSize = true;
+            this.radNo.Location = new System.Drawing.Point(110, 9);
+            this.radNo.Name = "radNo";
+            this.radNo.Size = new System.Drawing.Size(39, 17);
+            this.radNo.TabIndex = 35;
+            this.radNo.TabStop = true;
+            this.radNo.Text = "No";
+            this.radNo.UseVisualStyleBackColor = true;
+            // 
+            // radYes
+            // 
+            this.radYes.AutoSize = true;
+            this.radYes.Location = new System.Drawing.Point(39, 9);
+            this.radYes.Name = "radYes";
+            this.radYes.Size = new System.Drawing.Size(43, 17);
+            this.radYes.TabIndex = 34;
+            this.radYes.TabStop = true;
+            this.radYes.Text = "Yes";
+            this.radYes.UseVisualStyleBackColor = true;
+            // 
             // button6
             // 
             this.button6.Location = new System.Drawing.Point(333, 241);
@@ -875,28 +921,6 @@
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.Size = new System.Drawing.Size(620, 137);
             this.dgvProduct.TabIndex = 36;
-            // 
-            // radNo
-            // 
-            this.radNo.AutoSize = true;
-            this.radNo.Location = new System.Drawing.Point(110, 9);
-            this.radNo.Name = "radNo";
-            this.radNo.Size = new System.Drawing.Size(39, 17);
-            this.radNo.TabIndex = 35;
-            this.radNo.TabStop = true;
-            this.radNo.Text = "No";
-            this.radNo.UseVisualStyleBackColor = true;
-            // 
-            // radYes
-            // 
-            this.radYes.AutoSize = true;
-            this.radYes.Location = new System.Drawing.Point(39, 9);
-            this.radYes.Name = "radYes";
-            this.radYes.Size = new System.Drawing.Size(43, 17);
-            this.radYes.TabIndex = 34;
-            this.radYes.TabStop = true;
-            this.radYes.Text = "Yes";
-            this.radYes.UseVisualStyleBackColor = true;
             // 
             // label11
             // 
@@ -995,13 +1019,13 @@
             this.tEmployee.Controls.Add(this.mtbEmpPhone);
             this.tEmployee.Controls.Add(this.dtpEmpHireDate);
             this.tEmployee.Controls.Add(this.dtpEmpBirthdate);
-            this.tEmployee.Controls.Add(this.button10);
+            this.tEmployee.Controls.Add(this.btnLoadEmp);
             this.tEmployee.Controls.Add(this.btnUpdateEmp);
             this.tEmployee.Controls.Add(this.btnDeleteEmp);
             this.tEmployee.Controls.Add(this.btnAddEmp);
             this.tEmployee.Controls.Add(this.dgvEmp);
             this.tEmployee.Controls.Add(this.label25);
-            this.tEmployee.Controls.Add(this.txtMgrid);
+            this.tEmployee.Controls.Add(this.txtEmpManagerID);
             this.tEmployee.Controls.Add(this.label6);
             this.tEmployee.Controls.Add(this.label7);
             this.tEmployee.Controls.Add(this.label8);
@@ -1055,14 +1079,15 @@
             this.dtpEmpBirthdate.Size = new System.Drawing.Size(181, 20);
             this.dtpEmpBirthdate.TabIndex = 82;
             // 
-            // button10
+            // btnLoadEmp
             // 
-            this.button10.Location = new System.Drawing.Point(333, 286);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(119, 23);
-            this.button10.TabIndex = 81;
-            this.button10.Text = "button10";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnLoadEmp.Location = new System.Drawing.Point(333, 286);
+            this.btnLoadEmp.Name = "btnLoadEmp";
+            this.btnLoadEmp.Size = new System.Drawing.Size(119, 23);
+            this.btnLoadEmp.TabIndex = 81;
+            this.btnLoadEmp.Text = "Load Employee";
+            this.btnLoadEmp.UseVisualStyleBackColor = true;
+            this.btnLoadEmp.Click += new System.EventHandler(this.btnLoadEmp_Click);
             // 
             // btnUpdateEmp
             // 
@@ -1094,6 +1119,21 @@
             // dgvEmp
             // 
             this.dgvEmp.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEmp.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clEmployeeID,
+            this.clEmpLastName,
+            this.clEmpFirstName,
+            this.clEmpTitle,
+            this.clEmpTitleofCourtesy,
+            this.clEmpBirthdate,
+            this.clEmpHireDate,
+            this.clEmpAddress,
+            this.clEmpCity,
+            this.clEmpRegion,
+            this.clEmpPosCode,
+            this.clEmpCountry,
+            this.clEmpPhone,
+            this.clEmpManagerID});
             this.dgvEmp.Location = new System.Drawing.Point(6, 315);
             this.dgvEmp.Name = "dgvEmp";
             this.dgvEmp.Size = new System.Drawing.Size(620, 137);
@@ -1108,22 +1148,22 @@
             this.label25.TabIndex = 75;
             this.label25.Text = "Hire date";
             // 
-            // txtMgrid
+            // txtEmpManagerID
             // 
-            this.txtMgrid.Location = new System.Drawing.Point(387, 218);
-            this.txtMgrid.Name = "txtMgrid";
-            this.txtMgrid.Size = new System.Drawing.Size(181, 20);
-            this.txtMgrid.TabIndex = 74;
-            this.txtMgrid.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMgrid_KeyDown);
+            this.txtEmpManagerID.Location = new System.Drawing.Point(387, 218);
+            this.txtEmpManagerID.Name = "txtEmpManagerID";
+            this.txtEmpManagerID.Size = new System.Drawing.Size(181, 20);
+            this.txtEmpManagerID.TabIndex = 74;
+            this.txtEmpManagerID.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMgrid_KeyDown);
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(299, 221);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 73;
-            this.label6.Text = "MGRID";
+            this.label6.Text = "Manager ID";
             // 
             // label7
             // 
@@ -1922,15 +1962,75 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // groupBox1
+            // clEmployeeID
             // 
-            this.groupBox1.Controls.Add(this.radNo);
-            this.groupBox1.Controls.Add(this.radYes);
-            this.groupBox1.Location = new System.Drawing.Point(91, 172);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(181, 30);
-            this.groupBox1.TabIndex = 41;
-            this.groupBox1.TabStop = false;
+            this.clEmployeeID.HeaderText = "Employee ID";
+            this.clEmployeeID.Name = "clEmployeeID";
+            // 
+            // clEmpLastName
+            // 
+            this.clEmpLastName.HeaderText = "Employee Last Name";
+            this.clEmpLastName.Name = "clEmpLastName";
+            // 
+            // clEmpFirstName
+            // 
+            this.clEmpFirstName.HeaderText = "Employee Last Name";
+            this.clEmpFirstName.Name = "clEmpFirstName";
+            // 
+            // clEmpTitle
+            // 
+            this.clEmpTitle.HeaderText = "Employee Title";
+            this.clEmpTitle.Name = "clEmpTitle";
+            // 
+            // clEmpTitleofCourtesy
+            // 
+            this.clEmpTitleofCourtesy.HeaderText = "Employee Title of Courtesy";
+            this.clEmpTitleofCourtesy.Name = "clEmpTitleofCourtesy";
+            // 
+            // clEmpBirthdate
+            // 
+            this.clEmpBirthdate.HeaderText = "Employee Birthdate";
+            this.clEmpBirthdate.Name = "clEmpBirthdate";
+            // 
+            // clEmpHireDate
+            // 
+            this.clEmpHireDate.HeaderText = "Employee Hire Date";
+            this.clEmpHireDate.Name = "clEmpHireDate";
+            // 
+            // clEmpAddress
+            // 
+            this.clEmpAddress.HeaderText = "Employee Address";
+            this.clEmpAddress.Name = "clEmpAddress";
+            // 
+            // clEmpCity
+            // 
+            this.clEmpCity.HeaderText = "Employee City";
+            this.clEmpCity.Name = "clEmpCity";
+            // 
+            // clEmpRegion
+            // 
+            this.clEmpRegion.HeaderText = "Employee Region";
+            this.clEmpRegion.Name = "clEmpRegion";
+            // 
+            // clEmpPosCode
+            // 
+            this.clEmpPosCode.HeaderText = "Employee Postal Code";
+            this.clEmpPosCode.Name = "clEmpPosCode";
+            // 
+            // clEmpCountry
+            // 
+            this.clEmpCountry.HeaderText = "Employee Country";
+            this.clEmpCountry.Name = "clEmpCountry";
+            // 
+            // clEmpPhone
+            // 
+            this.clEmpPhone.HeaderText = "Employee Phone";
+            this.clEmpPhone.Name = "clEmpPhone";
+            // 
+            // clEmpManagerID
+            // 
+            this.clEmpManagerID.HeaderText = "Employee Managaer ID";
+            this.clEmpManagerID.Name = "clEmpManagerID";
             // 
             // Form1
             // 
@@ -1951,6 +2051,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.tProduct.ResumeLayout(false);
             this.tProduct.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProduct)).EndInit();
             this.tEmployee.ResumeLayout(false);
             this.tEmployee.PerformLayout();
@@ -1968,8 +2070,6 @@
             this.tShippers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2039,7 +2139,7 @@
         private System.Windows.Forms.RadioButton radYes;
         private System.Windows.Forms.RadioButton radNo;
         private System.Windows.Forms.Label label25;
-        private System.Windows.Forms.TextBox txtMgrid;
+        private System.Windows.Forms.TextBox txtEmpManagerID;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
@@ -2124,7 +2224,7 @@
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView dgvProduct;
-        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button btnLoadEmp;
         private System.Windows.Forms.Button btnUpdateEmp;
         private System.Windows.Forms.Button btnDeleteEmp;
         private System.Windows.Forms.Button btnAddEmp;
@@ -2158,6 +2258,20 @@
         private System.Windows.Forms.DateTimePicker dtpEmpBirthdate;
         private System.Windows.Forms.MaskedTextBox mtbEmpPhone;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmployeeID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpLastName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpFirstName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpTitleofCourtesy;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpBirthdate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpHireDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpPosCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clEmpManagerID;
     }
 }
 
