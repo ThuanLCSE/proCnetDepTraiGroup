@@ -24,51 +24,7 @@ namespace Project
 
         }
 
-        #region SectionChange
-        private void dgvCustomer_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvCustomer.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvCustomer.SelectedRows[0];
-                txtCustomerID.Text = r.Cells[0].Value.ToString();
-                txtCusComName.Text = r.Cells[1].Value.ToString();
-                txtCusName.Text = r.Cells[2].Value.ToString();
-                txtCusTitle.Text = r.Cells[3].Value.ToString();
-                txtCusAddress.Text = r.Cells[4].Value.ToString();
-                txtCusCity.Text = r.Cells[5].Value.ToString();
-                txtCusRegion.Text = r.Cells[6].Value.ToString();
-                txtCusPosCode.Text = r.Cells[7].Value.ToString();
-                cbCusCountry.Text = r.Cells[8].Value.ToString();
-                txtCusPhone.Text = r.Cells[9].Value.ToString();
-                txtCusFax.Text = r.Cells[10].Value.ToString();
-            }
-        }
 
-        private void dgvOrder_SelectionChanged(object sender, EventArgs e)
-        {
-            if (dgvOrder.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvOrder.SelectedRows[0];
-                txtOrderID.Text = r.Cells[0].Value.ToString();
-                txtOrderCusID.Text = r.Cells[1].Value.ToString();
-                txtOrderEmpID.Text = r.Cells[2].Value.ToString();
-                DateTime dt;
-                DateTime.TryParse(r.Cells[3].Value.ToString(), out dt);
-                dtpOrderDate.Value = dt;
-                DateTime.TryParse(r.Cells[4].Value.ToString(), out dt);
-                dtpRequireDate.Value = dt;
-                DateTime.TryParse(r.Cells[5].Value.ToString(), out dt);
-                dtpShippedDate.Value = dt;
-                txtOrFreight.Text = r.Cells[6].Value.ToString();
-                txtOrderShipName.Text = r.Cells[7].Value.ToString();
-                txtOrderShipAddress.Text = r.Cells[8].Value.ToString();
-                txtOrderShipCity.Text = r.Cells[9].Value.ToString();
-                txtOrderShipRegion.Text = r.Cells[10].Value.ToString();
-                txtOrderShipPosCode.Text = r.Cells[11].Value.ToString();
-                cbOrderShipCountry.Text = r.Cells[12].Value.ToString();
-            }
-        }
-        #endregion
 
 
 
@@ -81,29 +37,14 @@ namespace Project
                 errorProvider1.SetError(txtCusComName, "Enter Customer's company!!!");
                 error = false;
             }
-            if (txtCusName.Text.Length == 0)
+            if (txtProductName.Text.Length == 0)
             {
-                errorProvider1.SetError(txtCusName, "Enter Customer's name!!!");
-                error = false;
-            }
-            if (txtCusTitle.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtCusTitle, "Enter Title!!!");
+                errorProvider1.SetError(txtProductName, "Enter Customer's name!!!");
                 error = false;
             }
             if (txtCusAddress.Text.Length == 0)
             {
                 errorProvider1.SetError(txtCusAddress, "Enter Customer's address!!!");
-                error = false;
-            }
-            if (txtCusCity.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtCusCity, "Enter Customer's City!!!");
-                error = false;
-            }
-            if (cbCusCountry.Text.Length == 0)
-            {
-                errorProvider1.SetError(cbCusCountry, "Select Country!!!");
                 error = false;
             }
             if (txtCusPhone.Text.Length == 0)
@@ -117,14 +58,14 @@ namespace Project
         private bool validateOrder()
         {
             bool error = true;
+            if (txtOrderCusID.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtCusComName, "Enter Customer's cID!!!");
+                error = false;
+            }
             if (txtOrderEmpID.Text.Length == 0)
             {
                 errorProvider1.SetError(txtProductName, "Enter Employee's ID!!!");
-                error = false;
-            }
-            if (txtOrFreight.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtOrFreight, "Enter Order's Freight!!!");
                 error = false;
             }
             if (txtOrderShipName.Text.Length == 0)
@@ -142,9 +83,19 @@ namespace Project
                 errorProvider1.SetError(txtOrderShipCity, "Enter Ship City!!!");
                 error = false;
             }
-            if (cbOrderShipCountry.Text.Length == 0)
+            if (txtOrderShipRegion.Text.Length == 0)
             {
-                errorProvider1.SetError(cbOrderShipCountry, "Enter Ship Address!!!");
+                errorProvider1.SetError(txtOrderShipRegion, "Enter Ship Region!!!");
+                error = false;
+            }
+            if (txtOrderShipPosCode.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtOrderShipPosCode, "Enter Ship Address!!!");
+                error = false;
+            }
+            if (txtOrderShipPosCode.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtOrderShipPosCode, "Enter Ship Address!!!");
                 error = false;
             }
             return error;
@@ -374,18 +325,6 @@ namespace Project
                 if (e.Shift == true)
                     e.SuppressKeyPress = true;
         }
-
-        private void txtOrFreight_KeyDown(object sender, KeyEventArgs e)
-        {
-            if ((e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9) && e.KeyCode != Keys.Back)
-            {
-                e.SuppressKeyPress = true;
-            }
-            else
-                if (e.Shift == true)
-                    e.SuppressKeyPress = true;
-        }
-
         #endregion
 
 
@@ -495,14 +434,11 @@ namespace Project
 
 
 
+        
 
-        #region add
         private void btnAddCustomer_Click(object sender, EventArgs e)
         {
-            if (validateCustomer() == false)
-                return;
-            AddCustomer();
-            LoadCustomer();
+            
         }
 
         private void AddCustomer()
@@ -518,33 +454,15 @@ namespace Project
             list.Add(cbCusCountry.Text);
             list.Add(txtCusPhone.Text);
             list.Add(txtCusFax.Text);
-            new customer().insert(list);
         }
 
 
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
-            if (validateOrder() == false)
-                return;
-            AddOrder();
-            LoadOrder();
-        }
-
-        private void AddOrder()
-        {
             List<String> list = new List<string>();
             list.Add(txtOrderCusID.Text);
             list.Add(txtOrderEmpID.Text);
-            list.Add(dtpOrderDate.Value.ToShortDateString());
-            list.Add(dtpRequireDate.Value.ToShortDateString());
-            list.Add(dtpShippedDate.Value.ToShortDateString());
-            list.Add(txtOrFreight.Text);
-            list.Add(txtOrderShipName.Text);
-            list.Add(txtOrderShipAddress.Text);
-            list.Add(txtOrderShipCity.Text);
-            list.Add(txtOrderShipRegion.Text);
-            list.Add(txtOrderShipPosCode.Text);
-            list.Add(cbOrderShipCountry.Text);
+            list.Add(
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)
@@ -557,152 +475,9 @@ namespace Project
 
         }
 
-        #endregion
-
-
-        #region delete
-        private void btnDeleteCustomer_Click(object sender, EventArgs e)
+        private void dtpOrderDate_ValueChanged(object sender, EventArgs e)
         {
-            DeleteCustomer();
-            LoadCustomer();
+
         }
-
-        private void DeleteCustomer()
-        {
-            if (dgvCustomer.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvCustomer.SelectedRows[0];
-                new customer().delete(Int32.Parse(r.Cells[0].Value.ToString()));
-            }
-            else
-                MessageBox.Show("Select row to delete");
-            
-        }
-
-        private void btnDeleteOrder_Click(object sender, EventArgs e)
-        {
-            DeleteOrder();
-            LoadOrder();
-        }
-
-        private void DeleteOrder()
-        {
-            if (dgvOrder.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvOrder.SelectedRows[0];
-                new order().delete(Int32.Parse(r.Cells[0].Value.ToString()));
-            }
-            else
-                MessageBox.Show("Select row to delete");
-        }
-
-        private void btnDeleteProduct_Click(object sender, EventArgs e)
-        {
-            DeleteProduct();
-            LoadProduct();
-        }
-
-        void DeleteProduct()
-        {
-            if (dgvProduct.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvProduct.SelectedRows[0];
-                new products().delete(Int32.Parse(r.Cells[0].Value.ToString()));
-            }
-            else
-                MessageBox.Show("Select row to delete");
-        }
-
-        private void btnDeleteEmp_Click(object sender, EventArgs e)
-        {
-            DeleteEmp();
-            LoadEmp();
-        }
-
-        private void DeleteEmp()
-        {
-            if (dgvEmp.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvEmp.SelectedRows[0];
-                new employee().delete(Int32.Parse(r.Cells[0].Value.ToString()));
-            }
-            else
-                MessageBox.Show("Select row to delete");
-        }
-
-        #endregion
-
-
-        private void btnUpdateCustomer_Click(object sender, EventArgs e)
-        {
-            if (validateCustomer() == false)
-                return;
-            UpdateCustomer();
-            LoadCustomer();
-        }
-
-        private void UpdateCustomer()
-        {
-            if (dgvCustomer.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvCustomer.SelectedRows[0];
-                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
-                List<String> list = new List<string>();
-                list.Add(txtCusComName.Text);
-                list.Add(txtCusName.Text);
-                list.Add(txtCusTitle.Text);
-                list.Add(txtCusAddress.Text);
-                list.Add(txtCusCity.Text);
-                list.Add(txtCusRegion.Text);
-                list.Add(txtCusPosCode.Text);
-                list.Add(cbCusCountry.Text);
-                list.Add(txtCusPhone.Text);
-                list.Add(txtCusFax.Text);
-                new customer().update(point, list);
-            }
-            else
-                MessageBox.Show("Select row to update!");
-        }
-
-        private void btnUpdateOrder_Click(object sender, EventArgs e)
-        {
-            if (validateOrder() == false)
-                return;
-            UpdateOrder();
-            LoadOrder();
-        }
-
-        private void UpdateOrder()
-        {
-            if (dgvOrder.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvOrder.SelectedRows[0];
-                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
-                List<String> list = new List<string>();
-                list.Add(txtOrderCusID.Text);
-                list.Add(txtOrderEmpID.Text);
-                list.Add(dtpOrderDate.Value.ToShortDateString());
-                list.Add(dtpRequireDate.Value.ToShortDateString());
-                list.Add(dtpShippedDate.Value.ToShortDateString());
-                list.Add(txtOrFreight.Text);
-                list.Add(txtOrderShipName.Text);
-                list.Add(txtOrderShipAddress.Text);
-                list.Add(txtOrderShipCity.Text);
-                list.Add(txtOrderShipRegion.Text);
-                list.Add(txtOrderShipPosCode.Text);
-                list.Add(cbOrderShipCountry.Text);
-                new order().update(point, list);
-            }
-            else
-                MessageBox.Show("Select row to update!");
-        }
-
-        
-
-        
-
-
-
-
     }
 }
