@@ -21,14 +21,14 @@ namespace Project
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+
         }
 
 
 
 
 
-        //Validate 8 tab, put here!!!!!!!!!!!!!!!!!!!!!!
+        #region validate input
         private bool validateCustomer()
         {
             bool error = true;
@@ -200,13 +200,11 @@ namespace Project
             }
             return error;
         }
-
-        //End validate!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-
+        #endregion
 
 
 
-        //Must enter number, put here!!!!!!!!!!!!!!!!!!!    
+        #region validate enter number
         private void txtCusPhone_KeyDown(object sender, KeyEventArgs e)
         {
             if ((e.KeyCode < Keys.D0 || e.KeyCode > Keys.D9) && e.KeyCode != Keys.Back)
@@ -327,13 +325,13 @@ namespace Project
                 if (e.Shift == true)
                     e.SuppressKeyPress = true;
         }
+        #endregion
 
 
 
 
 
-
-        //Load from database to data grid view
+        #region load from db to dgv
         private void btnLoadEmp_Click(object sender, EventArgs e)
         {
             LoadEmp();
@@ -414,11 +412,11 @@ namespace Project
             }
             dr.Close();
         }
+        #endregion
 
 
 
-
-
+        #region combo box
         void Categories()
         {
             SqlConnection con = new SqlConnection();
@@ -432,12 +430,54 @@ namespace Project
             cbCaterogyID.DisplayMember = "CategoryName";
             cbCaterogyID.ValueMember = "CategoryID";
         }
+        #endregion
+
+
+
+        
+
+        private void btnAddCustomer_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void AddCustomer()
+        {
+            List<String> list = new List<string>();
+            list.Add(txtCusComName.Text);
+            list.Add(txtCusName.Text);
+            list.Add(txtCusTitle.Text);
+            list.Add(txtCusAddress.Text);
+            list.Add(txtCusCity.Text);
+            list.Add(txtCusRegion.Text);
+            list.Add(txtCusPosCode.Text);
+            list.Add(cbCusCountry.Text);
+            list.Add(txtCusPhone.Text);
+            list.Add(txtCusFax.Text);
+        }
+
+
+        private void btnAddOrder_Click(object sender, EventArgs e)
+        {
+            List<String> list = new List<string>();
+            list.Add(txtOrderCusID.Text);
+            list.Add(txtOrderEmpID.Text);
+            list.Add(
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+
+        }
 
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
 
         }
 
+        private void dtpOrderDate_ValueChanged(object sender, EventArgs e)
+        {
 
+        }
     }
 }

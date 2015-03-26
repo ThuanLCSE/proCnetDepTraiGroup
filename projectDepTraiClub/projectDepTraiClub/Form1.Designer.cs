@@ -31,11 +31,23 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tCustomer = new System.Windows.Forms.TabPage();
+            this.cbCusCountry = new System.Windows.Forms.ComboBox();
             this.btnLoadCustomer = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
+            this.clCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusComName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clCusFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCusFax = new System.Windows.Forms.TextBox();
             this.lblFax = new System.Windows.Forms.Label();
             this.txtCusPhone = new System.Windows.Forms.TextBox();
@@ -58,6 +70,7 @@
             this.lblComName = new System.Windows.Forms.Label();
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.mtbOrderFreight = new System.Windows.Forms.MaskedTextBox();
             this.dtpRequireDate = new System.Windows.Forms.DateTimePicker();
             this.dtpShippedDate = new System.Windows.Forms.DateTimePicker();
@@ -67,6 +80,19 @@
             this.btnDeleteOrder = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
+            this.clOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clReqDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShippedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clFreight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.lblShippedDate = new System.Windows.Forms.Label();
             this.txtOrderShipPosCode = new System.Windows.Forms.TextBox();
@@ -89,6 +115,7 @@
             this.lblOrderCusID = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.tProduct = new System.Windows.Forms.TabPage();
+            this.cbCaterogyID = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
@@ -115,6 +142,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tEmployee = new System.Windows.Forms.TabPage();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.mtbEmpPhone = new System.Windows.Forms.MaskedTextBox();
             this.dtpEmpHireDate = new System.Windows.Forms.DateTimePicker();
             this.dtpEmpBirthdate = new System.Windows.Forms.DateTimePicker();
@@ -162,6 +190,7 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.tSuppliers = new System.Windows.Forms.TabPage();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.button14 = new System.Windows.Forms.Button();
             this.btnUpdateSupplier = new System.Windows.Forms.Button();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
@@ -227,35 +256,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbCaterogyID = new System.Windows.Forms.ComboBox();
-            this.clOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clReqDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShippedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clFreight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusComName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clCusFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -295,7 +295,7 @@
             // 
             // tCustomer
             // 
-            this.tCustomer.Controls.Add(this.comboBox3);
+            this.tCustomer.Controls.Add(this.cbCusCountry);
             this.tCustomer.Controls.Add(this.btnLoadCustomer);
             this.tCustomer.Controls.Add(this.btnUpdate);
             this.tCustomer.Controls.Add(this.btnDeleteCustomer);
@@ -329,6 +329,25 @@
             this.tCustomer.TabIndex = 0;
             this.tCustomer.Text = "Customer";
             this.tCustomer.UseVisualStyleBackColor = true;
+            // 
+            // cbCusCountry
+            // 
+            this.cbCusCountry.FormattingEnabled = true;
+            this.cbCusCountry.Items.AddRange(new object[] {
+            "Viet Nam",
+            "Lao",
+            "Indonesia",
+            "Thai Lan",
+            "Malaysia",
+            "Singapore",
+            "Japan",
+            "Korea",
+            "USA",
+            "China"});
+            this.cbCusCountry.Location = new System.Drawing.Point(377, 109);
+            this.cbCusCountry.Name = "cbCusCountry";
+            this.cbCusCountry.Size = new System.Drawing.Size(181, 21);
+            this.cbCusCountry.TabIndex = 86;
             // 
             // btnLoadCustomer
             // 
@@ -366,6 +385,7 @@
             this.btnAddCustomer.TabIndex = 24;
             this.btnAddCustomer.Text = "Add Customer";
             this.btnAddCustomer.UseVisualStyleBackColor = true;
+            this.btnAddCustomer.Click += new System.EventHandler(this.btnAddCustomer_Click);
             // 
             // dgvCustomer
             // 
@@ -386,6 +406,61 @@
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.Size = new System.Drawing.Size(620, 137);
             this.dgvCustomer.TabIndex = 23;
+            // 
+            // clCusID
+            // 
+            this.clCusID.HeaderText = "ID";
+            this.clCusID.Name = "clCusID";
+            // 
+            // clCusComName
+            // 
+            this.clCusComName.HeaderText = "Company Name";
+            this.clCusComName.Name = "clCusComName";
+            // 
+            // clCusName
+            // 
+            this.clCusName.HeaderText = "Customer Name";
+            this.clCusName.Name = "clCusName";
+            // 
+            // clCusContactTitle
+            // 
+            this.clCusContactTitle.HeaderText = "Contact Title";
+            this.clCusContactTitle.Name = "clCusContactTitle";
+            // 
+            // clCusAddress
+            // 
+            this.clCusAddress.HeaderText = "Address";
+            this.clCusAddress.Name = "clCusAddress";
+            // 
+            // clCusCity
+            // 
+            this.clCusCity.HeaderText = "City";
+            this.clCusCity.Name = "clCusCity";
+            // 
+            // clCusRegion
+            // 
+            this.clCusRegion.HeaderText = "Region";
+            this.clCusRegion.Name = "clCusRegion";
+            // 
+            // clCusPosCode
+            // 
+            this.clCusPosCode.HeaderText = "Postal Code";
+            this.clCusPosCode.Name = "clCusPosCode";
+            // 
+            // clCusCountry
+            // 
+            this.clCusCountry.HeaderText = "Country";
+            this.clCusCountry.Name = "clCusCountry";
+            // 
+            // clCusPhone
+            // 
+            this.clCusPhone.HeaderText = "Phone";
+            this.clCusPhone.Name = "clCusPhone";
+            // 
+            // clCusFax
+            // 
+            this.clCusFax.HeaderText = "Fax";
+            this.clCusFax.Name = "clCusFax";
             // 
             // txtCusFax
             // 
@@ -518,6 +593,7 @@
             // 
             // txtCustomerID
             // 
+            this.txtCustomerID.Enabled = false;
             this.txtCustomerID.Location = new System.Drawing.Point(94, 8);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(181, 20);
@@ -600,6 +676,25 @@
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Viet Nam",
+            "Lao",
+            "Indonesia",
+            "Thai Lan",
+            "Malaysia",
+            "Singapore",
+            "Japan",
+            "Korea",
+            "USA",
+            "China"});
+            this.comboBox2.Location = new System.Drawing.Point(381, 216);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(181, 21);
+            this.comboBox2.TabIndex = 86;
+            // 
             // mtbOrderFreight
             // 
             this.mtbOrderFreight.Location = new System.Drawing.Point(381, 5);
@@ -628,6 +723,7 @@
             this.dtpOrderDate.Name = "dtpOrderDate";
             this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
             this.dtpOrderDate.TabIndex = 54;
+            this.dtpOrderDate.ValueChanged += new System.EventHandler(this.dtpOrderDate_ValueChanged);
             // 
             // btnLoadOrder
             // 
@@ -665,6 +761,7 @@
             this.btnAddOrder.TabIndex = 50;
             this.btnAddOrder.Text = "Add Order";
             this.btnAddOrder.UseVisualStyleBackColor = true;
+            this.btnAddOrder.Click += new System.EventHandler(this.btnAddOrder_Click);
             // 
             // dgvOrder
             // 
@@ -687,6 +784,71 @@
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.Size = new System.Drawing.Size(620, 137);
             this.dgvOrder.TabIndex = 49;
+            // 
+            // clOrderID
+            // 
+            this.clOrderID.HeaderText = "Order ID";
+            this.clOrderID.Name = "clOrderID";
+            // 
+            // clOrderCusID
+            // 
+            this.clOrderCusID.HeaderText = "Customer ID";
+            this.clOrderCusID.Name = "clOrderCusID";
+            // 
+            // clOrderEmpID
+            // 
+            this.clOrderEmpID.HeaderText = "Employee ID";
+            this.clOrderEmpID.Name = "clOrderEmpID";
+            // 
+            // clOrderDate
+            // 
+            this.clOrderDate.HeaderText = "Order Date";
+            this.clOrderDate.Name = "clOrderDate";
+            // 
+            // clReqDate
+            // 
+            this.clReqDate.HeaderText = "Require Date";
+            this.clReqDate.Name = "clReqDate";
+            // 
+            // clShippedDate
+            // 
+            this.clShippedDate.HeaderText = "Shipped Date";
+            this.clShippedDate.Name = "clShippedDate";
+            // 
+            // clFreight
+            // 
+            this.clFreight.HeaderText = "Freight";
+            this.clFreight.Name = "clFreight";
+            // 
+            // clShipName
+            // 
+            this.clShipName.HeaderText = "Ship Name";
+            this.clShipName.Name = "clShipName";
+            // 
+            // clShipAddress
+            // 
+            this.clShipAddress.HeaderText = "Ship Address";
+            this.clShipAddress.Name = "clShipAddress";
+            // 
+            // clShipCity
+            // 
+            this.clShipCity.HeaderText = "Ship City";
+            this.clShipCity.Name = "clShipCity";
+            // 
+            // clShipRegion
+            // 
+            this.clShipRegion.HeaderText = "Ship Region";
+            this.clShipRegion.Name = "clShipRegion";
+            // 
+            // clShipPosCode
+            // 
+            this.clShipPosCode.HeaderText = "Ship Postal Code";
+            this.clShipPosCode.Name = "clShipPosCode";
+            // 
+            // clShipCountry
+            // 
+            this.clShipCountry.HeaderText = "Ship Country";
+            this.clShipCountry.Name = "clShipCountry";
             // 
             // label5
             // 
@@ -823,6 +985,7 @@
             // 
             // txtOrderID
             // 
+            this.txtOrderID.Enabled = false;
             this.txtOrderID.Location = new System.Drawing.Point(98, 6);
             this.txtOrderID.Name = "txtOrderID";
             this.txtOrderID.Size = new System.Drawing.Size(181, 20);
@@ -892,6 +1055,14 @@
             this.tProduct.Text = "Product";
             this.tProduct.UseVisualStyleBackColor = true;
             // 
+            // cbCaterogyID
+            // 
+            this.cbCaterogyID.FormattingEnabled = true;
+            this.cbCaterogyID.Location = new System.Drawing.Point(278, 106);
+            this.cbCaterogyID.Name = "cbCaterogyID";
+            this.cbCaterogyID.Size = new System.Drawing.Size(121, 21);
+            this.cbCaterogyID.TabIndex = 42;
+            // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.radNo);
@@ -960,6 +1131,7 @@
             this.btnAddProduct.TabIndex = 37;
             this.btnAddProduct.Text = "Add Product";
             this.btnAddProduct.UseVisualStyleBackColor = true;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // dgvProduct
             // 
@@ -1057,6 +1229,7 @@
             // 
             // txtProductID
             // 
+            this.txtProductID.Enabled = false;
             this.txtProductID.Location = new System.Drawing.Point(91, 6);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(181, 20);
@@ -1140,6 +1313,25 @@
             this.tEmployee.TabIndex = 3;
             this.tEmployee.Text = "Employee";
             this.tEmployee.UseVisualStyleBackColor = true;
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Viet Nam",
+            "Lao",
+            "Indonesia",
+            "Thai Lan",
+            "Malaysia",
+            "Singapore",
+            "Japan",
+            "Korea",
+            "USA",
+            "China"});
+            this.comboBox1.Location = new System.Drawing.Point(387, 147);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(181, 21);
+            this.comboBox1.TabIndex = 85;
             // 
             // mtbEmpPhone
             // 
@@ -1526,6 +1718,25 @@
             this.tSuppliers.TabIndex = 4;
             this.tSuppliers.Text = "Suppliers";
             this.tSuppliers.UseVisualStyleBackColor = true;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "Viet Nam",
+            "Lao",
+            "Indonesia",
+            "Thai Lan",
+            "Malaysia",
+            "Singapore",
+            "Japan",
+            "Korea",
+            "USA",
+            "China"});
+            this.comboBox4.Location = new System.Drawing.Point(392, 109);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(181, 21);
+            this.comboBox4.TabIndex = 108;
             // 
             // button14
             // 
@@ -2103,210 +2314,6 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // cbCaterogyID
-            // 
-            this.cbCaterogyID.FormattingEnabled = true;
-            this.cbCaterogyID.Location = new System.Drawing.Point(278, 106);
-            this.cbCaterogyID.Name = "cbCaterogyID";
-            this.cbCaterogyID.Size = new System.Drawing.Size(121, 21);
-            this.cbCaterogyID.TabIndex = 42;
-            // 
-            // clOrderID
-            // 
-            this.clOrderID.HeaderText = "Order ID";
-            this.clOrderID.Name = "clOrderID";
-            // 
-            // clOrderCusID
-            // 
-            this.clOrderCusID.HeaderText = "Customer ID";
-            this.clOrderCusID.Name = "clOrderCusID";
-            // 
-            // clOrderEmpID
-            // 
-            this.clOrderEmpID.HeaderText = "Employee ID";
-            this.clOrderEmpID.Name = "clOrderEmpID";
-            // 
-            // clOrderDate
-            // 
-            this.clOrderDate.HeaderText = "Order Date";
-            this.clOrderDate.Name = "clOrderDate";
-            // 
-            // clReqDate
-            // 
-            this.clReqDate.HeaderText = "Require Date";
-            this.clReqDate.Name = "clReqDate";
-            // 
-            // clShippedDate
-            // 
-            this.clShippedDate.HeaderText = "Shipped Date";
-            this.clShippedDate.Name = "clShippedDate";
-            // 
-            // clFreight
-            // 
-            this.clFreight.HeaderText = "Freight";
-            this.clFreight.Name = "clFreight";
-            // 
-            // clShipName
-            // 
-            this.clShipName.HeaderText = "Ship Name";
-            this.clShipName.Name = "clShipName";
-            // 
-            // clShipAddress
-            // 
-            this.clShipAddress.HeaderText = "Ship Address";
-            this.clShipAddress.Name = "clShipAddress";
-            // 
-            // clShipCity
-            // 
-            this.clShipCity.HeaderText = "Ship City";
-            this.clShipCity.Name = "clShipCity";
-            // 
-            // clShipRegion
-            // 
-            this.clShipRegion.HeaderText = "Ship Region";
-            this.clShipRegion.Name = "clShipRegion";
-            // 
-            // clShipPosCode
-            // 
-            this.clShipPosCode.HeaderText = "Ship Postal Code";
-            this.clShipPosCode.Name = "clShipPosCode";
-            // 
-            // clShipCountry
-            // 
-            this.clShipCountry.HeaderText = "Ship Country";
-            this.clShipCountry.Name = "clShipCountry";
-            // 
-            // clCusID
-            // 
-            this.clCusID.HeaderText = "ID";
-            this.clCusID.Name = "clCusID";
-            // 
-            // clCusComName
-            // 
-            this.clCusComName.HeaderText = "Company Name";
-            this.clCusComName.Name = "clCusComName";
-            // 
-            // clCusName
-            // 
-            this.clCusName.HeaderText = "Customer Name";
-            this.clCusName.Name = "clCusName";
-            // 
-            // clCusContactTitle
-            // 
-            this.clCusContactTitle.HeaderText = "Contact Title";
-            this.clCusContactTitle.Name = "clCusContactTitle";
-            // 
-            // clCusAddress
-            // 
-            this.clCusAddress.HeaderText = "Address";
-            this.clCusAddress.Name = "clCusAddress";
-            // 
-            // clCusCity
-            // 
-            this.clCusCity.HeaderText = "City";
-            this.clCusCity.Name = "clCusCity";
-            // 
-            // clCusRegion
-            // 
-            this.clCusRegion.HeaderText = "Region";
-            this.clCusRegion.Name = "clCusRegion";
-            // 
-            // clCusPosCode
-            // 
-            this.clCusPosCode.HeaderText = "Postal Code";
-            this.clCusPosCode.Name = "clCusPosCode";
-            // 
-            // clCusCountry
-            // 
-            this.clCusCountry.HeaderText = "Country";
-            this.clCusCountry.Name = "clCusCountry";
-            // 
-            // clCusPhone
-            // 
-            this.clCusPhone.HeaderText = "Phone";
-            this.clCusPhone.Name = "clCusPhone";
-            // 
-            // clCusFax
-            // 
-            this.clCusFax.HeaderText = "Fax";
-            this.clCusFax.Name = "clCusFax";
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Viet Nam",
-            "Lao",
-            "Indonesia",
-            "Thai Lan",
-            "Malaysia",
-            "Singapore",
-            "Japan",
-            "Korea",
-            "USA",
-            "China"});
-            this.comboBox1.Location = new System.Drawing.Point(387, 147);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(181, 21);
-            this.comboBox1.TabIndex = 85;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Items.AddRange(new object[] {
-            "Viet Nam",
-            "Lao",
-            "Indonesia",
-            "Thai Lan",
-            "Malaysia",
-            "Singapore",
-            "Japan",
-            "Korea",
-            "USA",
-            "China"});
-            this.comboBox2.Location = new System.Drawing.Point(381, 216);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(181, 21);
-            this.comboBox2.TabIndex = 86;
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Viet Nam",
-            "Lao",
-            "Indonesia",
-            "Thai Lan",
-            "Malaysia",
-            "Singapore",
-            "Japan",
-            "Korea",
-            "USA",
-            "China"});
-            this.comboBox3.Location = new System.Drawing.Point(377, 109);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(181, 21);
-            this.comboBox3.TabIndex = 86;
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "Viet Nam",
-            "Lao",
-            "Indonesia",
-            "Thai Lan",
-            "Malaysia",
-            "Singapore",
-            "Japan",
-            "Korea",
-            "USA",
-            "China"});
-            this.comboBox4.Location = new System.Drawing.Point(392, 109);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(181, 21);
-            this.comboBox4.TabIndex = 108;
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2574,7 +2581,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusFax;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cbCusCountry;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.ComboBox comboBox4;
