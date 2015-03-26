@@ -16,6 +16,7 @@ namespace Project
         public Form1()
         {
             InitializeComponent();
+            Categories();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -190,11 +191,6 @@ namespace Project
             if (txtEmpPosCode.Text.Length == 0)
             {
                 errorProvider1.SetError(txtEmpPosCode, "Enter Postal Code!!!");
-                error = false;
-            }
-            if (txtEmpCountry.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtEmpCountry, "Enter Employee's Country!!!");
                 error = false;
             }
             if (mtbEmpPhone.MaskCompleted == false)
@@ -379,5 +375,69 @@ namespace Project
             }
             dr.Close();
         }
+
+        private void btnLoadOrder_Click(object sender, EventArgs e)
+        {
+            LoadOrder();   
+        }
+
+        private void LoadOrder()
+        {
+            SqlDataReader dr = (new order()).select();
+            dgvOrder.Rows.Clear();
+            while (dr.Read())
+            {
+                int cusid;
+                if (dr[1] == DBNull.Value)
+                    cusid = 0;
+                else cusid = dr.GetInt32(0);
+                dgvOrder.Rows.Add(dr.GetInt32(0), dr.GetInt32(1), dr.GetInt32(2), DateTime.Parse(dr[3].ToString()).ToShortDateString(),
+                    DateTime.Parse(dr[4].ToString()).ToShortDateString(), DateTime.Parse(dr[5].ToString()).ToShortDateString(),
+                    dr.GetInt32(6), double.Parse(dr[7].ToString()), dr[8].ToString(), dr[9].ToString(), dr[10].ToString(), dr[11].ToString(), dr[12].ToString(), dr[13].ToString());
+            }
+            dr.Close();
+        }
+
+        private void btnLoadCustomer_Click(object sender, EventArgs e)
+        {
+            LoadCustomer();
+        }
+
+        private void LoadCustomer()
+        {
+            SqlDataReader dr = (new customer()).select();
+            dgvCustomer.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvCustomer.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(), dr[5].ToString(),
+                    dr[6].ToString(), dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString());
+            }
+            dr.Close();
+        }
+
+
+
+
+
+        void Categories()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"server=(local);database=TSQLFundamentals2008;uid=sa;pwd=123456";
+
+            SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryID,CategoryName FROM Production.Categories",con);
+            DataTable dt = new DataTable("Production.Categories");
+            da.Fill(dt);
+
+            cbCaterogyID.DataSource = dt;
+            cbCaterogyID.DisplayMember = "CategoryName";
+            cbCaterogyID.ValueMember = "CategoryID";
+        }
+
+        private void btnAddEmp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
     }
 }
