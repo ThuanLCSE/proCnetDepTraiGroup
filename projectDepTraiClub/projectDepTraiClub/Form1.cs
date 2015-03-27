@@ -545,24 +545,8 @@ namespace Project
             list.Add(txtOrderShipRegion.Text);
             list.Add(txtOrderShipPosCode.Text);
             list.Add(cbOrderShipCountry.Text);
+            new order().insert(list);
         }
-
-        //private void btnAddProduct_Click(object sender, EventArgs e)
-        //{
-
-        //}
-
-        //private void btnAddEmp_Click(object sender, EventArgs e)
-        //{
-
-        //}
-        //private void btnAddOrder_Click(object sender, EventArgs e)
-        //{
-        //    List<String> list = new List<string>();
-        //    list.Add(txtOrderCusID.Text);
-        //    list.Add(txtOrderEmpID.Text);
-        //    //list.Add();
-        //}
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
@@ -580,6 +564,7 @@ namespace Project
             {
                 list.Add("False");
             }
+            new products().insert(list);
         }
 
         private void btnAddEmp_Click(object sender, EventArgs e)
@@ -591,8 +576,8 @@ namespace Project
             list.Add(this.txtEmpTitle.Text);
             list.Add(this.txtEmpTitleOfCourtesy.Text);
             //Date
-            list.Add(this.dtpEmpBirthdate.Value.ToString());
-            list.Add(this.dtpEmpHireDate.Value.ToString());
+            list.Add(this.dtpEmpBirthdate.Value.ToShortDateString());
+            list.Add(this.dtpEmpHireDate.Value.ToShortDateString());
             //
             list.Add(this.txtEmpAddress.Text);
             list.Add(this.txtEmpCity.Text);
@@ -601,11 +586,9 @@ namespace Project
             list.Add(this.cbEmpCountry.Text);
             list.Add(this.mtbEmpPhone.Text);
             list.Add(this.txtEmpManagerID.Text);
+            new employee().insert(list);
         }
 
-        private void dtpOrderDate_ValueChanged(object sender, EventArgs e)
-        {
-        }
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
@@ -620,6 +603,7 @@ namespace Project
             list.Add(this.cbSupCountry.Text);
             list.Add(this.txtSupPhone.Text);
             list.Add(this.txtSupFax.Text);
+            new Supplier().insert(list);
         }
 
         private void addOrderDetail_Click(object sender, EventArgs e)
@@ -630,6 +614,7 @@ namespace Project
             list.Add(this.txtOrDeUnitPrice.Text);
             list.Add(this.txtOrDeQuantity.Text);
             list.Add(this.txtOrDeDiscount.Text);
+            new orderDetail().insert(list);
         }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
@@ -638,6 +623,7 @@ namespace Project
             list.Add(this.txtCateID.Text);
             list.Add(this.txtCateName.Text);
             list.Add(this.txtCateDescription.Text);
+            new Categori().insert(list);
         }
 
         private void btnAddShipper_Click(object sender, EventArgs e)
@@ -646,6 +632,7 @@ namespace Project
             list.Add(this.txtShipperID.Text);
             list.Add(this.txtShipperCompany.Text);
             list.Add(this.txtShipperPhone.Text);
+            new Shipper().insert(list);
         }
         #endregion
 
@@ -723,6 +710,8 @@ namespace Project
         #endregion
 
 
+
+        #region update
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
         {
             if (validateCustomer() == false)
@@ -787,9 +776,9 @@ namespace Project
                 MessageBox.Show("Select row to update!");
         }
 
-        
+        #endregion
 
-        
+
 
 
 

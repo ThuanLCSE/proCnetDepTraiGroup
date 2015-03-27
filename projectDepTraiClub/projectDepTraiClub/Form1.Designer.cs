@@ -757,7 +757,6 @@
             this.dtpOrderDate.Name = "dtpOrderDate";
             this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
             this.dtpOrderDate.TabIndex = 54;
-            this.dtpOrderDate.ValueChanged += new System.EventHandler(this.dtpOrderDate_ValueChanged);
             // 
             // btnLoadOrder
             // 
