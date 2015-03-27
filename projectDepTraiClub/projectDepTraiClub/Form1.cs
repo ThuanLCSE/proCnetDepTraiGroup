@@ -497,7 +497,7 @@ namespace Project
             while (dr.Read())
             {
                 string s = "";
-                if (dr.GetBoolean(5)==true)
+                if (dr.GetBoolean(5) == true)
                     s = "Y";
                 else s = "N";
                 dgvProduct.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr.GetInt32(2), dr.GetInt32(3), double.Parse(dr[4].ToString()), s);
@@ -507,7 +507,7 @@ namespace Project
 
         private void btnLoadOrder_Click(object sender, EventArgs e)
         {
-            LoadOrder();   
+            LoadOrder();
         }
 
         private void LoadOrder()
@@ -543,6 +543,71 @@ namespace Project
             }
             dr.Close();
         }
+
+        private void btnLoadSupplier_Click(object sender, EventArgs e)
+        {
+            LoadSupplier();
+        }
+        private void LoadSupplier()
+        {
+            SqlDataReader dr = (new Supplier()).select();
+            dgvSupplier.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvSupplier.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    dr[5].ToString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString()
+                    );
+            }
+            dr.Close();
+        }
+
+        private void btnLoadCategory_Click(object sender, EventArgs e)
+        {
+            LoadCategory();
+        }
+
+        private void LoadCategory()
+        {
+            SqlDataReader dr = (new Categori()).select();
+            dgvCategory.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvCategory.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString()
+                    );
+            }
+            dr.Close();
+        }
+        private void btnLoadShipper_Click(object sender, EventArgs e)
+        {
+            LoadShipper();
+        }
+        private void LoadShipper()
+        {
+            SqlDataReader dr = (new Shipper()).select();
+            dgvShipper.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvShipper.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString()
+                    );
+            }
+            dr.Close();
+        }
         #endregion
 
 
@@ -562,7 +627,6 @@ namespace Project
             cbCaterogyID.ValueMember = "CategoryID";
         }
         #endregion
-
 
 
 
@@ -643,7 +707,6 @@ namespace Project
             }
             new products().insert(list);
         }
-
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
             if (validateEmp() == false)
@@ -651,7 +714,6 @@ namespace Project
             AddEmp();
             LoadEmp();
         }
-
         private void AddEmp()
         {
             List<String> list = new List<string>();
@@ -674,11 +736,13 @@ namespace Project
             new employee().insert(list);
         }
 
-
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
+            if (validateSupplier() == false)
+                return;
+            AddSupplier();
+            LoadSupplier();
         }
-
         private void AddSupplier()
         {
             List<String> list = new List<string>();
@@ -694,19 +758,25 @@ namespace Project
             list.Add(this.txtSupFax.Text);
             new Supplier().insert(list);
         }
-
-        //private void addOrderDetail_Click(object sender, EventArgs e)
-        //{
-        //    List<String> list = new List<string>();
-        //    list.Add(this.txtOrDeDetailID.Text);
-        //    list.Add(this.txtOrDeProID.Text);
-        //    list.Add(this.txtOrDeUnitPrice.Text);
-        //    list.Add(this.txtOrDeQuantity.Text);
-        //    list.Add(this.txtOrDeDiscount.Text);
-        //    new orderDetail().insert(list);
-        //}
+        private void addOrderDetail_Click(object sender, EventArgs e)
+        {
+            //List<String> list = new List<string>();
+            //list.Add(this.txtOrderID.Text);
+            //list.Add(this.txtOrderCusID.Text);
+            //list.Add(this.txtoe.Text);
+            //list.Add(this.txtOrDeQuantity.Text);
+            //list.Add(this.txtOrDeDiscount.Text);
+            //new orderDetail().insert(list);
+        }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
+        {
+            if (validateCategory() == false)
+                return;
+            AddCategory();
+            LoadCategory();
+        }
+        private void AddCategory()
         {
             List<String> list = new List<string>();
             list.Add(this.txtCateID.Text);
@@ -714,8 +784,14 @@ namespace Project
             list.Add(this.txtCateDescription.Text);
             new Categori().insert(list);
         }
-
         private void btnAddShipper_Click(object sender, EventArgs e)
+        {
+            if (validateShipper() == false)
+                return;
+            AddShipper();
+            LoadShipper();
+        }
+        private void AddShipper()
         {
             List<String> list = new List<string>();
             list.Add(this.txtShipperID.Text);

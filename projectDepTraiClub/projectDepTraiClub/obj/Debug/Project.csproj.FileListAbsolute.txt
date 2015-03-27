@@ -14,3 +14,6 @@ C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectD
 C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe
 C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.pdb
 C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.pdb
+C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.pdb
+C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe
+C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.pdb
