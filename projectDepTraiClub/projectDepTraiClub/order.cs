@@ -23,10 +23,10 @@ namespace Project
             cmd.Parameters.Clear();
 
             SqlParameter param = new SqlParameter("@custid", SqlDbType.Int);
-            param.Value = str[0];
+            param.Value = Int32.Parse(str[0]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@empid", SqlDbType.Int);
-            param.Value = str[1];
+            param.Value = Int32.Parse(str[1]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@orderdate", SqlDbType.DateTime);
             param.Value = str[2];
@@ -38,10 +38,10 @@ namespace Project
             param.Value = str[4];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@shipperid", SqlDbType.Int);
-            param.Value = str[5];
+            param.Value = Int32.Parse(str[5]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@freight", SqlDbType.Money);
-            param.Value = str[6];
+            param.Value = decimal.Parse(str[6]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@shipname", SqlDbType.VarChar, 40);
             param.Value = str[7];
@@ -77,10 +77,10 @@ namespace Project
             param.Value = id;
             cmd.Parameters.Add(param);
             param = new SqlParameter("@custid", SqlDbType.Int);
-            param.Value = str[0];
+            param.Value = Int32.Parse(str[0]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@empid", SqlDbType.Int);
-            param.Value = str[1];
+            param.Value = Int32.Parse(str[1]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@orderdate", SqlDbType.DateTime);
             param.Value = str[2];
@@ -92,10 +92,10 @@ namespace Project
             param.Value = str[4];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@shipperid", SqlDbType.Int);
-            param.Value = str[5];
+            param.Value = Int32.Parse(str[5]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@freight", SqlDbType.Money);
-            param.Value = str[6];
+            param.Value = decimal.Parse(str[6]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@shipname", SqlDbType.VarChar, 40);
             param.Value = str[7];
@@ -141,7 +141,6 @@ namespace Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectOrder";
             SqlDataReader dr = cmd.ExecuteReader();
-            closeConnection();
             return dr;
         }
 

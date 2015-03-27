@@ -80,19 +80,6 @@
             this.btnDeleteOrder = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
-            this.clOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clReqDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShippedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clFreight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.lblShippedDate = new System.Windows.Forms.Label();
             this.txtOrderShipPosCode = new System.Windows.Forms.TextBox();
@@ -255,6 +242,22 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.label35 = new System.Windows.Forms.Label();
+            this.txtOrderShiperID = new System.Windows.Forms.TextBox();
+            this.clOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clReqDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShippedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderShipperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clFreight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -651,6 +654,8 @@
             // 
             // tOrder
             // 
+            this.tOrder.Controls.Add(this.txtOrderShiperID);
+            this.tOrder.Controls.Add(this.label35);
             this.tOrder.Controls.Add(this.cbOrderShipCountry);
             this.tOrder.Controls.Add(this.mtbOrderFreight);
             this.tOrder.Controls.Add(this.dtpRequireDate);
@@ -713,7 +718,7 @@
             // mtbOrderFreight
             // 
             this.mtbOrderFreight.Location = new System.Drawing.Point(381, 5);
-            this.mtbOrderFreight.Mask = "999.999";
+            this.mtbOrderFreight.Mask = "999999";
             this.mtbOrderFreight.Name = "mtbOrderFreight";
             this.mtbOrderFreight.Size = new System.Drawing.Size(181, 20);
             this.mtbOrderFreight.TabIndex = 57;
@@ -757,6 +762,7 @@
             this.btnUpdateOrder.TabIndex = 52;
             this.btnUpdateOrder.Text = "Update Order";
             this.btnUpdateOrder.UseVisualStyleBackColor = true;
+            this.btnUpdateOrder.Click += new System.EventHandler(this.btnUpdateOrder_Click);
             // 
             // btnDeleteOrder
             // 
@@ -789,6 +795,7 @@
             this.clOrderDate,
             this.clReqDate,
             this.clShippedDate,
+            this.clOrderShipperID,
             this.clFreight,
             this.clShipName,
             this.clShipAddress,
@@ -802,84 +809,6 @@
             this.dgvOrder.Size = new System.Drawing.Size(620, 137);
             this.dgvOrder.TabIndex = 49;
             this.dgvOrder.SelectionChanged += new System.EventHandler(this.dgvOrder_SelectionChanged);
-            // 
-            // clOrderID
-            // 
-            this.clOrderID.HeaderText = "Order ID";
-            this.clOrderID.Name = "clOrderID";
-            this.clOrderID.ReadOnly = true;
-            // 
-            // clOrderCusID
-            // 
-            this.clOrderCusID.HeaderText = "Customer ID";
-            this.clOrderCusID.Name = "clOrderCusID";
-            this.clOrderCusID.ReadOnly = true;
-            // 
-            // clOrderEmpID
-            // 
-            this.clOrderEmpID.HeaderText = "Employee ID";
-            this.clOrderEmpID.Name = "clOrderEmpID";
-            this.clOrderEmpID.ReadOnly = true;
-            // 
-            // clOrderDate
-            // 
-            this.clOrderDate.HeaderText = "Order Date";
-            this.clOrderDate.Name = "clOrderDate";
-            this.clOrderDate.ReadOnly = true;
-            // 
-            // clReqDate
-            // 
-            this.clReqDate.HeaderText = "Require Date";
-            this.clReqDate.Name = "clReqDate";
-            this.clReqDate.ReadOnly = true;
-            // 
-            // clShippedDate
-            // 
-            this.clShippedDate.HeaderText = "Shipped Date";
-            this.clShippedDate.Name = "clShippedDate";
-            this.clShippedDate.ReadOnly = true;
-            // 
-            // clFreight
-            // 
-            this.clFreight.HeaderText = "Freight";
-            this.clFreight.Name = "clFreight";
-            this.clFreight.ReadOnly = true;
-            // 
-            // clShipName
-            // 
-            this.clShipName.HeaderText = "Ship Name";
-            this.clShipName.Name = "clShipName";
-            this.clShipName.ReadOnly = true;
-            // 
-            // clShipAddress
-            // 
-            this.clShipAddress.HeaderText = "Ship Address";
-            this.clShipAddress.Name = "clShipAddress";
-            this.clShipAddress.ReadOnly = true;
-            // 
-            // clShipCity
-            // 
-            this.clShipCity.HeaderText = "Ship City";
-            this.clShipCity.Name = "clShipCity";
-            this.clShipCity.ReadOnly = true;
-            // 
-            // clShipRegion
-            // 
-            this.clShipRegion.HeaderText = "Ship Region";
-            this.clShipRegion.Name = "clShipRegion";
-            this.clShipRegion.ReadOnly = true;
-            // 
-            // clShipPosCode
-            // 
-            this.clShipPosCode.HeaderText = "Ship Postal Code";
-            this.clShipPosCode.Name = "clShipPosCode";
-            this.clShipPosCode.ReadOnly = true;
-            // 
-            // clShipCountry
-            // 
-            this.clShipCountry.HeaderText = "Ship Country";
-            this.clShipCountry.Name = "clShipCountry";
-            this.clShipCountry.ReadOnly = true;
             // 
             // label5
             // 
@@ -2351,6 +2280,106 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(10, 219);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(57, 13);
+            this.label35.TabIndex = 87;
+            this.label35.Text = "Shipper ID";
+            // 
+            // txtOrderShiperID
+            // 
+            this.txtOrderShiperID.Location = new System.Drawing.Point(98, 216);
+            this.txtOrderShiperID.Name = "txtOrderShiperID";
+            this.txtOrderShiperID.Size = new System.Drawing.Size(181, 20);
+            this.txtOrderShiperID.TabIndex = 88;
+            // 
+            // clOrderID
+            // 
+            this.clOrderID.HeaderText = "Order ID";
+            this.clOrderID.Name = "clOrderID";
+            this.clOrderID.ReadOnly = true;
+            // 
+            // clOrderCusID
+            // 
+            this.clOrderCusID.HeaderText = "Customer ID";
+            this.clOrderCusID.Name = "clOrderCusID";
+            this.clOrderCusID.ReadOnly = true;
+            // 
+            // clOrderEmpID
+            // 
+            this.clOrderEmpID.HeaderText = "Employee ID";
+            this.clOrderEmpID.Name = "clOrderEmpID";
+            this.clOrderEmpID.ReadOnly = true;
+            // 
+            // clOrderDate
+            // 
+            this.clOrderDate.HeaderText = "Order Date";
+            this.clOrderDate.Name = "clOrderDate";
+            this.clOrderDate.ReadOnly = true;
+            // 
+            // clReqDate
+            // 
+            this.clReqDate.HeaderText = "Require Date";
+            this.clReqDate.Name = "clReqDate";
+            this.clReqDate.ReadOnly = true;
+            // 
+            // clShippedDate
+            // 
+            this.clShippedDate.HeaderText = "Shipped Date";
+            this.clShippedDate.Name = "clShippedDate";
+            this.clShippedDate.ReadOnly = true;
+            // 
+            // clOrderShipperID
+            // 
+            this.clOrderShipperID.HeaderText = "Shipper ID";
+            this.clOrderShipperID.Name = "clOrderShipperID";
+            this.clOrderShipperID.ReadOnly = true;
+            // 
+            // clFreight
+            // 
+            this.clFreight.HeaderText = "Freight";
+            this.clFreight.Name = "clFreight";
+            this.clFreight.ReadOnly = true;
+            // 
+            // clShipName
+            // 
+            this.clShipName.HeaderText = "Ship Name";
+            this.clShipName.Name = "clShipName";
+            this.clShipName.ReadOnly = true;
+            // 
+            // clShipAddress
+            // 
+            this.clShipAddress.HeaderText = "Ship Address";
+            this.clShipAddress.Name = "clShipAddress";
+            this.clShipAddress.ReadOnly = true;
+            // 
+            // clShipCity
+            // 
+            this.clShipCity.HeaderText = "Ship City";
+            this.clShipCity.Name = "clShipCity";
+            this.clShipCity.ReadOnly = true;
+            // 
+            // clShipRegion
+            // 
+            this.clShipRegion.HeaderText = "Ship Region";
+            this.clShipRegion.Name = "clShipRegion";
+            this.clShipRegion.ReadOnly = true;
+            // 
+            // clShipPosCode
+            // 
+            this.clShipPosCode.HeaderText = "Ship Postal Code";
+            this.clShipPosCode.Name = "clShipPosCode";
+            this.clShipPosCode.ReadOnly = true;
+            // 
+            // clShipCountry
+            // 
+            this.clShipCountry.HeaderText = "Ship Country";
+            this.clShipCountry.Name = "clShipCountry";
+            this.clShipCountry.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2574,19 +2603,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clProUnitPrice;
         private System.Windows.Forms.DataGridViewTextBoxColumn clProDiscontinued;
         private System.Windows.Forms.ComboBox cbCaterogyID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderCusID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderEmpID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clReqDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clShippedDate;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clFreight;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clShipName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clShipAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clShipCity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clShipRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clShipPosCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clShipCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusComName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCusName;
@@ -2618,6 +2634,22 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipperID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipperCompany;
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipperPhone;
+        private System.Windows.Forms.TextBox txtOrderShiperID;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderCusID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderEmpID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clReqDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShippedDate;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderShipperID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clFreight;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipPosCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clShipCountry;
     }
 }
 

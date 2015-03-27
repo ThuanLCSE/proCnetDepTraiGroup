@@ -24,10 +24,10 @@ namespace Project
             param.Value = str[0];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@supplierid", SqlDbType.Int);
-            param.Value = str[1];
+            param.Value = int.Parse(str[1]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@categoryid", SqlDbType.Int);
-            param.Value = str[2];
+            param.Value = int.Parse(str[2]);
             cmd.Parameters.Add(param);
                 param = new SqlParameter("@unitprice", SqlDbType.Money);
             param.Value = str[3];

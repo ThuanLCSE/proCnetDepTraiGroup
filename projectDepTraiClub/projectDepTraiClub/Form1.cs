@@ -59,13 +59,14 @@ namespace Project
                 dtpRequireDate.Value = dt;
                 DateTime.TryParse(r.Cells[5].Value.ToString(), out dt);
                 dtpShippedDate.Value = dt;
-                mtbOrderFreight.Text = r.Cells[6].Value.ToString();
-                txtOrderShipName.Text = r.Cells[7].Value.ToString();
-                txtOrderShipAddress.Text = r.Cells[8].Value.ToString();
-                txtOrderShipCity.Text = r.Cells[9].Value.ToString();
-                txtOrderShipRegion.Text = r.Cells[10].Value.ToString();
-                txtOrderShipPosCode.Text = r.Cells[11].Value.ToString();
-                cbOrderShipCountry.Text = r.Cells[12].Value.ToString();
+                txtOrderShiperID.Text = r.Cells[6].Value.ToString();
+                mtbOrderFreight.Text = r.Cells[7].Value.ToString();
+                txtOrderShipName.Text = r.Cells[8].Value.ToString();
+                txtOrderShipAddress.Text = r.Cells[9].Value.ToString();
+                txtOrderShipCity.Text = r.Cells[10].Value.ToString();
+                txtOrderShipRegion.Text = r.Cells[11].Value.ToString();
+                txtOrderShipPosCode.Text = r.Cells[12].Value.ToString();
+                cbOrderShipCountry.Text = r.Cells[13].Value.ToString();
             }
         }
         #endregion
@@ -564,8 +565,7 @@ namespace Project
                     dr[6].ToString(),
                     dr[7].ToString(),
                     dr[8].ToString(),
-                    dr[9].ToString(),
-                    dr[10].ToString()
+                    dr[9].ToString()
                     );
             }
             dr.Close();
@@ -622,6 +622,11 @@ namespace Project
             DataTable dt = new DataTable("Production.Categories");
             da.Fill(dt);
 
+            DataRow r = dt.NewRow();
+            r["CategoryID"] = -1;
+            r["CategoryName"] = "Select category";
+            dt.Rows.InsertAt(r, 0);
+
             cbCaterogyID.DataSource = dt;
             cbCaterogyID.DisplayMember = "CategoryName";
             cbCaterogyID.ValueMember = "CategoryID";
@@ -672,13 +677,14 @@ namespace Project
             list.Add(dtpOrderDate.Value.ToShortDateString());
             list.Add(dtpRequireDate.Value.ToShortDateString());
             list.Add(dtpShippedDate.Value.ToShortDateString());
+            list.Add(txtOrderShiperID.Text);
             list.Add(mtbOrderFreight.Text);
             list.Add(txtOrderShipName.Text);
             list.Add(txtOrderShipAddress.Text);
             list.Add(txtOrderShipCity.Text);
             list.Add(txtOrderShipRegion.Text);
             list.Add(txtOrderShipPosCode.Text);
-            list.Add(cbOrderShipCountry.Text);
+            list.Add(cbOrderShipCountry.Text.ToString());
             new order().insert(list);
         }
 
@@ -692,7 +698,6 @@ namespace Project
         private void AddProduct()
         {
             List<String> list = new List<string>();
-            list.Add(this.txtProductID.Text);
             list.Add(this.txtProductName.Text);
             list.Add(this.txtSupID.Text);
             list.Add(this.cbCaterogyID.Text);
@@ -717,7 +722,6 @@ namespace Project
         private void AddEmp()
         {
             List<String> list = new List<string>();
-            list.Add(this.txtEmployID.Text);
             list.Add(this.txtEmpLastName.Text);
             list.Add(this.txtEmpFirstName.Text);
             list.Add(this.txtEmpTitle.Text);
@@ -976,6 +980,7 @@ namespace Project
                 list.Add(dtpOrderDate.Value.ToShortDateString());
                 list.Add(dtpRequireDate.Value.ToShortDateString());
                 list.Add(dtpShippedDate.Value.ToShortDateString());
+                list.Add(txtOrderShiperID.Text);
                 list.Add(mtbOrderFreight.Text);
                 list.Add(txtOrderShipName.Text);
                 list.Add(txtOrderShipAddress.Text);
@@ -989,19 +994,34 @@ namespace Project
                 MessageBox.Show("Select row to update!");
         }
 
-
-
-        #endregion
-
         private void btnUpdateProduct_Click(object sender, EventArgs e)
         {
-
+            if (validateProduct() == false)
+                return;
+            UpdateProduct();
+            LoadProduct();
         }
 
         private void UpdateProduct()
         {
-            if (dgvOrder.SelectedRows.Count > 0)
+            if (dgvProduct.SelectedRows.Count > 0)
             {
+                DataGridViewRow r = dgvProduct.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+                List<String> list = new List<string>();
+                list.Add(this.txtProductName.Text);
+                list.Add(this.txtSupID.Text);
+                list.Add(this.cbCaterogyID.Text);
+                list.Add(this.txtProUnitPrice.Text);
+                if (this.radYes.Checked)
+                {
+                    list.Add("True");
+                }
+                else
+                {
+                    list.Add("False");
+                }
+                new products().update(point, list);
             }
             else
                 MessageBox.Show("Select row to update!");
@@ -1010,6 +1030,34 @@ namespace Project
         private void btnUpdateEmp_Click(object sender, EventArgs e)
         {
 
+        }
+
+        void UpdateEmp()
+        {
+            if (dgvOrder.SelectedRows.Count > 0)
+            {
+                List<String> list = new List<string>();
+                DataGridViewRow r = dgvProduct.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+                list.Add(this.txtEmpLastName.Text);
+                list.Add(this.txtEmpFirstName.Text);
+                list.Add(this.txtEmpTitle.Text);
+                list.Add(this.txtEmpTitleOfCourtesy.Text);
+                //Date
+                list.Add(this.dtpEmpBirthdate.Value.ToShortDateString());
+                list.Add(this.dtpEmpHireDate.Value.ToShortDateString());
+                //
+                list.Add(this.txtEmpAddress.Text);
+                list.Add(this.txtEmpCity.Text);
+                list.Add(this.txtEmpRegion.Text);
+                list.Add(this.txtEmpPosCode.Text);
+                list.Add(this.cbEmpCountry.Text);
+                list.Add(this.mtbEmpPhone.Text);
+                list.Add(this.txtEmpManagerID.Text);
+                new employee().update(point, list);
+            }
+            else
+                MessageBox.Show("Select row to update!");
         }
 
         private void btnUpdateSupplier_Click(object sender, EventArgs e)
@@ -1026,6 +1074,11 @@ namespace Project
         {
 
         }
+
+
+        #endregion
+
+        
 
 
 
