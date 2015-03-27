@@ -328,7 +328,7 @@
             // 
             // cbCusCountry
             // 
-            this.cbCusCountry.Enabled = false;
+            this.cbCusCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCusCountry.FormattingEnabled = true;
             this.cbCusCountry.Items.AddRange(new object[] {
             "Viet Nam",
@@ -692,7 +692,7 @@
             // 
             // cbOrderShipCountry
             // 
-            this.cbOrderShipCountry.Enabled = false;
+            this.cbOrderShipCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbOrderShipCountry.FormattingEnabled = true;
             this.cbOrderShipCountry.Items.AddRange(new object[] {
             "Viet Nam",
@@ -1144,6 +1144,7 @@
             this.btnUpdateProduct.TabIndex = 39;
             this.btnUpdateProduct.Text = "Update Product";
             this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnUpdateProduct_Click);
             // 
             // btnDeleteProduct
             // 
@@ -1348,6 +1349,7 @@
             // 
             // cbEmpCountry
             // 
+            this.cbEmpCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbEmpCountry.FormattingEnabled = true;
             this.cbEmpCountry.Items.AddRange(new object[] {
             "Viet Nam",
@@ -1405,6 +1407,7 @@
             this.btnUpdateEmp.TabIndex = 80;
             this.btnUpdateEmp.Text = "Update Employee";
             this.btnUpdateEmp.UseVisualStyleBackColor = true;
+            this.btnUpdateEmp.Click += new System.EventHandler(this.btnUpdateEmp_Click);
             // 
             // btnDeleteEmp
             // 
@@ -1805,6 +1808,7 @@
             this.btnUpdateSupplier.TabIndex = 106;
             this.btnUpdateSupplier.Text = "Update Supplier";
             this.btnUpdateSupplier.UseVisualStyleBackColor = true;
+            this.btnUpdateSupplier.Click += new System.EventHandler(this.btnUpdateSupplier_Click);
             // 
             // btnDeleteSupplier
             // 
@@ -1814,6 +1818,7 @@
             this.btnDeleteSupplier.TabIndex = 105;
             this.btnDeleteSupplier.Text = "Delete Supplier";
             this.btnDeleteSupplier.UseVisualStyleBackColor = true;
+            this.btnDeleteSupplier.Click += new System.EventHandler(this.btnDeleteSupplier_Click);
             // 
             // btnAddSupplier
             // 
@@ -2098,6 +2103,7 @@
             this.btnUpdateCategory.TabIndex = 87;
             this.btnUpdateCategory.Text = "Update Category";
             this.btnUpdateCategory.UseVisualStyleBackColor = true;
+            this.btnUpdateCategory.Click += new System.EventHandler(this.btnUpdateCategory_Click);
             // 
             // btnDeleteCategory
             // 
@@ -2107,6 +2113,7 @@
             this.btnDeleteCategory.TabIndex = 86;
             this.btnDeleteCategory.Text = "Delete Category";
             this.btnDeleteCategory.UseVisualStyleBackColor = true;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
             // 
             // btnAddCategory
             // 
@@ -2237,6 +2244,7 @@
             this.btnUpdateShipper.TabIndex = 93;
             this.btnUpdateShipper.Text = "Update Shipper";
             this.btnUpdateShipper.UseVisualStyleBackColor = true;
+            this.btnUpdateShipper.Click += new System.EventHandler(this.btnUpdateShipper_Click);
             // 
             // btnDeleteShipper
             // 
@@ -2246,6 +2254,7 @@
             this.btnDeleteShipper.TabIndex = 92;
             this.btnDeleteShipper.Text = "Delete Shipper";
             this.btnDeleteShipper.UseVisualStyleBackColor = true;
+            this.btnDeleteShipper.Click += new System.EventHandler(this.btnDeleteShipper_Click);
             // 
             // btnAddShipper
             // 

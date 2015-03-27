@@ -249,6 +249,76 @@ namespace Project
             }
             return error;
         }
+
+        private bool validateSupplier()
+        {
+            bool error = true;
+            if (txtSupCompanyName.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtSupCompanyName, "Enter Company Name!");
+                error = false;
+            }
+            if (txtSupContactName.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtSupContactName, "Enter Contact Name!");
+                error = false;
+            }
+            if (txtSupAdd.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtSupAdd, "Enter Address!");
+                error = false;
+            }
+            if (txtSupCity.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtSupCity, "Enter City!");
+                error = false;
+            }
+            if (cbCusCountry.Text.Length == 0)
+            {
+                errorProvider1.SetError(cbCusCountry, "Select Country!");
+                error = false;
+            }
+            if (txtSupPhone.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtSupPhone, "Enter Number!");
+                error = false;
+            }
+            return error;
+
+        }
+
+        private bool validateCategory()
+        {
+            bool error = true;
+            return error;
+            if (txtCateName.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtCateName, "Enter Category Name!");
+                error = false;
+            }
+            if (txtCateDescription.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtCateDescription, "Enter Description");
+                error = false;
+            }
+        }
+
+        private bool validateShipper()
+        {
+            bool error = true;
+            if (txtShipperCompany.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtShipperCompany, "Enter Company!");
+                error = false;
+            }
+            if (txtShipperPhone.Text.Length == 0)
+            {
+                errorProvider1.SetError(txtShipperPhone, "Enter Phone Number!");
+                error = false;
+            }
+            return false;
+        }
+
         #endregion
 
 
@@ -550,6 +620,13 @@ namespace Project
 
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
+            if (validateProduct() == false)
+                return;
+            AddProduct();
+            LoadProduct();
+        }
+        private void AddProduct()
+        {
             List<String> list = new List<string>();
             list.Add(this.txtProductID.Text);
             list.Add(this.txtProductName.Text);
@@ -568,6 +645,14 @@ namespace Project
         }
 
         private void btnAddEmp_Click(object sender, EventArgs e)
+        {
+            if (validateEmp() == false)
+                return;
+            AddEmp();
+            LoadEmp();
+        }
+
+        private void AddEmp()
         {
             List<String> list = new List<string>();
             list.Add(this.txtEmployID.Text);
@@ -592,6 +677,10 @@ namespace Project
 
         private void btnAddSupplier_Click(object sender, EventArgs e)
         {
+        }
+
+        private void AddSupplier()
+        {
             List<String> list = new List<string>();
             list.Add(this.txtSupID.Text);
             list.Add(this.txtSupCompanyName.Text);
@@ -606,16 +695,16 @@ namespace Project
             new Supplier().insert(list);
         }
 
-        private void addOrderDetail_Click(object sender, EventArgs e)
-        {
-            List<String> list = new List<string>();
-            list.Add(this.txtOrDeDetailID.Text);
-            list.Add(this.txtOrDeProID.Text);
-            list.Add(this.txtOrDeUnitPrice.Text);
-            list.Add(this.txtOrDeQuantity.Text);
-            list.Add(this.txtOrDeDiscount.Text);
-            new orderDetail().insert(list);
-        }
+        //private void addOrderDetail_Click(object sender, EventArgs e)
+        //{
+        //    List<String> list = new List<string>();
+        //    list.Add(this.txtOrDeDetailID.Text);
+        //    list.Add(this.txtOrDeProID.Text);
+        //    list.Add(this.txtOrDeUnitPrice.Text);
+        //    list.Add(this.txtOrDeQuantity.Text);
+        //    list.Add(this.txtOrDeDiscount.Text);
+        //    new orderDetail().insert(list);
+        //}
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
@@ -707,6 +796,54 @@ namespace Project
                 MessageBox.Show("Select row to delete");
         }
 
+        private void btnDeleteSupplier_Click(object sender, EventArgs e)
+        {
+            DeleteSupplier();
+        }
+
+        private void DeleteSupplier()
+        {
+            if (dgvSupplier.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvSupplier.SelectedRows[0];
+                new employee().delete(Int32.Parse(r.Cells[0].Value.ToString()));
+            }
+            else
+                MessageBox.Show("Select row to delete");
+        }
+
+        private void btnDeleteCategory_Click(object sender, EventArgs e)
+        {
+            DeleteCategory();
+        }
+
+        private void DeleteCategory()
+        {
+            if (dgvCategory.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvCategory.SelectedRows[0];
+                new employee().delete(Int32.Parse(r.Cells[0].Value.ToString()));
+            }
+            else
+                MessageBox.Show("Select row to delete");
+        }
+
+        private void btnDeleteShipper_Click(object sender, EventArgs e)
+        {
+            DeleteShipper();
+        }
+
+        private void DeleteShipper()
+        {
+            if (dgvShipper.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvShipper.SelectedRows[0];
+                new employee().delete(Int32.Parse(r.Cells[0].Value.ToString()));
+            }
+            else
+                MessageBox.Show("Select row to delete");
+        }
+
         #endregion
 
 
@@ -776,7 +913,45 @@ namespace Project
                 MessageBox.Show("Select row to update!");
         }
 
+
+
         #endregion
+
+        private void btnUpdateProduct_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UpdateProduct()
+        {
+            if (dgvOrder.SelectedRows.Count > 0)
+            {
+            }
+            else
+                MessageBox.Show("Select row to update!");
+        }
+
+        private void btnUpdateEmp_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateSupplier_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateCategory_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateShipper_Click(object sender, EventArgs e)
+        {
+
+        }
+
+
 
 
 
