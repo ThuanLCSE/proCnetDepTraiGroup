@@ -142,7 +142,6 @@ namespace Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectEmployee";
             SqlDataReader dr = cmd.ExecuteReader();
-            closeConnection();
             return dr;
         }
 

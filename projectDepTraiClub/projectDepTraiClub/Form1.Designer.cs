@@ -33,7 +33,7 @@
             this.tCustomer = new System.Windows.Forms.TabPage();
             this.cbCusCountry = new System.Windows.Forms.ComboBox();
             this.btnLoadCustomer = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnUpdateCustomer = new System.Windows.Forms.Button();
             this.btnDeleteCustomer = new System.Windows.Forms.Button();
             this.btnAddCustomer = new System.Windows.Forms.Button();
             this.dgvCustomer = new System.Windows.Forms.DataGridView();
@@ -120,7 +120,7 @@
             this.radNo = new System.Windows.Forms.RadioButton();
             this.radYes = new System.Windows.Forms.RadioButton();
             this.btnLoadProduct = new System.Windows.Forms.Button();
-            this.btnUpdateCustomer = new System.Windows.Forms.Button();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
             this.btnDeleteProduct = new System.Windows.Forms.Button();
             this.btnAddProduct = new System.Windows.Forms.Button();
             this.dgvProduct = new System.Windows.Forms.DataGridView();
@@ -224,27 +224,6 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
-            this.tOderDetail = new System.Windows.Forms.TabPage();
-            this.btnLoadDetail = new System.Windows.Forms.Button();
-            this.updateOrderDetail = new System.Windows.Forms.Button();
-            this.btndeleteOrderDetail = new System.Windows.Forms.Button();
-            this.btnaddOrderDetail = new System.Windows.Forms.Button();
-            this.dgvOrderDetail = new System.Windows.Forms.DataGridView();
-            this.cltOrDeID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltOrDeProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltOrDeUnitPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltOrDeQuantity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cltOrDeDiscount = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtOrDeDiscount = new System.Windows.Forms.TextBox();
-            this.label45 = new System.Windows.Forms.Label();
-            this.txtOrDeQuantity = new System.Windows.Forms.TextBox();
-            this.txtOrDeUnitPrice = new System.Windows.Forms.TextBox();
-            this.txtOrDeProID = new System.Windows.Forms.TextBox();
-            this.txtOrDeDetailID = new System.Windows.Forms.TextBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label47 = new System.Windows.Forms.Label();
-            this.label48 = new System.Windows.Forms.Label();
-            this.label49 = new System.Windows.Forms.Label();
             this.tCategories = new System.Windows.Forms.TabPage();
             this.btnLoadCategory = new System.Windows.Forms.Button();
             this.btnUpdateCategory = new System.Windows.Forms.Button();
@@ -288,8 +267,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvEmp)).BeginInit();
             this.tSuppliers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).BeginInit();
-            this.tOderDetail.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).BeginInit();
             this.tCategories.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).BeginInit();
             this.tShippers.SuspendLayout();
@@ -304,7 +281,6 @@
             this.tabControl.Controls.Add(this.tProduct);
             this.tabControl.Controls.Add(this.tEmployee);
             this.tabControl.Controls.Add(this.tSuppliers);
-            this.tabControl.Controls.Add(this.tOderDetail);
             this.tabControl.Controls.Add(this.tCategories);
             this.tabControl.Controls.Add(this.tShippers);
             this.tabControl.Location = new System.Drawing.Point(4, 14);
@@ -317,7 +293,7 @@
             // 
             this.tCustomer.Controls.Add(this.cbCusCountry);
             this.tCustomer.Controls.Add(this.btnLoadCustomer);
-            this.tCustomer.Controls.Add(this.btnUpdate);
+            this.tCustomer.Controls.Add(this.btnUpdateCustomer);
             this.tCustomer.Controls.Add(this.btnDeleteCustomer);
             this.tCustomer.Controls.Add(this.btnAddCustomer);
             this.tCustomer.Controls.Add(this.dgvCustomer);
@@ -352,6 +328,7 @@
             // 
             // cbCusCountry
             // 
+            this.cbCusCountry.Enabled = false;
             this.cbCusCountry.FormattingEnabled = true;
             this.cbCusCountry.Items.AddRange(new object[] {
             "Viet Nam",
@@ -379,14 +356,15 @@
             this.btnLoadCustomer.UseVisualStyleBackColor = true;
             this.btnLoadCustomer.Click += new System.EventHandler(this.btnLoadCustomer_Click);
             // 
-            // btnUpdate
+            // btnUpdateCustomer
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(185, 247);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(115, 23);
-            this.btnUpdate.TabIndex = 26;
-            this.btnUpdate.Text = "Update Customer";
-            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 247);
+            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
+            this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateCustomer.TabIndex = 26;
+            this.btnUpdateCustomer.Text = "Update Customer";
+            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateCustomer.Click += new System.EventHandler(this.btnUpdateCustomer_Click);
             // 
             // btnDeleteCustomer
             // 
@@ -396,6 +374,7 @@
             this.btnDeleteCustomer.TabIndex = 25;
             this.btnDeleteCustomer.Text = "Delete Customer";
             this.btnDeleteCustomer.UseVisualStyleBackColor = true;
+            this.btnDeleteCustomer.Click += new System.EventHandler(this.btnDeleteCustomer_Click);
             // 
             // btnAddCustomer
             // 
@@ -429,6 +408,7 @@
             this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.Size = new System.Drawing.Size(620, 137);
             this.dgvCustomer.TabIndex = 23;
+            this.dgvCustomer.SelectionChanged += new System.EventHandler(this.dgvCustomer_SelectionChanged);
             // 
             // clCusID
             // 
@@ -712,6 +692,7 @@
             // 
             // cbOrderShipCountry
             // 
+            this.cbOrderShipCountry.Enabled = false;
             this.cbOrderShipCountry.FormattingEnabled = true;
             this.cbOrderShipCountry.Items.AddRange(new object[] {
             "Viet Nam",
@@ -820,6 +801,7 @@
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.Size = new System.Drawing.Size(620, 137);
             this.dgvOrder.TabIndex = 49;
+            this.dgvOrder.SelectionChanged += new System.EventHandler(this.dgvOrder_SelectionChanged);
             // 
             // clOrderID
             // 
@@ -1081,7 +1063,7 @@
             this.tProduct.Controls.Add(this.cbCaterogyID);
             this.tProduct.Controls.Add(this.groupBox1);
             this.tProduct.Controls.Add(this.btnLoadProduct);
-            this.tProduct.Controls.Add(this.btnUpdateCustomer);
+            this.tProduct.Controls.Add(this.btnUpdateProduct);
             this.tProduct.Controls.Add(this.btnDeleteProduct);
             this.tProduct.Controls.Add(this.btnAddProduct);
             this.tProduct.Controls.Add(this.dgvProduct);
@@ -1154,14 +1136,14 @@
             this.btnLoadProduct.UseVisualStyleBackColor = true;
             this.btnLoadProduct.Click += new System.EventHandler(this.btnLoadProduct_Click);
             // 
-            // btnUpdateCustomer
+            // btnUpdateProduct
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 241);
-            this.btnUpdateCustomer.Name = "btnUpdateCustomer";
-            this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
-            this.btnUpdateCustomer.TabIndex = 39;
-            this.btnUpdateCustomer.Text = "Update Product";
-            this.btnUpdateCustomer.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Location = new System.Drawing.Point(185, 241);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateProduct.TabIndex = 39;
+            this.btnUpdateProduct.Text = "Update Product";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
             // 
             // btnDeleteProduct
             // 
@@ -2078,195 +2060,6 @@
             this.label39.TabIndex = 77;
             this.label39.Text = "Supplier ID";
             // 
-            // tOderDetail
-            // 
-            this.tOderDetail.Controls.Add(this.btnLoadDetail);
-            this.tOderDetail.Controls.Add(this.updateOrderDetail);
-            this.tOderDetail.Controls.Add(this.btndeleteOrderDetail);
-            this.tOderDetail.Controls.Add(this.btnaddOrderDetail);
-            this.tOderDetail.Controls.Add(this.dgvOrderDetail);
-            this.tOderDetail.Controls.Add(this.txtOrDeDiscount);
-            this.tOderDetail.Controls.Add(this.label45);
-            this.tOderDetail.Controls.Add(this.txtOrDeQuantity);
-            this.tOderDetail.Controls.Add(this.txtOrDeUnitPrice);
-            this.tOderDetail.Controls.Add(this.txtOrDeProID);
-            this.tOderDetail.Controls.Add(this.txtOrDeDetailID);
-            this.tOderDetail.Controls.Add(this.label46);
-            this.tOderDetail.Controls.Add(this.label47);
-            this.tOderDetail.Controls.Add(this.label48);
-            this.tOderDetail.Controls.Add(this.label49);
-            this.tOderDetail.Location = new System.Drawing.Point(4, 22);
-            this.tOderDetail.Name = "tOderDetail";
-            this.tOderDetail.Padding = new System.Windows.Forms.Padding(3);
-            this.tOderDetail.Size = new System.Drawing.Size(632, 458);
-            this.tOderDetail.TabIndex = 5;
-            this.tOderDetail.Text = "OrderDetail";
-            this.tOderDetail.UseVisualStyleBackColor = true;
-            // 
-            // btnLoadDetail
-            // 
-            this.btnLoadDetail.Location = new System.Drawing.Point(333, 225);
-            this.btnLoadDetail.Name = "btnLoadDetail";
-            this.btnLoadDetail.Size = new System.Drawing.Size(119, 23);
-            this.btnLoadDetail.TabIndex = 91;
-            this.btnLoadDetail.Text = "Load Detail";
-            this.btnLoadDetail.UseVisualStyleBackColor = true;
-            // 
-            // updateOrderDetail
-            // 
-            this.updateOrderDetail.Location = new System.Drawing.Point(185, 225);
-            this.updateOrderDetail.Name = "updateOrderDetail";
-            this.updateOrderDetail.Size = new System.Drawing.Size(115, 23);
-            this.updateOrderDetail.TabIndex = 90;
-            this.updateOrderDetail.Text = "Update Order Detail";
-            this.updateOrderDetail.UseVisualStyleBackColor = true;
-            // 
-            // btndeleteOrderDetail
-            // 
-            this.btndeleteOrderDetail.Location = new System.Drawing.Point(333, 192);
-            this.btndeleteOrderDetail.Name = "btndeleteOrderDetail";
-            this.btndeleteOrderDetail.Size = new System.Drawing.Size(119, 23);
-            this.btndeleteOrderDetail.TabIndex = 89;
-            this.btndeleteOrderDetail.Text = "Delete Order Detail";
-            this.btndeleteOrderDetail.UseVisualStyleBackColor = true;
-            // 
-            // btnaddOrderDetail
-            // 
-            this.btnaddOrderDetail.Location = new System.Drawing.Point(185, 192);
-            this.btnaddOrderDetail.Name = "btnaddOrderDetail";
-            this.btnaddOrderDetail.Size = new System.Drawing.Size(115, 23);
-            this.btnaddOrderDetail.TabIndex = 88;
-            this.btnaddOrderDetail.Text = "Add Order Detail";
-            this.btnaddOrderDetail.UseVisualStyleBackColor = true;
-            this.btnaddOrderDetail.Click += new System.EventHandler(this.addOrderDetail_Click);
-            // 
-            // dgvOrderDetail
-            // 
-            this.dgvOrderDetail.AllowUserToAddRows = false;
-            this.dgvOrderDetail.AllowUserToDeleteRows = false;
-            this.dgvOrderDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrderDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.cltOrDeID,
-            this.cltOrDeProductID,
-            this.cltOrDeUnitPrice,
-            this.cltOrDeQuantity,
-            this.cltOrDeDiscount});
-            this.dgvOrderDetail.Location = new System.Drawing.Point(6, 254);
-            this.dgvOrderDetail.Name = "dgvOrderDetail";
-            this.dgvOrderDetail.ReadOnly = true;
-            this.dgvOrderDetail.Size = new System.Drawing.Size(620, 137);
-            this.dgvOrderDetail.TabIndex = 87;
-            // 
-            // cltOrDeID
-            // 
-            this.cltOrDeID.HeaderText = "Order ID";
-            this.cltOrDeID.Name = "cltOrDeID";
-            this.cltOrDeID.ReadOnly = true;
-            // 
-            // cltOrDeProductID
-            // 
-            this.cltOrDeProductID.HeaderText = "Product ID";
-            this.cltOrDeProductID.Name = "cltOrDeProductID";
-            this.cltOrDeProductID.ReadOnly = true;
-            // 
-            // cltOrDeUnitPrice
-            // 
-            this.cltOrDeUnitPrice.HeaderText = "Unit Price";
-            this.cltOrDeUnitPrice.Name = "cltOrDeUnitPrice";
-            this.cltOrDeUnitPrice.ReadOnly = true;
-            // 
-            // cltOrDeQuantity
-            // 
-            this.cltOrDeQuantity.HeaderText = "Quantity";
-            this.cltOrDeQuantity.Name = "cltOrDeQuantity";
-            this.cltOrDeQuantity.ReadOnly = true;
-            // 
-            // cltOrDeDiscount
-            // 
-            this.cltOrDeDiscount.HeaderText = "Discount";
-            this.cltOrDeDiscount.Name = "cltOrDeDiscount";
-            this.cltOrDeDiscount.ReadOnly = true;
-            // 
-            // txtOrDeDiscount
-            // 
-            this.txtOrDeDiscount.Location = new System.Drawing.Point(97, 144);
-            this.txtOrDeDiscount.Name = "txtOrDeDiscount";
-            this.txtOrDeDiscount.Size = new System.Drawing.Size(181, 20);
-            this.txtOrDeDiscount.TabIndex = 86;
-            // 
-            // label45
-            // 
-            this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(9, 147);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(49, 13);
-            this.label45.TabIndex = 85;
-            this.label45.Text = "Discount";
-            // 
-            // txtOrDeQuantity
-            // 
-            this.txtOrDeQuantity.Location = new System.Drawing.Point(97, 106);
-            this.txtOrDeQuantity.Name = "txtOrDeQuantity";
-            this.txtOrDeQuantity.Size = new System.Drawing.Size(181, 20);
-            this.txtOrDeQuantity.TabIndex = 84;
-            // 
-            // txtOrDeUnitPrice
-            // 
-            this.txtOrDeUnitPrice.Location = new System.Drawing.Point(97, 71);
-            this.txtOrDeUnitPrice.Name = "txtOrDeUnitPrice";
-            this.txtOrDeUnitPrice.Size = new System.Drawing.Size(181, 20);
-            this.txtOrDeUnitPrice.TabIndex = 83;
-            // 
-            // txtOrDeProID
-            // 
-            this.txtOrDeProID.Location = new System.Drawing.Point(97, 39);
-            this.txtOrDeProID.Name = "txtOrDeProID";
-            this.txtOrDeProID.Size = new System.Drawing.Size(181, 20);
-            this.txtOrDeProID.TabIndex = 82;
-            // 
-            // txtOrDeDetailID
-            // 
-            this.txtOrDeDetailID.Location = new System.Drawing.Point(97, 5);
-            this.txtOrDeDetailID.Name = "txtOrDeDetailID";
-            this.txtOrDeDetailID.Size = new System.Drawing.Size(181, 20);
-            this.txtOrDeDetailID.TabIndex = 81;
-            // 
-            // label46
-            // 
-            this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(9, 109);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(46, 13);
-            this.label46.TabIndex = 80;
-            this.label46.Text = "Quantity";
-            // 
-            // label47
-            // 
-            this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(9, 74);
-            this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(53, 13);
-            this.label47.TabIndex = 79;
-            this.label47.Text = "Unit Price";
-            // 
-            // label48
-            // 
-            this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(9, 42);
-            this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(58, 13);
-            this.label48.TabIndex = 78;
-            this.label48.Text = "Product ID";
-            // 
-            // label49
-            // 
-            this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(9, 9);
-            this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(47, 13);
-            this.label49.TabIndex = 77;
-            this.label49.Text = "Order ID";
-            // 
             // tCategories
             // 
             this.tCategories.Controls.Add(this.btnLoadCategory);
@@ -2577,9 +2370,6 @@
             this.tSuppliers.ResumeLayout(false);
             this.tSuppliers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSupplier)).EndInit();
-            this.tOderDetail.ResumeLayout(false);
-            this.tOderDetail.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvOrderDetail)).EndInit();
             this.tCategories.ResumeLayout(false);
             this.tCategories.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCategory)).EndInit();
@@ -2677,7 +2467,6 @@
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.TabPage tSuppliers;
-        private System.Windows.Forms.TabPage tOderDetail;
         private System.Windows.Forms.TabPage tCategories;
         private System.Windows.Forms.TabPage tShippers;
         private System.Windows.Forms.TextBox txtSupFax;
@@ -2699,16 +2488,6 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.TextBox txtOrDeDiscount;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.TextBox txtOrDeQuantity;
-        private System.Windows.Forms.TextBox txtOrDeUnitPrice;
-        private System.Windows.Forms.TextBox txtOrDeProID;
-        private System.Windows.Forms.TextBox txtOrDeDetailID;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
         private System.Windows.Forms.TextBox txtCateDescription;
         private System.Windows.Forms.TextBox txtCateName;
         private System.Windows.Forms.TextBox txtCateID;
@@ -2723,7 +2502,7 @@
         private System.Windows.Forms.Label label34;
         private System.Windows.Forms.DataGridView dgvCustomer;
         private System.Windows.Forms.Button btnLoadCustomer;
-        private System.Windows.Forms.Button btnUpdate;
+        private System.Windows.Forms.Button btnUpdateCustomer;
         private System.Windows.Forms.Button btnDeleteCustomer;
         private System.Windows.Forms.Button btnAddCustomer;
         private System.Windows.Forms.Button btnLoadOrder;
@@ -2732,7 +2511,7 @@
         private System.Windows.Forms.Button btnAddOrder;
         private System.Windows.Forms.DataGridView dgvOrder;
         private System.Windows.Forms.Button btnLoadProduct;
-        private System.Windows.Forms.Button btnUpdateCustomer;
+        private System.Windows.Forms.Button btnUpdateProduct;
         private System.Windows.Forms.Button btnDeleteProduct;
         private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.DataGridView dgvProduct;
@@ -2746,11 +2525,6 @@
         private System.Windows.Forms.Button btnDeleteSupplier;
         private System.Windows.Forms.Button btnAddSupplier;
         private System.Windows.Forms.DataGridView dgvSupplier;
-        private System.Windows.Forms.Button btnLoadDetail;
-        private System.Windows.Forms.Button updateOrderDetail;
-        private System.Windows.Forms.Button btndeleteOrderDetail;
-        private System.Windows.Forms.Button btnaddOrderDetail;
-        private System.Windows.Forms.DataGridView dgvOrderDetail;
         private System.Windows.Forms.Button btnLoadCategory;
         private System.Windows.Forms.Button btnUpdateCategory;
         private System.Windows.Forms.Button btnDeleteCategory;
@@ -2829,11 +2603,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clSupCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSupPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSupFax;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeProductID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeUnitPrice;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeQuantity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cltOrDeDiscount;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCateID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCateName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCateDescription;

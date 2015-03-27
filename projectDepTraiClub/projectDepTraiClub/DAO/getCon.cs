@@ -1,21 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Data.SqlClient;
-using System.Configuration;
+
 
 namespace Project.DAO
 {
-    class getCon
+    public class getCon
     {
+        public System.Data.SqlClient.SqlConnection con;
         public SqlConnection ConDB()
         {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = ConfigurationManager.ConnectionStrings["Constr"].ConnectionString;
+            con = new System.Data.SqlClient.SqlConnection();
+            con.ConnectionString = //ConfigurationManager.ConnectionStrings["Constr"].ConnectionString;
             //con.ConnectionString =
-                //@"server=.\sqlexpress;database=EmployeeDB;integrated security=true";
-                //@"server=localhost;database=EmployeeDB;integrated security=true";
+                //@"server=.\sqlexpress;database=TSQLFundamentals2008;integrated security=true";
+                @"server=localhost;database=TSQLFundamentals2008;;uid=sa;pwd=123456";
             con.Open();
 
             return con;

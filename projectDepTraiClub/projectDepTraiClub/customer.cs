@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace Project
 {
@@ -62,7 +63,7 @@ namespace Project
         public bool update(int id, List<string> str)
         {
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "UpdateCustomers";
+            cmd.CommandText = "UpdateCustomer";
             cmd.Parameters.Clear();
             SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
             param.Value = id;
@@ -96,6 +97,7 @@ namespace Project
             cmd.Parameters.Add(param);
             param = new SqlParameter("@fax", SqlDbType.VarChar, 24);
             param.Value = str[9];
+            cmd.Parameters.Add(param);
             //
             cmd.ExecuteNonQuery();
             closeConnection();
@@ -104,16 +106,25 @@ namespace Project
 
         public bool delete(int id)
         {
-            cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "DeleteCustomers";
-            cmd.Parameters.Clear();
-            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
-            param.Value = id;
-            cmd.Parameters.Add(param);
-            //
-            cmd.ExecuteNonQuery();
-            closeConnection();
+            try
+            {
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.CommandText = "DeleteCustomer";
+                cmd.Parameters.Clear();
+                SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
+                param.Value = id;
+                cmd.Parameters.Add(param);
+                //
+
+                cmd.ExecuteNonQuery();
+                closeConnection();
+            }
+            catch (Exception e)
+            {
+                MessageBox.Show("This customer can not be delete");
+            }
             return true;
+
         }
 
         public  SqlDataReader select()
@@ -121,7 +132,6 @@ namespace Project
           cmd.CommandType = CommandType.StoredProcedure;
           cmd.CommandText = "selectCustomer";
             SqlDataReader dr = cmd.ExecuteReader();
-            closeConnection();
             return dr;
         }
 

@@ -5,3 +5,12 @@ C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\ob
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.csproj.GenerateResource.Cache
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe.config
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Form1.resources
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe.config
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.exe
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Form1.resources
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Properties.Resources.resources
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.csproj.GenerateResource.Cache
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.pdb
+C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.pdb
