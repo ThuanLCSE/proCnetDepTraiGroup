@@ -24,16 +24,16 @@ namespace Project
             param.Value = str[0];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@supplierid", SqlDbType.Int);
-            param.Value = int.Parse(str[1]);
+            param.Value = Int32.Parse(str[1]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@categoryid", SqlDbType.Int);
-            param.Value = int.Parse(str[2]);
+            param.Value = Int32.Parse(str[2]);
             cmd.Parameters.Add(param);
                 param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = str[3];
+            param.Value = decimal.Parse( str[3]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
-            param.Value = str[4];
+            param.Value = Int32.Parse( str[4]);
                 cmd.Parameters.Add(param);
 
 
@@ -58,17 +58,16 @@ namespace Project
             param.Value = str[0];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@supplierid", SqlDbType.Int);
-            param.Value = str[1];
+            param.Value = Int32.Parse(str[1]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@categoryid", SqlDbType.Int);
-            param.Value = str[2];
+            param.Value = Int32.Parse(str[2]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = str[3];
+            param.Value = decimal.Parse(str[3]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
-            param.Value = str[4];
-            cmd.Parameters.Add(param);
+            param.Value = Int32.Parse(str[4]);
             //
             cmd.ExecuteNonQuery();
             closeConnection();
