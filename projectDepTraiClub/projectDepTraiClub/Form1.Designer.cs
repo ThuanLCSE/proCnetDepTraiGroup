@@ -258,6 +258,33 @@
             this.clShipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clShipPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clShipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -275,6 +302,8 @@
             this.tShippers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -289,7 +318,7 @@
             this.tabControl.Location = new System.Drawing.Point(4, 14);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
-            this.tabControl.Size = new System.Drawing.Size(640, 484);
+            this.tabControl.Size = new System.Drawing.Size(1043, 511);
             this.tabControl.TabIndex = 0;
             // 
             // tCustomer
@@ -654,6 +683,11 @@
             // 
             // tOrder
             // 
+            this.tOrder.Controls.Add(this.button2);
+            this.tOrder.Controls.Add(this.button3);
+            this.tOrder.Controls.Add(this.button4);
+            this.tOrder.Controls.Add(this.panel1);
+            this.tOrder.Controls.Add(this.dataGridView1);
             this.tOrder.Controls.Add(this.txtOrderShiperID);
             this.tOrder.Controls.Add(this.label35);
             this.tOrder.Controls.Add(this.cbOrderShipCountry);
@@ -690,7 +724,7 @@
             this.tOrder.Location = new System.Drawing.Point(4, 22);
             this.tOrder.Name = "tOrder";
             this.tOrder.Padding = new System.Windows.Forms.Padding(3);
-            this.tOrder.Size = new System.Drawing.Size(632, 458);
+            this.tOrder.Size = new System.Drawing.Size(1035, 485);
             this.tOrder.TabIndex = 1;
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
@@ -710,14 +744,14 @@
             "Korea",
             "USA",
             "China"});
-            this.cbOrderShipCountry.Location = new System.Drawing.Point(381, 216);
+            this.cbOrderShipCountry.Location = new System.Drawing.Point(98, 459);
             this.cbOrderShipCountry.Name = "cbOrderShipCountry";
             this.cbOrderShipCountry.Size = new System.Drawing.Size(181, 21);
             this.cbOrderShipCountry.TabIndex = 86;
             // 
             // mtbOrderFreight
             // 
-            this.mtbOrderFreight.Location = new System.Drawing.Point(381, 5);
+            this.mtbOrderFreight.Location = new System.Drawing.Point(98, 248);
             this.mtbOrderFreight.Mask = "999999";
             this.mtbOrderFreight.Name = "mtbOrderFreight";
             this.mtbOrderFreight.Size = new System.Drawing.Size(181, 20);
@@ -746,7 +780,7 @@
             // 
             // btnLoadOrder
             // 
-            this.btnLoadOrder.Location = new System.Drawing.Point(336, 283);
+            this.btnLoadOrder.Location = new System.Drawing.Point(710, 216);
             this.btnLoadOrder.Name = "btnLoadOrder";
             this.btnLoadOrder.Size = new System.Drawing.Size(119, 23);
             this.btnLoadOrder.TabIndex = 53;
@@ -756,7 +790,7 @@
             // 
             // btnUpdateOrder
             // 
-            this.btnUpdateOrder.Location = new System.Drawing.Point(188, 283);
+            this.btnUpdateOrder.Location = new System.Drawing.Point(566, 216);
             this.btnUpdateOrder.Name = "btnUpdateOrder";
             this.btnUpdateOrder.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateOrder.TabIndex = 52;
@@ -766,7 +800,7 @@
             // 
             // btnDeleteOrder
             // 
-            this.btnDeleteOrder.Location = new System.Drawing.Point(336, 250);
+            this.btnDeleteOrder.Location = new System.Drawing.Point(710, 187);
             this.btnDeleteOrder.Name = "btnDeleteOrder";
             this.btnDeleteOrder.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteOrder.TabIndex = 51;
@@ -775,7 +809,7 @@
             // 
             // btnAddOrder
             // 
-            this.btnAddOrder.Location = new System.Drawing.Point(188, 250);
+            this.btnAddOrder.Location = new System.Drawing.Point(566, 187);
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(115, 23);
             this.btnAddOrder.TabIndex = 50;
@@ -803,17 +837,17 @@
             this.clShipRegion,
             this.clShipPosCode,
             this.clShipCountry});
-            this.dgvOrder.Location = new System.Drawing.Point(9, 312);
+            this.dgvOrder.Location = new System.Drawing.Point(296, 40);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.ReadOnly = true;
-            this.dgvOrder.Size = new System.Drawing.Size(620, 137);
+            this.dgvOrder.Size = new System.Drawing.Size(702, 137);
             this.dgvOrder.TabIndex = 49;
             this.dgvOrder.SelectionChanged += new System.EventHandler(this.dgvOrder_SelectionChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(293, 219);
+            this.label5.Location = new System.Drawing.Point(10, 462);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 47;
@@ -830,7 +864,7 @@
             // 
             // txtOrderShipPosCode
             // 
-            this.txtOrderShipPosCode.Location = new System.Drawing.Point(381, 184);
+            this.txtOrderShipPosCode.Location = new System.Drawing.Point(98, 427);
             this.txtOrderShipPosCode.Name = "txtOrderShipPosCode";
             this.txtOrderShipPosCode.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipPosCode.TabIndex = 44;
@@ -839,7 +873,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(293, 187);
+            this.label1.Location = new System.Drawing.Point(10, 430);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(88, 13);
             this.label1.TabIndex = 43;
@@ -847,7 +881,7 @@
             // 
             // txtOrderShipRegion
             // 
-            this.txtOrderShipRegion.Location = new System.Drawing.Point(381, 145);
+            this.txtOrderShipRegion.Location = new System.Drawing.Point(98, 388);
             this.txtOrderShipRegion.Name = "txtOrderShipRegion";
             this.txtOrderShipRegion.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipRegion.TabIndex = 42;
@@ -855,7 +889,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(293, 148);
+            this.label2.Location = new System.Drawing.Point(10, 391);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 41;
@@ -863,7 +897,7 @@
             // 
             // txtOrderShipCity
             // 
-            this.txtOrderShipCity.Location = new System.Drawing.Point(381, 107);
+            this.txtOrderShipCity.Location = new System.Drawing.Point(98, 350);
             this.txtOrderShipCity.Name = "txtOrderShipCity";
             this.txtOrderShipCity.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipCity.TabIndex = 40;
@@ -871,7 +905,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(293, 110);
+            this.label3.Location = new System.Drawing.Point(10, 353);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 39;
@@ -879,7 +913,7 @@
             // 
             // txtOrderShipAddress
             // 
-            this.txtOrderShipAddress.Location = new System.Drawing.Point(381, 72);
+            this.txtOrderShipAddress.Location = new System.Drawing.Point(98, 315);
             this.txtOrderShipAddress.Name = "txtOrderShipAddress";
             this.txtOrderShipAddress.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipAddress.TabIndex = 38;
@@ -887,7 +921,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(293, 75);
+            this.label4.Location = new System.Drawing.Point(10, 318);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 37;
@@ -895,7 +929,7 @@
             // 
             // txtOrderShipName
             // 
-            this.txtOrderShipName.Location = new System.Drawing.Point(381, 40);
+            this.txtOrderShipName.Location = new System.Drawing.Point(98, 283);
             this.txtOrderShipName.Name = "txtOrderShipName";
             this.txtOrderShipName.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipName.TabIndex = 36;
@@ -903,7 +937,7 @@
             // lblShipName
             // 
             this.lblShipName.AutoSize = true;
-            this.lblShipName.Location = new System.Drawing.Point(293, 43);
+            this.lblShipName.Location = new System.Drawing.Point(10, 286);
             this.lblShipName.Name = "lblShipName";
             this.lblShipName.Size = new System.Drawing.Size(59, 13);
             this.lblShipName.TabIndex = 35;
@@ -912,7 +946,7 @@
             // lblFreight
             // 
             this.lblFreight.AutoSize = true;
-            this.lblFreight.Location = new System.Drawing.Point(293, 10);
+            this.lblFreight.Location = new System.Drawing.Point(10, 253);
             this.lblFreight.Name = "lblFreight";
             this.lblFreight.Size = new System.Drawing.Size(39, 13);
             this.lblFreight.TabIndex = 33;
@@ -2380,12 +2414,228 @@
             this.clShipCountry.Name = "clShipCountry";
             this.clShipCountry.ReadOnly = true;
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.dataGridView1.Location = new System.Drawing.Point(296, 255);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(702, 137);
+            this.dataGridView1.TabIndex = 89;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Order ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Customer ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Employee ID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Order Date";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Require Date";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Shipped Date";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Shipper ID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Freight";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Ship Name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Ship Address";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Ship City";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Ship Region";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Ship Postal Code";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Ship Country";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.label44);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.label43);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label42);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label41);
+            this.panel1.Location = new System.Drawing.Point(296, 398);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(562, 60);
+            this.panel1.TabIndex = 90;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(95, 6);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(181, 20);
+            this.textBox2.TabIndex = 94;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(7, 9);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(58, 13);
+            this.label41.TabIndex = 93;
+            this.label41.Text = "Product ID";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(95, 32);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(181, 20);
+            this.textBox3.TabIndex = 96;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(7, 35);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(53, 13);
+            this.label42.TabIndex = 95;
+            this.label42.Text = "Unit Price";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(370, 6);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(181, 20);
+            this.textBox4.TabIndex = 98;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(282, 9);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(46, 13);
+            this.label43.TabIndex = 97;
+            this.label43.Text = "Quantity";
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(370, 32);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(181, 20);
+            this.textBox5.TabIndex = 100;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(282, 35);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(49, 13);
+            this.label44.TabIndex = 99;
+            this.label44.Text = "Discount";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(883, 427);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 23);
+            this.button2.TabIndex = 93;
+            this.button2.Text = "Update Detail";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(883, 456);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 23);
+            this.button3.TabIndex = 92;
+            this.button3.Text = "Delete Detail";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(883, 398);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 23);
+            this.button4.TabIndex = 91;
+            this.button4.Text = "Add Detail";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.ClientSize = new System.Drawing.Size(651, 505);
+            this.ClientSize = new System.Drawing.Size(1054, 528);
             this.Controls.Add(this.tabControl);
             this.Name = "Form1";
             this.Text = "Form1";
@@ -2415,6 +2665,9 @@
             this.tShippers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -2650,6 +2903,33 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipRegion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipPosCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipCountry;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.Label label41;
     }
 }
 

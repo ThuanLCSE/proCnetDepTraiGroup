@@ -1029,15 +1029,18 @@ namespace Project
 
         private void btnUpdateEmp_Click(object sender, EventArgs e)
         {
-
+            if (validateEmp() == false)
+                return;
+            UpdateEmp();
+            LoadEmp();
         }
 
         void UpdateEmp()
         {
-            if (dgvOrder.SelectedRows.Count > 0)
+            if (dgvEmp.SelectedRows.Count > 0)
             {
                 List<String> list = new List<string>();
-                DataGridViewRow r = dgvProduct.SelectedRows[0];
+                DataGridViewRow r = dgvEmp.SelectedRows[0];
                 Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
                 list.Add(this.txtEmpLastName.Text);
                 list.Add(this.txtEmpFirstName.Text);
@@ -1062,30 +1065,81 @@ namespace Project
 
         private void btnUpdateSupplier_Click(object sender, EventArgs e)
         {
+            UpdateSupplier();
+            LoadSupplier();
+        }
 
+        private void UpdateSupplier()
+        {
+            if (dgvSupplier.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvSupplier.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+                List<String> list = new List<string>();
+                list.Add(this.txtSupID.Text);
+                list.Add(this.txtSupCompanyName.Text);
+                list.Add(this.txtSupContactName.Text);
+                list.Add(this.txtSupAdd.Text);
+                list.Add(this.txtSupCity.Text);
+                list.Add(this.txtSupRegion.Text);
+                list.Add(this.txtSupPosCode.Text);
+                list.Add(this.cbSupCountry.Text);
+                list.Add(this.txtSupPhone.Text);
+                list.Add(this.txtSupFax.Text);
+                new Supplier().update(point,list);
+            }
+            else
+                MessageBox.Show("Select row to update!");
         }
 
         private void btnUpdateCategory_Click(object sender, EventArgs e)
         {
+            UpdateCategory();
+            LoadCategory();
+        }
 
+        private void UpdateCategory()
+        {
+            if (dgvCategory.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvCategory.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+                List<String> list = new List<string>();
+                list.Add(this.txtCateID.Text);
+                list.Add(this.txtCateName.Text);
+                list.Add(this.txtCateDescription.Text);
+                new Categori().update(point, list);
+            }
+            else
+                MessageBox.Show("Select row to update!");
         }
 
         private void btnUpdateShipper_Click(object sender, EventArgs e)
         {
+            if (validateShipper() == false)
+                return;
+            UpdateShipper();
+            LoadShipper();
+        }
 
+        private void UpdateShipper()
+        {
+            if (dgvCategory.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvCategory.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+                List<String> list = new List<string>();
+                list.Add(this.txtShipperID.Text);
+                list.Add(this.txtShipperCompany.Text);
+                list.Add(this.txtShipperPhone.Text);
+                new Shipper().update(point, list);
+            }
+            else
+                MessageBox.Show("Select row to update!");
         }
 
 
         #endregion
-
-        
-
-
-
-
-
-
-
 
     }
 }
