@@ -59,7 +59,9 @@ namespace Project
             param.Value = str[11];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@mgrid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[12]);
+            if (str[12].CompareTo("")==0)
+            param.Value= DBNull.Value;
+            else param.Value=Int32.Parse(str[12]);
             cmd.Parameters.Add(param);
 
             cmd.ExecuteNonQuery();
@@ -114,7 +116,9 @@ namespace Project
             param.Value = str[11];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@mgrid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[12]);
+            if (str[12].CompareTo("") == 0)
+                param.Value = DBNull.Value;
+            else param.Value = Int32.Parse(str[12]);
             cmd.Parameters.Add(param);
             //
             cmd.ExecuteNonQuery();
@@ -188,7 +192,9 @@ namespace Project
             param.Value = str[11];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@mgrid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[12]);
+            if (str[12].CompareTo("") == 0)
+                param.Value = DBNull.Value;
+            else param.Value = Int32.Parse(str[12]);
             cmd.Parameters.Add(param);
             //
             SqlDataReader dr = cmd.ExecuteReader();
