@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tCustomer = new System.Windows.Forms.TabPage();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.cbCusCountry = new System.Windows.Forms.ComboBox();
             this.btnLoadCustomer = new System.Windows.Forms.Button();
             this.btnUpdateCustomer = new System.Windows.Forms.Button();
@@ -225,16 +227,6 @@
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
-            this.clSupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSupFax = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtSupPhone = new System.Windows.Forms.TextBox();
@@ -285,8 +277,19 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.btnSearchCustomer = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtSupContactTitle = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
+            this.clSupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -361,6 +364,23 @@
             this.tCustomer.TabIndex = 0;
             this.tCustomer.Text = "Customer";
             this.tCustomer.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(295, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(385, 20);
+            this.textBox1.TabIndex = 88;
+            // 
+            // btnSearchCustomer
+            // 
+            this.btnSearchCustomer.Location = new System.Drawing.Point(710, 5);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchCustomer.TabIndex = 87;
+            this.btnSearchCustomer.Text = "Search";
+            this.btnSearchCustomer.UseVisualStyleBackColor = true;
             // 
             // cbCusCountry
             // 
@@ -741,7 +761,6 @@
             this.btnUpdateDetail.TabIndex = 93;
             this.btnUpdateDetail.Text = "Update Detail";
             this.btnUpdateDetail.UseVisualStyleBackColor = true;
-            this.btnUpdateDetail.Click += new System.EventHandler(this.btnUpdateDetail_Click);
             // 
             // btnDeleteDetail
             // 
@@ -751,7 +770,6 @@
             this.btnDeleteDetail.TabIndex = 92;
             this.btnDeleteDetail.Text = "Delete Detail";
             this.btnDeleteDetail.UseVisualStyleBackColor = true;
-            this.btnDeleteDetail.Click += new System.EventHandler(this.btnDeleteDetail_Click);
             // 
             // btnAddDetail
             // 
@@ -761,7 +779,6 @@
             this.btnAddDetail.TabIndex = 91;
             this.btnAddDetail.Text = "Add Detail";
             this.btnAddDetail.UseVisualStyleBackColor = true;
-            this.btnAddDetail.Click += new System.EventHandler(this.btnAddDetail_Click);
             // 
             // panel1
             // 
@@ -1470,6 +1487,7 @@
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.Size = new System.Drawing.Size(620, 137);
             this.dgvProduct.TabIndex = 36;
+            this.dgvProduct.SelectionChanged += new System.EventHandler(this.dgvProduct_SelectionChanged);
             // 
             // clProductID
             // 
@@ -1742,6 +1760,7 @@
             this.dgvEmp.ReadOnly = true;
             this.dgvEmp.Size = new System.Drawing.Size(620, 137);
             this.dgvEmp.TabIndex = 77;
+            this.dgvEmp.SelectionChanged += new System.EventHandler(this.dgvEmp_SelectionChanged);
             // 
             // clEmployeeID
             // 
@@ -1984,6 +2003,7 @@
             // 
             // txtEmployID
             // 
+            this.txtEmployID.Enabled = false;
             this.txtEmployID.Location = new System.Drawing.Point(98, 5);
             this.txtEmployID.Name = "txtEmployID";
             this.txtEmployID.Size = new System.Drawing.Size(181, 20);
@@ -2027,6 +2047,8 @@
             // 
             // tSuppliers
             // 
+            this.tSuppliers.Controls.Add(this.txtSupContactTitle);
+            this.tSuppliers.Controls.Add(this.label40);
             this.tSuppliers.Controls.Add(this.cbSupCountry);
             this.tSuppliers.Controls.Add(this.btnLoadSupplier);
             this.tSuppliers.Controls.Add(this.btnUpdateSupplier);
@@ -2075,7 +2097,7 @@
             "Korea",
             "USA",
             "China"});
-            this.cbSupCountry.Location = new System.Drawing.Point(98, 250);
+            this.cbSupCountry.Location = new System.Drawing.Point(98, 290);
             this.cbSupCountry.Name = "cbSupCountry";
             this.cbSupCountry.Size = new System.Drawing.Size(181, 21);
             this.cbSupCountry.TabIndex = 108;
@@ -2129,6 +2151,7 @@
             this.clSupID,
             this.clSupCompanyName,
             this.clSupContactName,
+            this.clSupContactTitle,
             this.clSupAddress,
             this.clSupCity,
             this.clSupRegion,
@@ -2136,75 +2159,16 @@
             this.clSupCountry,
             this.clSupPhone,
             this.clSupFax});
-            this.dgvSupplier.Location = new System.Drawing.Point(295, 40);
+            this.dgvSupplier.Location = new System.Drawing.Point(311, 40);
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.ReadOnly = true;
             this.dgvSupplier.Size = new System.Drawing.Size(620, 137);
             this.dgvSupplier.TabIndex = 103;
-            // 
-            // clSupID
-            // 
-            this.clSupID.HeaderText = "Supplier ID";
-            this.clSupID.Name = "clSupID";
-            this.clSupID.ReadOnly = true;
-            // 
-            // clSupCompanyName
-            // 
-            this.clSupCompanyName.HeaderText = "Company Name";
-            this.clSupCompanyName.Name = "clSupCompanyName";
-            this.clSupCompanyName.ReadOnly = true;
-            // 
-            // clSupContactName
-            // 
-            this.clSupContactName.HeaderText = "Contact Name";
-            this.clSupContactName.Name = "clSupContactName";
-            this.clSupContactName.ReadOnly = true;
-            // 
-            // clSupAddress
-            // 
-            this.clSupAddress.HeaderText = "Address";
-            this.clSupAddress.Name = "clSupAddress";
-            this.clSupAddress.ReadOnly = true;
-            // 
-            // clSupCity
-            // 
-            this.clSupCity.HeaderText = "City";
-            this.clSupCity.Name = "clSupCity";
-            this.clSupCity.ReadOnly = true;
-            // 
-            // clSupRegion
-            // 
-            this.clSupRegion.HeaderText = "Region";
-            this.clSupRegion.Name = "clSupRegion";
-            this.clSupRegion.ReadOnly = true;
-            // 
-            // clSupPostalCode
-            // 
-            this.clSupPostalCode.HeaderText = "Postal Code";
-            this.clSupPostalCode.Name = "clSupPostalCode";
-            this.clSupPostalCode.ReadOnly = true;
-            // 
-            // clSupCountry
-            // 
-            this.clSupCountry.HeaderText = "Country";
-            this.clSupCountry.Name = "clSupCountry";
-            this.clSupCountry.ReadOnly = true;
-            // 
-            // clSupPhone
-            // 
-            this.clSupPhone.HeaderText = "Phone";
-            this.clSupPhone.Name = "clSupPhone";
-            this.clSupPhone.ReadOnly = true;
-            // 
-            // clSupFax
-            // 
-            this.clSupFax.HeaderText = "Fax";
-            this.clSupFax.Name = "clSupFax";
-            this.clSupFax.ReadOnly = true;
+            this.dgvSupplier.SelectionChanged += new System.EventHandler(this.dgvSupplier_SelectionChanged);
             // 
             // txtSupFax
             // 
-            this.txtSupFax.Location = new System.Drawing.Point(98, 320);
+            this.txtSupFax.Location = new System.Drawing.Point(98, 360);
             this.txtSupFax.Name = "txtSupFax";
             this.txtSupFax.Size = new System.Drawing.Size(181, 20);
             this.txtSupFax.TabIndex = 102;
@@ -2212,7 +2176,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(10, 325);
+            this.label27.Location = new System.Drawing.Point(10, 365);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(24, 13);
             this.label27.TabIndex = 101;
@@ -2220,7 +2184,7 @@
             // 
             // txtSupPhone
             // 
-            this.txtSupPhone.Location = new System.Drawing.Point(98, 285);
+            this.txtSupPhone.Location = new System.Drawing.Point(98, 325);
             this.txtSupPhone.Name = "txtSupPhone";
             this.txtSupPhone.Size = new System.Drawing.Size(181, 20);
             this.txtSupPhone.TabIndex = 98;
@@ -2228,7 +2192,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(10, 290);
+            this.label29.Location = new System.Drawing.Point(10, 330);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(38, 13);
             this.label29.TabIndex = 97;
@@ -2237,7 +2201,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(10, 255);
+            this.label30.Location = new System.Drawing.Point(10, 295);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(43, 13);
             this.label30.TabIndex = 95;
@@ -2245,7 +2209,7 @@
             // 
             // txtSupPosCode
             // 
-            this.txtSupPosCode.Location = new System.Drawing.Point(98, 215);
+            this.txtSupPosCode.Location = new System.Drawing.Point(98, 255);
             this.txtSupPosCode.Name = "txtSupPosCode";
             this.txtSupPosCode.Size = new System.Drawing.Size(181, 20);
             this.txtSupPosCode.TabIndex = 94;
@@ -2253,7 +2217,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(10, 220);
+            this.label31.Location = new System.Drawing.Point(10, 260);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(64, 13);
             this.label31.TabIndex = 93;
@@ -2261,7 +2225,7 @@
             // 
             // txtSupRegion
             // 
-            this.txtSupRegion.Location = new System.Drawing.Point(98, 180);
+            this.txtSupRegion.Location = new System.Drawing.Point(98, 220);
             this.txtSupRegion.Name = "txtSupRegion";
             this.txtSupRegion.Size = new System.Drawing.Size(181, 20);
             this.txtSupRegion.TabIndex = 92;
@@ -2269,7 +2233,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(10, 185);
+            this.label32.Location = new System.Drawing.Point(10, 225);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(41, 13);
             this.label32.TabIndex = 91;
@@ -2277,7 +2241,7 @@
             // 
             // txtSupCity
             // 
-            this.txtSupCity.Location = new System.Drawing.Point(98, 145);
+            this.txtSupCity.Location = new System.Drawing.Point(98, 185);
             this.txtSupCity.Name = "txtSupCity";
             this.txtSupCity.Size = new System.Drawing.Size(181, 20);
             this.txtSupCity.TabIndex = 90;
@@ -2285,7 +2249,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(10, 150);
+            this.label33.Location = new System.Drawing.Point(10, 190);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(24, 13);
             this.label33.TabIndex = 89;
@@ -2293,7 +2257,7 @@
             // 
             // txtSupAdd
             // 
-            this.txtSupAdd.Location = new System.Drawing.Point(98, 110);
+            this.txtSupAdd.Location = new System.Drawing.Point(98, 150);
             this.txtSupAdd.Name = "txtSupAdd";
             this.txtSupAdd.Size = new System.Drawing.Size(181, 20);
             this.txtSupAdd.TabIndex = 84;
@@ -2314,6 +2278,7 @@
             // 
             // txtSupID
             // 
+            this.txtSupID.Enabled = false;
             this.txtSupID.Location = new System.Drawing.Point(98, 5);
             this.txtSupID.Name = "txtSupID";
             this.txtSupID.Size = new System.Drawing.Size(181, 20);
@@ -2322,7 +2287,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(10, 115);
+            this.label36.Location = new System.Drawing.Point(10, 155);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(45, 13);
             this.label36.TabIndex = 80;
@@ -2430,6 +2395,7 @@
             this.dgvCategory.ReadOnly = true;
             this.dgvCategory.Size = new System.Drawing.Size(620, 137);
             this.dgvCategory.TabIndex = 84;
+            this.dgvCategory.SelectionChanged += new System.EventHandler(this.dgvCategory_SelectionChanged);
             // 
             // clCateID
             // 
@@ -2465,6 +2431,7 @@
             // 
             // txtCateID
             // 
+            this.txtCateID.Enabled = false;
             this.txtCateID.Location = new System.Drawing.Point(98, 5);
             this.txtCateID.Name = "txtCateID";
             this.txtCateID.Size = new System.Drawing.Size(181, 20);
@@ -2572,6 +2539,7 @@
             this.dgvShipper.ReadOnly = true;
             this.dgvShipper.Size = new System.Drawing.Size(620, 137);
             this.dgvShipper.TabIndex = 90;
+            this.dgvShipper.SelectionChanged += new System.EventHandler(this.dgvShipper_SelectionChanged);
             // 
             // clShipperID
             // 
@@ -2607,6 +2575,7 @@
             // 
             // txtShipperID
             // 
+            this.txtShipperID.Enabled = false;
             this.txtShipperID.Location = new System.Drawing.Point(98, 5);
             this.txtShipperID.Name = "txtShipperID";
             this.txtShipperID.Size = new System.Drawing.Size(181, 20);
@@ -2643,22 +2612,87 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // btnSearchCustomer
+            // txtSupContactTitle
             // 
-            this.btnSearchCustomer.Location = new System.Drawing.Point(710, 5);
-            this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(75, 23);
-            this.btnSearchCustomer.TabIndex = 87;
-            this.btnSearchCustomer.Text = "Search";
-            this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.txtSupContactTitle.Location = new System.Drawing.Point(98, 112);
+            this.txtSupContactTitle.Name = "txtSupContactTitle";
+            this.txtSupContactTitle.Size = new System.Drawing.Size(181, 20);
+            this.txtSupContactTitle.TabIndex = 110;
             // 
-            // textBox1
+            // label40
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(295, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(385, 20);
-            this.textBox1.TabIndex = 88;
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(10, 117);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(67, 13);
+            this.label40.TabIndex = 109;
+            this.label40.Text = "Contact Title";
+            // 
+            // clSupID
+            // 
+            this.clSupID.HeaderText = "Supplier ID";
+            this.clSupID.Name = "clSupID";
+            this.clSupID.ReadOnly = true;
+            // 
+            // clSupCompanyName
+            // 
+            this.clSupCompanyName.HeaderText = "Company Name";
+            this.clSupCompanyName.Name = "clSupCompanyName";
+            this.clSupCompanyName.ReadOnly = true;
+            // 
+            // clSupContactName
+            // 
+            this.clSupContactName.HeaderText = "Contact Name";
+            this.clSupContactName.Name = "clSupContactName";
+            this.clSupContactName.ReadOnly = true;
+            // 
+            // clSupContactTitle
+            // 
+            this.clSupContactTitle.HeaderText = "Contact Title";
+            this.clSupContactTitle.Name = "clSupContactTitle";
+            this.clSupContactTitle.ReadOnly = true;
+            // 
+            // clSupAddress
+            // 
+            this.clSupAddress.HeaderText = "Address";
+            this.clSupAddress.Name = "clSupAddress";
+            this.clSupAddress.ReadOnly = true;
+            // 
+            // clSupCity
+            // 
+            this.clSupCity.HeaderText = "City";
+            this.clSupCity.Name = "clSupCity";
+            this.clSupCity.ReadOnly = true;
+            // 
+            // clSupRegion
+            // 
+            this.clSupRegion.HeaderText = "Region";
+            this.clSupRegion.Name = "clSupRegion";
+            this.clSupRegion.ReadOnly = true;
+            // 
+            // clSupPostalCode
+            // 
+            this.clSupPostalCode.HeaderText = "Postal Code";
+            this.clSupPostalCode.Name = "clSupPostalCode";
+            this.clSupPostalCode.ReadOnly = true;
+            // 
+            // clSupCountry
+            // 
+            this.clSupCountry.HeaderText = "Country";
+            this.clSupCountry.Name = "clSupCountry";
+            this.clSupCountry.ReadOnly = true;
+            // 
+            // clSupPhone
+            // 
+            this.clSupPhone.HeaderText = "Phone";
+            this.clSupPhone.Name = "clSupPhone";
+            this.clSupPhone.ReadOnly = true;
+            // 
+            // clSupFax
+            // 
+            this.clSupFax.HeaderText = "Fax";
+            this.clSupFax.Name = "clSupFax";
+            this.clSupFax.ReadOnly = true;
             // 
             // Form1
             // 
@@ -2901,16 +2935,6 @@
         private System.Windows.Forms.ComboBox cbOrderShipCountry;
         private System.Windows.Forms.ComboBox cbEmpCountry;
         private System.Windows.Forms.ComboBox cbSupCountry;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCompanyName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupContactName;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupAddress;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCity;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupRegion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupPostalCode;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCountry;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupPhone;
-        private System.Windows.Forms.DataGridViewTextBoxColumn clSupFax;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCateID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCateName;
         private System.Windows.Forms.DataGridViewTextBoxColumn clCateDescription;
@@ -2962,6 +2986,19 @@
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSearchCustomer;
+        private System.Windows.Forms.TextBox txtSupContactTitle;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCompanyName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupContactName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupContactTitle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupAddress;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCity;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupRegion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupPostalCode;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupCountry;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupPhone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clSupFax;
     }
 }
 

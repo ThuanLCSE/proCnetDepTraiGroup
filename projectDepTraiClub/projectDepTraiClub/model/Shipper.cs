@@ -59,7 +59,7 @@ namespace Project
         public bool delete(int id)
         {
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "DeleteShippers";
+            cmd.CommandText = "DeleteShipper";
             cmd.Parameters.Clear();
 
             SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
@@ -77,7 +77,6 @@ namespace Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectShipper";
             SqlDataReader dr = cmd.ExecuteReader();
-            closeConnection();
             return dr;
         }
         public SqlDataReader search(int id,List<string> str)

@@ -119,7 +119,7 @@ namespace Project
             return true;
         }
 
-        public SqlDataReader select(int id)
+        public SqlDataReader select()
         {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectSupplier";

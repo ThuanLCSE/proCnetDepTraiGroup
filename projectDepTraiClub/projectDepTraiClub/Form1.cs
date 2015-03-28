@@ -69,8 +69,92 @@ namespace Project
                 cbOrderShipCountry.Text = r.Cells[13].Value.ToString();
             }
         }
-        #endregion
 
+        private void dgvProduct_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvProduct.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvProduct.SelectedRows[0];
+                txtProductID.Text = r.Cells[0].Value.ToString();
+                txtProductName.Text = r.Cells[1].Value.ToString();
+                txtProSupplierID.Text = r.Cells[2].Value.ToString();
+                cbCaterogyID.Text = r.Cells[3].Value.ToString();
+                txtProUnitPrice.Text = r.Cells[4].Value.ToString();
+                if (r.Cells[5].Value.ToString().Equals("Y"))
+                    radYes.Checked = true;
+                else radNo.Checked = true; ;
+            }
+        }
+
+        private void dgvEmp_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvEmp.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvEmp.SelectedRows[0];
+                txtEmployID.Text = r.Cells[0].Value.ToString();
+                txtEmpLastName.Text = r.Cells[1].Value.ToString();
+                txtEmpFirstName.Text = r.Cells[2].Value.ToString();
+                txtEmpTitle.Text = r.Cells[3].Value.ToString();
+                txtEmpTitleOfCourtesy.Text = r.Cells[4].Value.ToString();
+                DateTime dt;
+                DateTime.TryParse(r.Cells[5].Value.ToString(), out dt);
+                dtpEmpBirthdate.Value = dt;
+                DateTime.TryParse(r.Cells[6].Value.ToString(), out dt);
+                dtpEmpHireDate.Value = dt;
+                txtEmpAddress.Text = r.Cells[7].Value.ToString();
+                txtEmpCity.Text = r.Cells[8].Value.ToString();
+                txtEmpRegion.Text = r.Cells[9].Value.ToString();
+                txtEmpPosCode.Text = r.Cells[10].Value.ToString();
+                cbEmpCountry.Text = r.Cells[11].Value.ToString();
+                mtbEmpPhone.Text = r.Cells[12].Value.ToString();
+                txtEmpManagerID.Text = r.Cells[13].Value.ToString();
+            }
+        }
+
+        private void dgvSupplier_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvSupplier.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvSupplier.SelectedRows[0];
+                txtSupID.Text = r.Cells[0].Value.ToString();
+                txtSupCompanyName.Text = r.Cells[1].Value.ToString();
+                txtSupContactName.Text = r.Cells[2].Value.ToString();
+                txtSupContactTitle.Text = r.Cells[3].Value.ToString();
+                txtSupAdd.Text = r.Cells[4].Value.ToString();
+                txtSupCity.Text = r.Cells[5].Value.ToString();
+                txtSupRegion.Text = r.Cells[6].Value.ToString();
+                txtSupPosCode.Text = r.Cells[7].Value.ToString();
+                cbSupCountry.DropDownStyle = ComboBoxStyle.DropDown;
+                cbSupCountry.Text = r.Cells[8].Value.ToString();
+                cbSupCountry.DropDownStyle = ComboBoxStyle.DropDownList;
+                txtSupPhone.Text = r.Cells[9].Value.ToString();
+                txtSupFax.Text = r.Cells[10].Value.ToString();
+            }
+        }
+
+        private void dgvCategory_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvCategory.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvCategory.SelectedRows[0];
+                txtCateID.Text = r.Cells[0].Value.ToString();
+                txtCateName.Text = r.Cells[1].Value.ToString();
+                txtCateDescription.Text = r.Cells[2].Value.ToString();
+            }
+        }
+
+        private void dgvShipper_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvShipper.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvShipper.SelectedRows[0];
+                txtShipperID.Text = r.Cells[0].Value.ToString();
+                txtShipperCompany.Text = r.Cells[1].Value.ToString();
+                txtShipperPhone.Text = r.Cells[2].Value.ToString();
+            }
+        }
+
+        #endregion
 
 
         #region validate input
@@ -118,6 +202,26 @@ namespace Project
         private bool validateOrder()
         {
             bool error = true;
+            DateTime currDate = DateTime.Now;
+            int currYear = currDate.Year;
+            DateTime OrderDate = dtpOrderDate.Value;
+            DateTime RequireDate = dtpRequireDate.Value;
+            DateTime ShippedDate = dtpShippedDate.Value;
+            if (currDate.CompareTo(OrderDate)<=0)
+            {
+                errorProvider1.SetError(dtpOrderDate, "Order date must before today");
+                error = false;
+            }
+            if (RequireDate.CompareTo(OrderDate) < 0)
+            {
+                errorProvider1.SetError(dtpRequireDate, "Require date must after order date");
+                error = false;
+            }
+            if (ShippedDate.CompareTo(RequireDate) > 0 || ShippedDate.CompareTo(OrderDate)<=0)
+            {
+                errorProvider1.SetError(dtpShippedDate, "Shipped date can't be after require date or before order date");
+                error = false;
+            }
             if (txtOrderEmpID.Text.Length == 0)
             {
                 errorProvider1.SetError(txtProductName, "Enter Employee's ID!!!");
@@ -164,11 +268,11 @@ namespace Project
                 errorProvider1.SetError(txtProSupplierID, "Enter Supplier ID!!!");
                 error = false;
             }
-            //if (cbCaterogyID.Text.Length == 0)
-            //{
-            //    errorProvider1.SetError(cbCaterogyID, "Enter Category ID!!!");
-            //    error = false;
-            //}
+            if (cbCaterogyID.Text.Length == 0)
+            {
+                errorProvider1.SetError(cbCaterogyID, "Choose Category ID!!!");
+                error = false;
+            }
             if (txtProUnitPrice.Text.Length == 0)
             {
                 errorProvider1.SetError(txtProUnitPrice, "Enter Unit Price!!!");
@@ -217,7 +321,7 @@ namespace Project
                 errorProvider1.SetError(dtpEmpBirthdate, "Age must be greater than or equal to 18");
                 error = false;
             }
-            if (currYear - birthYear < 0)
+            if (currYear - hireYear < 0)
             {
                 errorProvider1.SetError(dtpEmpBirthdate, "Hire date must before today!!!");
                 error = false;
@@ -231,16 +335,6 @@ namespace Project
             if (txtEmpCity.Text.Length == 0)
             {
                 errorProvider1.SetError(txtEmpCity, "Enter Employee City!!!");
-                error = false;
-            }
-            if (txtEmpRegion.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtEmpRegion, "Enter Employee's Region!!!");
-                error = false;
-            }
-            if (txtEmpPosCode.Text.Length == 0)
-            {
-                errorProvider1.SetError(txtEmpPosCode, "Enter Postal Code!!!");
                 error = false;
             }
             if (mtbEmpPhone.MaskCompleted == false)
@@ -274,7 +368,7 @@ namespace Project
                 errorProvider1.SetError(txtSupCity, "Enter City!");
                 error = false;
             }
-            if (cbCusCountry.Text.Length == 0)
+            if (cbSupCountry.Text.Length == 0)
             {
                 errorProvider1.SetError(cbCusCountry, "Select Country!");
                 error = false;
@@ -291,7 +385,6 @@ namespace Project
         private bool validateCategory()
         {
             bool error = true;
-            return error;
             if (txtCateName.Text.Length == 0)
             {
                 errorProvider1.SetError(txtCateName, "Enter Category Name!");
@@ -302,6 +395,7 @@ namespace Project
                 errorProvider1.SetError(txtCateDescription, "Enter Description");
                 error = false;
             }
+            return error;
         }
 
         private bool validateShipper()
@@ -317,7 +411,7 @@ namespace Project
                 errorProvider1.SetError(txtShipperPhone, "Enter Phone Number!");
                 error = false;
             }
-            return false;
+            return error;
         }
 
         #endregion
@@ -494,10 +588,10 @@ namespace Project
             dgvEmp.Rows.Clear();
             while (dr.Read())
             {
-                int mgrid;
+                string mgrid="";
                 if (dr[13] == DBNull.Value)
-                    mgrid = 0;
-                else mgrid = dr.GetInt32(0);
+                    mgrid = "";
+                else mgrid = dr[13].ToString();
                 dgvEmp.Rows.Add(dr.GetInt32(0), dr[1].ToString(), dr[2].ToString(), dr[3].ToString(), dr[4].ToString(),
                     DateTime.Parse(dr[5].ToString()).ToShortDateString(), DateTime.Parse(dr[6].ToString()).ToShortDateString(),
                     dr[7].ToString(), dr[8].ToString(), dr[9].ToString(), dr[10].ToString(), dr[11].ToString(), dr[12].ToString(), mgrid);
@@ -584,7 +678,8 @@ namespace Project
                     dr[6].ToString(),
                     dr[7].ToString(),
                     dr[8].ToString(),
-                    dr[9].ToString()
+                    dr[9].ToString(),
+                    dr[10].ToString()
                     );
             }
             dr.Close();
@@ -694,8 +789,8 @@ namespace Project
         {
             List<String> list = new List<string>();
             list.Add(this.txtProductName.Text);
-            list.Add(this.txtSupID.Text);
-            list.Add(this.cbCaterogyID.Text);
+            list.Add(this.txtProSupplierID.Text);
+            list.Add(this.cbCaterogyID.SelectedValue.ToString());
             list.Add(this.txtProUnitPrice.Text);
             if (this.radYes.Checked)
             {
@@ -729,7 +824,7 @@ namespace Project
             list.Add(this.txtEmpCity.Text);
             list.Add(this.txtEmpRegion.Text);
             list.Add(this.txtEmpPosCode.Text);
-            list.Add(this.cbEmpCountry.Text);
+            list.Add(this.cbEmpCountry.ValueMember);
             list.Add(this.mtbEmpPhone.Text);
             list.Add(this.txtEmpManagerID.Text);
             new employee().insert(list);
@@ -745,9 +840,9 @@ namespace Project
         private void AddSupplier()
         {
             List<String> list = new List<string>();
-            list.Add(this.txtSupID.Text);
             list.Add(this.txtSupCompanyName.Text);
             list.Add(this.txtSupContactName.Text);
+            list.Add(this.txtSupContactTitle.Text);
             list.Add(this.txtSupAdd.Text);
             list.Add(this.txtSupCity.Text);
             list.Add(this.txtSupRegion.Text);
@@ -778,7 +873,6 @@ namespace Project
         private void AddCategory()
         {
             List<String> list = new List<string>();
-            list.Add(this.txtCateID.Text);
             list.Add(this.txtCateName.Text);
             list.Add(this.txtCateDescription.Text);
             new Categori().insert(list);
@@ -793,7 +887,6 @@ namespace Project
         private void AddShipper()
         {
             List<String> list = new List<string>();
-            list.Add(this.txtShipperID.Text);
             list.Add(this.txtShipperCompany.Text);
             list.Add(this.txtShipperPhone.Text);
             new Shipper().insert(list);
@@ -874,6 +967,7 @@ namespace Project
         private void btnDeleteSupplier_Click(object sender, EventArgs e)
         {
             DeleteSupplier();
+            LoadSupplier();
         }
 
         private void DeleteSupplier()
@@ -881,7 +975,7 @@ namespace Project
             if (dgvSupplier.SelectedRows.Count > 0)
             {
                 DataGridViewRow r = dgvSupplier.SelectedRows[0];
-                new employee().delete(Int32.Parse(r.Cells[0].Value.ToString()));
+                new Supplier().delete(Int32.Parse(r.Cells[0].Value.ToString()));
             }
             else
                 MessageBox.Show("Select row to delete");
@@ -890,6 +984,7 @@ namespace Project
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
             DeleteCategory();
+            LoadCategory();
         }
 
         private void DeleteCategory()
@@ -897,7 +992,7 @@ namespace Project
             if (dgvCategory.SelectedRows.Count > 0)
             {
                 DataGridViewRow r = dgvCategory.SelectedRows[0];
-                new employee().delete(Int32.Parse(r.Cells[0].Value.ToString()));
+                new Categori().delete(Int32.Parse(r.Cells[0].Value.ToString()));
             }
             else
                 MessageBox.Show("Select row to delete");
@@ -906,6 +1001,7 @@ namespace Project
         private void btnDeleteShipper_Click(object sender, EventArgs e)
         {
             DeleteShipper();
+            LoadShipper();
         }
 
         private void DeleteShipper()
@@ -913,7 +1009,7 @@ namespace Project
             if (dgvShipper.SelectedRows.Count > 0)
             {
                 DataGridViewRow r = dgvShipper.SelectedRows[0];
-                new employee().delete(Int32.Parse(r.Cells[0].Value.ToString()));
+                new Shipper().delete(Int32.Parse(r.Cells[0].Value.ToString()));
             }
             else
                 MessageBox.Show("Select row to delete");
@@ -1005,8 +1101,8 @@ namespace Project
                 Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
                 List<String> list = new List<string>();
                 list.Add(this.txtProductName.Text);
-                list.Add(this.txtSupID.Text);
-                list.Add(this.cbCaterogyID.Text);
+                list.Add(this.txtProSupplierID.Text);
+                list.Add(this.cbCaterogyID.SelectedValue.ToString());
                 list.Add(this.txtProUnitPrice.Text);
                 if (this.radYes.Checked)
                 {
@@ -1071,9 +1167,9 @@ namespace Project
                 DataGridViewRow r = dgvSupplier.SelectedRows[0];
                 Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
                 List<String> list = new List<string>();
-                list.Add(this.txtSupID.Text);
                 list.Add(this.txtSupCompanyName.Text);
                 list.Add(this.txtSupContactName.Text);
+                list.Add(this.txtSupContactTitle.Text);
                 list.Add(this.txtSupAdd.Text);
                 list.Add(this.txtSupCity.Text);
                 list.Add(this.txtSupRegion.Text);
@@ -1100,7 +1196,6 @@ namespace Project
                 DataGridViewRow r = dgvCategory.SelectedRows[0];
                 Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
                 List<String> list = new List<string>();
-                list.Add(this.txtCateID.Text);
                 list.Add(this.txtCateName.Text);
                 list.Add(this.txtCateDescription.Text);
                 new Categori().update(point, list);
@@ -1119,12 +1214,11 @@ namespace Project
 
         private void UpdateShipper()
         {
-            if (dgvCategory.SelectedRows.Count > 0)
+            if (dgvShipper.SelectedRows.Count > 0)
             {
-                DataGridViewRow r = dgvCategory.SelectedRows[0];
+                DataGridViewRow r = dgvShipper.SelectedRows[0];
                 Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
                 List<String> list = new List<string>();
-                list.Add(this.txtShipperID.Text);
                 list.Add(this.txtShipperCompany.Text);
                 list.Add(this.txtShipperPhone.Text);
                 new Shipper().update(point, list);
@@ -1135,21 +1229,6 @@ namespace Project
 
 
         #endregion
-
-        private void btnAddDetail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnUpdateDetail_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnDeleteDetail_Click(object sender, EventArgs e)
-        {
-
-        }
 
     }
 }
