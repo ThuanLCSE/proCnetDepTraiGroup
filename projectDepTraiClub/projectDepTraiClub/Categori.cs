@@ -39,7 +39,7 @@ namespace Project
             cmd.CommandText = "UpdateCategories";
             cmd.Parameters.Clear();
         
-                SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
+            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
             param.Value = id;
             cmd.Parameters.Add(param);
             param = new SqlParameter("@categoryname", SqlDbType.VarChar, 15);
@@ -77,7 +77,17 @@ namespace Project
             closeConnection();
             return dr;
         }
+        public SqlDataReader search(int id)
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "searchCategories";
+            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
+            param.Value = id;
+            cmd.Parameters.Add(param);
+            SqlDataReader dr = cmd.ExecuteReader();
 
+            return dr;
+        }
         #endregion
     }
 }
