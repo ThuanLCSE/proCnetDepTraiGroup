@@ -97,13 +97,27 @@ namespace Project
             closeConnection();
             return dr;
         }
-        public SqlDataReader search(int id)
+        public SqlDataReader search(int id, List<string> str)
         {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "searchOrderProduct";
             SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
             param.Value = id;
             cmd.Parameters.Add(param);
+            param = new SqlParameter("@productname", SqlDbType.VarChar, 40);
+            param.Value = str[0];
+            cmd.Parameters.Add(param);
+            param = new SqlParameter("@supplierid", SqlDbType.Int);
+            param.Value = Int32.Parse(str[1]);
+            cmd.Parameters.Add(param);
+            param = new SqlParameter("@categoryid", SqlDbType.Int);
+            param.Value = Int32.Parse(str[2]);
+            cmd.Parameters.Add(param);
+            param = new SqlParameter("@unitprice", SqlDbType.Money);
+            param.Value = decimal.Parse(str[3]);
+            cmd.Parameters.Add(param);
+            param = new SqlParameter("@discontinued", SqlDbType.Bit);
+            param.Value = Int32.Parse(str[4]);
             SqlDataReader dr = cmd.ExecuteReader();
 
             return dr;

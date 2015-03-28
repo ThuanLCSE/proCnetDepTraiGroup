@@ -17,3 +17,11 @@ C:\Users\BuiPhu\Documents\GitHub\proCnetDepTraiGroup\projectDepTraiClub\projectD
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.pdb
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe
 C:\Users\MK\Desktop\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.pdb
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe.config
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\projectDepTraiClub.pdb
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.exe
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\bin\Debug\projectDepTraiClub.pdb
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\ResolveAssemblyReference.cache
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Form1.resources
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.Properties.Resources.resources
+D:\Source\C#\proCnetDepTraiGroup\projectDepTraiClub\projectDepTraiClub\obj\Debug\Project.csproj.GenerateResource.Cache

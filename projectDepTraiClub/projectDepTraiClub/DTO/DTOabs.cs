@@ -46,7 +46,7 @@ namespace Project
 
 
 
-        public SqlDataReader search(int id)
+        public SqlDataReader search(int id, List<String> str)
         {
             throw new NotImplementedException();
         }

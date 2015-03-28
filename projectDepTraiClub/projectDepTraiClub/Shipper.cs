@@ -80,12 +80,18 @@ namespace Project
             closeConnection();
             return dr;
         }
-        public SqlDataReader search(int id)
+        public SqlDataReader search(int id,List<string> str)
         {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "searchShipper";
             SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
             param.Value = id;
+            cmd.Parameters.Add(param);
+            param = new SqlParameter("@companyname", SqlDbType.VarChar, 40);
+            param.Value = str[0];
+            cmd.Parameters.Add(param);
+            param = new SqlParameter("@phone", SqlDbType.VarChar, 24);
+            param.Value = str[1];
             cmd.Parameters.Add(param);
             SqlDataReader dr = cmd.ExecuteReader();
 
