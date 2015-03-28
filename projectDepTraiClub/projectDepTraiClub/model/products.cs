@@ -30,11 +30,11 @@ namespace Project
             param.Value = Int32.Parse(str[2]);
             cmd.Parameters.Add(param);
                 param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = decimal.Parse( str[3]);
+            param.Value = str[3];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
             param.Value = Int32.Parse( str[4]);
-                cmd.Parameters.Add(param);
+            cmd.Parameters.Add(param);
 
 
 
@@ -64,10 +64,11 @@ namespace Project
             param.Value = Int32.Parse(str[2]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = decimal.Parse(str[3]);
+            param.Value = str[3];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
             param.Value = Int32.Parse(str[4]);
+            cmd.Parameters.Add(param);
             //
             cmd.ExecuteNonQuery();
             closeConnection();
@@ -100,7 +101,7 @@ namespace Project
         public SqlDataReader search(int id, List<string> str)
         {
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "searchOrderProduct";
+            cmd.CommandText = "searchProduct";
             SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
             param.Value = id;
             cmd.Parameters.Add(param);
@@ -114,10 +115,11 @@ namespace Project
             param.Value = Int32.Parse(str[2]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = decimal.Parse(str[3]);
+            param.Value = str[3];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
             param.Value = Int32.Parse(str[4]);
+            cmd.Parameters.Add(param);
             SqlDataReader dr = cmd.ExecuteReader();
 
             return dr;
