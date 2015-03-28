@@ -70,9 +70,9 @@
             this.lblComName = new System.Windows.Forms.Label();
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnUpdateDetail = new System.Windows.Forms.Button();
+            this.btnDeleteDetail = new System.Windows.Forms.Button();
+            this.btnAddDetail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.textBox5 = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
@@ -285,6 +285,8 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSearchCustomer = new System.Windows.Forms.Button();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -323,6 +325,8 @@
             // 
             // tCustomer
             // 
+            this.tCustomer.Controls.Add(this.textBox1);
+            this.tCustomer.Controls.Add(this.btnSearchCustomer);
             this.tCustomer.Controls.Add(this.cbCusCountry);
             this.tCustomer.Controls.Add(this.btnLoadCustomer);
             this.tCustomer.Controls.Add(this.btnUpdateCustomer);
@@ -683,9 +687,9 @@
             // 
             // tOrder
             // 
-            this.tOrder.Controls.Add(this.button2);
-            this.tOrder.Controls.Add(this.button3);
-            this.tOrder.Controls.Add(this.button4);
+            this.tOrder.Controls.Add(this.btnUpdateDetail);
+            this.tOrder.Controls.Add(this.btnDeleteDetail);
+            this.tOrder.Controls.Add(this.btnAddDetail);
             this.tOrder.Controls.Add(this.panel1);
             this.tOrder.Controls.Add(this.dataGridView1);
             this.tOrder.Controls.Add(this.txtOrderShiperID);
@@ -729,32 +733,35 @@
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // btnUpdateDetail
             // 
-            this.button2.Location = new System.Drawing.Point(885, 430);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
-            this.button2.TabIndex = 93;
-            this.button2.Text = "Update Detail";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btnUpdateDetail.Location = new System.Drawing.Point(885, 430);
+            this.btnUpdateDetail.Name = "btnUpdateDetail";
+            this.btnUpdateDetail.Size = new System.Drawing.Size(115, 23);
+            this.btnUpdateDetail.TabIndex = 93;
+            this.btnUpdateDetail.Text = "Update Detail";
+            this.btnUpdateDetail.UseVisualStyleBackColor = true;
+            this.btnUpdateDetail.Click += new System.EventHandler(this.btnUpdateDetail_Click);
             // 
-            // button3
+            // btnDeleteDetail
             // 
-            this.button3.Location = new System.Drawing.Point(885, 460);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 92;
-            this.button3.Text = "Delete Detail";
-            this.button3.UseVisualStyleBackColor = true;
+            this.btnDeleteDetail.Location = new System.Drawing.Point(885, 460);
+            this.btnDeleteDetail.Name = "btnDeleteDetail";
+            this.btnDeleteDetail.Size = new System.Drawing.Size(115, 23);
+            this.btnDeleteDetail.TabIndex = 92;
+            this.btnDeleteDetail.Text = "Delete Detail";
+            this.btnDeleteDetail.UseVisualStyleBackColor = true;
+            this.btnDeleteDetail.Click += new System.EventHandler(this.btnDeleteDetail_Click);
             // 
-            // button4
+            // btnAddDetail
             // 
-            this.button4.Location = new System.Drawing.Point(885, 400);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 23);
-            this.button4.TabIndex = 91;
-            this.button4.Text = "Add Detail";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAddDetail.Location = new System.Drawing.Point(885, 400);
+            this.btnAddDetail.Name = "btnAddDetail";
+            this.btnAddDetail.Size = new System.Drawing.Size(115, 23);
+            this.btnAddDetail.TabIndex = 91;
+            this.btnAddDetail.Text = "Add Detail";
+            this.btnAddDetail.UseVisualStyleBackColor = true;
+            this.btnAddDetail.Click += new System.EventHandler(this.btnAddDetail_Click);
             // 
             // panel1
             // 
@@ -1038,6 +1045,7 @@
             this.btnDeleteOrder.TabIndex = 51;
             this.btnDeleteOrder.Text = "Delete Order";
             this.btnDeleteOrder.UseVisualStyleBackColor = true;
+            this.btnDeleteOrder.Click += new System.EventHandler(this.btnDeleteOrder_Click);
             // 
             // btnAddOrder
             // 
@@ -1433,6 +1441,7 @@
             this.btnDeleteProduct.TabIndex = 38;
             this.btnDeleteProduct.Text = "Delete Product";
             this.btnDeleteProduct.UseVisualStyleBackColor = true;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
             // btnAddProduct
             // 
@@ -1625,7 +1634,6 @@
             this.tEmployee.TabIndex = 3;
             this.tEmployee.Text = "Employee";
             this.tEmployee.UseVisualStyleBackColor = true;
-            this.tEmployee.Click += new System.EventHandler(this.tEmployee_Click);
             // 
             // cbEmpCountry
             // 
@@ -1697,6 +1705,7 @@
             this.btnDeleteEmp.TabIndex = 79;
             this.btnDeleteEmp.Text = "Delete Employee";
             this.btnDeleteEmp.UseVisualStyleBackColor = true;
+            this.btnDeleteEmp.Click += new System.EventHandler(this.btnDeleteEmp_Click);
             // 
             // btnAddEmp
             // 
@@ -2079,6 +2088,7 @@
             this.btnLoadSupplier.TabIndex = 107;
             this.btnLoadSupplier.Text = "Load Supplier";
             this.btnLoadSupplier.UseVisualStyleBackColor = true;
+            this.btnLoadSupplier.Click += new System.EventHandler(this.btnLoadSupplier_Click);
             // 
             // btnUpdateSupplier
             // 
@@ -2374,6 +2384,7 @@
             this.btnLoadCategory.TabIndex = 88;
             this.btnLoadCategory.Text = "Load Category";
             this.btnLoadCategory.UseVisualStyleBackColor = true;
+            this.btnLoadCategory.Click += new System.EventHandler(this.btnLoadCategory_Click);
             // 
             // btnUpdateCategory
             // 
@@ -2515,6 +2526,7 @@
             this.btnLoadShipper.TabIndex = 94;
             this.btnLoadShipper.Text = "Load Shipper";
             this.btnLoadShipper.UseVisualStyleBackColor = true;
+            this.btnLoadShipper.Click += new System.EventHandler(this.btnLoadShipper_Click);
             // 
             // btnUpdateShipper
             // 
@@ -2630,6 +2642,23 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
+            // 
+            // btnSearchCustomer
+            // 
+            this.btnSearchCustomer.Location = new System.Drawing.Point(710, 5);
+            this.btnSearchCustomer.Name = "btnSearchCustomer";
+            this.btnSearchCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchCustomer.TabIndex = 87;
+            this.btnSearchCustomer.Text = "Search";
+            this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            // 
+            // textBox1
+            // 
+            this.textBox1.Enabled = false;
+            this.textBox1.Location = new System.Drawing.Point(295, 7);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(385, 20);
+            this.textBox1.TabIndex = 88;
             // 
             // Form1
             // 
@@ -2919,9 +2948,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnUpdateDetail;
+        private System.Windows.Forms.Button btnDeleteDetail;
+        private System.Windows.Forms.Button btnAddDetail;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label44;
@@ -2931,6 +2960,8 @@
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSearchCustomer;
     }
 }
 

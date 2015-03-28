@@ -1135,5 +1135,21 @@ namespace Project
 
 
         #endregion
+
+        private void btnAddDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnUpdateDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
     }
 }
