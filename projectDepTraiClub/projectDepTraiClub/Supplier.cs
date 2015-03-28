@@ -109,6 +109,9 @@ namespace Project
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "DeleteSuplier";
             cmd.Parameters.Clear();
+            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
+            param.Value = id;
+            cmd.Parameters.Add(param);
 
             //
             cmd.ExecuteNonQuery();
@@ -116,15 +119,26 @@ namespace Project
             return true;
         }
 
-        public SqlDataReader select()
+        public SqlDataReader select(int id)
         {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "selectSupplier";
             SqlDataReader dr = cmd.ExecuteReader();
-            closeConnection();
+          
             return dr;
         }
 
+        public SqlDataReader search(int id)
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "searchSupplier";
+            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
+            param.Value = id;
+            cmd.Parameters.Add(param);
+            SqlDataReader dr = cmd.ExecuteReader();
+         
+            return dr;
+        }
         #endregion
     }
 }

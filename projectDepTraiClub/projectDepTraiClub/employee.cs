@@ -144,7 +144,17 @@ namespace Project
             SqlDataReader dr = cmd.ExecuteReader();
             return dr;
         }
+        public SqlDataReader search(int id)
+        {
+            cmd.CommandType = CommandType.StoredProcedure;
+            cmd.CommandText = "searchEmployee";
+            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
+            param.Value = id;
+            cmd.Parameters.Add(param);
+            SqlDataReader dr = cmd.ExecuteReader();
 
+            return dr;
+        }
         #endregion
     }
 }

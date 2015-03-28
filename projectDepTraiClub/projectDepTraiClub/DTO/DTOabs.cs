@@ -43,6 +43,14 @@ namespace Project
             throw new NotImplementedException();
         }
 
+
+
+
+        public SqlDataReader search(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         #endregion
     }
 }
