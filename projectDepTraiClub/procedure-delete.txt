@@ -1,0 +1,55 @@
+-----------------------------------
+CREATE PROCEDURE [HR].[DeleteEmployee]
+@id int
+AS
+BEGIN
+	DELETE FROM Employees WHERE empid=@id
+END
+GO
+-----------------------------------
+CREATE PROCEDURE [Production].[DeleteCategories]
+@id int
+AS
+BEGIN
+	DELETE FROM Production.Categories WHERE  categoryid=@id
+END
+GO
+----------------------
+CREATE PROCEDURE [Production].[DeleteSuplier]
+@id int
+AS
+BEGIN
+	DELETE FROM Production.Suppliers WHERE  supplierid=@id
+END
+GO
+---------------------------
+CREATE PROCEDURE [Sales].[DeleteShipper]
+@id int
+AS
+BEGIN
+	DELETE FROM Sales.Shippers WHERE  shipperid=@id
+END
+GO
+--------------------------
+CREATE PROCEDURE [Production].[DeleteProduct]
+@id int
+AS
+BEGIN
+	DELETE FROM Production.Products WHERE  productid=@id
+END
+GO
+--------------
+CREATE PROCEDURE [Sales].[DeleteOrder]
+@id int
+AS
+BEGIN
+	DELETE FROM  Sales.Orders  WHERE  orderid=@id
+END
+GO
+---------------------
+CREATE PROCEDURE [DeleteOrderDetail]
+@id 
+AS
+BEGIN
+DELETE FROM Sales.OrderDetails WHERE orderid = @id
+END

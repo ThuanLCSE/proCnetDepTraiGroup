@@ -70,6 +70,35 @@
             this.lblComName = new System.Windows.Forms.Label();
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.label44 = new System.Windows.Forms.Label();
+            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.label42 = new System.Windows.Forms.Label();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.label41 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.txtOrderShiperID = new System.Windows.Forms.TextBox();
+            this.label35 = new System.Windows.Forms.Label();
             this.cbOrderShipCountry = new System.Windows.Forms.ComboBox();
             this.mtbOrderFreight = new System.Windows.Forms.MaskedTextBox();
             this.dtpRequireDate = new System.Windows.Forms.DateTimePicker();
@@ -80,6 +109,20 @@
             this.btnDeleteOrder = new System.Windows.Forms.Button();
             this.btnAddOrder = new System.Windows.Forms.Button();
             this.dgvOrder = new System.Windows.Forms.DataGridView();
+            this.clOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clReqDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShippedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clOrderShipperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clFreight = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clShipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label5 = new System.Windows.Forms.Label();
             this.lblShippedDate = new System.Windows.Forms.Label();
             this.txtOrderShipPosCode = new System.Windows.Forms.TextBox();
@@ -242,53 +285,12 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.label35 = new System.Windows.Forms.Label();
-            this.txtOrderShiperID = new System.Windows.Forms.TextBox();
-            this.clOrderID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderCusID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderEmpID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clReqDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShippedDate = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clOrderShipperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clFreight = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipPosCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clShipCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label41 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label42 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.label43 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.label44 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tOrder.SuspendLayout();
+            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.tProduct.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -302,8 +304,6 @@
             this.tShippers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -353,7 +353,7 @@
             this.tCustomer.Location = new System.Drawing.Point(4, 22);
             this.tCustomer.Name = "tCustomer";
             this.tCustomer.Padding = new System.Windows.Forms.Padding(3);
-            this.tCustomer.Size = new System.Drawing.Size(632, 458);
+            this.tCustomer.Size = new System.Drawing.Size(1035, 485);
             this.tCustomer.TabIndex = 0;
             this.tCustomer.Text = "Customer";
             this.tCustomer.UseVisualStyleBackColor = true;
@@ -373,14 +373,14 @@
             "Korea",
             "USA",
             "China"});
-            this.cbCusCountry.Location = new System.Drawing.Point(377, 109);
+            this.cbCusCountry.Location = new System.Drawing.Point(98, 285);
             this.cbCusCountry.Name = "cbCusCountry";
             this.cbCusCountry.Size = new System.Drawing.Size(181, 21);
             this.cbCusCountry.TabIndex = 86;
             // 
             // btnLoadCustomer
             // 
-            this.btnLoadCustomer.Location = new System.Drawing.Point(333, 247);
+            this.btnLoadCustomer.Location = new System.Drawing.Point(710, 215);
             this.btnLoadCustomer.Name = "btnLoadCustomer";
             this.btnLoadCustomer.Size = new System.Drawing.Size(119, 23);
             this.btnLoadCustomer.TabIndex = 27;
@@ -390,7 +390,7 @@
             // 
             // btnUpdateCustomer
             // 
-            this.btnUpdateCustomer.Location = new System.Drawing.Point(185, 247);
+            this.btnUpdateCustomer.Location = new System.Drawing.Point(565, 215);
             this.btnUpdateCustomer.Name = "btnUpdateCustomer";
             this.btnUpdateCustomer.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateCustomer.TabIndex = 26;
@@ -400,7 +400,7 @@
             // 
             // btnDeleteCustomer
             // 
-            this.btnDeleteCustomer.Location = new System.Drawing.Point(333, 214);
+            this.btnDeleteCustomer.Location = new System.Drawing.Point(710, 185);
             this.btnDeleteCustomer.Name = "btnDeleteCustomer";
             this.btnDeleteCustomer.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteCustomer.TabIndex = 25;
@@ -410,7 +410,7 @@
             // 
             // btnAddCustomer
             // 
-            this.btnAddCustomer.Location = new System.Drawing.Point(185, 214);
+            this.btnAddCustomer.Location = new System.Drawing.Point(565, 185);
             this.btnAddCustomer.Name = "btnAddCustomer";
             this.btnAddCustomer.Size = new System.Drawing.Size(115, 23);
             this.btnAddCustomer.TabIndex = 24;
@@ -435,7 +435,7 @@
             this.clCusCountry,
             this.clCusPhone,
             this.clCusFax});
-            this.dgvCustomer.Location = new System.Drawing.Point(6, 276);
+            this.dgvCustomer.Location = new System.Drawing.Point(295, 40);
             this.dgvCustomer.Name = "dgvCustomer";
             this.dgvCustomer.ReadOnly = true;
             this.dgvCustomer.Size = new System.Drawing.Size(620, 137);
@@ -510,7 +510,7 @@
             // 
             // txtCusFax
             // 
-            this.txtCusFax.Location = new System.Drawing.Point(377, 186);
+            this.txtCusFax.Location = new System.Drawing.Point(94, 376);
             this.txtCusFax.Name = "txtCusFax";
             this.txtCusFax.Size = new System.Drawing.Size(181, 20);
             this.txtCusFax.TabIndex = 22;
@@ -519,7 +519,7 @@
             // lblFax
             // 
             this.lblFax.AutoSize = true;
-            this.lblFax.Location = new System.Drawing.Point(289, 189);
+            this.lblFax.Location = new System.Drawing.Point(6, 379);
             this.lblFax.Name = "lblFax";
             this.lblFax.Size = new System.Drawing.Size(24, 13);
             this.lblFax.TabIndex = 21;
@@ -527,7 +527,7 @@
             // 
             // txtCusPhone
             // 
-            this.txtCusPhone.Location = new System.Drawing.Point(377, 147);
+            this.txtCusPhone.Location = new System.Drawing.Point(98, 320);
             this.txtCusPhone.Name = "txtCusPhone";
             this.txtCusPhone.Size = new System.Drawing.Size(181, 20);
             this.txtCusPhone.TabIndex = 20;
@@ -536,7 +536,7 @@
             // lblPhone
             // 
             this.lblPhone.AutoSize = true;
-            this.lblPhone.Location = new System.Drawing.Point(289, 150);
+            this.lblPhone.Location = new System.Drawing.Point(10, 325);
             this.lblPhone.Name = "lblPhone";
             this.lblPhone.Size = new System.Drawing.Size(38, 13);
             this.lblPhone.TabIndex = 19;
@@ -545,7 +545,7 @@
             // lblCountry
             // 
             this.lblCountry.AutoSize = true;
-            this.lblCountry.Location = new System.Drawing.Point(289, 112);
+            this.lblCountry.Location = new System.Drawing.Point(10, 290);
             this.lblCountry.Name = "lblCountry";
             this.lblCountry.Size = new System.Drawing.Size(43, 13);
             this.lblCountry.TabIndex = 17;
@@ -553,7 +553,7 @@
             // 
             // txtCusPosCode
             // 
-            this.txtCusPosCode.Location = new System.Drawing.Point(377, 74);
+            this.txtCusPosCode.Location = new System.Drawing.Point(98, 250);
             this.txtCusPosCode.Name = "txtCusPosCode";
             this.txtCusPosCode.Size = new System.Drawing.Size(181, 20);
             this.txtCusPosCode.TabIndex = 16;
@@ -562,7 +562,7 @@
             // lblPosCode
             // 
             this.lblPosCode.AutoSize = true;
-            this.lblPosCode.Location = new System.Drawing.Point(289, 77);
+            this.lblPosCode.Location = new System.Drawing.Point(10, 255);
             this.lblPosCode.Name = "lblPosCode";
             this.lblPosCode.Size = new System.Drawing.Size(64, 13);
             this.lblPosCode.TabIndex = 15;
@@ -570,7 +570,7 @@
             // 
             // txtCusRegion
             // 
-            this.txtCusRegion.Location = new System.Drawing.Point(377, 42);
+            this.txtCusRegion.Location = new System.Drawing.Point(98, 215);
             this.txtCusRegion.Name = "txtCusRegion";
             this.txtCusRegion.Size = new System.Drawing.Size(181, 20);
             this.txtCusRegion.TabIndex = 14;
@@ -578,7 +578,7 @@
             // lblRegion
             // 
             this.lblRegion.AutoSize = true;
-            this.lblRegion.Location = new System.Drawing.Point(289, 45);
+            this.lblRegion.Location = new System.Drawing.Point(10, 220);
             this.lblRegion.Name = "lblRegion";
             this.lblRegion.Size = new System.Drawing.Size(41, 13);
             this.lblRegion.TabIndex = 13;
@@ -586,7 +586,7 @@
             // 
             // txtCusCity
             // 
-            this.txtCusCity.Location = new System.Drawing.Point(377, 9);
+            this.txtCusCity.Location = new System.Drawing.Point(98, 180);
             this.txtCusCity.Name = "txtCusCity";
             this.txtCusCity.Size = new System.Drawing.Size(181, 20);
             this.txtCusCity.TabIndex = 12;
@@ -594,7 +594,7 @@
             // lblCity
             // 
             this.lblCity.AutoSize = true;
-            this.lblCity.Location = new System.Drawing.Point(289, 12);
+            this.lblCity.Location = new System.Drawing.Point(10, 185);
             this.lblCity.Name = "lblCity";
             this.lblCity.Size = new System.Drawing.Size(24, 13);
             this.lblCity.TabIndex = 11;
@@ -602,7 +602,7 @@
             // 
             // txtCusAddress
             // 
-            this.txtCusAddress.Location = new System.Drawing.Point(94, 147);
+            this.txtCusAddress.Location = new System.Drawing.Point(98, 145);
             this.txtCusAddress.Name = "txtCusAddress";
             this.txtCusAddress.Size = new System.Drawing.Size(181, 20);
             this.txtCusAddress.TabIndex = 10;
@@ -610,7 +610,7 @@
             // lblAddress
             // 
             this.lblAddress.AutoSize = true;
-            this.lblAddress.Location = new System.Drawing.Point(6, 150);
+            this.lblAddress.Location = new System.Drawing.Point(10, 150);
             this.lblAddress.Name = "lblAddress";
             this.lblAddress.Size = new System.Drawing.Size(45, 13);
             this.lblAddress.TabIndex = 9;
@@ -618,21 +618,21 @@
             // 
             // txtCusTitle
             // 
-            this.txtCusTitle.Location = new System.Drawing.Point(94, 109);
+            this.txtCusTitle.Location = new System.Drawing.Point(98, 110);
             this.txtCusTitle.Name = "txtCusTitle";
             this.txtCusTitle.Size = new System.Drawing.Size(181, 20);
             this.txtCusTitle.TabIndex = 8;
             // 
             // txtCusName
             // 
-            this.txtCusName.Location = new System.Drawing.Point(94, 74);
+            this.txtCusName.Location = new System.Drawing.Point(98, 75);
             this.txtCusName.Name = "txtCusName";
             this.txtCusName.Size = new System.Drawing.Size(181, 20);
             this.txtCusName.TabIndex = 7;
             // 
             // txtCusComName
             // 
-            this.txtCusComName.Location = new System.Drawing.Point(94, 42);
+            this.txtCusComName.Location = new System.Drawing.Point(98, 40);
             this.txtCusComName.Name = "txtCusComName";
             this.txtCusComName.Size = new System.Drawing.Size(181, 20);
             this.txtCusComName.TabIndex = 6;
@@ -640,7 +640,7 @@
             // txtCustomerID
             // 
             this.txtCustomerID.Enabled = false;
-            this.txtCustomerID.Location = new System.Drawing.Point(94, 8);
+            this.txtCustomerID.Location = new System.Drawing.Point(98, 5);
             this.txtCustomerID.Name = "txtCustomerID";
             this.txtCustomerID.Size = new System.Drawing.Size(181, 20);
             this.txtCustomerID.TabIndex = 5;
@@ -648,7 +648,7 @@
             // lblCusTitle
             // 
             this.lblCusTitle.AutoSize = true;
-            this.lblCusTitle.Location = new System.Drawing.Point(6, 112);
+            this.lblCusTitle.Location = new System.Drawing.Point(10, 115);
             this.lblCusTitle.Name = "lblCusTitle";
             this.lblCusTitle.Size = new System.Drawing.Size(67, 13);
             this.lblCusTitle.TabIndex = 4;
@@ -657,7 +657,7 @@
             // lblCusName
             // 
             this.lblCusName.AutoSize = true;
-            this.lblCusName.Location = new System.Drawing.Point(6, 77);
+            this.lblCusName.Location = new System.Drawing.Point(10, 80);
             this.lblCusName.Name = "lblCusName";
             this.lblCusName.Size = new System.Drawing.Size(82, 13);
             this.lblCusName.TabIndex = 3;
@@ -666,7 +666,7 @@
             // lblComName
             // 
             this.lblComName.AutoSize = true;
-            this.lblComName.Location = new System.Drawing.Point(6, 45);
+            this.lblComName.Location = new System.Drawing.Point(10, 45);
             this.lblComName.Name = "lblComName";
             this.lblComName.Size = new System.Drawing.Size(82, 13);
             this.lblComName.TabIndex = 2;
@@ -675,7 +675,7 @@
             // lblCusID
             // 
             this.lblCusID.AutoSize = true;
-            this.lblCusID.Location = new System.Drawing.Point(6, 12);
+            this.lblCusID.Location = new System.Drawing.Point(10, 10);
             this.lblCusID.Name = "lblCusID";
             this.lblCusID.Size = new System.Drawing.Size(18, 13);
             this.lblCusID.TabIndex = 1;
@@ -729,6 +729,238 @@
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(885, 430);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(115, 23);
+            this.button2.TabIndex = 93;
+            this.button2.Text = "Update Detail";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(885, 460);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(115, 23);
+            this.button3.TabIndex = 92;
+            this.button3.Text = "Delete Detail";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(885, 400);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(115, 23);
+            this.button4.TabIndex = 91;
+            this.button4.Text = "Add Detail";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.label44);
+            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.label43);
+            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.label42);
+            this.panel1.Controls.Add(this.textBox2);
+            this.panel1.Controls.Add(this.label41);
+            this.panel1.Location = new System.Drawing.Point(296, 398);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(562, 60);
+            this.panel1.TabIndex = 90;
+            // 
+            // textBox5
+            // 
+            this.textBox5.Location = new System.Drawing.Point(370, 32);
+            this.textBox5.Name = "textBox5";
+            this.textBox5.Size = new System.Drawing.Size(181, 20);
+            this.textBox5.TabIndex = 100;
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Location = new System.Drawing.Point(282, 35);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(49, 13);
+            this.label44.TabIndex = 99;
+            this.label44.Text = "Discount";
+            // 
+            // textBox4
+            // 
+            this.textBox4.Location = new System.Drawing.Point(370, 6);
+            this.textBox4.Name = "textBox4";
+            this.textBox4.Size = new System.Drawing.Size(181, 20);
+            this.textBox4.TabIndex = 98;
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(282, 9);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(46, 13);
+            this.label43.TabIndex = 97;
+            this.label43.Text = "Quantity";
+            // 
+            // textBox3
+            // 
+            this.textBox3.Location = new System.Drawing.Point(95, 32);
+            this.textBox3.Name = "textBox3";
+            this.textBox3.Size = new System.Drawing.Size(181, 20);
+            this.textBox3.TabIndex = 96;
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(7, 35);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(53, 13);
+            this.label42.TabIndex = 95;
+            this.label42.Text = "Unit Price";
+            // 
+            // textBox2
+            // 
+            this.textBox2.Location = new System.Drawing.Point(95, 6);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.Size = new System.Drawing.Size(181, 20);
+            this.textBox2.TabIndex = 94;
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(7, 9);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(58, 13);
+            this.label41.TabIndex = 93;
+            this.label41.Text = "Product ID";
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn1,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5,
+            this.dataGridViewTextBoxColumn6,
+            this.dataGridViewTextBoxColumn7,
+            this.dataGridViewTextBoxColumn8,
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14});
+            this.dataGridView1.Location = new System.Drawing.Point(295, 255);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.Size = new System.Drawing.Size(702, 137);
+            this.dataGridView1.TabIndex = 89;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.HeaderText = "Order ID";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.HeaderText = "Customer ID";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.HeaderText = "Employee ID";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.HeaderText = "Order Date";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.HeaderText = "Require Date";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.HeaderText = "Shipped Date";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.HeaderText = "Shipper ID";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            this.dataGridViewTextBoxColumn8.HeaderText = "Freight";
+            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.HeaderText = "Ship Name";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.HeaderText = "Ship Address";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.HeaderText = "Ship City";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            this.dataGridViewTextBoxColumn11.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.HeaderText = "Ship Region";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            this.dataGridViewTextBoxColumn12.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.HeaderText = "Ship Postal Code";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            this.dataGridViewTextBoxColumn13.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.HeaderText = "Ship Country";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            // 
+            // txtOrderShiperID
+            // 
+            this.txtOrderShiperID.Location = new System.Drawing.Point(98, 215);
+            this.txtOrderShiperID.Name = "txtOrderShiperID";
+            this.txtOrderShiperID.Size = new System.Drawing.Size(181, 20);
+            this.txtOrderShiperID.TabIndex = 88;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(10, 220);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(57, 13);
+            this.label35.TabIndex = 87;
+            this.label35.Text = "Shipper ID";
+            // 
             // cbOrderShipCountry
             // 
             this.cbOrderShipCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -744,14 +976,14 @@
             "Korea",
             "USA",
             "China"});
-            this.cbOrderShipCountry.Location = new System.Drawing.Point(98, 459);
+            this.cbOrderShipCountry.Location = new System.Drawing.Point(98, 460);
             this.cbOrderShipCountry.Name = "cbOrderShipCountry";
             this.cbOrderShipCountry.Size = new System.Drawing.Size(181, 21);
             this.cbOrderShipCountry.TabIndex = 86;
             // 
             // mtbOrderFreight
             // 
-            this.mtbOrderFreight.Location = new System.Drawing.Point(98, 248);
+            this.mtbOrderFreight.Location = new System.Drawing.Point(98, 250);
             this.mtbOrderFreight.Mask = "999999";
             this.mtbOrderFreight.Name = "mtbOrderFreight";
             this.mtbOrderFreight.Size = new System.Drawing.Size(181, 20);
@@ -759,28 +991,28 @@
             // 
             // dtpRequireDate
             // 
-            this.dtpRequireDate.Location = new System.Drawing.Point(98, 142);
+            this.dtpRequireDate.Location = new System.Drawing.Point(98, 145);
             this.dtpRequireDate.Name = "dtpRequireDate";
             this.dtpRequireDate.Size = new System.Drawing.Size(181, 20);
             this.dtpRequireDate.TabIndex = 56;
             // 
             // dtpShippedDate
             // 
-            this.dtpShippedDate.Location = new System.Drawing.Point(98, 181);
+            this.dtpShippedDate.Location = new System.Drawing.Point(98, 180);
             this.dtpShippedDate.Name = "dtpShippedDate";
             this.dtpShippedDate.Size = new System.Drawing.Size(181, 20);
             this.dtpShippedDate.TabIndex = 55;
             // 
             // dtpOrderDate
             // 
-            this.dtpOrderDate.Location = new System.Drawing.Point(98, 106);
+            this.dtpOrderDate.Location = new System.Drawing.Point(98, 110);
             this.dtpOrderDate.Name = "dtpOrderDate";
             this.dtpOrderDate.Size = new System.Drawing.Size(181, 20);
             this.dtpOrderDate.TabIndex = 54;
             // 
             // btnLoadOrder
             // 
-            this.btnLoadOrder.Location = new System.Drawing.Point(710, 216);
+            this.btnLoadOrder.Location = new System.Drawing.Point(710, 215);
             this.btnLoadOrder.Name = "btnLoadOrder";
             this.btnLoadOrder.Size = new System.Drawing.Size(119, 23);
             this.btnLoadOrder.TabIndex = 53;
@@ -790,7 +1022,7 @@
             // 
             // btnUpdateOrder
             // 
-            this.btnUpdateOrder.Location = new System.Drawing.Point(566, 216);
+            this.btnUpdateOrder.Location = new System.Drawing.Point(565, 215);
             this.btnUpdateOrder.Name = "btnUpdateOrder";
             this.btnUpdateOrder.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateOrder.TabIndex = 52;
@@ -800,7 +1032,7 @@
             // 
             // btnDeleteOrder
             // 
-            this.btnDeleteOrder.Location = new System.Drawing.Point(710, 187);
+            this.btnDeleteOrder.Location = new System.Drawing.Point(710, 185);
             this.btnDeleteOrder.Name = "btnDeleteOrder";
             this.btnDeleteOrder.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteOrder.TabIndex = 51;
@@ -809,7 +1041,7 @@
             // 
             // btnAddOrder
             // 
-            this.btnAddOrder.Location = new System.Drawing.Point(566, 187);
+            this.btnAddOrder.Location = new System.Drawing.Point(565, 185);
             this.btnAddOrder.Name = "btnAddOrder";
             this.btnAddOrder.Size = new System.Drawing.Size(115, 23);
             this.btnAddOrder.TabIndex = 50;
@@ -837,17 +1069,101 @@
             this.clShipRegion,
             this.clShipPosCode,
             this.clShipCountry});
-            this.dgvOrder.Location = new System.Drawing.Point(296, 40);
+            this.dgvOrder.Location = new System.Drawing.Point(295, 40);
             this.dgvOrder.Name = "dgvOrder";
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.Size = new System.Drawing.Size(702, 137);
             this.dgvOrder.TabIndex = 49;
             this.dgvOrder.SelectionChanged += new System.EventHandler(this.dgvOrder_SelectionChanged);
             // 
+            // clOrderID
+            // 
+            this.clOrderID.HeaderText = "Order ID";
+            this.clOrderID.Name = "clOrderID";
+            this.clOrderID.ReadOnly = true;
+            // 
+            // clOrderCusID
+            // 
+            this.clOrderCusID.HeaderText = "Customer ID";
+            this.clOrderCusID.Name = "clOrderCusID";
+            this.clOrderCusID.ReadOnly = true;
+            // 
+            // clOrderEmpID
+            // 
+            this.clOrderEmpID.HeaderText = "Employee ID";
+            this.clOrderEmpID.Name = "clOrderEmpID";
+            this.clOrderEmpID.ReadOnly = true;
+            // 
+            // clOrderDate
+            // 
+            this.clOrderDate.HeaderText = "Order Date";
+            this.clOrderDate.Name = "clOrderDate";
+            this.clOrderDate.ReadOnly = true;
+            // 
+            // clReqDate
+            // 
+            this.clReqDate.HeaderText = "Require Date";
+            this.clReqDate.Name = "clReqDate";
+            this.clReqDate.ReadOnly = true;
+            // 
+            // clShippedDate
+            // 
+            this.clShippedDate.HeaderText = "Shipped Date";
+            this.clShippedDate.Name = "clShippedDate";
+            this.clShippedDate.ReadOnly = true;
+            // 
+            // clOrderShipperID
+            // 
+            this.clOrderShipperID.HeaderText = "Shipper ID";
+            this.clOrderShipperID.Name = "clOrderShipperID";
+            this.clOrderShipperID.ReadOnly = true;
+            // 
+            // clFreight
+            // 
+            this.clFreight.HeaderText = "Freight";
+            this.clFreight.Name = "clFreight";
+            this.clFreight.ReadOnly = true;
+            // 
+            // clShipName
+            // 
+            this.clShipName.HeaderText = "Ship Name";
+            this.clShipName.Name = "clShipName";
+            this.clShipName.ReadOnly = true;
+            // 
+            // clShipAddress
+            // 
+            this.clShipAddress.HeaderText = "Ship Address";
+            this.clShipAddress.Name = "clShipAddress";
+            this.clShipAddress.ReadOnly = true;
+            // 
+            // clShipCity
+            // 
+            this.clShipCity.HeaderText = "Ship City";
+            this.clShipCity.Name = "clShipCity";
+            this.clShipCity.ReadOnly = true;
+            // 
+            // clShipRegion
+            // 
+            this.clShipRegion.HeaderText = "Ship Region";
+            this.clShipRegion.Name = "clShipRegion";
+            this.clShipRegion.ReadOnly = true;
+            // 
+            // clShipPosCode
+            // 
+            this.clShipPosCode.HeaderText = "Ship Postal Code";
+            this.clShipPosCode.Name = "clShipPosCode";
+            this.clShipPosCode.ReadOnly = true;
+            // 
+            // clShipCountry
+            // 
+            this.clShipCountry.HeaderText = "Ship Country";
+            this.clShipCountry.Name = "clShipCountry";
+            this.clShipCountry.ReadOnly = true;
+            // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(10, 462);
+            this.label5.Location = new System.Drawing.Point(10, 465);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(67, 13);
             this.label5.TabIndex = 47;
@@ -856,7 +1172,7 @@
             // lblShippedDate
             // 
             this.lblShippedDate.AutoSize = true;
-            this.lblShippedDate.Location = new System.Drawing.Point(10, 187);
+            this.lblShippedDate.Location = new System.Drawing.Point(10, 185);
             this.lblShippedDate.Name = "lblShippedDate";
             this.lblShippedDate.Size = new System.Drawing.Size(72, 13);
             this.lblShippedDate.TabIndex = 45;
@@ -864,7 +1180,7 @@
             // 
             // txtOrderShipPosCode
             // 
-            this.txtOrderShipPosCode.Location = new System.Drawing.Point(98, 427);
+            this.txtOrderShipPosCode.Location = new System.Drawing.Point(98, 425);
             this.txtOrderShipPosCode.Name = "txtOrderShipPosCode";
             this.txtOrderShipPosCode.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipPosCode.TabIndex = 44;
@@ -881,7 +1197,7 @@
             // 
             // txtOrderShipRegion
             // 
-            this.txtOrderShipRegion.Location = new System.Drawing.Point(98, 388);
+            this.txtOrderShipRegion.Location = new System.Drawing.Point(98, 390);
             this.txtOrderShipRegion.Name = "txtOrderShipRegion";
             this.txtOrderShipRegion.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipRegion.TabIndex = 42;
@@ -889,7 +1205,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(10, 391);
+            this.label2.Location = new System.Drawing.Point(10, 395);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(65, 13);
             this.label2.TabIndex = 41;
@@ -897,7 +1213,7 @@
             // 
             // txtOrderShipCity
             // 
-            this.txtOrderShipCity.Location = new System.Drawing.Point(98, 350);
+            this.txtOrderShipCity.Location = new System.Drawing.Point(98, 355);
             this.txtOrderShipCity.Name = "txtOrderShipCity";
             this.txtOrderShipCity.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipCity.TabIndex = 40;
@@ -905,7 +1221,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(10, 353);
+            this.label3.Location = new System.Drawing.Point(10, 360);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(48, 13);
             this.label3.TabIndex = 39;
@@ -913,7 +1229,7 @@
             // 
             // txtOrderShipAddress
             // 
-            this.txtOrderShipAddress.Location = new System.Drawing.Point(98, 315);
+            this.txtOrderShipAddress.Location = new System.Drawing.Point(98, 320);
             this.txtOrderShipAddress.Name = "txtOrderShipAddress";
             this.txtOrderShipAddress.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipAddress.TabIndex = 38;
@@ -921,7 +1237,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(10, 318);
+            this.label4.Location = new System.Drawing.Point(10, 325);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(69, 13);
             this.label4.TabIndex = 37;
@@ -929,7 +1245,7 @@
             // 
             // txtOrderShipName
             // 
-            this.txtOrderShipName.Location = new System.Drawing.Point(98, 283);
+            this.txtOrderShipName.Location = new System.Drawing.Point(98, 285);
             this.txtOrderShipName.Name = "txtOrderShipName";
             this.txtOrderShipName.Size = new System.Drawing.Size(181, 20);
             this.txtOrderShipName.TabIndex = 36;
@@ -937,7 +1253,7 @@
             // lblShipName
             // 
             this.lblShipName.AutoSize = true;
-            this.lblShipName.Location = new System.Drawing.Point(10, 286);
+            this.lblShipName.Location = new System.Drawing.Point(10, 290);
             this.lblShipName.Name = "lblShipName";
             this.lblShipName.Size = new System.Drawing.Size(59, 13);
             this.lblShipName.TabIndex = 35;
@@ -946,7 +1262,7 @@
             // lblFreight
             // 
             this.lblFreight.AutoSize = true;
-            this.lblFreight.Location = new System.Drawing.Point(10, 253);
+            this.lblFreight.Location = new System.Drawing.Point(10, 255);
             this.lblFreight.Name = "lblFreight";
             this.lblFreight.Size = new System.Drawing.Size(39, 13);
             this.lblFreight.TabIndex = 33;
@@ -955,7 +1271,7 @@
             // lblRequireDate
             // 
             this.lblRequireDate.AutoSize = true;
-            this.lblRequireDate.Location = new System.Drawing.Point(10, 148);
+            this.lblRequireDate.Location = new System.Drawing.Point(10, 150);
             this.lblRequireDate.Name = "lblRequireDate";
             this.lblRequireDate.Size = new System.Drawing.Size(70, 13);
             this.lblRequireDate.TabIndex = 31;
@@ -963,7 +1279,7 @@
             // 
             // txtOrderEmpID
             // 
-            this.txtOrderEmpID.Location = new System.Drawing.Point(98, 72);
+            this.txtOrderEmpID.Location = new System.Drawing.Point(98, 75);
             this.txtOrderEmpID.Name = "txtOrderEmpID";
             this.txtOrderEmpID.Size = new System.Drawing.Size(181, 20);
             this.txtOrderEmpID.TabIndex = 29;
@@ -980,7 +1296,7 @@
             // txtOrderID
             // 
             this.txtOrderID.Enabled = false;
-            this.txtOrderID.Location = new System.Drawing.Point(98, 6);
+            this.txtOrderID.Location = new System.Drawing.Point(98, 5);
             this.txtOrderID.Name = "txtOrderID";
             this.txtOrderID.Size = new System.Drawing.Size(181, 20);
             this.txtOrderID.TabIndex = 27;
@@ -997,7 +1313,7 @@
             // lblOrderEmpID
             // 
             this.lblOrderEmpID.AutoSize = true;
-            this.lblOrderEmpID.Location = new System.Drawing.Point(10, 75);
+            this.lblOrderEmpID.Location = new System.Drawing.Point(10, 80);
             this.lblOrderEmpID.Name = "lblOrderEmpID";
             this.lblOrderEmpID.Size = new System.Drawing.Size(67, 13);
             this.lblOrderEmpID.TabIndex = 25;
@@ -1006,7 +1322,7 @@
             // lblOrderCusID
             // 
             this.lblOrderCusID.AutoSize = true;
-            this.lblOrderCusID.Location = new System.Drawing.Point(10, 43);
+            this.lblOrderCusID.Location = new System.Drawing.Point(10, 45);
             this.lblOrderCusID.Name = "lblOrderCusID";
             this.lblOrderCusID.Size = new System.Drawing.Size(65, 13);
             this.lblOrderCusID.TabIndex = 24;
@@ -1043,7 +1359,7 @@
             this.tProduct.Location = new System.Drawing.Point(4, 22);
             this.tProduct.Name = "tProduct";
             this.tProduct.Padding = new System.Windows.Forms.Padding(3);
-            this.tProduct.Size = new System.Drawing.Size(632, 458);
+            this.tProduct.Size = new System.Drawing.Size(1035, 485);
             this.tProduct.TabIndex = 2;
             this.tProduct.Text = "Product";
             this.tProduct.UseVisualStyleBackColor = true;
@@ -1052,7 +1368,7 @@
             // 
             this.cbCaterogyID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbCaterogyID.FormattingEnabled = true;
-            this.cbCaterogyID.Location = new System.Drawing.Point(91, 106);
+            this.cbCaterogyID.Location = new System.Drawing.Point(98, 110);
             this.cbCaterogyID.Name = "cbCaterogyID";
             this.cbCaterogyID.Size = new System.Drawing.Size(181, 21);
             this.cbCaterogyID.TabIndex = 42;
@@ -1061,7 +1377,7 @@
             // 
             this.groupBox1.Controls.Add(this.radNo);
             this.groupBox1.Controls.Add(this.radYes);
-            this.groupBox1.Location = new System.Drawing.Point(91, 172);
+            this.groupBox1.Location = new System.Drawing.Point(98, 180);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(181, 30);
             this.groupBox1.TabIndex = 41;
@@ -1091,7 +1407,7 @@
             // 
             // btnLoadProduct
             // 
-            this.btnLoadProduct.Location = new System.Drawing.Point(333, 241);
+            this.btnLoadProduct.Location = new System.Drawing.Point(710, 215);
             this.btnLoadProduct.Name = "btnLoadProduct";
             this.btnLoadProduct.Size = new System.Drawing.Size(119, 23);
             this.btnLoadProduct.TabIndex = 40;
@@ -1101,7 +1417,7 @@
             // 
             // btnUpdateProduct
             // 
-            this.btnUpdateProduct.Location = new System.Drawing.Point(185, 241);
+            this.btnUpdateProduct.Location = new System.Drawing.Point(565, 215);
             this.btnUpdateProduct.Name = "btnUpdateProduct";
             this.btnUpdateProduct.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateProduct.TabIndex = 39;
@@ -1111,7 +1427,7 @@
             // 
             // btnDeleteProduct
             // 
-            this.btnDeleteProduct.Location = new System.Drawing.Point(333, 208);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(710, 185);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteProduct.TabIndex = 38;
@@ -1120,7 +1436,7 @@
             // 
             // btnAddProduct
             // 
-            this.btnAddProduct.Location = new System.Drawing.Point(185, 208);
+            this.btnAddProduct.Location = new System.Drawing.Point(565, 185);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(115, 23);
             this.btnAddProduct.TabIndex = 37;
@@ -1140,7 +1456,7 @@
             this.clProCategoryID,
             this.clProUnitPrice,
             this.clProDiscontinued});
-            this.dgvProduct.Location = new System.Drawing.Point(6, 270);
+            this.dgvProduct.Location = new System.Drawing.Point(295, 40);
             this.dgvProduct.Name = "dgvProduct";
             this.dgvProduct.ReadOnly = true;
             this.dgvProduct.Size = new System.Drawing.Size(620, 137);
@@ -1185,7 +1501,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(3, 183);
+            this.label11.Location = new System.Drawing.Point(10, 185);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(69, 13);
             this.label11.TabIndex = 33;
@@ -1193,7 +1509,7 @@
             // 
             // txtProUnitPrice
             // 
-            this.txtProUnitPrice.Location = new System.Drawing.Point(91, 145);
+            this.txtProUnitPrice.Location = new System.Drawing.Point(98, 145);
             this.txtProUnitPrice.Name = "txtProUnitPrice";
             this.txtProUnitPrice.Size = new System.Drawing.Size(181, 20);
             this.txtProUnitPrice.TabIndex = 32;
@@ -1202,7 +1518,7 @@
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(3, 148);
+            this.label12.Location = new System.Drawing.Point(10, 150);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 13);
             this.label12.TabIndex = 31;
@@ -1210,7 +1526,7 @@
             // 
             // txtProSupplierID
             // 
-            this.txtProSupplierID.Location = new System.Drawing.Point(91, 72);
+            this.txtProSupplierID.Location = new System.Drawing.Point(98, 75);
             this.txtProSupplierID.Name = "txtProSupplierID";
             this.txtProSupplierID.Size = new System.Drawing.Size(181, 20);
             this.txtProSupplierID.TabIndex = 29;
@@ -1218,7 +1534,7 @@
             // 
             // txtProductName
             // 
-            this.txtProductName.Location = new System.Drawing.Point(91, 40);
+            this.txtProductName.Location = new System.Drawing.Point(98, 40);
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(181, 20);
             this.txtProductName.TabIndex = 28;
@@ -1226,7 +1542,7 @@
             // txtProductID
             // 
             this.txtProductID.Enabled = false;
-            this.txtProductID.Location = new System.Drawing.Point(91, 6);
+            this.txtProductID.Location = new System.Drawing.Point(98, 5);
             this.txtProductID.Name = "txtProductID";
             this.txtProductID.Size = new System.Drawing.Size(181, 20);
             this.txtProductID.TabIndex = 27;
@@ -1234,7 +1550,7 @@
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(3, 110);
+            this.label13.Location = new System.Drawing.Point(10, 115);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(63, 13);
             this.label13.TabIndex = 26;
@@ -1243,7 +1559,7 @@
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(3, 75);
+            this.label14.Location = new System.Drawing.Point(10, 80);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(59, 13);
             this.label14.TabIndex = 25;
@@ -1252,7 +1568,7 @@
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(3, 43);
+            this.label15.Location = new System.Drawing.Point(10, 45);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(75, 13);
             this.label15.TabIndex = 24;
@@ -1261,7 +1577,7 @@
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(3, 10);
+            this.label16.Location = new System.Drawing.Point(10, 10);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(58, 13);
             this.label16.TabIndex = 23;
@@ -1305,10 +1621,11 @@
             this.tEmployee.Location = new System.Drawing.Point(4, 22);
             this.tEmployee.Name = "tEmployee";
             this.tEmployee.Padding = new System.Windows.Forms.Padding(3);
-            this.tEmployee.Size = new System.Drawing.Size(632, 458);
+            this.tEmployee.Size = new System.Drawing.Size(1035, 485);
             this.tEmployee.TabIndex = 3;
             this.tEmployee.Text = "Employee";
             this.tEmployee.UseVisualStyleBackColor = true;
+            this.tEmployee.Click += new System.EventHandler(this.tEmployee_Click);
             // 
             // cbEmpCountry
             // 
@@ -1325,14 +1642,14 @@
             "Korea",
             "USA",
             "China"});
-            this.cbEmpCountry.Location = new System.Drawing.Point(387, 147);
+            this.cbEmpCountry.Location = new System.Drawing.Point(98, 390);
             this.cbEmpCountry.Name = "cbEmpCountry";
             this.cbEmpCountry.Size = new System.Drawing.Size(181, 21);
             this.cbEmpCountry.TabIndex = 85;
             // 
             // mtbEmpPhone
             // 
-            this.mtbEmpPhone.Location = new System.Drawing.Point(387, 183);
+            this.mtbEmpPhone.Location = new System.Drawing.Point(98, 425);
             this.mtbEmpPhone.Mask = "(9000) 000-0000";
             this.mtbEmpPhone.Name = "mtbEmpPhone";
             this.mtbEmpPhone.Size = new System.Drawing.Size(181, 20);
@@ -1340,21 +1657,21 @@
             // 
             // dtpEmpHireDate
             // 
-            this.dtpEmpHireDate.Location = new System.Drawing.Point(104, 218);
+            this.dtpEmpHireDate.Location = new System.Drawing.Point(98, 215);
             this.dtpEmpHireDate.Name = "dtpEmpHireDate";
             this.dtpEmpHireDate.Size = new System.Drawing.Size(181, 20);
             this.dtpEmpHireDate.TabIndex = 83;
             // 
             // dtpEmpBirthdate
             // 
-            this.dtpEmpBirthdate.Location = new System.Drawing.Point(104, 183);
+            this.dtpEmpBirthdate.Location = new System.Drawing.Point(98, 180);
             this.dtpEmpBirthdate.Name = "dtpEmpBirthdate";
             this.dtpEmpBirthdate.Size = new System.Drawing.Size(181, 20);
             this.dtpEmpBirthdate.TabIndex = 82;
             // 
             // btnLoadEmp
             // 
-            this.btnLoadEmp.Location = new System.Drawing.Point(333, 286);
+            this.btnLoadEmp.Location = new System.Drawing.Point(710, 215);
             this.btnLoadEmp.Name = "btnLoadEmp";
             this.btnLoadEmp.Size = new System.Drawing.Size(119, 23);
             this.btnLoadEmp.TabIndex = 81;
@@ -1364,7 +1681,7 @@
             // 
             // btnUpdateEmp
             // 
-            this.btnUpdateEmp.Location = new System.Drawing.Point(185, 286);
+            this.btnUpdateEmp.Location = new System.Drawing.Point(565, 215);
             this.btnUpdateEmp.Name = "btnUpdateEmp";
             this.btnUpdateEmp.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateEmp.TabIndex = 80;
@@ -1374,7 +1691,7 @@
             // 
             // btnDeleteEmp
             // 
-            this.btnDeleteEmp.Location = new System.Drawing.Point(333, 253);
+            this.btnDeleteEmp.Location = new System.Drawing.Point(710, 185);
             this.btnDeleteEmp.Name = "btnDeleteEmp";
             this.btnDeleteEmp.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteEmp.TabIndex = 79;
@@ -1383,7 +1700,7 @@
             // 
             // btnAddEmp
             // 
-            this.btnAddEmp.Location = new System.Drawing.Point(185, 253);
+            this.btnAddEmp.Location = new System.Drawing.Point(565, 185);
             this.btnAddEmp.Name = "btnAddEmp";
             this.btnAddEmp.Size = new System.Drawing.Size(115, 23);
             this.btnAddEmp.TabIndex = 78;
@@ -1411,7 +1728,7 @@
             this.clEmpCountry,
             this.clEmpPhone,
             this.clEmpManagerID});
-            this.dgvEmp.Location = new System.Drawing.Point(6, 315);
+            this.dgvEmp.Location = new System.Drawing.Point(295, 40);
             this.dgvEmp.Name = "dgvEmp";
             this.dgvEmp.ReadOnly = true;
             this.dgvEmp.Size = new System.Drawing.Size(620, 137);
@@ -1504,7 +1821,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(16, 221);
+            this.label25.Location = new System.Drawing.Point(10, 220);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(50, 13);
             this.label25.TabIndex = 75;
@@ -1512,7 +1829,7 @@
             // 
             // txtEmpManagerID
             // 
-            this.txtEmpManagerID.Location = new System.Drawing.Point(387, 218);
+            this.txtEmpManagerID.Location = new System.Drawing.Point(98, 460);
             this.txtEmpManagerID.Name = "txtEmpManagerID";
             this.txtEmpManagerID.Size = new System.Drawing.Size(181, 20);
             this.txtEmpManagerID.TabIndex = 74;
@@ -1521,7 +1838,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(299, 221);
+            this.label6.Location = new System.Drawing.Point(10, 465);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(63, 13);
             this.label6.TabIndex = 73;
@@ -1530,7 +1847,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 189);
+            this.label7.Location = new System.Drawing.Point(10, 185);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(49, 13);
             this.label7.TabIndex = 71;
@@ -1539,7 +1856,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(299, 189);
+            this.label8.Location = new System.Drawing.Point(10, 430);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(38, 13);
             this.label8.TabIndex = 69;
@@ -1548,7 +1865,7 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(299, 150);
+            this.label9.Location = new System.Drawing.Point(10, 395);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(43, 13);
             this.label9.TabIndex = 67;
@@ -1556,7 +1873,7 @@
             // 
             // txtEmpPosCode
             // 
-            this.txtEmpPosCode.Location = new System.Drawing.Point(387, 109);
+            this.txtEmpPosCode.Location = new System.Drawing.Point(98, 355);
             this.txtEmpPosCode.Name = "txtEmpPosCode";
             this.txtEmpPosCode.Size = new System.Drawing.Size(181, 20);
             this.txtEmpPosCode.TabIndex = 66;
@@ -1565,7 +1882,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(299, 112);
+            this.label10.Location = new System.Drawing.Point(10, 360);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(64, 13);
             this.label10.TabIndex = 65;
@@ -1573,7 +1890,7 @@
             // 
             // txtEmpRegion
             // 
-            this.txtEmpRegion.Location = new System.Drawing.Point(387, 74);
+            this.txtEmpRegion.Location = new System.Drawing.Point(98, 320);
             this.txtEmpRegion.Name = "txtEmpRegion";
             this.txtEmpRegion.Size = new System.Drawing.Size(181, 20);
             this.txtEmpRegion.TabIndex = 64;
@@ -1581,7 +1898,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(299, 77);
+            this.label17.Location = new System.Drawing.Point(10, 325);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(41, 13);
             this.label17.TabIndex = 63;
@@ -1589,7 +1906,7 @@
             // 
             // txtEmpCity
             // 
-            this.txtEmpCity.Location = new System.Drawing.Point(387, 42);
+            this.txtEmpCity.Location = new System.Drawing.Point(98, 285);
             this.txtEmpCity.Name = "txtEmpCity";
             this.txtEmpCity.Size = new System.Drawing.Size(181, 20);
             this.txtEmpCity.TabIndex = 62;
@@ -1597,7 +1914,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(299, 45);
+            this.label18.Location = new System.Drawing.Point(10, 290);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(24, 13);
             this.label18.TabIndex = 61;
@@ -1605,7 +1922,7 @@
             // 
             // txtEmpAddress
             // 
-            this.txtEmpAddress.Location = new System.Drawing.Point(387, 9);
+            this.txtEmpAddress.Location = new System.Drawing.Point(98, 250);
             this.txtEmpAddress.Name = "txtEmpAddress";
             this.txtEmpAddress.Size = new System.Drawing.Size(181, 20);
             this.txtEmpAddress.TabIndex = 60;
@@ -1613,7 +1930,7 @@
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(299, 12);
+            this.label19.Location = new System.Drawing.Point(10, 255);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(45, 13);
             this.label19.TabIndex = 59;
@@ -1621,7 +1938,7 @@
             // 
             // txtEmpTitleOfCourtesy
             // 
-            this.txtEmpTitleOfCourtesy.Location = new System.Drawing.Point(104, 147);
+            this.txtEmpTitleOfCourtesy.Location = new System.Drawing.Point(98, 145);
             this.txtEmpTitleOfCourtesy.Name = "txtEmpTitleOfCourtesy";
             this.txtEmpTitleOfCourtesy.Size = new System.Drawing.Size(181, 20);
             this.txtEmpTitleOfCourtesy.TabIndex = 58;
@@ -1629,7 +1946,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(16, 150);
+            this.label20.Location = new System.Drawing.Point(10, 150);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(85, 13);
             this.label20.TabIndex = 57;
@@ -1637,28 +1954,28 @@
             // 
             // txtEmpTitle
             // 
-            this.txtEmpTitle.Location = new System.Drawing.Point(104, 109);
+            this.txtEmpTitle.Location = new System.Drawing.Point(98, 110);
             this.txtEmpTitle.Name = "txtEmpTitle";
             this.txtEmpTitle.Size = new System.Drawing.Size(181, 20);
             this.txtEmpTitle.TabIndex = 56;
             // 
             // txtEmpFirstName
             // 
-            this.txtEmpFirstName.Location = new System.Drawing.Point(104, 74);
+            this.txtEmpFirstName.Location = new System.Drawing.Point(98, 75);
             this.txtEmpFirstName.Name = "txtEmpFirstName";
             this.txtEmpFirstName.Size = new System.Drawing.Size(181, 20);
             this.txtEmpFirstName.TabIndex = 55;
             // 
             // txtEmpLastName
             // 
-            this.txtEmpLastName.Location = new System.Drawing.Point(104, 42);
+            this.txtEmpLastName.Location = new System.Drawing.Point(98, 40);
             this.txtEmpLastName.Name = "txtEmpLastName";
             this.txtEmpLastName.Size = new System.Drawing.Size(181, 20);
             this.txtEmpLastName.TabIndex = 54;
             // 
             // txtEmployID
             // 
-            this.txtEmployID.Location = new System.Drawing.Point(104, 8);
+            this.txtEmployID.Location = new System.Drawing.Point(98, 5);
             this.txtEmployID.Name = "txtEmployID";
             this.txtEmployID.Size = new System.Drawing.Size(181, 20);
             this.txtEmployID.TabIndex = 53;
@@ -1666,7 +1983,7 @@
             // label21
             // 
             this.label21.AutoSize = true;
-            this.label21.Location = new System.Drawing.Point(16, 112);
+            this.label21.Location = new System.Drawing.Point(10, 115);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(27, 13);
             this.label21.TabIndex = 52;
@@ -1675,7 +1992,7 @@
             // label22
             // 
             this.label22.AutoSize = true;
-            this.label22.Location = new System.Drawing.Point(16, 77);
+            this.label22.Location = new System.Drawing.Point(10, 80);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(57, 13);
             this.label22.TabIndex = 51;
@@ -1684,7 +2001,7 @@
             // label23
             // 
             this.label23.AutoSize = true;
-            this.label23.Location = new System.Drawing.Point(16, 45);
+            this.label23.Location = new System.Drawing.Point(10, 45);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(58, 13);
             this.label23.TabIndex = 50;
@@ -1693,7 +2010,7 @@
             // label24
             // 
             this.label24.AutoSize = true;
-            this.label24.Location = new System.Drawing.Point(16, 12);
+            this.label24.Location = new System.Drawing.Point(10, 10);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(67, 13);
             this.label24.TabIndex = 49;
@@ -1729,7 +2046,7 @@
             this.tSuppliers.Location = new System.Drawing.Point(4, 22);
             this.tSuppliers.Name = "tSuppliers";
             this.tSuppliers.Padding = new System.Windows.Forms.Padding(3);
-            this.tSuppliers.Size = new System.Drawing.Size(632, 458);
+            this.tSuppliers.Size = new System.Drawing.Size(1035, 485);
             this.tSuppliers.TabIndex = 4;
             this.tSuppliers.Text = "Suppliers";
             this.tSuppliers.UseVisualStyleBackColor = true;
@@ -1749,14 +2066,14 @@
             "Korea",
             "USA",
             "China"});
-            this.cbSupCountry.Location = new System.Drawing.Point(392, 109);
+            this.cbSupCountry.Location = new System.Drawing.Point(98, 250);
             this.cbSupCountry.Name = "cbSupCountry";
             this.cbSupCountry.Size = new System.Drawing.Size(181, 21);
             this.cbSupCountry.TabIndex = 108;
             // 
             // btnLoadSupplier
             // 
-            this.btnLoadSupplier.Location = new System.Drawing.Point(333, 286);
+            this.btnLoadSupplier.Location = new System.Drawing.Point(710, 215);
             this.btnLoadSupplier.Name = "btnLoadSupplier";
             this.btnLoadSupplier.Size = new System.Drawing.Size(119, 23);
             this.btnLoadSupplier.TabIndex = 107;
@@ -1765,7 +2082,7 @@
             // 
             // btnUpdateSupplier
             // 
-            this.btnUpdateSupplier.Location = new System.Drawing.Point(185, 286);
+            this.btnUpdateSupplier.Location = new System.Drawing.Point(565, 215);
             this.btnUpdateSupplier.Name = "btnUpdateSupplier";
             this.btnUpdateSupplier.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateSupplier.TabIndex = 106;
@@ -1775,7 +2092,7 @@
             // 
             // btnDeleteSupplier
             // 
-            this.btnDeleteSupplier.Location = new System.Drawing.Point(333, 253);
+            this.btnDeleteSupplier.Location = new System.Drawing.Point(710, 185);
             this.btnDeleteSupplier.Name = "btnDeleteSupplier";
             this.btnDeleteSupplier.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteSupplier.TabIndex = 105;
@@ -1785,7 +2102,7 @@
             // 
             // btnAddSupplier
             // 
-            this.btnAddSupplier.Location = new System.Drawing.Point(185, 253);
+            this.btnAddSupplier.Location = new System.Drawing.Point(565, 185);
             this.btnAddSupplier.Name = "btnAddSupplier";
             this.btnAddSupplier.Size = new System.Drawing.Size(115, 23);
             this.btnAddSupplier.TabIndex = 104;
@@ -1809,7 +2126,7 @@
             this.clSupCountry,
             this.clSupPhone,
             this.clSupFax});
-            this.dgvSupplier.Location = new System.Drawing.Point(6, 315);
+            this.dgvSupplier.Location = new System.Drawing.Point(295, 40);
             this.dgvSupplier.Name = "dgvSupplier";
             this.dgvSupplier.ReadOnly = true;
             this.dgvSupplier.Size = new System.Drawing.Size(620, 137);
@@ -1877,7 +2194,7 @@
             // 
             // txtSupFax
             // 
-            this.txtSupFax.Location = new System.Drawing.Point(392, 176);
+            this.txtSupFax.Location = new System.Drawing.Point(98, 320);
             this.txtSupFax.Name = "txtSupFax";
             this.txtSupFax.Size = new System.Drawing.Size(181, 20);
             this.txtSupFax.TabIndex = 102;
@@ -1885,7 +2202,7 @@
             // label27
             // 
             this.label27.AutoSize = true;
-            this.label27.Location = new System.Drawing.Point(304, 183);
+            this.label27.Location = new System.Drawing.Point(10, 325);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(24, 13);
             this.label27.TabIndex = 101;
@@ -1893,7 +2210,7 @@
             // 
             // txtSupPhone
             // 
-            this.txtSupPhone.Location = new System.Drawing.Point(392, 148);
+            this.txtSupPhone.Location = new System.Drawing.Point(98, 285);
             this.txtSupPhone.Name = "txtSupPhone";
             this.txtSupPhone.Size = new System.Drawing.Size(181, 20);
             this.txtSupPhone.TabIndex = 98;
@@ -1901,7 +2218,7 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Location = new System.Drawing.Point(304, 151);
+            this.label29.Location = new System.Drawing.Point(10, 290);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(38, 13);
             this.label29.TabIndex = 97;
@@ -1910,7 +2227,7 @@
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(304, 112);
+            this.label30.Location = new System.Drawing.Point(10, 255);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(43, 13);
             this.label30.TabIndex = 95;
@@ -1918,7 +2235,7 @@
             // 
             // txtSupPosCode
             // 
-            this.txtSupPosCode.Location = new System.Drawing.Point(392, 71);
+            this.txtSupPosCode.Location = new System.Drawing.Point(98, 215);
             this.txtSupPosCode.Name = "txtSupPosCode";
             this.txtSupPosCode.Size = new System.Drawing.Size(181, 20);
             this.txtSupPosCode.TabIndex = 94;
@@ -1926,7 +2243,7 @@
             // label31
             // 
             this.label31.AutoSize = true;
-            this.label31.Location = new System.Drawing.Point(304, 74);
+            this.label31.Location = new System.Drawing.Point(10, 220);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(64, 13);
             this.label31.TabIndex = 93;
@@ -1934,7 +2251,7 @@
             // 
             // txtSupRegion
             // 
-            this.txtSupRegion.Location = new System.Drawing.Point(392, 36);
+            this.txtSupRegion.Location = new System.Drawing.Point(98, 180);
             this.txtSupRegion.Name = "txtSupRegion";
             this.txtSupRegion.Size = new System.Drawing.Size(181, 20);
             this.txtSupRegion.TabIndex = 92;
@@ -1942,7 +2259,7 @@
             // label32
             // 
             this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(304, 39);
+            this.label32.Location = new System.Drawing.Point(10, 185);
             this.label32.Name = "label32";
             this.label32.Size = new System.Drawing.Size(41, 13);
             this.label32.TabIndex = 91;
@@ -1950,7 +2267,7 @@
             // 
             // txtSupCity
             // 
-            this.txtSupCity.Location = new System.Drawing.Point(392, 4);
+            this.txtSupCity.Location = new System.Drawing.Point(98, 145);
             this.txtSupCity.Name = "txtSupCity";
             this.txtSupCity.Size = new System.Drawing.Size(181, 20);
             this.txtSupCity.TabIndex = 90;
@@ -1958,7 +2275,7 @@
             // label33
             // 
             this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(304, 7);
+            this.label33.Location = new System.Drawing.Point(10, 150);
             this.label33.Name = "label33";
             this.label33.Size = new System.Drawing.Size(24, 13);
             this.label33.TabIndex = 89;
@@ -1966,14 +2283,14 @@
             // 
             // txtSupAdd
             // 
-            this.txtSupAdd.Location = new System.Drawing.Point(98, 107);
+            this.txtSupAdd.Location = new System.Drawing.Point(98, 110);
             this.txtSupAdd.Name = "txtSupAdd";
             this.txtSupAdd.Size = new System.Drawing.Size(181, 20);
             this.txtSupAdd.TabIndex = 84;
             // 
             // txtSupContactName
             // 
-            this.txtSupContactName.Location = new System.Drawing.Point(98, 72);
+            this.txtSupContactName.Location = new System.Drawing.Point(98, 75);
             this.txtSupContactName.Name = "txtSupContactName";
             this.txtSupContactName.Size = new System.Drawing.Size(181, 20);
             this.txtSupContactName.TabIndex = 83;
@@ -1987,7 +2304,7 @@
             // 
             // txtSupID
             // 
-            this.txtSupID.Location = new System.Drawing.Point(98, 6);
+            this.txtSupID.Location = new System.Drawing.Point(98, 5);
             this.txtSupID.Name = "txtSupID";
             this.txtSupID.Size = new System.Drawing.Size(181, 20);
             this.txtSupID.TabIndex = 81;
@@ -1995,7 +2312,7 @@
             // label36
             // 
             this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(10, 110);
+            this.label36.Location = new System.Drawing.Point(10, 115);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(45, 13);
             this.label36.TabIndex = 80;
@@ -2004,7 +2321,7 @@
             // label37
             // 
             this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(10, 75);
+            this.label37.Location = new System.Drawing.Point(10, 80);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(75, 13);
             this.label37.TabIndex = 79;
@@ -2013,7 +2330,7 @@
             // label38
             // 
             this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(10, 43);
+            this.label38.Location = new System.Drawing.Point(10, 45);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(82, 13);
             this.label38.TabIndex = 78;
@@ -2044,14 +2361,14 @@
             this.tCategories.Location = new System.Drawing.Point(4, 22);
             this.tCategories.Name = "tCategories";
             this.tCategories.Padding = new System.Windows.Forms.Padding(3);
-            this.tCategories.Size = new System.Drawing.Size(632, 458);
+            this.tCategories.Size = new System.Drawing.Size(1035, 485);
             this.tCategories.TabIndex = 6;
             this.tCategories.Text = "Categories";
             this.tCategories.UseVisualStyleBackColor = true;
             // 
             // btnLoadCategory
             // 
-            this.btnLoadCategory.Location = new System.Drawing.Point(333, 140);
+            this.btnLoadCategory.Location = new System.Drawing.Point(710, 215);
             this.btnLoadCategory.Name = "btnLoadCategory";
             this.btnLoadCategory.Size = new System.Drawing.Size(119, 23);
             this.btnLoadCategory.TabIndex = 88;
@@ -2060,7 +2377,7 @@
             // 
             // btnUpdateCategory
             // 
-            this.btnUpdateCategory.Location = new System.Drawing.Point(185, 140);
+            this.btnUpdateCategory.Location = new System.Drawing.Point(565, 215);
             this.btnUpdateCategory.Name = "btnUpdateCategory";
             this.btnUpdateCategory.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateCategory.TabIndex = 87;
@@ -2070,7 +2387,7 @@
             // 
             // btnDeleteCategory
             // 
-            this.btnDeleteCategory.Location = new System.Drawing.Point(333, 107);
+            this.btnDeleteCategory.Location = new System.Drawing.Point(710, 185);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteCategory.TabIndex = 86;
@@ -2080,7 +2397,7 @@
             // 
             // btnAddCategory
             // 
-            this.btnAddCategory.Location = new System.Drawing.Point(185, 107);
+            this.btnAddCategory.Location = new System.Drawing.Point(565, 185);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(115, 23);
             this.btnAddCategory.TabIndex = 85;
@@ -2097,7 +2414,7 @@
             this.clCateID,
             this.clCateName,
             this.clCateDescription});
-            this.dgvCategory.Location = new System.Drawing.Point(6, 169);
+            this.dgvCategory.Location = new System.Drawing.Point(295, 40);
             this.dgvCategory.Name = "dgvCategory";
             this.dgvCategory.ReadOnly = true;
             this.dgvCategory.Size = new System.Drawing.Size(620, 137);
@@ -2123,21 +2440,21 @@
             // 
             // txtCateDescription
             // 
-            this.txtCateDescription.Location = new System.Drawing.Point(98, 69);
+            this.txtCateDescription.Location = new System.Drawing.Point(98, 75);
             this.txtCateDescription.Name = "txtCateDescription";
             this.txtCateDescription.Size = new System.Drawing.Size(181, 20);
             this.txtCateDescription.TabIndex = 83;
             // 
             // txtCateName
             // 
-            this.txtCateName.Location = new System.Drawing.Point(98, 37);
+            this.txtCateName.Location = new System.Drawing.Point(98, 40);
             this.txtCateName.Name = "txtCateName";
             this.txtCateName.Size = new System.Drawing.Size(181, 20);
             this.txtCateName.TabIndex = 82;
             // 
             // txtCateID
             // 
-            this.txtCateID.Location = new System.Drawing.Point(98, 3);
+            this.txtCateID.Location = new System.Drawing.Point(98, 5);
             this.txtCateID.Name = "txtCateID";
             this.txtCateID.Size = new System.Drawing.Size(181, 20);
             this.txtCateID.TabIndex = 81;
@@ -2145,7 +2462,7 @@
             // label52
             // 
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(10, 72);
+            this.label52.Location = new System.Drawing.Point(10, 80);
             this.label52.Name = "label52";
             this.label52.Size = new System.Drawing.Size(60, 13);
             this.label52.TabIndex = 79;
@@ -2154,7 +2471,7 @@
             // label53
             // 
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(10, 40);
+            this.label53.Location = new System.Drawing.Point(10, 45);
             this.label53.Name = "label53";
             this.label53.Size = new System.Drawing.Size(80, 13);
             this.label53.TabIndex = 78;
@@ -2163,7 +2480,7 @@
             // label54
             // 
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(10, 7);
+            this.label54.Location = new System.Drawing.Point(10, 10);
             this.label54.Name = "label54";
             this.label54.Size = new System.Drawing.Size(63, 13);
             this.label54.TabIndex = 77;
@@ -2185,14 +2502,14 @@
             this.tShippers.Location = new System.Drawing.Point(4, 22);
             this.tShippers.Name = "tShippers";
             this.tShippers.Padding = new System.Windows.Forms.Padding(3);
-            this.tShippers.Size = new System.Drawing.Size(632, 458);
+            this.tShippers.Size = new System.Drawing.Size(1035, 485);
             this.tShippers.TabIndex = 7;
             this.tShippers.Text = "Shippers";
             this.tShippers.UseVisualStyleBackColor = true;
             // 
             // btnLoadShipper
             // 
-            this.btnLoadShipper.Location = new System.Drawing.Point(333, 138);
+            this.btnLoadShipper.Location = new System.Drawing.Point(710, 215);
             this.btnLoadShipper.Name = "btnLoadShipper";
             this.btnLoadShipper.Size = new System.Drawing.Size(119, 23);
             this.btnLoadShipper.TabIndex = 94;
@@ -2201,7 +2518,7 @@
             // 
             // btnUpdateShipper
             // 
-            this.btnUpdateShipper.Location = new System.Drawing.Point(185, 138);
+            this.btnUpdateShipper.Location = new System.Drawing.Point(565, 215);
             this.btnUpdateShipper.Name = "btnUpdateShipper";
             this.btnUpdateShipper.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateShipper.TabIndex = 93;
@@ -2211,7 +2528,7 @@
             // 
             // btnDeleteShipper
             // 
-            this.btnDeleteShipper.Location = new System.Drawing.Point(333, 105);
+            this.btnDeleteShipper.Location = new System.Drawing.Point(710, 185);
             this.btnDeleteShipper.Name = "btnDeleteShipper";
             this.btnDeleteShipper.Size = new System.Drawing.Size(119, 23);
             this.btnDeleteShipper.TabIndex = 92;
@@ -2221,7 +2538,7 @@
             // 
             // btnAddShipper
             // 
-            this.btnAddShipper.Location = new System.Drawing.Point(185, 105);
+            this.btnAddShipper.Location = new System.Drawing.Point(565, 185);
             this.btnAddShipper.Name = "btnAddShipper";
             this.btnAddShipper.Size = new System.Drawing.Size(115, 23);
             this.btnAddShipper.TabIndex = 91;
@@ -2238,7 +2555,7 @@
             this.clShipperID,
             this.clShipperCompany,
             this.clShipperPhone});
-            this.dgvShipper.Location = new System.Drawing.Point(6, 167);
+            this.dgvShipper.Location = new System.Drawing.Point(295, 40);
             this.dgvShipper.Name = "dgvShipper";
             this.dgvShipper.ReadOnly = true;
             this.dgvShipper.Size = new System.Drawing.Size(620, 137);
@@ -2264,21 +2581,21 @@
             // 
             // txtShipperPhone
             // 
-            this.txtShipperPhone.Location = new System.Drawing.Point(99, 69);
+            this.txtShipperPhone.Location = new System.Drawing.Point(98, 75);
             this.txtShipperPhone.Name = "txtShipperPhone";
             this.txtShipperPhone.Size = new System.Drawing.Size(181, 20);
             this.txtShipperPhone.TabIndex = 89;
             // 
             // txtShipperCompany
             // 
-            this.txtShipperCompany.Location = new System.Drawing.Point(99, 37);
+            this.txtShipperCompany.Location = new System.Drawing.Point(98, 40);
             this.txtShipperCompany.Name = "txtShipperCompany";
             this.txtShipperCompany.Size = new System.Drawing.Size(181, 20);
             this.txtShipperCompany.TabIndex = 88;
             // 
             // txtShipperID
             // 
-            this.txtShipperID.Location = new System.Drawing.Point(99, 3);
+            this.txtShipperID.Location = new System.Drawing.Point(98, 5);
             this.txtShipperID.Name = "txtShipperID";
             this.txtShipperID.Size = new System.Drawing.Size(181, 20);
             this.txtShipperID.TabIndex = 87;
@@ -2286,7 +2603,7 @@
             // label26
             // 
             this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(11, 72);
+            this.label26.Location = new System.Drawing.Point(10, 80);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(38, 13);
             this.label26.TabIndex = 86;
@@ -2295,7 +2612,7 @@
             // label28
             // 
             this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(11, 40);
+            this.label28.Location = new System.Drawing.Point(10, 45);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(82, 13);
             this.label28.TabIndex = 85;
@@ -2304,7 +2621,7 @@
             // label34
             // 
             this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(11, 7);
+            this.label34.Location = new System.Drawing.Point(10, 10);
             this.label34.Name = "label34";
             this.label34.Size = new System.Drawing.Size(57, 13);
             this.label34.TabIndex = 84;
@@ -2313,322 +2630,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(10, 219);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(57, 13);
-            this.label35.TabIndex = 87;
-            this.label35.Text = "Shipper ID";
-            // 
-            // txtOrderShiperID
-            // 
-            this.txtOrderShiperID.Location = new System.Drawing.Point(98, 216);
-            this.txtOrderShiperID.Name = "txtOrderShiperID";
-            this.txtOrderShiperID.Size = new System.Drawing.Size(181, 20);
-            this.txtOrderShiperID.TabIndex = 88;
-            // 
-            // clOrderID
-            // 
-            this.clOrderID.HeaderText = "Order ID";
-            this.clOrderID.Name = "clOrderID";
-            this.clOrderID.ReadOnly = true;
-            // 
-            // clOrderCusID
-            // 
-            this.clOrderCusID.HeaderText = "Customer ID";
-            this.clOrderCusID.Name = "clOrderCusID";
-            this.clOrderCusID.ReadOnly = true;
-            // 
-            // clOrderEmpID
-            // 
-            this.clOrderEmpID.HeaderText = "Employee ID";
-            this.clOrderEmpID.Name = "clOrderEmpID";
-            this.clOrderEmpID.ReadOnly = true;
-            // 
-            // clOrderDate
-            // 
-            this.clOrderDate.HeaderText = "Order Date";
-            this.clOrderDate.Name = "clOrderDate";
-            this.clOrderDate.ReadOnly = true;
-            // 
-            // clReqDate
-            // 
-            this.clReqDate.HeaderText = "Require Date";
-            this.clReqDate.Name = "clReqDate";
-            this.clReqDate.ReadOnly = true;
-            // 
-            // clShippedDate
-            // 
-            this.clShippedDate.HeaderText = "Shipped Date";
-            this.clShippedDate.Name = "clShippedDate";
-            this.clShippedDate.ReadOnly = true;
-            // 
-            // clOrderShipperID
-            // 
-            this.clOrderShipperID.HeaderText = "Shipper ID";
-            this.clOrderShipperID.Name = "clOrderShipperID";
-            this.clOrderShipperID.ReadOnly = true;
-            // 
-            // clFreight
-            // 
-            this.clFreight.HeaderText = "Freight";
-            this.clFreight.Name = "clFreight";
-            this.clFreight.ReadOnly = true;
-            // 
-            // clShipName
-            // 
-            this.clShipName.HeaderText = "Ship Name";
-            this.clShipName.Name = "clShipName";
-            this.clShipName.ReadOnly = true;
-            // 
-            // clShipAddress
-            // 
-            this.clShipAddress.HeaderText = "Ship Address";
-            this.clShipAddress.Name = "clShipAddress";
-            this.clShipAddress.ReadOnly = true;
-            // 
-            // clShipCity
-            // 
-            this.clShipCity.HeaderText = "Ship City";
-            this.clShipCity.Name = "clShipCity";
-            this.clShipCity.ReadOnly = true;
-            // 
-            // clShipRegion
-            // 
-            this.clShipRegion.HeaderText = "Ship Region";
-            this.clShipRegion.Name = "clShipRegion";
-            this.clShipRegion.ReadOnly = true;
-            // 
-            // clShipPosCode
-            // 
-            this.clShipPosCode.HeaderText = "Ship Postal Code";
-            this.clShipPosCode.Name = "clShipPosCode";
-            this.clShipPosCode.ReadOnly = true;
-            // 
-            // clShipCountry
-            // 
-            this.clShipCountry.HeaderText = "Ship Country";
-            this.clShipCountry.Name = "clShipCountry";
-            this.clShipCountry.ReadOnly = true;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
-            this.dataGridView1.Location = new System.Drawing.Point(296, 255);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(702, 137);
-            this.dataGridView1.TabIndex = 89;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Order ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Customer ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Employee ID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Order Date";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Require Date";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Shipped Date";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Shipper ID";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Freight";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Ship Name";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Ship Address";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Ship City";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Ship Region";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Ship Postal Code";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Ship Country";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.textBox5);
-            this.panel1.Controls.Add(this.label44);
-            this.panel1.Controls.Add(this.textBox4);
-            this.panel1.Controls.Add(this.label43);
-            this.panel1.Controls.Add(this.textBox3);
-            this.panel1.Controls.Add(this.label42);
-            this.panel1.Controls.Add(this.textBox2);
-            this.panel1.Controls.Add(this.label41);
-            this.panel1.Location = new System.Drawing.Point(296, 398);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 60);
-            this.panel1.TabIndex = 90;
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(95, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 94;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Location = new System.Drawing.Point(7, 9);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(58, 13);
-            this.label41.TabIndex = 93;
-            this.label41.Text = "Product ID";
-            // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(95, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 20);
-            this.textBox3.TabIndex = 96;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Location = new System.Drawing.Point(7, 35);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(53, 13);
-            this.label42.TabIndex = 95;
-            this.label42.Text = "Unit Price";
-            // 
-            // textBox4
-            // 
-            this.textBox4.Location = new System.Drawing.Point(370, 6);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(181, 20);
-            this.textBox4.TabIndex = 98;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(282, 9);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(46, 13);
-            this.label43.TabIndex = 97;
-            this.label43.Text = "Quantity";
-            // 
-            // textBox5
-            // 
-            this.textBox5.Location = new System.Drawing.Point(370, 32);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(181, 20);
-            this.textBox5.TabIndex = 100;
-            // 
-            // label44
-            // 
-            this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(282, 35);
-            this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(49, 13);
-            this.label44.TabIndex = 99;
-            this.label44.Text = "Discount";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(883, 427);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(115, 23);
-            this.button2.TabIndex = 93;
-            this.button2.Text = "Update Detail";
-            this.button2.UseVisualStyleBackColor = true;
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(883, 456);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(115, 23);
-            this.button3.TabIndex = 92;
-            this.button3.Text = "Delete Detail";
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(883, 398);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(115, 23);
-            this.button4.TabIndex = 91;
-            this.button4.Text = "Add Detail";
-            this.button4.UseVisualStyleBackColor = true;
             // 
             // Form1
             // 
@@ -2646,6 +2647,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).EndInit();
             this.tOrder.ResumeLayout(false);
             this.tOrder.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.tProduct.ResumeLayout(false);
             this.tProduct.PerformLayout();
@@ -2665,9 +2669,6 @@
             this.tShippers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvShipper)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -1,0 +1,73 @@
+-----------------------
+--DROP PROCEDURE [SearchEmployee]
+CREATE PROCEDURE [SearchEmployee]
+@lastname nvarchar(20),
+@firstname nvarchar(10)
+AS
+BEGIN
+
+	SELECT 	* FROM HR.Employees WHERE ( lastname LIKE '%'+@lastname+'%' AND firstname LIKE '%'+@firstname+'%' );
+END
+EXECUTE SearchEmployee @lastname ='a' , @firstname =''
+-----------------------------------
+CREATE PROCEDURE [SearchCustomers]
+
+@companyname nvarchar (40),
+@contactname nvarchar (30),
+@contacttitle nvarchar (30),
+@address nvarchar (60),
+@city nvarchar (15),
+@region nvarchar (15),
+@postalcode nvarchar (10),
+@country nvarchar (15),
+@phone nvarchar (24),
+@fax nvarchar (24)
+AS
+BEGIN
+	SELECT * FROM  Sales.Customers    WHERE ( companyname LIKE '%'+@companyname+'%' AND contactname LIKE '%'+@contactname+'%' AND contacttitle LIKE '%'+@contacttitle+'%' AND address LIKE '%'+@address+'%' AND city LIKE '%'+@city+'%' AND region LIKE '%'+@region+'%' AND postalcode LIKE '%'+@postalcode+'%' AND country LIKE '%'+@country+'%' AND phone LIKE '%'+@phone+'%' AND fax LIKE '%'+@fax+'%' )
+End
+GO
+
+-----------------------------------
+--EXECUTE DeleteCustomer @id =5
+-----------
+CREATE PROCEDURE [SearchCategories]
+@categoryname nvarchar (15) ,
+@description nvarchar (200)  
+ 
+AS
+BEGIN
+SELECT * FROM  Production.Categories    WHERE ( categoryname LIKE '%'+@categoryname+'%' AND description LIKE '%'+@description+'%' );
+End
+GO
+
+-----------
+----------------------
+CREATE PROCEDURE [SearchSupliers]
+
+@companyname nvarchar (40),
+@contactname nvarchar (30),
+@contacttitle nvarchar (30),
+@address nvarchar (60),
+@city nvarchar (15),
+@region nvarchar (15),
+@postalcode nvarchar (10),
+@country nvarchar (15),
+@phone nvarchar (24),
+@fax nvarchar (24)
+ 
+AS
+BEGIN
+SELECT * FROM Production.Supliers    WHERE ( companyname LIKE '%'+@companyname+'%' AND contactname LIKE '%'+@contactname+'%' AND contacttitle LIKE '%'+@contacttitle+'%' AND address LIKE '%'+@address+'%' AND city LIKE '%'+@city+'%' AND region LIKE '%'+@region+'%' AND postalcode LIKE '%'+@postalcode+'%' AND country LIKE '%'+@country+'%' AND phone LIKE '%'+@phone+'%' AND fax LIKE '%'+@fax+'%'  )
+End
+GO
+
+----------------------
+---------------------
+CREATE PROCEDURE [SearchOrderDetail]
+@OrderID int 
+AS
+BEGIN 
+	SELECT * FROM Sales.OrderDetails WHERE orderid = @OrderID;
+END
+--------------------

@@ -460,7 +460,26 @@ namespace Project
         #endregion
 
 
+        #region combo box
+        void Categories()
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"server=(local);database=TSQLFundamentals2008;uid=sa;pwd=123456";
 
+            SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryID,CategoryName FROM Production.Categories", con);
+            DataTable dt = new DataTable("Production.Categories");
+            da.Fill(dt);
+
+            DataRow r = dt.NewRow();
+            r["CategoryID"] = -1;
+            r["CategoryName"] = "Select category";
+            dt.Rows.InsertAt(r, 0);
+
+            cbCaterogyID.DataSource = dt;
+            cbCaterogyID.DisplayMember = "CategoryName";
+            cbCaterogyID.ValueMember = "CategoryID";
+        }
+        #endregion
 
 
         #region load from db to dgv
@@ -609,30 +628,6 @@ namespace Project
             dr.Close();
         }
         #endregion
-
-
-
-        #region combo box
-        void Categories()
-        {
-            SqlConnection con = new SqlConnection();
-            con.ConnectionString = @"server=(local);database=TSQLFundamentals2008;uid=sa;pwd=123456";
-
-            SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryID,CategoryName FROM Production.Categories",con);
-            DataTable dt = new DataTable("Production.Categories");
-            da.Fill(dt);
-
-            DataRow r = dt.NewRow();
-            r["CategoryID"] = -1;
-            r["CategoryName"] = "Select category";
-            dt.Rows.InsertAt(r, 0);
-
-            cbCaterogyID.DataSource = dt;
-            cbCaterogyID.DisplayMember = "CategoryName";
-            cbCaterogyID.ValueMember = "CategoryID";
-        }
-        #endregion
-
 
 
         #region add
@@ -822,7 +817,7 @@ namespace Project
             }
             else
                 MessageBox.Show("Select row to delete");
-            
+
         }
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
@@ -848,7 +843,7 @@ namespace Project
             LoadProduct();
         }
 
-        void DeleteProduct()
+        private void DeleteProduct()
         {
             if (dgvProduct.SelectedRows.Count > 0)
             {
@@ -1086,7 +1081,7 @@ namespace Project
                 list.Add(this.cbSupCountry.Text);
                 list.Add(this.txtSupPhone.Text);
                 list.Add(this.txtSupFax.Text);
-                new Supplier().update(point,list);
+                new Supplier().update(point, list);
             }
             else
                 MessageBox.Show("Select row to update!");
@@ -1140,6 +1135,5 @@ namespace Project
 
 
         #endregion
-
     }
 }
