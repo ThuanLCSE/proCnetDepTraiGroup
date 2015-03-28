@@ -74,7 +74,7 @@ namespace Project
            cmd.CommandType = CommandType.StoredProcedure;
            cmd.CommandText = "selectCategories";
             SqlDataReader dr = cmd.ExecuteReader();
-            closeConnection();
+            //closeConnection();
             return dr;
         }
         public SqlDataReader search(int id, List<string> str)
