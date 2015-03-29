@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Project
 {
@@ -16,6 +17,7 @@ namespace Project
 
         public bool insert(List<string> str)
         {
+            try{
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "InsertProduct";
             cmd.Parameters.Clear();
@@ -42,12 +44,18 @@ namespace Project
             //
             cmd.ExecuteNonQuery();
             closeConnection();
+             }
+            catch (Exception e)
+            {
+                MessageBox.Show("This product can not be inserted");
+            }
             return true;
         }
 
 
         public bool update(int id, List<string> str)
         {
+            try{
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "UpdateProduct";
             cmd.Parameters.Clear();
@@ -74,11 +82,18 @@ namespace Project
             //
             cmd.ExecuteNonQuery();
             closeConnection();
+                      }
+            catch (Exception e)
+            {
+                MessageBox.Show("This product can not be updated");
+            }
+          
             return true;
         }
 
         public bool delete(int id)
         {
+            try{
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "DeleteProduct";
             cmd.Parameters.Clear();
@@ -89,6 +104,11 @@ namespace Project
             //
             cmd.ExecuteNonQuery();
             closeConnection();
+                }
+            catch (Exception e)
+            {
+                MessageBox.Show("This product can not be updated");
+            }
             return true;
         }
 

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Data.SqlClient;
 using System.Data;
+using System.Windows.Forms;
 
 namespace Project
 {
@@ -58,6 +59,7 @@ namespace Project
 
         public bool delete(int id)
         {
+            try{
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "DeleteShipper";
             cmd.Parameters.Clear();
@@ -68,7 +70,13 @@ namespace Project
             //
             cmd.ExecuteNonQuery();
             closeConnection();
+             }
+            catch (Exception e)
+            {
+                MessageBox.Show("This supplier can not be delete");
+            }
             return true;
+       
         }
 
         public System.Data.SqlClient.SqlDataReader select()
