@@ -31,7 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tCustomer = new System.Windows.Forms.TabPage();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnNewCustomer = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.cbCusCountry = new System.Windows.Forms.ComboBox();
             this.btnLoadCustomer = new System.Windows.Forms.Button();
@@ -72,33 +72,27 @@
             this.lblComName = new System.Windows.Forms.Label();
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
+            this.btnNewDetail = new System.Windows.Forms.Button();
+            this.btnSearchDetail = new System.Windows.Forms.Button();
+            this.btnNewOrder = new System.Windows.Forms.Button();
+            this.btnSearchOrder = new System.Windows.Forms.Button();
             this.btnUpdateDetail = new System.Windows.Forms.Button();
             this.btnDeleteDetail = new System.Windows.Forms.Button();
             this.btnAddDetail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtDetailDiscount = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtDetailQuantity = new System.Windows.Forms.TextBox();
             this.label43 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDetailUnitPrice = new System.Windows.Forms.TextBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.label41 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgvDetail = new System.Windows.Forms.DataGridView();
+            this.clOrderIDDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDetailProductID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clUnitPriceDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clQuantilyDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clDiscountDetail = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtOrderShiperID = new System.Windows.Forms.TextBox();
             this.label35 = new System.Windows.Forms.Label();
             this.cbOrderShipCountry = new System.Windows.Forms.ComboBox();
@@ -221,12 +215,25 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.tSuppliers = new System.Windows.Forms.TabPage();
+            this.txtSupContactTitle = new System.Windows.Forms.TextBox();
+            this.label40 = new System.Windows.Forms.Label();
             this.cbSupCountry = new System.Windows.Forms.ComboBox();
             this.btnLoadSupplier = new System.Windows.Forms.Button();
             this.btnUpdateSupplier = new System.Windows.Forms.Button();
             this.btnDeleteSupplier = new System.Windows.Forms.Button();
             this.btnAddSupplier = new System.Windows.Forms.Button();
             this.dgvSupplier = new System.Windows.Forms.DataGridView();
+            this.clSupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clSupFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSupFax = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.txtSupPhone = new System.Windows.Forms.TextBox();
@@ -277,25 +284,13 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.txtSupContactTitle = new System.Windows.Forms.TextBox();
-            this.label40 = new System.Windows.Forms.Label();
-            this.clSupID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupCompanyName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupContactName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupContactTitle = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupAddress = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupCity = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupRegion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupPostalCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupCountry = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clSupFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbDetailProductID = new System.Windows.Forms.ComboBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
             this.tOrder.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).BeginInit();
             this.tProduct.SuspendLayout();
             this.groupBox1.SuspendLayout();
@@ -328,7 +323,7 @@
             // 
             // tCustomer
             // 
-            this.tCustomer.Controls.Add(this.textBox1);
+            this.tCustomer.Controls.Add(this.btnNewCustomer);
             this.tCustomer.Controls.Add(this.btnSearchCustomer);
             this.tCustomer.Controls.Add(this.cbCusCountry);
             this.tCustomer.Controls.Add(this.btnLoadCustomer);
@@ -365,22 +360,25 @@
             this.tCustomer.Text = "Customer";
             this.tCustomer.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // btnNewCustomer
             // 
-            this.textBox1.Enabled = false;
-            this.textBox1.Location = new System.Drawing.Point(295, 7);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(385, 20);
-            this.textBox1.TabIndex = 88;
+            this.btnNewCustomer.Location = new System.Drawing.Point(420, 185);
+            this.btnNewCustomer.Name = "btnNewCustomer";
+            this.btnNewCustomer.Size = new System.Drawing.Size(119, 23);
+            this.btnNewCustomer.TabIndex = 89;
+            this.btnNewCustomer.Text = "New Customer";
+            this.btnNewCustomer.UseVisualStyleBackColor = true;
+            this.btnNewCustomer.Click += new System.EventHandler(this.btnNewCustomer_Click);
             // 
             // btnSearchCustomer
             // 
-            this.btnSearchCustomer.Location = new System.Drawing.Point(710, 5);
+            this.btnSearchCustomer.Location = new System.Drawing.Point(420, 215);
             this.btnSearchCustomer.Name = "btnSearchCustomer";
-            this.btnSearchCustomer.Size = new System.Drawing.Size(75, 23);
+            this.btnSearchCustomer.Size = new System.Drawing.Size(119, 23);
             this.btnSearchCustomer.TabIndex = 87;
             this.btnSearchCustomer.Text = "Search";
             this.btnSearchCustomer.UseVisualStyleBackColor = true;
+            this.btnSearchCustomer.Click += new System.EventHandler(this.btnSearchCustomer_Click);
             // 
             // cbCusCountry
             // 
@@ -707,11 +705,15 @@
             // 
             // tOrder
             // 
+            this.tOrder.Controls.Add(this.btnNewDetail);
+            this.tOrder.Controls.Add(this.btnSearchDetail);
+            this.tOrder.Controls.Add(this.btnNewOrder);
+            this.tOrder.Controls.Add(this.btnSearchOrder);
             this.tOrder.Controls.Add(this.btnUpdateDetail);
             this.tOrder.Controls.Add(this.btnDeleteDetail);
             this.tOrder.Controls.Add(this.btnAddDetail);
             this.tOrder.Controls.Add(this.panel1);
-            this.tOrder.Controls.Add(this.dataGridView1);
+            this.tOrder.Controls.Add(this.dgvDetail);
             this.tOrder.Controls.Add(this.txtOrderShiperID);
             this.tOrder.Controls.Add(this.label35);
             this.tOrder.Controls.Add(this.cbOrderShipCountry);
@@ -753,86 +755,129 @@
             this.tOrder.Text = "Order";
             this.tOrder.UseVisualStyleBackColor = true;
             // 
+            // btnNewDetail
+            // 
+            this.btnNewDetail.Location = new System.Drawing.Point(792, 402);
+            this.btnNewDetail.Name = "btnNewDetail";
+            this.btnNewDetail.Size = new System.Drawing.Size(119, 23);
+            this.btnNewDetail.TabIndex = 97;
+            this.btnNewDetail.Text = "New Detail";
+            this.btnNewDetail.UseVisualStyleBackColor = true;
+            this.btnNewDetail.Click += new System.EventHandler(this.btnNewDetail_Click);
+            // 
+            // btnSearchDetail
+            // 
+            this.btnSearchDetail.Location = new System.Drawing.Point(792, 432);
+            this.btnSearchDetail.Name = "btnSearchDetail";
+            this.btnSearchDetail.Size = new System.Drawing.Size(119, 23);
+            this.btnSearchDetail.TabIndex = 96;
+            this.btnSearchDetail.Text = "Search";
+            this.btnSearchDetail.UseVisualStyleBackColor = true;
+            this.btnSearchDetail.Click += new System.EventHandler(this.btnSearchDetail_Click);
+            // 
+            // btnNewOrder
+            // 
+            this.btnNewOrder.Location = new System.Drawing.Point(420, 185);
+            this.btnNewOrder.Name = "btnNewOrder";
+            this.btnNewOrder.Size = new System.Drawing.Size(119, 23);
+            this.btnNewOrder.TabIndex = 95;
+            this.btnNewOrder.Text = "New Customer";
+            this.btnNewOrder.UseVisualStyleBackColor = true;
+            this.btnNewOrder.Click += new System.EventHandler(this.btnNewOrder_Click);
+            // 
+            // btnSearchOrder
+            // 
+            this.btnSearchOrder.Location = new System.Drawing.Point(420, 215);
+            this.btnSearchOrder.Name = "btnSearchOrder";
+            this.btnSearchOrder.Size = new System.Drawing.Size(119, 23);
+            this.btnSearchOrder.TabIndex = 94;
+            this.btnSearchOrder.Text = "Search";
+            this.btnSearchOrder.UseVisualStyleBackColor = true;
+            this.btnSearchOrder.Click += new System.EventHandler(this.btnSearchOrder_Click);
+            // 
             // btnUpdateDetail
             // 
-            this.btnUpdateDetail.Location = new System.Drawing.Point(885, 430);
+            this.btnUpdateDetail.Location = new System.Drawing.Point(917, 430);
             this.btnUpdateDetail.Name = "btnUpdateDetail";
             this.btnUpdateDetail.Size = new System.Drawing.Size(115, 23);
             this.btnUpdateDetail.TabIndex = 93;
             this.btnUpdateDetail.Text = "Update Detail";
             this.btnUpdateDetail.UseVisualStyleBackColor = true;
+            this.btnUpdateDetail.Click += new System.EventHandler(this.btnUpdateDetail_Click);
             // 
             // btnDeleteDetail
             // 
-            this.btnDeleteDetail.Location = new System.Drawing.Point(885, 460);
+            this.btnDeleteDetail.Location = new System.Drawing.Point(917, 460);
             this.btnDeleteDetail.Name = "btnDeleteDetail";
             this.btnDeleteDetail.Size = new System.Drawing.Size(115, 23);
             this.btnDeleteDetail.TabIndex = 92;
             this.btnDeleteDetail.Text = "Delete Detail";
             this.btnDeleteDetail.UseVisualStyleBackColor = true;
+            this.btnDeleteDetail.Click += new System.EventHandler(this.btnDeleteDetail_Click);
             // 
             // btnAddDetail
             // 
-            this.btnAddDetail.Location = new System.Drawing.Point(885, 400);
+            this.btnAddDetail.Location = new System.Drawing.Point(917, 400);
             this.btnAddDetail.Name = "btnAddDetail";
             this.btnAddDetail.Size = new System.Drawing.Size(115, 23);
             this.btnAddDetail.TabIndex = 91;
             this.btnAddDetail.Text = "Add Detail";
             this.btnAddDetail.UseVisualStyleBackColor = true;
+            this.btnAddDetail.Click += new System.EventHandler(this.btnAddDetail_Click);
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.textBox5);
+            this.panel1.Controls.Add(this.cbDetailProductID);
+            this.panel1.Controls.Add(this.txtDetailDiscount);
             this.panel1.Controls.Add(this.label44);
-            this.panel1.Controls.Add(this.textBox4);
+            this.panel1.Controls.Add(this.txtDetailQuantity);
             this.panel1.Controls.Add(this.label43);
-            this.panel1.Controls.Add(this.textBox3);
+            this.panel1.Controls.Add(this.txtDetailUnitPrice);
             this.panel1.Controls.Add(this.label42);
-            this.panel1.Controls.Add(this.textBox2);
             this.panel1.Controls.Add(this.label41);
             this.panel1.Location = new System.Drawing.Point(296, 398);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(562, 60);
+            this.panel1.Size = new System.Drawing.Size(496, 60);
             this.panel1.TabIndex = 90;
             // 
-            // textBox5
+            // txtDetailDiscount
             // 
-            this.textBox5.Location = new System.Drawing.Point(370, 32);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(181, 20);
-            this.textBox5.TabIndex = 100;
+            this.txtDetailDiscount.Location = new System.Drawing.Point(305, 31);
+            this.txtDetailDiscount.Name = "txtDetailDiscount";
+            this.txtDetailDiscount.Size = new System.Drawing.Size(181, 20);
+            this.txtDetailDiscount.TabIndex = 100;
             // 
             // label44
             // 
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(282, 35);
+            this.label44.Location = new System.Drawing.Point(253, 34);
             this.label44.Name = "label44";
             this.label44.Size = new System.Drawing.Size(49, 13);
             this.label44.TabIndex = 99;
             this.label44.Text = "Discount";
             // 
-            // textBox4
+            // txtDetailQuantity
             // 
-            this.textBox4.Location = new System.Drawing.Point(370, 6);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(181, 20);
-            this.textBox4.TabIndex = 98;
+            this.txtDetailQuantity.Location = new System.Drawing.Point(305, 5);
+            this.txtDetailQuantity.Name = "txtDetailQuantity";
+            this.txtDetailQuantity.Size = new System.Drawing.Size(181, 20);
+            this.txtDetailQuantity.TabIndex = 98;
             // 
             // label43
             // 
             this.label43.AutoSize = true;
-            this.label43.Location = new System.Drawing.Point(282, 9);
+            this.label43.Location = new System.Drawing.Point(253, 8);
             this.label43.Name = "label43";
             this.label43.Size = new System.Drawing.Size(46, 13);
             this.label43.TabIndex = 97;
             this.label43.Text = "Quantity";
             // 
-            // textBox3
+            // txtDetailUnitPrice
             // 
-            this.textBox3.Location = new System.Drawing.Point(95, 32);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 20);
-            this.textBox3.TabIndex = 96;
+            this.txtDetailUnitPrice.Location = new System.Drawing.Point(66, 31);
+            this.txtDetailUnitPrice.Name = "txtDetailUnitPrice";
+            this.txtDetailUnitPrice.Size = new System.Drawing.Size(181, 20);
+            this.txtDetailUnitPrice.TabIndex = 96;
             // 
             // label42
             // 
@@ -843,13 +888,6 @@
             this.label42.TabIndex = 95;
             this.label42.Text = "Unit Price";
             // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(95, 6);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(181, 20);
-            this.textBox2.TabIndex = 94;
-            // 
             // label41
             // 
             this.label41.AutoSize = true;
@@ -859,115 +897,52 @@
             this.label41.TabIndex = 93;
             this.label41.Text = "Product ID";
             // 
-            // dataGridView1
+            // dgvDetail
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn1,
-            this.dataGridViewTextBoxColumn2,
-            this.dataGridViewTextBoxColumn3,
-            this.dataGridViewTextBoxColumn4,
-            this.dataGridViewTextBoxColumn5,
-            this.dataGridViewTextBoxColumn6,
-            this.dataGridViewTextBoxColumn7,
-            this.dataGridViewTextBoxColumn8,
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14});
-            this.dataGridView1.Location = new System.Drawing.Point(295, 255);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.Size = new System.Drawing.Size(702, 137);
-            this.dataGridView1.TabIndex = 89;
+            this.dgvDetail.AllowUserToAddRows = false;
+            this.dgvDetail.AllowUserToDeleteRows = false;
+            this.dgvDetail.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvDetail.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.clOrderIDDetail,
+            this.clDetailProductID,
+            this.clUnitPriceDetail,
+            this.clQuantilyDetail,
+            this.clDiscountDetail});
+            this.dgvDetail.Location = new System.Drawing.Point(295, 255);
+            this.dgvDetail.Name = "dgvDetail";
+            this.dgvDetail.ReadOnly = true;
+            this.dgvDetail.Size = new System.Drawing.Size(702, 137);
+            this.dgvDetail.TabIndex = 89;
             // 
-            // dataGridViewTextBoxColumn1
+            // clOrderIDDetail
             // 
-            this.dataGridViewTextBoxColumn1.HeaderText = "Order ID";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            this.clOrderIDDetail.HeaderText = "Order ID";
+            this.clOrderIDDetail.Name = "clOrderIDDetail";
+            this.clOrderIDDetail.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn2
+            // clDetailProductID
             // 
-            this.dataGridViewTextBoxColumn2.HeaderText = "Customer ID";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            this.clDetailProductID.HeaderText = "Product ID";
+            this.clDetailProductID.Name = "clDetailProductID";
+            this.clDetailProductID.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn3
+            // clUnitPriceDetail
             // 
-            this.dataGridViewTextBoxColumn3.HeaderText = "Employee ID";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            this.clUnitPriceDetail.HeaderText = "Unit Price";
+            this.clUnitPriceDetail.Name = "clUnitPriceDetail";
+            this.clUnitPriceDetail.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn4
+            // clQuantilyDetail
             // 
-            this.dataGridViewTextBoxColumn4.HeaderText = "Order Date";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            this.clQuantilyDetail.HeaderText = "Quantily";
+            this.clQuantilyDetail.Name = "clQuantilyDetail";
+            this.clQuantilyDetail.ReadOnly = true;
             // 
-            // dataGridViewTextBoxColumn5
+            // clDiscountDetail
             // 
-            this.dataGridViewTextBoxColumn5.HeaderText = "Require Date";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.HeaderText = "Shipped Date";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.HeaderText = "Shipper ID";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn8
-            // 
-            this.dataGridViewTextBoxColumn8.HeaderText = "Freight";
-            this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
-            this.dataGridViewTextBoxColumn8.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.HeaderText = "Ship Name";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.HeaderText = "Ship Address";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.HeaderText = "Ship City";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            this.dataGridViewTextBoxColumn11.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.HeaderText = "Ship Region";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            this.dataGridViewTextBoxColumn12.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.HeaderText = "Ship Postal Code";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            this.dataGridViewTextBoxColumn13.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.HeaderText = "Ship Country";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            this.dataGridViewTextBoxColumn14.ReadOnly = true;
+            this.clDiscountDetail.HeaderText = "Discount";
+            this.clDiscountDetail.Name = "clDiscountDetail";
+            this.clDiscountDetail.ReadOnly = true;
             // 
             // txtOrderShiperID
             // 
@@ -1099,6 +1074,7 @@
             this.dgvOrder.ReadOnly = true;
             this.dgvOrder.Size = new System.Drawing.Size(702, 137);
             this.dgvOrder.TabIndex = 49;
+            this.dgvOrder.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvOrder_CellClick);
             this.dgvOrder.SelectionChanged += new System.EventHandler(this.dgvOrder_SelectionChanged);
             // 
             // clOrderID
@@ -2082,6 +2058,22 @@
             this.tSuppliers.Text = "Suppliers";
             this.tSuppliers.UseVisualStyleBackColor = true;
             // 
+            // txtSupContactTitle
+            // 
+            this.txtSupContactTitle.Location = new System.Drawing.Point(98, 112);
+            this.txtSupContactTitle.Name = "txtSupContactTitle";
+            this.txtSupContactTitle.Size = new System.Drawing.Size(181, 20);
+            this.txtSupContactTitle.TabIndex = 110;
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(10, 117);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(67, 13);
+            this.label40.TabIndex = 109;
+            this.label40.Text = "Contact Title";
+            // 
             // cbSupCountry
             // 
             this.cbSupCountry.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -2165,6 +2157,72 @@
             this.dgvSupplier.Size = new System.Drawing.Size(620, 137);
             this.dgvSupplier.TabIndex = 103;
             this.dgvSupplier.SelectionChanged += new System.EventHandler(this.dgvSupplier_SelectionChanged);
+            // 
+            // clSupID
+            // 
+            this.clSupID.HeaderText = "Supplier ID";
+            this.clSupID.Name = "clSupID";
+            this.clSupID.ReadOnly = true;
+            // 
+            // clSupCompanyName
+            // 
+            this.clSupCompanyName.HeaderText = "Company Name";
+            this.clSupCompanyName.Name = "clSupCompanyName";
+            this.clSupCompanyName.ReadOnly = true;
+            // 
+            // clSupContactName
+            // 
+            this.clSupContactName.HeaderText = "Contact Name";
+            this.clSupContactName.Name = "clSupContactName";
+            this.clSupContactName.ReadOnly = true;
+            // 
+            // clSupContactTitle
+            // 
+            this.clSupContactTitle.HeaderText = "Contact Title";
+            this.clSupContactTitle.Name = "clSupContactTitle";
+            this.clSupContactTitle.ReadOnly = true;
+            // 
+            // clSupAddress
+            // 
+            this.clSupAddress.HeaderText = "Address";
+            this.clSupAddress.Name = "clSupAddress";
+            this.clSupAddress.ReadOnly = true;
+            // 
+            // clSupCity
+            // 
+            this.clSupCity.HeaderText = "City";
+            this.clSupCity.Name = "clSupCity";
+            this.clSupCity.ReadOnly = true;
+            // 
+            // clSupRegion
+            // 
+            this.clSupRegion.HeaderText = "Region";
+            this.clSupRegion.Name = "clSupRegion";
+            this.clSupRegion.ReadOnly = true;
+            // 
+            // clSupPostalCode
+            // 
+            this.clSupPostalCode.HeaderText = "Postal Code";
+            this.clSupPostalCode.Name = "clSupPostalCode";
+            this.clSupPostalCode.ReadOnly = true;
+            // 
+            // clSupCountry
+            // 
+            this.clSupCountry.HeaderText = "Country";
+            this.clSupCountry.Name = "clSupCountry";
+            this.clSupCountry.ReadOnly = true;
+            // 
+            // clSupPhone
+            // 
+            this.clSupPhone.HeaderText = "Phone";
+            this.clSupPhone.Name = "clSupPhone";
+            this.clSupPhone.ReadOnly = true;
+            // 
+            // clSupFax
+            // 
+            this.clSupFax.HeaderText = "Fax";
+            this.clSupFax.Name = "clSupFax";
+            this.clSupFax.ReadOnly = true;
             // 
             // txtSupFax
             // 
@@ -2612,87 +2670,14 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // txtSupContactTitle
+            // cbDetailProductID
             // 
-            this.txtSupContactTitle.Location = new System.Drawing.Point(98, 112);
-            this.txtSupContactTitle.Name = "txtSupContactTitle";
-            this.txtSupContactTitle.Size = new System.Drawing.Size(181, 20);
-            this.txtSupContactTitle.TabIndex = 110;
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Location = new System.Drawing.Point(10, 117);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(67, 13);
-            this.label40.TabIndex = 109;
-            this.label40.Text = "Contact Title";
-            // 
-            // clSupID
-            // 
-            this.clSupID.HeaderText = "Supplier ID";
-            this.clSupID.Name = "clSupID";
-            this.clSupID.ReadOnly = true;
-            // 
-            // clSupCompanyName
-            // 
-            this.clSupCompanyName.HeaderText = "Company Name";
-            this.clSupCompanyName.Name = "clSupCompanyName";
-            this.clSupCompanyName.ReadOnly = true;
-            // 
-            // clSupContactName
-            // 
-            this.clSupContactName.HeaderText = "Contact Name";
-            this.clSupContactName.Name = "clSupContactName";
-            this.clSupContactName.ReadOnly = true;
-            // 
-            // clSupContactTitle
-            // 
-            this.clSupContactTitle.HeaderText = "Contact Title";
-            this.clSupContactTitle.Name = "clSupContactTitle";
-            this.clSupContactTitle.ReadOnly = true;
-            // 
-            // clSupAddress
-            // 
-            this.clSupAddress.HeaderText = "Address";
-            this.clSupAddress.Name = "clSupAddress";
-            this.clSupAddress.ReadOnly = true;
-            // 
-            // clSupCity
-            // 
-            this.clSupCity.HeaderText = "City";
-            this.clSupCity.Name = "clSupCity";
-            this.clSupCity.ReadOnly = true;
-            // 
-            // clSupRegion
-            // 
-            this.clSupRegion.HeaderText = "Region";
-            this.clSupRegion.Name = "clSupRegion";
-            this.clSupRegion.ReadOnly = true;
-            // 
-            // clSupPostalCode
-            // 
-            this.clSupPostalCode.HeaderText = "Postal Code";
-            this.clSupPostalCode.Name = "clSupPostalCode";
-            this.clSupPostalCode.ReadOnly = true;
-            // 
-            // clSupCountry
-            // 
-            this.clSupCountry.HeaderText = "Country";
-            this.clSupCountry.Name = "clSupCountry";
-            this.clSupCountry.ReadOnly = true;
-            // 
-            // clSupPhone
-            // 
-            this.clSupPhone.HeaderText = "Phone";
-            this.clSupPhone.Name = "clSupPhone";
-            this.clSupPhone.ReadOnly = true;
-            // 
-            // clSupFax
-            // 
-            this.clSupFax.HeaderText = "Fax";
-            this.clSupFax.Name = "clSupFax";
-            this.clSupFax.ReadOnly = true;
+            this.cbDetailProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDetailProductID.FormattingEnabled = true;
+            this.cbDetailProductID.Location = new System.Drawing.Point(66, 5);
+            this.cbDetailProductID.Name = "cbDetailProductID";
+            this.cbDetailProductID.Size = new System.Drawing.Size(181, 21);
+            this.cbDetailProductID.TabIndex = 98;
             // 
             // Form1
             // 
@@ -2712,7 +2697,7 @@
             this.tOrder.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvDetail)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrder)).EndInit();
             this.tProduct.ResumeLayout(false);
             this.tProduct.PerformLayout();
@@ -2957,34 +2942,18 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipRegion;
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipPosCode;
         private System.Windows.Forms.DataGridViewTextBoxColumn clShipCountry;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.DataGridView dgvDetail;
         private System.Windows.Forms.Button btnUpdateDetail;
         private System.Windows.Forms.Button btnDeleteDetail;
         private System.Windows.Forms.Button btnAddDetail;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtDetailDiscount;
         private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtDetailQuantity;
         private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDetailUnitPrice;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnSearchCustomer;
         private System.Windows.Forms.TextBox txtSupContactTitle;
         private System.Windows.Forms.Label label40;
@@ -2999,6 +2968,17 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clSupCountry;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSupPhone;
         private System.Windows.Forms.DataGridViewTextBoxColumn clSupFax;
+        private System.Windows.Forms.Button btnNewCustomer;
+        private System.Windows.Forms.Button btnNewOrder;
+        private System.Windows.Forms.Button btnSearchOrder;
+        private System.Windows.Forms.Button btnNewDetail;
+        private System.Windows.Forms.Button btnSearchDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clOrderIDDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDetailProductID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clUnitPriceDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clQuantilyDetail;
+        private System.Windows.Forms.DataGridViewTextBoxColumn clDiscountDetail;
+        private System.Windows.Forms.ComboBox cbDetailProductID;
     }
 }
 

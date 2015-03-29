@@ -16,12 +16,26 @@ namespace Project
         public Form1()
         {
             InitializeComponent();
-            Categories();
+            UpdatecbofProductByCategories();
+            UpdatecbofDetailByProduct();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            cbCusCountry.SelectedIndex = -1;
+            cbEmpCountry.SelectedIndex = -1;
+            cbOrderShipCountry.SelectedIndex = -1;
+            cbSupCountry.SelectedIndex = -1;
+            //dtpOrderDate.Text = DateTime.Now.ToShortDateString();
+            //dtpRequireDate.Text = DateTime.Now.ToShortDateString();
+            //dtpShippedDate.Text = DateTime.Now.ToShortDateString();
+            //            
+            btnAddDetail.Enabled = false;
+            btnNewDetail.Enabled = false;
+            btnDeleteDetail.Enabled = false;
+            btnUpdateDetail.Enabled = false;
+            btnSearchDetail.Enabled = false; 
+            //
         }
 
         #region SectionChange
@@ -414,6 +428,18 @@ namespace Project
             return error;
         }
 
+
+        public bool validateOrderDetail()
+        {
+            bool error = true;
+
+
+            //Hien thuc code
+
+
+
+            return error;
+        }
         #endregion
 
 
@@ -555,10 +581,14 @@ namespace Project
 
 
         #region combo box
-        void Categories()
+        private void UpdatecbofProductByCategories()
         {
+            //Cần sử dùng phương thức App.conf
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"server=(local);database=TSQLFundamentals2008;uid=sa;pwd=123456";
+            //SqlCommand cmd = new SqlCommand();
+            //SqlConnection con = new SqlConnection();
+            //cmd.Connection = (new DAO.getCon()).ConDB();
 
             SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryID,CategoryName FROM Production.Categories", con);
             DataTable dt = new DataTable("Production.Categories");
@@ -572,6 +602,26 @@ namespace Project
             cbCaterogyID.DataSource = dt;
             cbCaterogyID.DisplayMember = "CategoryName";
             cbCaterogyID.ValueMember = "CategoryID";
+        }
+
+        private void UpdatecbofDetailByProduct()
+        {
+            //Cần sử dùng phương thức App.conf
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"server=(local);database=TSQLFundamentals2008;uid=sa;pwd=123456";
+
+            SqlDataAdapter da = new SqlDataAdapter("SELECT ProductID,ProductName FROM Production.Products", con);
+            DataTable dt = new DataTable("Production.Products");
+            da.Fill(dt);
+
+            DataRow r = dt.NewRow();
+            r["ProductID"] = -1;
+            r["ProductName"] = "Select Products";
+            dt.Rows.InsertAt(r, 0);
+
+            cbDetailProductID.DataSource = dt;
+            cbDetailProductID.DisplayMember = "ProductName";
+            cbDetailProductID.ValueMember = "ProductID";
         }
         #endregion
 
@@ -800,6 +850,7 @@ namespace Project
             {
                 list.Add("False");
             }
+            UpdatecbofDetailByProduct();
             new products().insert(list);
         }
         private void btnAddEmp_Click(object sender, EventArgs e)
@@ -876,6 +927,8 @@ namespace Project
             list.Add(this.txtCateName.Text);
             list.Add(this.txtCateDescription.Text);
             new Categori().insert(list);
+            //Mỗi lần thêm vào 1 category mới update lại combox trong Product
+            UpdatecbofProductByCategories();
         }
         private void btnAddShipper_Click(object sender, EventArgs e)
         {
@@ -1229,6 +1282,243 @@ namespace Project
 
 
         #endregion
+
+        #region search
+        private void btnSearchCustomer_Click(object sender, EventArgs e)
+        {
+            if (txtCustomerID.Text == "" &
+                txtCusComName.Text == "" &
+                txtCusName.Text == "" &
+                txtCusTitle.Text == "" &
+                txtCusAddress.Text == "" &
+                txtCusCity.Text == "" &
+                txtCusRegion.Text == "" &
+                txtCusPosCode.Text == "" &
+                txtCusPhone.Text == "" &
+                txtCusFax.Text == "" &
+                cbCusCountry.SelectedIndex == -1
+                )
+            {
+                //All text empty
+                MessageBox.Show("========================");
+            }
+            else
+            {
+                List<String> list = new List<string>();
+                list.Add(txtCusComName.Text);
+                list.Add(txtCusName.Text);
+                list.Add(txtCusTitle.Text);
+                list.Add(txtCusAddress.Text);
+                list.Add(txtCusCity.Text);
+                list.Add(txtCusRegion.Text);
+                list.Add(txtCusPosCode.Text);
+                list.Add(cbCusCountry.Text);
+                list.Add(txtCusPhone.Text);
+                list.Add(txtCusFax.Text);
+                SqlDataReader dr = new customer().search(list);
+                dgvCustomer.Rows.Clear();
+                while (dr.Read())
+                {
+                    dgvCustomer.Rows.Add(
+                        dr.GetInt32(0),
+                        dr[1].ToString(),
+                        dr[2].ToString(),
+                        dr[3].ToString(),
+                        dr[4].ToString(),
+                        dr[5].ToString(),
+                        dr[6].ToString(),
+                        dr[7].ToString(),
+                        dr[8].ToString(),
+                        dr[9].ToString(),
+                        dr[10].ToString()
+                        );
+                }
+                dr.Close();
+            }
+        }
+
+        private void btnSearchOrder_Click(object sender, EventArgs e)
+        {
+            //Còn lỗi chưa xử lí đc
+
+            if( txtOrderCusID.Text == ""&
+                txtOrderEmpID.Text == ""&
+                dtpOrderDate.Text == DateTime.Now.ToShortDateString()&
+                dtpRequireDate.Text == DateTime.Now.ToShortDateString()&
+                dtpShippedDate.Text == DateTime.Now.ToShortDateString()&
+                txtOrderShiperID.Text == ""&
+                mtbOrderFreight.Text == ""&
+                txtOrderShipName.Text == "" &
+                txtOrderShipAddress.Text == ""&
+                txtOrderShipCity.Text == ""&
+                txtOrderShipRegion.Text == ""&
+                txtOrderShipPosCode.Text == ""&
+                cbOrderShipCountry.SelectedIndex == -1)
+            {
+                MessageBox.Show("====================");
+            }
+            else
+            {
+                List<String> list = new List<string>();
+                list.Add(txtOrderCusID.Text);
+                list.Add(txtOrderEmpID.Text);
+                list.Add(dtpOrderDate.Value.ToShortDateString());
+                list.Add(dtpRequireDate.Value.ToShortDateString());
+                list.Add(dtpShippedDate.Value.ToShortDateString());
+                list.Add(txtOrderShiperID.Text);
+                list.Add(mtbOrderFreight.Text);
+                list.Add(txtOrderShipName.Text);
+                list.Add(txtOrderShipAddress.Text);
+                list.Add(txtOrderShipCity.Text);
+                list.Add(txtOrderShipRegion.Text);
+                list.Add(txtOrderShipPosCode.Text);
+                list.Add(cbOrderShipCountry.Text);
+                SqlDataReader dr = new order().search(list);
+                dgvCustomer.Rows.Clear();
+                while (dr.Read())
+                {
+                    dgvCustomer.Rows.Add(
+                        dr.GetInt32(0),
+                        dr[1].ToString(),
+                        dr[2].ToString(),
+                        dr[3].ToString(),
+                        dr[4].ToString(),
+                        dr[5].ToString(),
+                        dr[6].ToString(),
+                        dr[7].ToString(),
+                        dr[8].ToString(),
+                        dr[9].ToString(),
+                        dr[10].ToString(),
+                        dr[11].ToString(),
+                        dr[12].ToString()
+                        );
+                }
+                dr.Close();
+            }
+            
+        }
+
+        #endregion
+
+
+        #region new text
+        private void btnNewCustomer_Click(object sender, EventArgs e)
+        {
+            txtCustomerID.Text = "";
+            txtCusComName.Text = "";
+            txtCusName.Text = "";
+            txtCusTitle.Text = "";
+            txtCusAddress.Text = "";
+            txtCusCity.Text = "";
+            txtCusRegion.Text = "";
+            txtCusPosCode.Text = "";
+            txtCusPhone.Text = "";
+            txtCusFax.Text = "";
+            cbCusCountry.SelectedIndex = -1;
+        }
+        private void btnNewOrder_Click(object sender, EventArgs e)
+        {
+            txtOrderCusID.Text = "";
+            txtOrderEmpID.Text = "";
+            dtpOrderDate.Text = DateTime.Now.ToShortDateString();
+            dtpRequireDate.Text = DateTime.Now.ToShortDateString();
+            dtpShippedDate.Text = DateTime.Now.ToShortDateString();
+            txtOrderShiperID.Text = "";
+            mtbOrderFreight.Text = "";
+            txtOrderShipName.Text = "";
+            txtOrderShipAddress.Text = "";
+            txtOrderShipCity.Text = "";
+            txtOrderShipRegion.Text = "";
+            txtOrderShipPosCode.Text = "";
+            cbOrderShipCountry.SelectedIndex = -1;
+        }
+
+        private void btnNewDetail_Click(object sender, EventArgs e)
+        {
+            //Mô tả tính năng: cbDetailProductID sử dụng giúp người dùng chọn nhanh Product ID từ tab Product
+            cbDetailProductID.SelectedIndex = -1;
+            txtDetailQuantity.Text = "";
+            txtDetailUnitPrice.Text = "";
+            txtDetailDiscount.Text = "";
+        }
+        #endregion
+
+        
+        private void btnSearchDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnAddDetail_Click(object sender, EventArgs e)
+        {
+            if (validateOrderDetail() == false)    //chua hien thuc ham validateOrderDetail
+                return;
+            AddDetail();
+            LoadDetailByOrder();
+        }
+        private void AddDetail()
+        {
+            if (dgvOrder.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvOrder.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+
+                List<String> list = new List<string>();
+                list.Add(cbDetailProductID.SelectedValue.ToString());
+                list.Add(txtDetailQuantity.Text);
+                list.Add(txtDetailUnitPrice.Text);
+                list.Add(txtDetailDiscount.Text);
+
+                new orderDetail().insert(point,list);
+            }
+        }
+        private void btnUpdateDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDeleteDetail_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnAddDetail.Enabled = true;
+            btnNewDetail.Enabled = true;
+            btnDeleteDetail.Enabled = true;
+            btnUpdateDetail.Enabled = true;
+            btnSearchDetail.Enabled = true; 
+            LoadDetailByOrder();
+        }
+
+        private void LoadDetailByOrder()
+        {
+            if (dgvOrder.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvOrder.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+
+                SqlDataReader dr = (new orderDetail()).searchByID(point);// list);
+                dgvDetail.Rows.Clear();
+                while (dr.Read())
+                {
+                    dgvDetail.Rows.Add(
+                        dr.GetInt32(0),
+                        dr.GetInt32(1),
+                        decimal.Parse(dr[2].ToString()),
+                        dr.GetInt16(3),
+                        decimal.Parse(dr[4].ToString())
+                        );
+                }
+                dr.Close();     
+            }
+        }
+
+
+
+
+
 
     }
 }

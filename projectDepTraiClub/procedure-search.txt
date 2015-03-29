@@ -71,3 +71,22 @@ BEGIN
 	SELECT * FROM Sales.OrderDetails WHERE orderid = @OrderID;
 END
 --------------------
+--------------
+CREATE PROCEDURE [SearchOrder]
+@custid int,
+@empid int,
+@shipperid int,
+@freight money,
+@shipname nvarchar (40),
+@shipaddress nvarchar (60),
+@shipcity nvarchar (15),
+@shipregion nvarchar (15),
+@shippostalcode nvarchar (10),
+@shipcountry nvarchar (15)
+ 
+AS
+BEGIN
+SELECT * FROM  Sales.Orders    WHERE ( (custid=@custid OR @custid is null ) AND (empid =@empid OR @empid is null)  AND (shipperid =@shipperid OR @shipperid is null )AND ( @freight is null OR freight =@freight) AND shipname LIKE '%'+@shipname+'%' AND shipaddress LIKE '%'+@shipaddress+'%' AND shipcity LIKE '%'+@shipcity+'%' AND shipregion LIKE '%'+@shipregion+'%' AND shippostalcode LIKE '%'+@shippostalcode+'%' AND shipcountry LIKE '%'+@shipcountry+'%'  )
+End
+GO
+----------------

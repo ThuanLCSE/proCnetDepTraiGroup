@@ -143,33 +143,68 @@ namespace Project
             SqlDataReader dr = cmd.ExecuteReader();
             return dr;
         }
-        public SqlDataReader search(int id, List<string> str)
+        public SqlDataReader search(List<string> str)
         {
             cmd.CommandType = CommandType.StoredProcedure;
-            cmd.CommandText = "searchOrder";
-            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
-            param.Value = id;
-            cmd.Parameters.Add(param);
+            cmd.CommandText = "SearchOrder";
+            SqlParameter param;// = new SqlParameter("@id", SqlDbType.Int);
+            //param.Value = id;
+            //cmd.Parameters.Add(param);
+            //
             param = new SqlParameter("@custid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[0]);
+            if (str[0].Equals(""))
+                param.Value = DBNull.Value;
+            else 
+                param.Value = Int32.Parse(str[0]);
             cmd.Parameters.Add(param);
+            //
+            //
             param = new SqlParameter("@empid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[1]);
+            if (str[1].Equals(""))
+                param.Value = DBNull.Value;
+            else
+                param.Value = Int32.Parse(str[1]);
             cmd.Parameters.Add(param);
+            //
+            //
             param = new SqlParameter("@orderdate", SqlDbType.DateTime);
-            param.Value = str[2];
+            if (str[2].Equals(DateTime.Now.ToShortDateString()))
+                param.Value = DBNull.Value;
+            else    
+                param.Value = str[2];
             cmd.Parameters.Add(param);
+            //
+            //
             param = new SqlParameter("@requireddate", SqlDbType.DateTime);
-            param.Value = str[3];
+            if (str[3].Equals(DateTime.Now.ToShortDateString()))
+                param.Value = DBNull.Value;
+            else 
+                param.Value = str[3];
             cmd.Parameters.Add(param);
+            //
+            //
             param = new SqlParameter("@shippeddate", SqlDbType.DateTime);
-            param.Value = str[4];
+            if (str[4].Equals(DateTime.Now.ToShortDateString()))
+                param.Value = DBNull.Value;
+            else
+                param.Value = str[4];
             cmd.Parameters.Add(param);
+            //
+            //
             param = new SqlParameter("@shipperid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[5]);
+            if (str[5].Equals(""))
+                param.Value = DBNull.Value;
+            else
+                param.Value = Int32.Parse(str[5]);
             cmd.Parameters.Add(param);
+            //
+            //
             param = new SqlParameter("@freight", SqlDbType.Money);
-            param.Value = decimal.Parse(str[6]);
+            if (str[6].Equals(""))
+                param.Value = DBNull.Value;
+            else
+                param.Value = decimal.Parse(str[6]);
+            //
             cmd.Parameters.Add(param);
             param = new SqlParameter("@shipname", SqlDbType.VarChar, 40);
             param.Value = str[7];
