@@ -16,7 +16,6 @@ namespace Project
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
-            (new customer()).delete(1);
         }
     }
 }
