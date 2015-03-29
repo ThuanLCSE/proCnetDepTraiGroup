@@ -52,7 +52,6 @@
             this.clCusFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtCusFax = new System.Windows.Forms.TextBox();
             this.lblFax = new System.Windows.Forms.Label();
-            this.txtCusPhone = new System.Windows.Forms.TextBox();
             this.lblPhone = new System.Windows.Forms.Label();
             this.lblCountry = new System.Windows.Forms.Label();
             this.txtCusPosCode = new System.Windows.Forms.TextBox();
@@ -80,6 +79,7 @@
             this.btnDeleteDetail = new System.Windows.Forms.Button();
             this.btnAddDetail = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbDetailProductID = new System.Windows.Forms.ComboBox();
             this.txtDetailDiscount = new System.Windows.Forms.TextBox();
             this.label44 = new System.Windows.Forms.Label();
             this.txtDetailQuantity = new System.Windows.Forms.TextBox();
@@ -236,7 +236,6 @@
             this.clSupFax = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtSupFax = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
-            this.txtSupPhone = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.txtSupPosCode = new System.Windows.Forms.TextBox();
@@ -277,14 +276,15 @@
             this.clShipperID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clShipperCompany = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clShipperPhone = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.txtShipperPhone = new System.Windows.Forms.TextBox();
             this.txtShipperCompany = new System.Windows.Forms.TextBox();
             this.txtShipperID = new System.Windows.Forms.TextBox();
             this.label26 = new System.Windows.Forms.Label();
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.cbDetailProductID = new System.Windows.Forms.ComboBox();
+            this.mtbCusPhone = new System.Windows.Forms.MaskedTextBox();
+            this.mtbSupPhone = new System.Windows.Forms.MaskedTextBox();
+            this.mtbShipperPhone = new System.Windows.Forms.MaskedTextBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -323,6 +323,7 @@
             // 
             // tCustomer
             // 
+            this.tCustomer.Controls.Add(this.mtbCusPhone);
             this.tCustomer.Controls.Add(this.btnNewCustomer);
             this.tCustomer.Controls.Add(this.btnSearchCustomer);
             this.tCustomer.Controls.Add(this.cbCusCountry);
@@ -333,7 +334,6 @@
             this.tCustomer.Controls.Add(this.dgvCustomer);
             this.tCustomer.Controls.Add(this.txtCusFax);
             this.tCustomer.Controls.Add(this.lblFax);
-            this.tCustomer.Controls.Add(this.txtCusPhone);
             this.tCustomer.Controls.Add(this.lblPhone);
             this.tCustomer.Controls.Add(this.lblCountry);
             this.tCustomer.Controls.Add(this.txtCusPosCode);
@@ -532,7 +532,7 @@
             // 
             // txtCusFax
             // 
-            this.txtCusFax.Location = new System.Drawing.Point(94, 376);
+            this.txtCusFax.Location = new System.Drawing.Point(98, 362);
             this.txtCusFax.Name = "txtCusFax";
             this.txtCusFax.Size = new System.Drawing.Size(181, 20);
             this.txtCusFax.TabIndex = 22;
@@ -541,19 +541,11 @@
             // lblFax
             // 
             this.lblFax.AutoSize = true;
-            this.lblFax.Location = new System.Drawing.Point(6, 379);
+            this.lblFax.Location = new System.Drawing.Point(10, 365);
             this.lblFax.Name = "lblFax";
             this.lblFax.Size = new System.Drawing.Size(24, 13);
             this.lblFax.TabIndex = 21;
             this.lblFax.Text = "Fax";
-            // 
-            // txtCusPhone
-            // 
-            this.txtCusPhone.Location = new System.Drawing.Point(98, 320);
-            this.txtCusPhone.Name = "txtCusPhone";
-            this.txtCusPhone.Size = new System.Drawing.Size(181, 20);
-            this.txtCusPhone.TabIndex = 20;
-            this.txtCusPhone.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtCusPhone_KeyDown);
             // 
             // lblPhone
             // 
@@ -839,6 +831,15 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(496, 60);
             this.panel1.TabIndex = 90;
+            // 
+            // cbDetailProductID
+            // 
+            this.cbDetailProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbDetailProductID.FormattingEnabled = true;
+            this.cbDetailProductID.Location = new System.Drawing.Point(66, 5);
+            this.cbDetailProductID.Name = "cbDetailProductID";
+            this.cbDetailProductID.Size = new System.Drawing.Size(181, 21);
+            this.cbDetailProductID.TabIndex = 98;
             // 
             // txtDetailDiscount
             // 
@@ -2023,6 +2024,7 @@
             // 
             // tSuppliers
             // 
+            this.tSuppliers.Controls.Add(this.mtbSupPhone);
             this.tSuppliers.Controls.Add(this.txtSupContactTitle);
             this.tSuppliers.Controls.Add(this.label40);
             this.tSuppliers.Controls.Add(this.cbSupCountry);
@@ -2033,7 +2035,6 @@
             this.tSuppliers.Controls.Add(this.dgvSupplier);
             this.tSuppliers.Controls.Add(this.txtSupFax);
             this.tSuppliers.Controls.Add(this.label27);
-            this.tSuppliers.Controls.Add(this.txtSupPhone);
             this.tSuppliers.Controls.Add(this.label29);
             this.tSuppliers.Controls.Add(this.label30);
             this.tSuppliers.Controls.Add(this.txtSupPosCode);
@@ -2239,13 +2240,6 @@
             this.label27.Size = new System.Drawing.Size(24, 13);
             this.label27.TabIndex = 101;
             this.label27.Text = "Fax";
-            // 
-            // txtSupPhone
-            // 
-            this.txtSupPhone.Location = new System.Drawing.Point(98, 325);
-            this.txtSupPhone.Name = "txtSupPhone";
-            this.txtSupPhone.Size = new System.Drawing.Size(181, 20);
-            this.txtSupPhone.TabIndex = 98;
             // 
             // label29
             // 
@@ -2524,12 +2518,12 @@
             // 
             // tShippers
             // 
+            this.tShippers.Controls.Add(this.mtbShipperPhone);
             this.tShippers.Controls.Add(this.btnLoadShipper);
             this.tShippers.Controls.Add(this.btnUpdateShipper);
             this.tShippers.Controls.Add(this.btnDeleteShipper);
             this.tShippers.Controls.Add(this.btnAddShipper);
             this.tShippers.Controls.Add(this.dgvShipper);
-            this.tShippers.Controls.Add(this.txtShipperPhone);
             this.tShippers.Controls.Add(this.txtShipperCompany);
             this.tShippers.Controls.Add(this.txtShipperID);
             this.tShippers.Controls.Add(this.label26);
@@ -2617,13 +2611,6 @@
             this.clShipperPhone.Name = "clShipperPhone";
             this.clShipperPhone.ReadOnly = true;
             // 
-            // txtShipperPhone
-            // 
-            this.txtShipperPhone.Location = new System.Drawing.Point(98, 75);
-            this.txtShipperPhone.Name = "txtShipperPhone";
-            this.txtShipperPhone.Size = new System.Drawing.Size(181, 20);
-            this.txtShipperPhone.TabIndex = 89;
-            // 
             // txtShipperCompany
             // 
             this.txtShipperCompany.Location = new System.Drawing.Point(98, 40);
@@ -2670,14 +2657,29 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // cbDetailProductID
+            // mtbCusPhone
             // 
-            this.cbDetailProductID.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbDetailProductID.FormattingEnabled = true;
-            this.cbDetailProductID.Location = new System.Drawing.Point(66, 5);
-            this.cbDetailProductID.Name = "cbDetailProductID";
-            this.cbDetailProductID.Size = new System.Drawing.Size(181, 21);
-            this.cbDetailProductID.TabIndex = 98;
+            this.mtbCusPhone.Location = new System.Drawing.Point(98, 322);
+            this.mtbCusPhone.Mask = "(9000) 000-0000";
+            this.mtbCusPhone.Name = "mtbCusPhone";
+            this.mtbCusPhone.Size = new System.Drawing.Size(181, 20);
+            this.mtbCusPhone.TabIndex = 90;
+            // 
+            // mtbSupPhone
+            // 
+            this.mtbSupPhone.Location = new System.Drawing.Point(98, 327);
+            this.mtbSupPhone.Mask = "(9000) 000-0000";
+            this.mtbSupPhone.Name = "mtbSupPhone";
+            this.mtbSupPhone.Size = new System.Drawing.Size(181, 20);
+            this.mtbSupPhone.TabIndex = 111;
+            // 
+            // mtbShipperPhone
+            // 
+            this.mtbShipperPhone.Location = new System.Drawing.Point(98, 77);
+            this.mtbShipperPhone.Mask = "(9000) 000-0000";
+            this.mtbShipperPhone.Name = "mtbShipperPhone";
+            this.mtbShipperPhone.Size = new System.Drawing.Size(181, 20);
+            this.mtbShipperPhone.TabIndex = 95;
             // 
             // Form1
             // 
@@ -2743,7 +2745,6 @@
         private System.Windows.Forms.Label lblCity;
         private System.Windows.Forms.TextBox txtCusAddress;
         private System.Windows.Forms.Label lblAddress;
-        private System.Windows.Forms.TextBox txtCusPhone;
         private System.Windows.Forms.Label lblPhone;
         private System.Windows.Forms.Label lblCountry;
         private System.Windows.Forms.TextBox txtCusFax;
@@ -2811,7 +2812,6 @@
         private System.Windows.Forms.TabPage tShippers;
         private System.Windows.Forms.TextBox txtSupFax;
         private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.TextBox txtSupPhone;
         private System.Windows.Forms.Label label29;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.TextBox txtSupPosCode;
@@ -2834,7 +2834,6 @@
         private System.Windows.Forms.Label label52;
         private System.Windows.Forms.Label label53;
         private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.TextBox txtShipperPhone;
         private System.Windows.Forms.TextBox txtShipperCompany;
         private System.Windows.Forms.TextBox txtShipperID;
         private System.Windows.Forms.Label label26;
@@ -2979,6 +2978,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn clQuantilyDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn clDiscountDetail;
         private System.Windows.Forms.ComboBox cbDetailProductID;
+        private System.Windows.Forms.MaskedTextBox mtbCusPhone;
+        private System.Windows.Forms.MaskedTextBox mtbSupPhone;
+        private System.Windows.Forms.MaskedTextBox mtbShipperPhone;
     }
 }
 

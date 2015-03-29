@@ -53,7 +53,7 @@ namespace Project
                 txtCusRegion.Text = r.Cells[6].Value.ToString();
                 txtCusPosCode.Text = r.Cells[7].Value.ToString();
                 cbCusCountry.Text = r.Cells[8].Value.ToString();
-                txtCusPhone.Text = r.Cells[9].Value.ToString();
+                mtbCusPhone.Text = r.Cells[9].Value.ToString();
                 txtCusFax.Text = r.Cells[10].Value.ToString();
             }
         }
@@ -141,7 +141,7 @@ namespace Project
                 cbSupCountry.DropDownStyle = ComboBoxStyle.DropDown;
                 cbSupCountry.Text = r.Cells[8].Value.ToString();
                 cbSupCountry.DropDownStyle = ComboBoxStyle.DropDownList;
-                txtSupPhone.Text = r.Cells[9].Value.ToString();
+                mtbSupPhone.Text = r.Cells[9].Value.ToString();
                 txtSupFax.Text = r.Cells[10].Value.ToString();
             }
         }
@@ -164,7 +164,7 @@ namespace Project
                 DataGridViewRow r = dgvShipper.SelectedRows[0];
                 txtShipperID.Text = r.Cells[0].Value.ToString();
                 txtShipperCompany.Text = r.Cells[1].Value.ToString();
-                txtShipperPhone.Text = r.Cells[2].Value.ToString();
+                mtbShipperPhone.Text = r.Cells[2].Value.ToString();
             }
         }
 
@@ -205,9 +205,9 @@ namespace Project
                 errorProvider1.SetError(cbCusCountry, "Select Country!!!");
                 error = false;
             }
-            if (txtCusPhone.Text.Length == 0)
+            if (mtbCusPhone.MaskCompleted == false)
             {
-                errorProvider1.SetError(txtCusPhone, "Enter Custumber's phone number!!!");
+                errorProvider1.SetError(mtbCusPhone, "Enter Custumber's phone number!!!");
                 error = false;
             }
             return error;
@@ -387,9 +387,9 @@ namespace Project
                 errorProvider1.SetError(cbCusCountry, "Select Country!");
                 error = false;
             }
-            if (txtSupPhone.Text.Length == 0)
+            if (mtbSupPhone.MaskCompleted==false)
             {
-                errorProvider1.SetError(txtSupPhone, "Enter Number!");
+                errorProvider1.SetError(mtbSupPhone, "Enter Number!");
                 error = false;
             }
             return error;
@@ -420,9 +420,9 @@ namespace Project
                 errorProvider1.SetError(txtShipperCompany, "Enter Company!");
                 error = false;
             }
-            if (txtShipperPhone.Text.Length == 0)
+            if (mtbShipperPhone.MaskCompleted == false)
             {
-                errorProvider1.SetError(txtShipperPhone, "Enter Phone Number!");
+                errorProvider1.SetError(mtbShipperPhone, "Enter Phone Number!");
                 error = false;
             }
             return error;
@@ -795,7 +795,7 @@ namespace Project
             list.Add(txtCusRegion.Text);
             list.Add(txtCusPosCode.Text);
             list.Add(cbCusCountry.Text);
-            list.Add(txtCusPhone.Text);
+            list.Add(mtbCusPhone.Text);
             list.Add(txtCusFax.Text);
             new customer().insert(list);
         }
@@ -899,7 +899,7 @@ namespace Project
             list.Add(this.txtSupRegion.Text);
             list.Add(this.txtSupPosCode.Text);
             list.Add(this.cbSupCountry.Text);
-            list.Add(this.txtSupPhone.Text);
+            list.Add(this.mtbSupPhone.Text);
             list.Add(this.txtSupFax.Text);
             new Supplier().insert(list);
         }
@@ -941,7 +941,7 @@ namespace Project
         {
             List<String> list = new List<string>();
             list.Add(this.txtShipperCompany.Text);
-            list.Add(this.txtShipperPhone.Text);
+            list.Add(this.mtbShipperPhone.Text);
             new Shipper().insert(list);
         }
         #endregion
@@ -1096,7 +1096,7 @@ namespace Project
                 list.Add(txtCusRegion.Text);
                 list.Add(txtCusPosCode.Text);
                 list.Add(cbCusCountry.Text);
-                list.Add(txtCusPhone.Text);
+                list.Add(mtbCusPhone.Text);
                 list.Add(txtCusFax.Text);
                 new customer().update(point, list);
             }
@@ -1228,7 +1228,7 @@ namespace Project
                 list.Add(this.txtSupRegion.Text);
                 list.Add(this.txtSupPosCode.Text);
                 list.Add(this.cbSupCountry.Text);
-                list.Add(this.txtSupPhone.Text);
+                list.Add(this.mtbSupPhone.Text);
                 list.Add(this.txtSupFax.Text);
                 new Supplier().update(point, list);
             }
@@ -1273,7 +1273,7 @@ namespace Project
                 Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
                 List<String> list = new List<string>();
                 list.Add(this.txtShipperCompany.Text);
-                list.Add(this.txtShipperPhone.Text);
+                list.Add(this.mtbShipperPhone.Text);
                 new Shipper().update(point, list);
             }
             else
@@ -1294,7 +1294,7 @@ namespace Project
                 txtCusCity.Text == "" &
                 txtCusRegion.Text == "" &
                 txtCusPosCode.Text == "" &
-                txtCusPhone.Text == "" &
+                mtbCusPhone.Text == "" &
                 txtCusFax.Text == "" &
                 cbCusCountry.SelectedIndex == -1
                 )
@@ -1313,7 +1313,7 @@ namespace Project
                 list.Add(txtCusRegion.Text);
                 list.Add(txtCusPosCode.Text);
                 list.Add(cbCusCountry.Text);
-                list.Add(txtCusPhone.Text);
+                list.Add(mtbCusPhone.Text);
                 list.Add(txtCusFax.Text);
                 SqlDataReader dr = new customer().search(list);
                 dgvCustomer.Rows.Clear();
@@ -1412,7 +1412,7 @@ namespace Project
             txtCusCity.Text = "";
             txtCusRegion.Text = "";
             txtCusPosCode.Text = "";
-            txtCusPhone.Text = "";
+            mtbCusPhone.Text = "";
             txtCusFax.Text = "";
             cbCusCountry.SelectedIndex = -1;
         }
