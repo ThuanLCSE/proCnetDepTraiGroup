@@ -92,7 +92,10 @@ namespace Project
                 txtProductID.Text = r.Cells[0].Value.ToString();
                 txtProductName.Text = r.Cells[1].Value.ToString();
                 txtProSupplierID.Text = r.Cells[2].Value.ToString();
+                cbCaterogyID.DropDownStyle = ComboBoxStyle.DropDown;
                 cbCaterogyID.Text = r.Cells[3].Value.ToString();
+                cbCaterogyID.Text = cbCaterogyID.ValueMember;
+                cbCaterogyID.DropDownStyle = ComboBoxStyle.DropDownList;
                 txtProUnitPrice.Text = r.Cells[4].Value.ToString();
                 if (r.Cells[5].Value.ToString().Equals("Y"))
                     radYes.Checked = true;
@@ -241,7 +244,7 @@ namespace Project
                 errorProvider1.SetError(txtProductName, "Enter Employee's ID!!!");
                 error = false;
             }
-            if (mtbOrderFreight.Text.Length == 0)
+            if (mtbOrderFreight.MaskCompleted==false)
             {
                 errorProvider1.SetError(mtbOrderFreight, "Enter Order's Freight!!!");
                 error = false;

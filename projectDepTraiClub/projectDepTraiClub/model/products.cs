@@ -33,7 +33,8 @@ namespace Project
             param.Value = str[3];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
-            param.Value = Int32.Parse( str[4]);
+            param.DbType = System.Data.DbType.Boolean;
+            param.Value = Boolean.Parse(str[4]);
             cmd.Parameters.Add(param);
 
 
@@ -67,7 +68,8 @@ namespace Project
             param.Value = str[3];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
-            param.Value = Int32.Parse(str[4]);
+            param.DbType = System.Data.DbType.Boolean;
+            param.Value = Boolean.Parse(str[4]);
             cmd.Parameters.Add(param);
             //
             cmd.ExecuteNonQuery();
