@@ -31,7 +31,7 @@ namespace Project
             param = new SqlParameter("@categoryid", SqlDbType.Int);
             param.Value = Int32.Parse(str[2]);
             cmd.Parameters.Add(param);
-                param = new SqlParameter("@unitprice", SqlDbType.Money);
+            param = new SqlParameter("@unitprice", SqlDbType.Money);
             param.Value = str[3];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
@@ -120,28 +120,44 @@ namespace Project
             //closeConnection();
             return dr;
         }
-        public SqlDataReader search(int id, List<string> str)
+        public SqlDataReader search(List<string> str)
         {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "searchProduct";
-            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
-            param.Value = id;
-            cmd.Parameters.Add(param);
+            SqlParameter param;// = new SqlParameter("@id", SqlDbType.Int);
+            //param.Value = id;
+            //cmd.Parameters.Add(param);
             param = new SqlParameter("@productname", SqlDbType.VarChar, 40);
             param.Value = str[0];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@supplierid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[1]);
+            if (str[1].Equals(""))
+                param.Value = DBNull.Value;
+            else
+                param.Value = Int32.Parse(str[1]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@categoryid", SqlDbType.Int);
-            param.Value = Int32.Parse(str[2]);
+            if (str[2].Equals("0"))
+                param.Value = DBNull.Value;
+            else
+                param.Value = Int32.Parse(str[2]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = str[3];
+            if (str[3].Equals(""))
+                param.Value = DBNull.Value;
+            else
+                param.Value = str[3];
             cmd.Parameters.Add(param);
+            //
             param = new SqlParameter("@discontinued", SqlDbType.Bit);
-            param.Value = Int32.Parse(str[4]);
+            if (str[4].Equals(""))
+                param.Value = DBNull.Value;
+            else if (str[4].Equals("True"))
+                param.Value = true;
+            else if (str[4].Equals("False"))
+                param.Value = false;
             cmd.Parameters.Add(param);
+            //
             SqlDataReader dr = cmd.ExecuteReader();
 
             return dr;

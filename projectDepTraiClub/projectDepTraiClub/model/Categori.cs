@@ -77,13 +77,14 @@ namespace Project
             //closeConnection();
             return dr;
         }
-        public SqlDataReader search(int id, List<string> str)
+        public SqlDataReader search(List<string> str)
         {
             cmd.CommandType = CommandType.StoredProcedure;
             cmd.CommandText = "searchCategories";
-            SqlParameter param = new SqlParameter("@id", SqlDbType.Int);
-            param.Value = id;
-            cmd.Parameters.Add(param);
+            SqlParameter param;
+            //= new SqlParameter("@id", SqlDbType.Int);
+            //param.Value = id;
+            //cmd.Parameters.Add(param);
             param = new SqlParameter("@categoryname", SqlDbType.VarChar, 15);
             param.Value = str[0];
             cmd.Parameters.Add(param);

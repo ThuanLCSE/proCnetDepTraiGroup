@@ -34,7 +34,7 @@ namespace Project
             btnNewDetail.Enabled = false;
             btnDeleteDetail.Enabled = false;
             btnUpdateDetail.Enabled = false;
-            btnSearchDetail.Enabled = false; 
+            //btnSearchDetail.Enabled = false; 
             //
         }
 
@@ -168,6 +168,18 @@ namespace Project
                 txtShipperID.Text = r.Cells[0].Value.ToString();
                 txtShipperCompany.Text = r.Cells[1].Value.ToString();
                 mtbShipperPhone.Text = r.Cells[2].Value.ToString();
+            }
+        }
+        private void dgvDetail_SelectionChanged(object sender, EventArgs e)
+        {
+            if (dgvDetail.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvDetail.SelectedRows[0];
+
+                cbDetailProductID.Text = r.Cells[1].Value.ToString() ;
+                txtDetailUnitPrice.Text = r.Cells[2].Value.ToString();
+                txtDetailQuantity.Text = r.Cells[3].Value.ToString();
+                txtDetailDiscount.Text = r.Cells[4].Value.ToString();
             }
         }
 
@@ -445,8 +457,6 @@ namespace Project
         }
         #endregion
 
-
-
         #region validate enter number
         private void txtCusPhone_KeyDown(object sender, KeyEventArgs e)
         {
@@ -582,7 +592,6 @@ namespace Project
 
         #endregion
 
-
         #region combo box
         private void UpdatecbofProductByCategories()
         {
@@ -593,17 +602,17 @@ namespace Project
             //SqlConnection con = new SqlConnection();
             //cmd.Connection = (new DAO.getCon()).ConDB();
 
-            SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryID,CategoryName FROM Production.Categories", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT CategoryID FROM Production.Categories", con);
             DataTable dt = new DataTable("Production.Categories");
             da.Fill(dt);
 
             DataRow r = dt.NewRow();
             r["CategoryID"] = -1;
-            r["CategoryName"] = "Select category";
+            //r["CategoryName"] = "Select category";
             dt.Rows.InsertAt(r, 0);
 
             cbCaterogyID.DataSource = dt;
-            cbCaterogyID.DisplayMember = "CategoryName";
+            cbCaterogyID.DisplayMember = "CategoryID";
             cbCaterogyID.ValueMember = "CategoryID";
         }
 
@@ -613,28 +622,26 @@ namespace Project
             SqlConnection con = new SqlConnection();
             con.ConnectionString = @"server=(local);database=TSQLFundamentals2008;uid=sa;pwd=123456";
 
-            SqlDataAdapter da = new SqlDataAdapter("SELECT ProductID,ProductName FROM Production.Products", con);
+            SqlDataAdapter da = new SqlDataAdapter("SELECT ProductID FROM Production.Products", con);
             DataTable dt = new DataTable("Production.Products");
             da.Fill(dt);
 
             DataRow r = dt.NewRow();
             r["ProductID"] = -1;
-            r["ProductName"] = "Select Products";
+            //r["ProductName"] = "Select Products";
             dt.Rows.InsertAt(r, 0);
 
             cbDetailProductID.DataSource = dt;
-            cbDetailProductID.DisplayMember = "ProductName";
+            cbDetailProductID.DisplayMember = "ProductID";
             cbDetailProductID.ValueMember = "ProductID";
         }
         #endregion
-
 
         #region load from db to dgv
         private void btnLoadEmp_Click(object sender, EventArgs e)
         {
             LoadEmp();
         }
-
         private void LoadEmp()
         {
             SqlDataReader dr = (new employee()).select();
@@ -656,7 +663,6 @@ namespace Project
         {
             LoadProduct();
         }
-
         private void LoadProduct()
         {
             SqlDataReader dr = (new products()).select();
@@ -676,7 +682,6 @@ namespace Project
         {
             LoadOrder();
         }
-
         private void LoadOrder()
         {
             SqlDataReader dr = (new order()).select();
@@ -698,7 +703,6 @@ namespace Project
         {
             LoadCustomer();
         }
-
         private void LoadCustomer()
         {
             SqlDataReader dr = (new customer()).select();
@@ -742,7 +746,6 @@ namespace Project
         {
             LoadCategory();
         }
-
         private void LoadCategory()
         {
             SqlDataReader dr = (new Categori()).select();
@@ -757,6 +760,7 @@ namespace Project
             }
             dr.Close();
         }
+
         private void btnLoadShipper_Click(object sender, EventArgs e)
         {
             LoadShipper();
@@ -775,8 +779,30 @@ namespace Project
             }
             dr.Close();
         }
-        #endregion
 
+        private void LoadDetailByOrder()
+        {
+            if (dgvOrder.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvOrder.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+
+                SqlDataReader dr = (new orderDetail()).searchByID(point);// list);
+                dgvDetail.Rows.Clear();
+                while (dr.Read())
+                {
+                    dgvDetail.Rows.Add(
+                        dr.GetInt32(0),
+                        dr.GetInt32(1),
+                        decimal.Parse(dr[2].ToString()),
+                        dr.GetInt16(3),
+                        decimal.Parse(dr[4].ToString())
+                        );
+                }
+                dr.Close();
+            }
+        }
+        #endregion
 
         #region add
         private void btnAddCustomer_Click(object sender, EventArgs e)
@@ -786,7 +812,6 @@ namespace Project
             AddCustomer();
             LoadCustomer();
         }
-
         private void AddCustomer()
         {
             List<String> list = new List<string>();
@@ -803,7 +828,6 @@ namespace Project
             new customer().insert(list);
         }
 
-
         private void btnAddOrder_Click(object sender, EventArgs e)
         {
             if (validateOrder() == false)
@@ -811,7 +835,6 @@ namespace Project
             AddOrder();
             LoadOrder();
         }
-
         private void AddOrder()
         {
             List<String> list = new List<string>();
@@ -856,6 +879,7 @@ namespace Project
             UpdatecbofDetailByProduct();
             new products().insert(list);
         }
+
         private void btnAddEmp_Click(object sender, EventArgs e)
         {
             if (validateEmp() == false)
@@ -906,17 +930,17 @@ namespace Project
             list.Add(this.txtSupFax.Text);
             new Supplier().insert(list);
         }
-        private void addOrderDetail_Click(object sender, EventArgs e)
-        {
-            //List<String> list = new List<string>();
-            //list.Add(this.txtOrderID.Text);
-            //list.Add(this.txtOrderCusID.Text);
-            //list.Add(this.txtoe.Text);
-            //list.Add(this.txtOrDeQuantity.Text);
-            //list.Add(this.txtOrDeDiscount.Text);
-            //new orderDetail().insert(list);
-        }
 
+        //private void addOrderDetail_Click(object sender, EventArgs e)
+        //{
+        //    //List<String> list = new List<string>();
+        //    //list.Add(this.txtOrderID.Text);
+        //    //list.Add(this.txtOrderCusID.Text);
+        //    //list.Add(this.txtoe.Text);
+        //    //list.Add(this.txtOrDeQuantity.Text);
+        //    //list.Add(this.txtOrDeDiscount.Text);
+        //    //new orderDetail().insert(list);
+        //}
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
             if (validateCategory() == false)
@@ -933,6 +957,7 @@ namespace Project
             //Mỗi lần thêm vào 1 category mới update lại combox trong Product
             UpdatecbofProductByCategories();
         }
+
         private void btnAddShipper_Click(object sender, EventArgs e)
         {
             if (validateShipper() == false)
@@ -947,16 +972,43 @@ namespace Project
             list.Add(this.mtbShipperPhone.Text);
             new Shipper().insert(list);
         }
-        #endregion
 
+        private void btnAddDetail_Click(object sender, EventArgs e)
+        {
+            //if (validateOrderDetail() == false)    //chua hien thuc ham validateOrderDetail
+            //return;
+            AddDetail();
+            LoadDetailByOrder();
+        }
+        private void AddDetail()
+        {
+            if (dgvOrder.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvOrder.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+
+                List<String> list = new List<string>();
+                list.Add(cbDetailProductID.SelectedValue.ToString());
+                list.Add(txtDetailQuantity.Text);
+                list.Add(txtDetailUnitPrice.Text);
+                list.Add(txtDetailDiscount.Text);
+
+                new orderDetail().insert(point, list);
+            }
+        }
+
+        #endregion
 
         #region delete
         private void btnDeleteCustomer_Click(object sender, EventArgs e)
         {
-            DeleteCustomer();
-            LoadCustomer();
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteCustomer();
+                LoadCustomer();
+            }
         }
-
         private void DeleteCustomer()
         {
             if (dgvCustomer.SelectedRows.Count > 0)
@@ -971,10 +1023,13 @@ namespace Project
 
         private void btnDeleteOrder_Click(object sender, EventArgs e)
         {
-            DeleteOrder();
-            LoadOrder();
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteOrder();
+                LoadOrder();
+            }
         }
-
         private void DeleteOrder()
         {
             if (dgvOrder.SelectedRows.Count > 0)
@@ -988,10 +1043,13 @@ namespace Project
 
         private void btnDeleteProduct_Click(object sender, EventArgs e)
         {
-            DeleteProduct();
-            LoadProduct();
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteProduct();
+                LoadProduct();
+            }
         }
-
         private void DeleteProduct()
         {
             if (dgvProduct.SelectedRows.Count > 0)
@@ -1005,10 +1063,13 @@ namespace Project
 
         private void btnDeleteEmp_Click(object sender, EventArgs e)
         {
-            DeleteEmp();
-            LoadEmp();
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteEmp();
+                LoadEmp();
+            }
         }
-
         private void DeleteEmp()
         {
             if (dgvEmp.SelectedRows.Count > 0)
@@ -1022,10 +1083,13 @@ namespace Project
 
         private void btnDeleteSupplier_Click(object sender, EventArgs e)
         {
-            DeleteSupplier();
-            LoadSupplier();
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteSupplier();
+                LoadSupplier();
+            }
         }
-
         private void DeleteSupplier()
         {
             if (dgvSupplier.SelectedRows.Count > 0)
@@ -1039,10 +1103,13 @@ namespace Project
 
         private void btnDeleteCategory_Click(object sender, EventArgs e)
         {
-            DeleteCategory();
-            LoadCategory();
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteCategory();
+                LoadCategory();
+            }
         }
-
         private void DeleteCategory()
         {
             if (dgvCategory.SelectedRows.Count > 0)
@@ -1056,10 +1123,13 @@ namespace Project
 
         private void btnDeleteShipper_Click(object sender, EventArgs e)
         {
-            DeleteShipper();
-            LoadShipper();
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteShipper();
+                LoadShipper();
+            }
         }
-
         private void DeleteShipper()
         {
             if (dgvShipper.SelectedRows.Count > 0)
@@ -1071,9 +1141,27 @@ namespace Project
                 MessageBox.Show("Select row to delete");
         }
 
+        private void btnDeleteDetail_Click(object sender, EventArgs e)
+        {
+            DialogResult dr = MessageBox.Show("are you sure?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                DeleteDetail();
+                LoadDetailByOrder();
+            }
+        }
+        void DeleteDetail()
+        {
+            if (dgvDetail.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvDetail.SelectedRows[0];
+                //MessageBox.Show(r.Cells[1].Value.ToString());
+                new orderDetail().delete(Int32.Parse(r.Cells[1].Value.ToString()));
+            }
+            else
+                MessageBox.Show("Select row to delete");
+        }
         #endregion
-
-
 
         #region update
         private void btnUpdateCustomer_Click(object sender, EventArgs e)
@@ -1083,8 +1171,7 @@ namespace Project
             UpdateCustomer();
             LoadCustomer();
         }
-
-        private void UpdateCustomer()
+        void UpdateCustomer()
         {
             if (dgvCustomer.SelectedRows.Count > 0)
             {
@@ -1114,8 +1201,7 @@ namespace Project
             UpdateOrder();
             LoadOrder();
         }
-
-        private void UpdateOrder()
+        void UpdateOrder()
         {
             if (dgvOrder.SelectedRows.Count > 0)
             {
@@ -1148,8 +1234,7 @@ namespace Project
             UpdateProduct();
             LoadProduct();
         }
-
-        private void UpdateProduct()
+        void UpdateProduct()
         {
             if (dgvProduct.SelectedRows.Count > 0)
             {
@@ -1181,7 +1266,6 @@ namespace Project
             UpdateEmp();
             LoadEmp();
         }
-
         void UpdateEmp()
         {
             if (dgvEmp.SelectedRows.Count > 0)
@@ -1215,8 +1299,7 @@ namespace Project
             UpdateSupplier();
             LoadSupplier();
         }
-
-        private void UpdateSupplier()
+        void UpdateSupplier()
         {
             if (dgvSupplier.SelectedRows.Count > 0)
             {
@@ -1244,8 +1327,7 @@ namespace Project
             UpdateCategory();
             LoadCategory();
         }
-
-        private void UpdateCategory()
+        void UpdateCategory()
         {
             if (dgvCategory.SelectedRows.Count > 0)
             {
@@ -1267,8 +1349,7 @@ namespace Project
             UpdateShipper();
             LoadShipper();
         }
-
-        private void UpdateShipper()
+        void UpdateShipper()
         {
             if (dgvShipper.SelectedRows.Count > 0)
             {
@@ -1283,13 +1364,47 @@ namespace Project
                 MessageBox.Show("Select row to update!");
         }
 
+        private void btnUpdateDetail_Click(object sender, EventArgs e)
+        {
+            //if (validateDetail() == false)
+            //    return;
+            if (btnUpdateDetail.Text.Contains("Update Detail"))
+            {
+                cbDetailProductID.Enabled = false;
+                btnUpdateDetail.Text = "Update now";
+            }
+            else
+            {
+                UpdateDetail();
+                cbDetailProductID.Enabled = true;
+                LoadDetailByOrder();
+            }
 
+        }
+        void UpdateDetail()
+        {
+            if (dgvDetail.SelectedRows.Count > 0)
+            {
+                DataGridViewRow r = dgvDetail.SelectedRows[0];
+                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
+                //MessageBox.Show(r.Cells[0].Value.ToString());
+                List<String> list = new List<string>();
+                //MessageBox.Show(cbDetailProductID.SelectedValue.ToString());
+                list.Add(cbDetailProductID.SelectedValue.ToString());
+                list.Add(txtDetailUnitPrice.Text);
+                list.Add(txtDetailQuantity.Text);
+                list.Add(txtDetailDiscount.Text);
+                new orderDetail().update(point,list);
+            }
+            else
+                MessageBox.Show("Select row to update!");
+        }
         #endregion
 
         #region search
         private void btnSearchCustomer_Click(object sender, EventArgs e)
         {
-            if (txtCustomerID.Text == "" &
+            if (
                 txtCusComName.Text == "" &
                 txtCusName.Text == "" &
                 txtCusTitle.Text == "" &
@@ -1297,112 +1412,393 @@ namespace Project
                 txtCusCity.Text == "" &
                 txtCusRegion.Text == "" &
                 txtCusPosCode.Text == "" &
-                mtbCusPhone.Text == "" &
+                mtbCusPhone.Text == "(    )    -" &
                 txtCusFax.Text == "" &
                 cbCusCountry.SelectedIndex == -1
                 )
             {
                 //All text empty
-                MessageBox.Show("========================");
+                MessageBox.Show("Don't have keyword for search");
             }
             else
             {
-                List<String> list = new List<string>();
-                list.Add(txtCusComName.Text);
-                list.Add(txtCusName.Text);
-                list.Add(txtCusTitle.Text);
-                list.Add(txtCusAddress.Text);
-                list.Add(txtCusCity.Text);
-                list.Add(txtCusRegion.Text);
-                list.Add(txtCusPosCode.Text);
-                list.Add(cbCusCountry.Text);
-                list.Add(mtbCusPhone.Text);
-                list.Add(txtCusFax.Text);
-                SqlDataReader dr = new customer().search(list);
-                dgvCustomer.Rows.Clear();
-                while (dr.Read())
-                {
-                    dgvCustomer.Rows.Add(
-                        dr.GetInt32(0),
-                        dr[1].ToString(),
-                        dr[2].ToString(),
-                        dr[3].ToString(),
-                        dr[4].ToString(),
-                        dr[5].ToString(),
-                        dr[6].ToString(),
-                        dr[7].ToString(),
-                        dr[8].ToString(),
-                        dr[9].ToString(),
-                        dr[10].ToString()
-                        );
-                }
-                dr.Close();
+                SearchCustomer();
             }
+        }
+        void SearchCustomer()
+        {
+            List<String> list = new List<string>();
+            list.Add(txtCusComName.Text);
+            list.Add(txtCusName.Text);
+            list.Add(txtCusTitle.Text);
+            list.Add(txtCusAddress.Text);
+            list.Add(txtCusCity.Text);
+            list.Add(txtCusRegion.Text);
+            list.Add(txtCusPosCode.Text);
+            list.Add(cbCusCountry.Text);
+            list.Add(mtbCusPhone.Text);
+            list.Add(txtCusFax.Text);
+            SqlDataReader dr = (new customer()).search(list);
+            dgvCustomer.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvCustomer.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    dr[5].ToString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString()
+                    );
+            }
+            dr.Close();
         }
 
         private void btnSearchOrder_Click(object sender, EventArgs e)
         {
-            //Còn lỗi chưa xử lí đc
-
-            if( txtOrderCusID.Text == ""&
-                txtOrderEmpID.Text == ""&
-                dtpOrderDate.Text == DateTime.Now.ToShortDateString()&
-                dtpRequireDate.Text == DateTime.Now.ToShortDateString()&
-                dtpShippedDate.Text == DateTime.Now.ToShortDateString()&
-                txtOrderShiperID.Text == ""&
-                mtbOrderFreight.Text == ""&
-                txtOrderShipName.Text == "" &
-                txtOrderShipAddress.Text == ""&
-                txtOrderShipCity.Text == ""&
-                txtOrderShipRegion.Text == ""&
-                txtOrderShipPosCode.Text == ""&
-                cbOrderShipCountry.SelectedIndex == -1)
+            if (btnSearchOrder.Text.Equals("Search"))
             {
-                MessageBox.Show("====================");
+                btnSearchOrder.Text = "Search now";
+                dtpOrderDate.Enabled = false;
+                dtpRequireDate.Enabled = false;
+                dtpShippedDate.Enabled = false;
+            }
+            else
+                if (txtOrderCusID.Text == "" &
+                    txtOrderEmpID.Text == "" &
+                    //dtpOrderDate.Text == DateTime.Now.ToShortDateString()&
+                    //dtpRequireDate.Text == DateTime.Now.ToShortDateString()&
+                    //dtpShippedDate.Text == DateTime.Now.ToShortDateString()&
+                    txtOrderShiperID.Text == "" &
+                    mtbOrderFreight.Text == "" &
+                    txtOrderShipName.Text == "" &
+                    txtOrderShipAddress.Text == "" &
+                    txtOrderShipCity.Text == "" &
+                    txtOrderShipRegion.Text == "" &
+                    txtOrderShipPosCode.Text == "" &
+                    cbOrderShipCountry.SelectedIndex == -1)
+                {
+                    MessageBox.Show("Don't have keyword for search");
+                }
+                else
+                {
+                    btnSearchOrder.Text = "Search";
+                    dtpOrderDate.Enabled = true;
+                    dtpRequireDate.Enabled = true;
+                    dtpShippedDate.Enabled = true;
+                    SearchOrder();
+                }
+        }
+        void SearchOrder()
+        {
+            List<String> list = new List<string>();
+            list.Add(txtOrderCusID.Text);
+            list.Add(txtOrderEmpID.Text);
+            //list.Add(dtpOrderDate.Value.ToShortDateString());
+            //list.Add(dtpRequireDate.Value.ToShortDateString());
+            //list.Add(dtpShippedDate.Value.ToShortDateString());
+            list.Add(txtOrderShiperID.Text);
+            list.Add(mtbOrderFreight.Text);
+            list.Add(txtOrderShipName.Text);
+            list.Add(txtOrderShipAddress.Text);
+            list.Add(txtOrderShipCity.Text);
+            list.Add(txtOrderShipRegion.Text);
+            list.Add(txtOrderShipPosCode.Text);
+            list.Add(cbOrderShipCountry.Text);
+            SqlDataReader dr = new order().search(list);
+            dgvOrder.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvOrder.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    DateTime.Parse(dr[3].ToString()).ToShortDateString(),
+                    DateTime.Parse(dr[4].ToString()).ToShortDateString(),
+                    DateTime.Parse(dr[5].ToString()).ToShortDateString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString(),
+                    dr[11].ToString(),
+                    dr[12].ToString(),
+                    dr[13].ToString()
+                    );
+            }
+            dr.Close();
+        }
+
+        private void btnSearchProduct_Click(object sender, EventArgs e)
+        {
+            if (
+                this.txtProductName.Text == "" &
+                this.txtProSupplierID.Text == "" &
+                this.cbCaterogyID.Text.Equals("-1") &
+                this.txtProUnitPrice.Text == "" &
+                !this.radYes.Checked & !this.radNo.Checked
+                )
+            {
+                MessageBox.Show("Don't have keyword for search");
             }
             else
             {
-                List<String> list = new List<string>();
-                list.Add(txtOrderCusID.Text);
-                list.Add(txtOrderEmpID.Text);
-                list.Add(dtpOrderDate.Value.ToShortDateString());
-                list.Add(dtpRequireDate.Value.ToShortDateString());
-                list.Add(dtpShippedDate.Value.ToShortDateString());
-                list.Add(txtOrderShiperID.Text);
-                list.Add(mtbOrderFreight.Text);
-                list.Add(txtOrderShipName.Text);
-                list.Add(txtOrderShipAddress.Text);
-                list.Add(txtOrderShipCity.Text);
-                list.Add(txtOrderShipRegion.Text);
-                list.Add(txtOrderShipPosCode.Text);
-                list.Add(cbOrderShipCountry.Text);
-                SqlDataReader dr = new order().search(list);
-                dgvCustomer.Rows.Clear();
-                while (dr.Read())
-                {
-                    dgvCustomer.Rows.Add(
-                        dr.GetInt32(0),
-                        dr[1].ToString(),
-                        dr[2].ToString(),
-                        dr[3].ToString(),
-                        dr[4].ToString(),
-                        dr[5].ToString(),
-                        dr[6].ToString(),
-                        dr[7].ToString(),
-                        dr[8].ToString(),
-                        dr[9].ToString(),
-                        dr[10].ToString(),
-                        dr[11].ToString(),
-                        dr[12].ToString()
-                        );
-                }
-                dr.Close();
+                SearchProduct();
+            }
+        }
+        void SearchProduct()
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtProductName.Text);
+            list.Add(this.txtProSupplierID.Text);
+            list.Add(this.cbCaterogyID.SelectedValue.ToString());
+            list.Add(this.txtProUnitPrice.Text);
+            if (this.radYes.Checked)
+            {
+                list.Add("True");
+            }
+            else if (this.radNo.Checked)
+            {
+                list.Add("False");
+            }
+            else list.Add("");
+            SqlDataReader dr = (new products()).search(list);
+            dgvProduct.Rows.Clear();
+            while (dr.Read())
+            {
+                string s = "";
+                if (dr.GetBoolean(5) == true)
+                    s = "Y";
+                else s = "N";
+                dgvProduct.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr.GetInt32(2),
+                    dr.GetInt32(3),
+                    double.Parse(dr[4].ToString()),
+                    s);
+            }
+            dr.Close();
+        }
+
+        private void btnSearchEmp_Click(object sender, EventArgs e)
+        {            
+            if (btnSearchEmp.Text.Equals("Search"))
+            {
+                btnSearchEmp.Text = "Search now";
+                txtEmpTitle.Enabled = false;
+                txtEmpTitleOfCourtesy.Enabled = false;
+                dtpEmpBirthdate.Enabled = false;
+                dtpEmpHireDate.Enabled = false;
+                txtEmpAddress.Enabled = false;
+                txtEmpCity.Enabled = false;
+                txtEmpRegion.Enabled = false;
+                cbEmpCountry.Enabled = false;
+                mtbEmpPhone.Enabled = false;
+                txtEmpManagerID.Enabled = false;
+            }
+            else
+                if  (
+                    this.txtEmpLastName.Text == "" &
+                    this.txtEmpFirstName.Text == ""
+                    )
+            {
+                //All text empty
+                MessageBox.Show("Don't have keyword for search");
+            }
+            else{
+                btnSearchEmp.Text = "Search";
+                txtEmpTitle.Enabled = true;
+                txtEmpTitleOfCourtesy.Enabled = true;
+                dtpEmpBirthdate.Enabled = true;
+                dtpEmpHireDate.Enabled = true;
+                txtEmpAddress.Enabled = true;
+                txtEmpCity.Enabled = true;
+                txtEmpRegion.Enabled = true;
+                cbEmpCountry.Enabled = true;
+                mtbEmpPhone.Enabled = true;
+                txtEmpManagerID.Enabled = true;
+                SearchEmp();
+            }
+
+        }
+        void SearchEmp()
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtEmpLastName.Text);
+            list.Add(this.txtEmpFirstName.Text);
+            //list.Add(this.txtEmpTitle.Text);
+            //list.Add(this.txtEmpTitleOfCourtesy.Text);
+            ////Date
+            //list.Add(this.dtpEmpBirthdate.Value.ToShortDateString());
+            //list.Add(this.dtpEmpHireDate.Value.ToShortDateString());
+            ////
+            //list.Add(this.txtEmpAddress.Text);
+            //list.Add(this.txtEmpCity.Text);
+            //list.Add(this.txtEmpRegion.Text);
+            //list.Add(this.txtEmpPosCode.Text);
+            //list.Add(this.cbEmpCountry.ValueMember);
+            //list.Add(this.mtbEmpPhone.Text);
+            //list.Add(this.txtEmpManagerID.Text);
+            SqlDataReader dr = (new employee()).search(list);
+            dgvEmp.Rows.Clear();
+            while (dr.Read())
+            {
+                string mgrid = "";
+                if (dr[13] == DBNull.Value)
+                    mgrid = "";
+                else mgrid = dr[13].ToString();
+
+                dgvEmp.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    DateTime.Parse(dr[5].ToString()).ToShortDateString(),
+                    DateTime.Parse(dr[6].ToString()).ToShortDateString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString(),
+                    dr[11].ToString(),
+                    dr[12].ToString(),
+                    mgrid
+                    );
+            }
+            dr.Close();
+        }
+
+        private void btnSearchSup_Click(object sender, EventArgs e)
+        {
+            if (
+                this.txtSupCompanyName.Text == "" &
+                this.txtSupContactName.Text == "" &
+                this.txtSupContactTitle.Text == "" &
+                this.txtSupAdd.Text == "" &
+                this.txtSupCity.Text == "" &
+                this.txtSupRegion.Text == "" &
+                this.txtSupPosCode.Text == "" &
+                this.cbSupCountry.Text == "" &
+                this.mtbSupPhone.Text == "(    )    -" &
+                this.txtSupFax.Text == ""
+                )
+            {
+                MessageBox.Show("Don't have keyword for search");
+            }
+            else
+            {
+                SearchSup();
             }
             
         }
+        void SearchSup()
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtSupCompanyName.Text);
+            list.Add(this.txtSupContactName.Text);
+            list.Add(this.txtSupContactTitle.Text);
+            list.Add(this.txtSupAdd.Text);
+            list.Add(this.txtSupCity.Text);
+            list.Add(this.txtSupRegion.Text);
+            list.Add(this.txtSupPosCode.Text);
+            list.Add(this.cbSupCountry.Text);
+            list.Add(this.mtbSupPhone.Text);
+            list.Add(this.txtSupFax.Text);
 
+            SqlDataReader dr = new Supplier().search(list);
+            dgvSupplier.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvSupplier.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString(),
+                    dr[3].ToString(),
+                    dr[4].ToString(),
+                    dr[5].ToString(),
+                    dr[6].ToString(),
+                    dr[7].ToString(),
+                    dr[8].ToString(),
+                    dr[9].ToString(),
+                    dr[10].ToString()
+                    );
+            }
+            dr.Close();
+        }
+
+        private void btnSearchCate_Click(object sender, EventArgs e)
+        {
+            if (
+                this.txtCateName.Text == "" &
+                this.txtCateDescription.Text == ""
+                )
+            {
+                MessageBox.Show("Don't have keyword for search");
+            }
+            else
+            {
+                SearchCate();
+            }
+        }
+        void SearchCate()
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtCateName.Text);
+            list.Add(this.txtCateDescription.Text);
+
+            SqlDataReader dr = new Categori().search(list);
+            dgvCategory.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvCategory.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString()
+                    );
+            }
+            dr.Close();
+
+        }
+
+        private void btnSearchShipper_Click(object sender, EventArgs e)
+        {
+            if (
+                this.txtShipperCompany.Text == "" &
+                this.mtbShipperPhone.Text == "(    )    -"
+                )
+            {
+                MessageBox.Show("Don't have keyword for search");
+            }
+            else
+            {
+                SearchShipper();
+            }
+        }
+        void SearchShipper()
+        {
+            List<String> list = new List<string>();
+            list.Add(this.txtShipperCompany.Text);
+            list.Add(this.mtbShipperPhone.Text);
+
+            SqlDataReader dr = new Shipper().search(list);
+            dgvShipper.Rows.Clear();
+            while (dr.Read())
+            {
+                dgvShipper.Rows.Add(
+                    dr.GetInt32(0),
+                    dr[1].ToString(),
+                    dr[2].ToString()
+                    );
+            }
+            dr.Close();
+        }
         #endregion
-
 
         #region new text
         private void btnNewCustomer_Click(object sender, EventArgs e)
@@ -1421,6 +1817,7 @@ namespace Project
         }
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
+            txtOrderID.Text = "";
             txtOrderCusID.Text = "";
             txtOrderEmpID.Text = "";
             dtpOrderDate.Text = DateTime.Now.ToShortDateString();
@@ -1434,56 +1831,95 @@ namespace Project
             txtOrderShipRegion.Text = "";
             txtOrderShipPosCode.Text = "";
             cbOrderShipCountry.SelectedIndex = -1;
+            DialogResult dr = MessageBox.Show("you are sure to stop search?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
+            {
+                btnSearchOrder.Text = "Search";
+                dtpOrderDate.Enabled = true;
+                dtpRequireDate.Enabled = true;
+                dtpShippedDate.Enabled = true;
+            }
         }
 
         private void btnNewDetail_Click(object sender, EventArgs e)
         {
             //Mô tả tính năng: cbDetailProductID sử dụng giúp người dùng chọn nhanh Product ID từ tab Product
-            cbDetailProductID.SelectedIndex = -1;
+            cbDetailProductID.SelectedIndex = 0;
             txtDetailQuantity.Text = "";
             txtDetailUnitPrice.Text = "";
             txtDetailDiscount.Text = "";
         }
-        #endregion
-
-        
-        private void btnSearchDetail_Click(object sender, EventArgs e)
+        private void btnNewProduct_Click(object sender, EventArgs e)
         {
-
+            txtProductID.Text = "";
+            txtProductName.Text = "";
+            txtProSupplierID.Text = "";
+            cbCaterogyID.SelectedIndex = 0;
+            txtProUnitPrice.Text = "";
+            radNo.Checked = false;
+            radYes.Checked = false;
         }
-
-        private void btnAddDetail_Click(object sender, EventArgs e)
+        private void btnNewEmp_Click(object sender, EventArgs e)
         {
-            if (validateOrderDetail() == false)    //chua hien thuc ham validateOrderDetail
-                return;
-            AddDetail();
-            LoadDetailByOrder();
-        }
-        private void AddDetail()
-        {
-            if (dgvOrder.SelectedRows.Count > 0)
+            txtEmployID.Text = "";
+            txtEmpLastName.Text = "";
+            txtEmpFirstName.Text = "";
+            txtEmpTitle.Text = "";
+            txtEmpTitleOfCourtesy.Text = "";
+            dtpEmpBirthdate.Text = DateTime.Now.ToShortDateString();
+            dtpEmpHireDate.Text = DateTime.Now.ToShortDateString();
+            txtEmpAddress.Text = "";
+            txtEmpCity.Text = "";
+            txtEmpRegion.Text = "";
+            txtEmpPosCode.Text = "";
+            cbEmpCountry.SelectedIndex = -1;
+            mtbEmpPhone.Text = "";
+            txtEmpManagerID.Text = "";
+            DialogResult dr = MessageBox.Show("you are sure to stop search?", "Notification", MessageBoxButtons.YesNo);
+            if (dr == DialogResult.Yes)
             {
-                DataGridViewRow r = dgvOrder.SelectedRows[0];
-                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
-
-                List<String> list = new List<string>();
-                list.Add(cbDetailProductID.SelectedValue.ToString());
-                list.Add(txtDetailQuantity.Text);
-                list.Add(txtDetailUnitPrice.Text);
-                list.Add(txtDetailDiscount.Text);
-
-                new orderDetail().insert(point,list);
+                btnSearchOrder.Text = "Search";
+                txtEmpTitle.Enabled = true;
+                txtEmpTitleOfCourtesy.Enabled = true;
+                dtpEmpBirthdate.Enabled = true;
+                dtpEmpHireDate.Enabled = true;
+                txtEmpAddress.Enabled = true;
+                txtEmpCity.Enabled = true;
+                txtEmpRegion.Enabled = true;
+                cbEmpCountry.Enabled = true;
+                mtbEmpPhone.Enabled = true;
+                txtEmpManagerID.Enabled = true;
             }
         }
-        private void btnUpdateDetail_Click(object sender, EventArgs e)
+
+        private void btnNewSup_Click(object sender, EventArgs e)
         {
-
+            txtSupID.Text = "";
+            txtSupCompanyName.Text = "";
+            txtSupContactName.Text = "";
+            txtSupContactTitle.Text = "";
+            txtSupAdd.Text = "";
+            txtSupCity.Text = "";
+            txtSupRegion.Text = "";
+            txtSupPosCode.Text = "";
+            cbSupCountry.SelectedIndex = -1;
+            mtbSupPhone.Text = "";
+            txtSupFax.Text = "";
         }
-
-        private void btnDeleteDetail_Click(object sender, EventArgs e)
+        private void btnNewCate_Click(object sender, EventArgs e)
         {
-
+            txtCateID.Text = "";
+            txtCateName.Text = "";
+            txtCateDescription.Text = "";
         }
+        private void btnNewShipper_Click(object sender, EventArgs e)
+        {
+            txtShipperID.Text = "";
+            txtShipperCompany.Text = "";
+            mtbShipperPhone.Text = "";
+        }
+        #endregion
+
 
         private void dgvOrder_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -1491,36 +1927,17 @@ namespace Project
             btnNewDetail.Enabled = true;
             btnDeleteDetail.Enabled = true;
             btnUpdateDetail.Enabled = true;
-            btnSearchDetail.Enabled = true; 
+            //btnSearchDetail.Enabled = true; 
             LoadDetailByOrder();
         }
 
-        private void LoadDetailByOrder()
+
+
+
+        private bool validateDetail()
         {
-            if (dgvOrder.SelectedRows.Count > 0)
-            {
-                DataGridViewRow r = dgvOrder.SelectedRows[0];
-                Int32 point = Int32.Parse(r.Cells[0].Value.ToString());
-
-                SqlDataReader dr = (new orderDetail()).searchByID(point);// list);
-                dgvDetail.Rows.Clear();
-                while (dr.Read())
-                {
-                    dgvDetail.Rows.Add(
-                        dr.GetInt32(0),
-                        dr.GetInt32(1),
-                        decimal.Parse(dr[2].ToString()),
-                        dr.GetInt16(3),
-                        decimal.Parse(dr[4].ToString())
-                        );
-                }
-                dr.Close();     
-            }
+            throw new NotImplementedException();
         }
-
-
-
-
 
 
     }

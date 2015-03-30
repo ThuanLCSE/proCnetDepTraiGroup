@@ -30,7 +30,7 @@ namespace Project
             param.Value = Int32.Parse(str[0]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = decimal.Parse( str[1]);
+            param.Value = str[1];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@qty", SqlDbType.SmallInt);
             param.Value = Int16.Parse( str[2]);
@@ -62,7 +62,7 @@ namespace Project
             param.Value = Int32.Parse(str[0]);
             cmd.Parameters.Add(param);
             param = new SqlParameter("@unitprice", SqlDbType.Money);
-            param.Value = decimal.Parse(str[1]);
+            param.Value = str[1];
             cmd.Parameters.Add(param);
             param = new SqlParameter("@qty", SqlDbType.SmallInt);
             param.Value = Int16.Parse(str[2]);
@@ -123,16 +123,29 @@ namespace Project
         //    //param.Value = id;
         //    //cmd.Parameters.Add(param);
         //    param = new SqlParameter("@productid", SqlDbType.Int);
-        //    param.Value = Int32.Parse(str[0]);
+        //    if (str[0].Equals(""))
+        //        param.Value = DBNull.Value;
+        //    else
+        //        param.Value = Int32.Parse(str[0]);
         //    cmd.Parameters.Add(param);
         //    param = new SqlParameter("@unitprice", SqlDbType.Money);
-        //    param.Value = decimal.Parse(str[1]);
+        //    if (str[1].Equals(""))
+        //        param.Value = DBNull.Value;
+        //    else
+        //        param.Value = decimal.Parse(str[1]);
         //    cmd.Parameters.Add(param);
         //    param = new SqlParameter("@qty", SqlDbType.SmallInt);
-        //    param.Value = Int16.Parse(str[2]);
+        //    if (str[2].Equals(""))
+        //        param.Value = DBNull.Value;
+        //    else
+        //        param.Value = Int16.Parse(str[2]);
         //    cmd.Parameters.Add(param);
         //    param = new SqlParameter("@discount", SqlDbType.Decimal);
-        //    param.Value = decimal.Parse(str[3]);
+        //    if (str[3].Equals(""))
+        //        param.Value = DBNull.Value;
+        //    else
+        //        param.Value = decimal.Parse(str[3]);
+        //    cmd.Parameters.Add(param);
         //    SqlDataReader dr = cmd.ExecuteReader();
 
         //    return dr;

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tCustomer = new System.Windows.Forms.TabPage();
+            this.mtbCusPhone = new System.Windows.Forms.MaskedTextBox();
             this.btnNewCustomer = new System.Windows.Forms.Button();
             this.btnSearchCustomer = new System.Windows.Forms.Button();
             this.cbCusCountry = new System.Windows.Forms.ComboBox();
@@ -72,7 +73,6 @@
             this.lblCusID = new System.Windows.Forms.Label();
             this.tOrder = new System.Windows.Forms.TabPage();
             this.btnNewDetail = new System.Windows.Forms.Button();
-            this.btnSearchDetail = new System.Windows.Forms.Button();
             this.btnNewOrder = new System.Windows.Forms.Button();
             this.btnSearchOrder = new System.Windows.Forms.Button();
             this.btnUpdateDetail = new System.Windows.Forms.Button();
@@ -141,6 +141,8 @@
             this.lblOrderCusID = new System.Windows.Forms.Label();
             this.lblOrderID = new System.Windows.Forms.Label();
             this.tProduct = new System.Windows.Forms.TabPage();
+            this.btnNewProduct = new System.Windows.Forms.Button();
+            this.btnSearchProduct = new System.Windows.Forms.Button();
             this.cbCaterogyID = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.radNo = new System.Windows.Forms.RadioButton();
@@ -167,6 +169,8 @@
             this.label15 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
             this.tEmployee = new System.Windows.Forms.TabPage();
+            this.btnNewEmp = new System.Windows.Forms.Button();
+            this.btnSearchEmp = new System.Windows.Forms.Button();
             this.cbEmpCountry = new System.Windows.Forms.ComboBox();
             this.mtbEmpPhone = new System.Windows.Forms.MaskedTextBox();
             this.dtpEmpHireDate = new System.Windows.Forms.DateTimePicker();
@@ -215,6 +219,9 @@
             this.label23 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
             this.tSuppliers = new System.Windows.Forms.TabPage();
+            this.btnNewSup = new System.Windows.Forms.Button();
+            this.btnSearchSup = new System.Windows.Forms.Button();
+            this.mtbSupPhone = new System.Windows.Forms.MaskedTextBox();
             this.txtSupContactTitle = new System.Windows.Forms.TextBox();
             this.label40 = new System.Windows.Forms.Label();
             this.cbSupCountry = new System.Windows.Forms.ComboBox();
@@ -253,6 +260,8 @@
             this.label38 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.tCategories = new System.Windows.Forms.TabPage();
+            this.btnNewCate = new System.Windows.Forms.Button();
+            this.btnSearchCate = new System.Windows.Forms.Button();
             this.btnLoadCategory = new System.Windows.Forms.Button();
             this.btnUpdateCategory = new System.Windows.Forms.Button();
             this.btnDeleteCategory = new System.Windows.Forms.Button();
@@ -268,6 +277,9 @@
             this.label53 = new System.Windows.Forms.Label();
             this.label54 = new System.Windows.Forms.Label();
             this.tShippers = new System.Windows.Forms.TabPage();
+            this.btnNewShipper = new System.Windows.Forms.Button();
+            this.btnSearchShipper = new System.Windows.Forms.Button();
+            this.mtbShipperPhone = new System.Windows.Forms.MaskedTextBox();
             this.btnLoadShipper = new System.Windows.Forms.Button();
             this.btnUpdateShipper = new System.Windows.Forms.Button();
             this.btnDeleteShipper = new System.Windows.Forms.Button();
@@ -282,9 +294,6 @@
             this.label28 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
-            this.mtbCusPhone = new System.Windows.Forms.MaskedTextBox();
-            this.mtbSupPhone = new System.Windows.Forms.MaskedTextBox();
-            this.mtbShipperPhone = new System.Windows.Forms.MaskedTextBox();
             this.tabControl.SuspendLayout();
             this.tCustomer.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCustomer)).BeginInit();
@@ -359,6 +368,14 @@
             this.tCustomer.TabIndex = 0;
             this.tCustomer.Text = "Customer";
             this.tCustomer.UseVisualStyleBackColor = true;
+            // 
+            // mtbCusPhone
+            // 
+            this.mtbCusPhone.Location = new System.Drawing.Point(98, 322);
+            this.mtbCusPhone.Mask = "(9000) 000-0000";
+            this.mtbCusPhone.Name = "mtbCusPhone";
+            this.mtbCusPhone.Size = new System.Drawing.Size(181, 20);
+            this.mtbCusPhone.TabIndex = 90;
             // 
             // btnNewCustomer
             // 
@@ -698,7 +715,6 @@
             // tOrder
             // 
             this.tOrder.Controls.Add(this.btnNewDetail);
-            this.tOrder.Controls.Add(this.btnSearchDetail);
             this.tOrder.Controls.Add(this.btnNewOrder);
             this.tOrder.Controls.Add(this.btnSearchOrder);
             this.tOrder.Controls.Add(this.btnUpdateDetail);
@@ -756,16 +772,6 @@
             this.btnNewDetail.Text = "New Detail";
             this.btnNewDetail.UseVisualStyleBackColor = true;
             this.btnNewDetail.Click += new System.EventHandler(this.btnNewDetail_Click);
-            // 
-            // btnSearchDetail
-            // 
-            this.btnSearchDetail.Location = new System.Drawing.Point(792, 432);
-            this.btnSearchDetail.Name = "btnSearchDetail";
-            this.btnSearchDetail.Size = new System.Drawing.Size(119, 23);
-            this.btnSearchDetail.TabIndex = 96;
-            this.btnSearchDetail.Text = "Search";
-            this.btnSearchDetail.UseVisualStyleBackColor = true;
-            this.btnSearchDetail.Click += new System.EventHandler(this.btnSearchDetail_Click);
             // 
             // btnNewOrder
             // 
@@ -914,6 +920,7 @@
             this.dgvDetail.ReadOnly = true;
             this.dgvDetail.Size = new System.Drawing.Size(702, 137);
             this.dgvDetail.TabIndex = 89;
+            this.dgvDetail.SelectionChanged += new System.EventHandler(this.dgvDetail_SelectionChanged);
             // 
             // clOrderIDDetail
             // 
@@ -1341,6 +1348,8 @@
             // 
             // tProduct
             // 
+            this.tProduct.Controls.Add(this.btnNewProduct);
+            this.tProduct.Controls.Add(this.btnSearchProduct);
             this.tProduct.Controls.Add(this.cbCaterogyID);
             this.tProduct.Controls.Add(this.groupBox1);
             this.tProduct.Controls.Add(this.btnLoadProduct);
@@ -1365,6 +1374,26 @@
             this.tProduct.TabIndex = 2;
             this.tProduct.Text = "Product";
             this.tProduct.UseVisualStyleBackColor = true;
+            // 
+            // btnNewProduct
+            // 
+            this.btnNewProduct.Location = new System.Drawing.Point(420, 185);
+            this.btnNewProduct.Name = "btnNewProduct";
+            this.btnNewProduct.Size = new System.Drawing.Size(119, 23);
+            this.btnNewProduct.TabIndex = 91;
+            this.btnNewProduct.Text = "New Product";
+            this.btnNewProduct.UseVisualStyleBackColor = true;
+            this.btnNewProduct.Click += new System.EventHandler(this.btnNewProduct_Click);
+            // 
+            // btnSearchProduct
+            // 
+            this.btnSearchProduct.Location = new System.Drawing.Point(420, 215);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(119, 23);
+            this.btnSearchProduct.TabIndex = 90;
+            this.btnSearchProduct.Text = "Search";
+            this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // cbCaterogyID
             // 
@@ -1589,6 +1618,8 @@
             // 
             // tEmployee
             // 
+            this.tEmployee.Controls.Add(this.btnNewEmp);
+            this.tEmployee.Controls.Add(this.btnSearchEmp);
             this.tEmployee.Controls.Add(this.cbEmpCountry);
             this.tEmployee.Controls.Add(this.mtbEmpPhone);
             this.tEmployee.Controls.Add(this.dtpEmpHireDate);
@@ -1629,6 +1660,26 @@
             this.tEmployee.TabIndex = 3;
             this.tEmployee.Text = "Employee";
             this.tEmployee.UseVisualStyleBackColor = true;
+            // 
+            // btnNewEmp
+            // 
+            this.btnNewEmp.Location = new System.Drawing.Point(420, 185);
+            this.btnNewEmp.Name = "btnNewEmp";
+            this.btnNewEmp.Size = new System.Drawing.Size(119, 23);
+            this.btnNewEmp.TabIndex = 93;
+            this.btnNewEmp.Text = "New Employee";
+            this.btnNewEmp.UseVisualStyleBackColor = true;
+            this.btnNewEmp.Click += new System.EventHandler(this.btnNewEmp_Click);
+            // 
+            // btnSearchEmp
+            // 
+            this.btnSearchEmp.Location = new System.Drawing.Point(420, 215);
+            this.btnSearchEmp.Name = "btnSearchEmp";
+            this.btnSearchEmp.Size = new System.Drawing.Size(119, 23);
+            this.btnSearchEmp.TabIndex = 92;
+            this.btnSearchEmp.Text = "Search";
+            this.btnSearchEmp.UseVisualStyleBackColor = true;
+            this.btnSearchEmp.Click += new System.EventHandler(this.btnSearchEmp_Click);
             // 
             // cbEmpCountry
             // 
@@ -2024,6 +2075,8 @@
             // 
             // tSuppliers
             // 
+            this.tSuppliers.Controls.Add(this.btnNewSup);
+            this.tSuppliers.Controls.Add(this.btnSearchSup);
             this.tSuppliers.Controls.Add(this.mtbSupPhone);
             this.tSuppliers.Controls.Add(this.txtSupContactTitle);
             this.tSuppliers.Controls.Add(this.label40);
@@ -2058,6 +2111,34 @@
             this.tSuppliers.TabIndex = 4;
             this.tSuppliers.Text = "Suppliers";
             this.tSuppliers.UseVisualStyleBackColor = true;
+            // 
+            // btnNewSup
+            // 
+            this.btnNewSup.Location = new System.Drawing.Point(420, 185);
+            this.btnNewSup.Name = "btnNewSup";
+            this.btnNewSup.Size = new System.Drawing.Size(119, 23);
+            this.btnNewSup.TabIndex = 113;
+            this.btnNewSup.Text = "New Suppliers";
+            this.btnNewSup.UseVisualStyleBackColor = true;
+            this.btnNewSup.Click += new System.EventHandler(this.btnNewSup_Click);
+            // 
+            // btnSearchSup
+            // 
+            this.btnSearchSup.Location = new System.Drawing.Point(420, 215);
+            this.btnSearchSup.Name = "btnSearchSup";
+            this.btnSearchSup.Size = new System.Drawing.Size(119, 23);
+            this.btnSearchSup.TabIndex = 112;
+            this.btnSearchSup.Text = "Search";
+            this.btnSearchSup.UseVisualStyleBackColor = true;
+            this.btnSearchSup.Click += new System.EventHandler(this.btnSearchSup_Click);
+            // 
+            // mtbSupPhone
+            // 
+            this.mtbSupPhone.Location = new System.Drawing.Point(98, 327);
+            this.mtbSupPhone.Mask = "(9000) 000-0000";
+            this.mtbSupPhone.Name = "mtbSupPhone";
+            this.mtbSupPhone.Size = new System.Drawing.Size(181, 20);
+            this.mtbSupPhone.TabIndex = 111;
             // 
             // txtSupContactTitle
             // 
@@ -2374,6 +2455,8 @@
             // 
             // tCategories
             // 
+            this.tCategories.Controls.Add(this.btnNewCate);
+            this.tCategories.Controls.Add(this.btnSearchCate);
             this.tCategories.Controls.Add(this.btnLoadCategory);
             this.tCategories.Controls.Add(this.btnUpdateCategory);
             this.tCategories.Controls.Add(this.btnDeleteCategory);
@@ -2392,6 +2475,26 @@
             this.tCategories.TabIndex = 6;
             this.tCategories.Text = "Categories";
             this.tCategories.UseVisualStyleBackColor = true;
+            // 
+            // btnNewCate
+            // 
+            this.btnNewCate.Location = new System.Drawing.Point(420, 185);
+            this.btnNewCate.Name = "btnNewCate";
+            this.btnNewCate.Size = new System.Drawing.Size(119, 23);
+            this.btnNewCate.TabIndex = 95;
+            this.btnNewCate.Text = "New Categories";
+            this.btnNewCate.UseVisualStyleBackColor = true;
+            this.btnNewCate.Click += new System.EventHandler(this.btnNewCate_Click);
+            // 
+            // btnSearchCate
+            // 
+            this.btnSearchCate.Location = new System.Drawing.Point(420, 215);
+            this.btnSearchCate.Name = "btnSearchCate";
+            this.btnSearchCate.Size = new System.Drawing.Size(119, 23);
+            this.btnSearchCate.TabIndex = 94;
+            this.btnSearchCate.Text = "Search";
+            this.btnSearchCate.UseVisualStyleBackColor = true;
+            this.btnSearchCate.Click += new System.EventHandler(this.btnSearchCate_Click);
             // 
             // btnLoadCategory
             // 
@@ -2518,6 +2621,8 @@
             // 
             // tShippers
             // 
+            this.tShippers.Controls.Add(this.btnNewShipper);
+            this.tShippers.Controls.Add(this.btnSearchShipper);
             this.tShippers.Controls.Add(this.mtbShipperPhone);
             this.tShippers.Controls.Add(this.btnLoadShipper);
             this.tShippers.Controls.Add(this.btnUpdateShipper);
@@ -2536,6 +2641,34 @@
             this.tShippers.TabIndex = 7;
             this.tShippers.Text = "Shippers";
             this.tShippers.UseVisualStyleBackColor = true;
+            // 
+            // btnNewShipper
+            // 
+            this.btnNewShipper.Location = new System.Drawing.Point(420, 185);
+            this.btnNewShipper.Name = "btnNewShipper";
+            this.btnNewShipper.Size = new System.Drawing.Size(119, 23);
+            this.btnNewShipper.TabIndex = 97;
+            this.btnNewShipper.Text = "New Shipper";
+            this.btnNewShipper.UseVisualStyleBackColor = true;
+            this.btnNewShipper.Click += new System.EventHandler(this.btnNewShipper_Click);
+            // 
+            // btnSearchShipper
+            // 
+            this.btnSearchShipper.Location = new System.Drawing.Point(420, 215);
+            this.btnSearchShipper.Name = "btnSearchShipper";
+            this.btnSearchShipper.Size = new System.Drawing.Size(119, 23);
+            this.btnSearchShipper.TabIndex = 96;
+            this.btnSearchShipper.Text = "Search";
+            this.btnSearchShipper.UseVisualStyleBackColor = true;
+            this.btnSearchShipper.Click += new System.EventHandler(this.btnSearchShipper_Click);
+            // 
+            // mtbShipperPhone
+            // 
+            this.mtbShipperPhone.Location = new System.Drawing.Point(98, 77);
+            this.mtbShipperPhone.Mask = "(9000) 000-0000";
+            this.mtbShipperPhone.Name = "mtbShipperPhone";
+            this.mtbShipperPhone.Size = new System.Drawing.Size(181, 20);
+            this.mtbShipperPhone.TabIndex = 95;
             // 
             // btnLoadShipper
             // 
@@ -2656,30 +2789,6 @@
             // errorProvider1
             // 
             this.errorProvider1.ContainerControl = this;
-            // 
-            // mtbCusPhone
-            // 
-            this.mtbCusPhone.Location = new System.Drawing.Point(98, 322);
-            this.mtbCusPhone.Mask = "(9000) 000-0000";
-            this.mtbCusPhone.Name = "mtbCusPhone";
-            this.mtbCusPhone.Size = new System.Drawing.Size(181, 20);
-            this.mtbCusPhone.TabIndex = 90;
-            // 
-            // mtbSupPhone
-            // 
-            this.mtbSupPhone.Location = new System.Drawing.Point(98, 327);
-            this.mtbSupPhone.Mask = "(9000) 000-0000";
-            this.mtbSupPhone.Name = "mtbSupPhone";
-            this.mtbSupPhone.Size = new System.Drawing.Size(181, 20);
-            this.mtbSupPhone.TabIndex = 111;
-            // 
-            // mtbShipperPhone
-            // 
-            this.mtbShipperPhone.Location = new System.Drawing.Point(98, 77);
-            this.mtbShipperPhone.Mask = "(9000) 000-0000";
-            this.mtbShipperPhone.Name = "mtbShipperPhone";
-            this.mtbShipperPhone.Size = new System.Drawing.Size(181, 20);
-            this.mtbShipperPhone.TabIndex = 95;
             // 
             // Form1
             // 
@@ -2971,7 +3080,6 @@
         private System.Windows.Forms.Button btnNewOrder;
         private System.Windows.Forms.Button btnSearchOrder;
         private System.Windows.Forms.Button btnNewDetail;
-        private System.Windows.Forms.Button btnSearchDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn clOrderIDDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn clDetailProductID;
         private System.Windows.Forms.DataGridViewTextBoxColumn clUnitPriceDetail;
@@ -2981,6 +3089,16 @@
         private System.Windows.Forms.MaskedTextBox mtbCusPhone;
         private System.Windows.Forms.MaskedTextBox mtbSupPhone;
         private System.Windows.Forms.MaskedTextBox mtbShipperPhone;
+        private System.Windows.Forms.Button btnNewProduct;
+        private System.Windows.Forms.Button btnSearchProduct;
+        private System.Windows.Forms.Button btnNewEmp;
+        private System.Windows.Forms.Button btnSearchEmp;
+        private System.Windows.Forms.Button btnNewSup;
+        private System.Windows.Forms.Button btnSearchSup;
+        private System.Windows.Forms.Button btnNewCate;
+        private System.Windows.Forms.Button btnSearchCate;
+        private System.Windows.Forms.Button btnNewShipper;
+        private System.Windows.Forms.Button btnSearchShipper;
     }
 }
 

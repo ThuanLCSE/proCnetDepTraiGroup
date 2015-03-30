@@ -90,3 +90,16 @@ SELECT * FROM  Sales.Orders    WHERE ( (custid=@custid OR @custid is null ) AND 
 End
 GO
 ----------------
+
+--DROP PROCEDURE [SearchProduct]
+CREATE PROCEDURE [SearchProduct]
+@productname nvarchar (40),
+@supplierid int,
+@categoryid int,
+@unitprice money,
+@discontinued bit
+AS
+BEGIN
+	SELECT * FROM Production.Products WHERE ( productname LIKE '%'+@productname+'%' AND (supplierid=@supplierid OR @supplierid IS null) AND (categoryid=@categoryid OR @categoryid IS null )AND (unitprice= @unitprice OR @unitprice IS null) AND (discontinued=@discontinued OR @discontinued IS NULL) )
+END
+EXECUTE SearchProduct @productname ='',@supplierid=null, @categoryid=null , @unitprice= null, @discontinued= true
